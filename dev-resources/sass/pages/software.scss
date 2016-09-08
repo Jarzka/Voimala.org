@@ -1,0 +1,234 @@
+// ****************************************************************
+// General rules
+// ****************************************************************
+.owl-carousel-item {
+    width: 100%;
+}
+
+// Layout
+// ----------------------------------------------------------------
+.col-wrapper:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.col-wrapper > * {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    padding: 5px;
+}
+
+.col1 {
+    width: 30%;
+    float: left;
+}
+
+.col2 {
+    width: 70%;
+    float: right;
+}
+
+.more-projects {
+    display: none;
+}
+
+// Texts
+// ----------------------------------------------------------------
+
+.project-small-info {
+    font-size: 0.8em;
+}
+
+blockquote {
+    margin-left: 0;
+}
+
+#quote {
+     /* So that the site content does not jump up and down when the quote is changed.
+      * The height has to be equal to the longest quote. */
+    height: 7em;
+}
+
+// Images
+// ----------------------------------------------------------------
+    
+img {
+    // Programming language logos
+    &.software-logo-right {
+        float: right;
+    }
+    
+    &.software-logo-small {
+        width: 25%;
+    }
+    
+    // Screenshots
+    &.screenshot {
+        width: 100%;
+    }
+}
+
+// Links
+// ----------------------------------------------------------------
+
+.button {
+    display: block;
+    overflow: hidden;
+    width: 115px;
+    max-width: 100%;
+    font-size: 14px;
+    color: #FFFFFF;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    border: 1px solid black;
+}
+
+.button-download {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 10px 10px 10px 35px;
+    background-color: #46ade5;
+    background: url("../images/download.svg"), -moz-linear-gradient(top, #46ade5 0%, #317fa6);
+    background: url("../images/download.svg"), -webkit-gradient(linear, left top, left bottom, from(#46ade5), to(#317fa6));
+    background: url("../images/download.svg"), linear-gradient(to bottom, #46ade5 0%, #317fa6);
+    background-size: 22px 22px, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 8px 8px, 0 0;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    -webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    text-shadow: 0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.button-download:hover {
+    background-color: #d0edfc;
+    background: url("../images/download.svg"), -moz-linear-gradient(top, #d0edfc 0%, #a7c1cf);
+    background: url("../images/download.svg"), -webkit-gradient(linear, left top, left bottom, from(#d0edfc), to(#a7c1cf));
+    background: url("../images/download.svg"), linear-gradient(to bottom, #d0edfc 0%, #a7c1cf);
+    background-size: 22px 22px, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 8px 8px, 0 0;
+}
+
+.button-github {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 10px 10px 10px 36px;
+    background-color: #46ade5;
+    background: url("../images/some_github.png"), -moz-linear-gradient(top, #46ade5 0%, #317fa6);
+    background: url("../images/some_github.png"), -webkit-gradient(linear, left top, left bottom, from(#46ade5), to(#317fa6));
+    background: url("../images/some_github.png"), linear-gradient(to bottom, #46ade5 0%, #317fa6);
+    background-size: 22px 22px, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 8px 8px, 0 0;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    -webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    text-shadow: 0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.button-github:hover {
+    background-color: #d0edfc;
+    background: url("../images/some_github.png"), -moz-linear-gradient(top, #d0edfc 0%, #a7c1cf);
+    background: url("../images/some_github.png"), -webkit-gradient(linear, left top, left bottom, from(#d0edfc), to(#a7c1cf));
+    background: url("../images/some_github.png"), linear-gradient(to bottom, #d0edfc 0%, #a7c1cf);
+    background-size: 22px 22px, 100% 100%;
+    background-repeat: no-repeat, no-repeat;
+    background-position: 8px 8px, 0 0;
+}
+
+.button-view {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 10px 10px 10px 10px;
+    background-color: #b0abe0;
+    background: -moz-linear-gradient(top, #b0abe0 0%, #8f8bb6);
+    background: -webkit-gradient(linear, left top, left bottom, from(#b0abe0), to(#8f8bb6));
+    background: linear-gradient(to bottom, #b0abe0 0%, #8f8bb6);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    -webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    text-shadow: 0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.button-view:hover {
+    background-color: #e5e2fb;
+    background: -moz-linear-gradient(top, #e5e2fb 0%, #aca9c0);
+    background: -webkit-gradient(linear, left top, left bottom, from(#e5e2fb), to(#aca9c0));
+    background: linear-gradient(to bottom, #e5e2fb 0%, #aca9c0);
+}
+
+.button-show-more {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 10px 10px 10px 10px;
+    background-color: #b0abe0;
+    background: -moz-linear-gradient(top, #b0abe0 0%, #8f8bb6);
+    background: -webkit-gradient(linear, left top, left bottom, from(#b0abe0), to(#8f8bb6));
+    background: linear-gradient(to bottom, #b0abe0 0%, #8f8bb6);
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    -webkit-box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    box-shadow: 0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7);
+    text-shadow: 0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3);
+}
+
+.button-show-more:hover {
+    background-color: #e5e2fb;
+    background: -moz-linear-gradient(top, #e5e2fb 0%, #aca9c0);
+    background: -webkit-gradient(linear, left top, left bottom, from(#e5e2fb), to(#aca9c0));
+    background: linear-gradient(to bottom, #e5e2fb 0%, #aca9c0);
+}
+
+// ****************************************************************
+// Tablets
+// ****************************************************************
+@media screen and (min-width: 520px) {
+    // Buttons
+    // ----------------------------------------------------------------
+    .button {
+        visibility: visible;
+    }
+    
+    // Texts
+    // ----------------------------------------------------------------
+    blockquote {
+        margin-left: 1em;
+    }
+    
+    #quote {
+     /* So that the site content does not jump up and down when the quote is changed.
+      * The height has to be equal to the longest quote. */
+    height: 5em;
+    }
+}
+
+// ****************************************************************
+// Desktop
+// ****************************************************************
+@media screen and (min-width: 650px) {
+    #quote {
+        /* So that the site content does not jump up and down when the quote is changed.
+         * The height has to be equal to the longest quote. */
+        height: 4em;
+    }
+}

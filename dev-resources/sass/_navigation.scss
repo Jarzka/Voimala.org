@@ -1,0 +1,41 @@
+// ****************************************************************
+// Tabs
+// ****************************************************************
+.tabs {
+    margin-top: 0;
+    margin-bottom: 20px;
+    list-style-type: none;
+    padding-left: 0;
+    margin-left: 0;
+    border-bottom: 1px solid #204d66;
+
+    > li {
+        display: inline-block;
+
+        > .link {
+            display: inline-block;
+            height: 30px;
+            background-color: #122b39;
+            border: 1px solid #204d66;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            padding: 7px;
+            margin-right: 3px;
+            text-decoration: none;
+            font-size: 16px;
+            line-height: 2em;
+        }
+
+        > .link:not(.tabs-active-tab):hover {
+            border: 1px solid #31769d;
+            background-color: #1b465d;
+        }
+
+        > .link.tabs-active-tab {
+            border: 1px solid #43a1d6;
+            border-bottom: 1px solid #276586;
+            background-color: #276586;
+            color: white;
+        }
+    }
+}
