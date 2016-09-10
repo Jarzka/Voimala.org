@@ -1,0 +1,1 @@
+java -jar /var/www/Voimala.org/target/uberjar/voimala-0.1.0-SNAPSHOT-standalone.jar
