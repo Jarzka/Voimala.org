@@ -15,7 +15,7 @@ RUN cd ~ && \
     mv lein /usr/local/bin
 
 # Get source code from GitHub
-RUN mkdir -p /var/www/app && \
+RUN mkdir -p /var/www && \
     cd /var/www && \
     git clone https://github.com/Jarzka/Voimala.org.git
 
