@@ -20,6 +20,7 @@ resources/public/js/voimala.js
 resources/public/css/
 .sass-cache
 figwheel_server.log
+dev_notes.md
 
 resources/public/images
 resources/public/projects
