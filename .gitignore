@@ -22,4 +22,5 @@ resources/public/css/
 figwheel_server.log
 
 resources/public/images
-/filesystem
+resources/public/projects
+resources/public/aarrearkku
