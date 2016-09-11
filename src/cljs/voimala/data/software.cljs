@@ -79,7 +79,7 @@
                 :importance         3}
                {:name               "Multithreaded Game of Life"
                 :image-url          "images/multithreaded_game_of_life.png"
-                :links              {:github "https://github.com/Jarzka/Multithreaded-Game-of-Lifep"}
+                :links              {:github "https://github.com/Jarzka/Multithreaded-Game-of-Life"}
                 :description-hiccup [:span
                                      [:p "Multithreaded version of popular Game of Life simulation. The app outputs individual generations to the console window and also saves them to a gif file for visual presentation."]
                                      [:p [:a {:href "images/game_of_life_example.gif"} "View example output GIF"]]]
