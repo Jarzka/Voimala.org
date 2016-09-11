@@ -14,6 +14,17 @@
     become: true
     become_user: root
 
+    # To prevent "ImportError: No module named pkg_resources
+  - name: Install Python setuptools
+    raw: wget https://bootstrap.pypa.io/ez_setup.py -O - | python
+    become: true
+    become_user: root
+
+  - name: Install Ansible Docker module
+    raw: pip install 'docker-py>=1.7.0'
+    become: true
+    become_user: root
+
   - name: Install Docker
     script: scripts/install_docker.sh
     become: true
@@ -22,8 +33,11 @@
   - name: Download Docker image
     raw: docker pull jarzka/voimala.org-app
 
-    # TODO If the container already exists: stop it and run the new image (without losing logging data)
-    # If the container does not exist, simply run it
+  - name: Stop & Remove previous container
+    docker:
+      name: voimala.org-app
+      image: jarzka/voimala.org-app
+      state: absent
 
   - name: Run Docker image
-    raw: docker run -d -p 80:81 jarzka/voimala.org-app
+    raw: docker run --name voimala.org-app -d -p 80:81 jarzka/voimala.org-app
