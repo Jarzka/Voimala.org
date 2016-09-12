@@ -58,7 +58,7 @@
   (GET "/blog" [] handle-view)
   (GET "/contact" [] handle-view)
   ; Resources
-  (resources "/")
+  (files "/")
   ; 404
   (not-found "<p>Page not found.</p>"))
 
