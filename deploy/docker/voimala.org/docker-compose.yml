@@ -1,0 +1,10 @@
+version: '2'
+services:
+  voimala-org:
+    container_name: voimala-app
+    image: jarzka/voimala.org-app
+  nginx:
+    container_name: voimala-nginx
+    image: jarzka/voimala.org-nginx
+    ports:
+     - "80:80"

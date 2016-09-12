@@ -30,14 +30,36 @@
     become: true
     become_user: root
 
-  - name: Download Docker image
-    raw: docker pull jarzka/voimala.org-app
-
-  - name: Stop & Remove previous container
+  - name: Stop & remove app container
     docker:
-      name: voimala.org-app
+      name: voimala-app
       image: jarzka/voimala.org-app
       state: absent
 
-  - name: Run Docker image
-    raw: docker run --name voimala.org-app -d -p 80:81 jarzka/voimala.org-app
+  - name: Stop & remove nginx container
+    docker:
+      name: voimala-nginx
+      image: jarzka/voimala.org-nginx
+      state: absent
+
+  - name: Remove old nginx image
+    docker_image:
+      state: absent
+      name: jarzka/voimala.org-nginx
+
+  - name: Remove old app image
+    docker_image:
+      state: absent
+      name: jarzka/voimala.org-app
+
+  - name: Download app image
+    raw: docker pull jarzka/voimala.org-app
+
+  - name: Download nginx image
+    raw: docker pull jarzka/voimala.org-nginx
+
+  - name: Copy Docker composite file
+    copy: src=docker/voimala.org/docker-compose.yml dest=~/docker-compose.yml
+
+  - name: Run Docker composite file
+    raw: cd ~ && docker-compose up -d
