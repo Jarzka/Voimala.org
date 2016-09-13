@@ -40,11 +40,10 @@ COPY images /var/www/Voimala.org/public/images
 COPY projects /var/www/Voimala.org/public/projects
 COPY aarrearkku /var/www/Voimala.org/public/aarrearkku
 
-# chmod assets
-RUN cd /var/www/Voimala.org/public && \
-    chmod -R 755 images && \
-    chmod -R 755 projects && \
-    chmod -R 755 aarrearkku
+# chmod
+RUN cd /var/www && \
+    find Voimala.org -type d -exec chmod 755 {} \; && \
+    find Voimala.org -type f -exec chmod 744 {} \;
 
 # Remove source files
 RUN rm -r tmp/Voimala.org
