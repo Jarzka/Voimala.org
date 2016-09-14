@@ -5,14 +5,15 @@
   gather_facts: False # Fails without this because Python 2 is missing
 
   tasks:
-  - name: Update packages
-    apt: update_cache=yes
-    become: true
-    become_user: root
     
     # No Python 2 in Ubuntu 16.04, but Ansible needs it.
   - name: Install Python 2
     raw: test -e /usr/bin/python || (apt -y update && apt install -y python-minimal)
+    become: true
+    become_user: root
+
+  - name: Update packages
+    apt: update_cache=yes
     become: true
     become_user: root
 
