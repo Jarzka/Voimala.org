@@ -38,6 +38,11 @@
     become: true
     become_user: root
 
+  - name: Install Docker Compose
+    raw: apt-get -y install docker-compose
+    become: true
+    become_user: root
+
   - name: Stop & remove app container
     docker:
       name: voimala-app
@@ -49,6 +54,10 @@
       name: voimala-nginx
       image: jarzka/voimala.org-nginx
       state: absent
+
+  # TODO It is (very) inefficient to remove the old images and download them again from scratch.
+  # It would be better to stop the containers first, download the new images (only changed parts),
+  # start the containers with the latest images and then remove the old images.
 
   - name: Remove old nginx image
     docker_image:
@@ -69,5 +78,12 @@
   - name: Copy Docker composite file
     copy: src=docker/voimala.org/docker-compose.yml dest=~/docker-compose.yml
 
-  - name: Run Docker composite file
-    raw: cd ~ && docker-compose up -d
+    # TODO Unable to use docker-compose.yml version 2.
+    # The newest version of docker-compose is not available on Ubuntu 16 (and there was no package source for it)
+    # Thus, start containers manually.
+
+  - name: Run app containerr
+    raw: docker run --name voimala-app -d jarzka/voimala.org-app
+
+  - name: Run nginx container
+    raw: docker run --name voimala-nginx -d  --link voimala-app:voimala-app -p 80:80 jarzka/voimala.org-nginx
