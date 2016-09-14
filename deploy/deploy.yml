@@ -1,5 +1,7 @@
+# Deploy script for Ubuntu 16.04 based systems.
+
 - name: Deploy to server
-  hosts: test-servers
+  hosts: '{{ target }}'
   gather_facts: False # Fails without this because Python 2 is missing
 
   tasks:
