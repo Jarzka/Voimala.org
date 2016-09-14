@@ -13,6 +13,7 @@ pom.xml.asc
 *.iml
 *.key
 deploy/.vagrant/
+deploy/hosts
 resources/public/js/dev/out/
 resources/public/js/dev/voimala.js
 resources/public/js/out/
