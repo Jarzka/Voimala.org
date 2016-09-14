@@ -23,6 +23,11 @@
     become: true
     become_user: root
 
+  - name: Install pip
+    raw: apt-get -y install python-pip
+    become: true
+    become_user: root
+
   - name: Install Ansible Docker module
     raw: pip install 'docker-py>=1.7.0'
     become: true
