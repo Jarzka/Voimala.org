@@ -19,22 +19,7 @@
                {:id :chrome :full-name "Google Chrome" :familiar-name "Chrome" :short-name "Chrome"}
                {:id :ie :full-name "Microsoft Internet Explorer" :familiar-name "Internet Explorer" :short-name "IE"}])
 
-(def projects [{:name               "HTML5 Spreadsheet"
-                :image-url          "images/html5_spreadsheet.png"
-                :links              {:github "https://github.com/Jarzka/HTML5-Spreadsheet"
-                                     :view   "projects/html5_spreadsheet"}
-                :description-hiccup [:p "A simple spreadsheet app that can export the data to MS Excel format."]
-                :date-released         (t/date-time 2014 7 27)
-                :technologies-used  #{:javascript :jquery :angularjs :php :phpexcel}
-                :tested-browsers    #{{:id      :firefox
-                                       :version 31}
-                                      {:id      :chrome
-                                       :version 36}
-                                      {:id      :ie
-                                       :version 11}}
-                :tags               #{:web}
-                :importance         5}
-               {:name               "Ajokit"
+(def projects [{:name               "Ajokit"
                 :image-url          "images/ajokit.jpg"
                 :links              {:github "https://github.com/Jarzka/Ajokit"
                                      :view   "projects/ajokit"}
@@ -102,20 +87,6 @@
                                        :version 11}}
                 :tags               #{:web}
                 :importance         6}
-               {:name               "UutisApp"
-                :image-url          "images/uutisapp.png"
-                :links              {:view "projects/uutisapp"}
-                :description-hiccup [:p "A simple web app containing news collected from several sources. The app uses HIGH.fi REST API for getting news headlines."]
-                :date-released         (t/date-time 2014 8 9)
-                :technologies-used  #{:javascript :jquery :angularjs :php}
-                :tested-browsers    #{{:id      :firefox
-                                       :version 31}
-                                      {:id      :chrome
-                                       :version 36}
-                                      {:id      :ie
-                                       :version 11}}
-                :tags               #{:web}
-                :importance         5}
                {:name               "ThisSimpleMarquee"
                 :image-url          "images/thissimplemarquee.png"
                 :links              {:github "https://github.com/Jarzka/ThisSimpleMarquee"
