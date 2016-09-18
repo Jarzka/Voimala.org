@@ -13,4 +13,5 @@
     " and the deployment is done using "
     [:a {:href "https://www.ansible.com/"} "Ansible"]
     " and "
-    [:a {:href "https://www.docker.com/"} "Docker"]]])
+    [:a {:href "https://www.docker.com/"} "Docker"]
+    "."]])
