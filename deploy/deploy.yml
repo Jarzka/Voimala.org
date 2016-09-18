@@ -75,12 +75,14 @@
   - name: Download nginx image
     raw: docker pull jarzka/voimala.org-nginx
 
-  - name: Copy Docker composite file
-    copy: src=docker/voimala.org/docker-compose.yml dest=~/docker-compose.yml
-
-    # TODO Unable to use docker-compose.yml version 2.
-    # The newest version of docker-compose is not available on Ubuntu 16 (and there was no package source for it)
-    # Thus, start containers manually.
+# - name: Copy Docker composite file
+#   copy: src=docker/voimala.org/docker-compose.yml dest=~/docker-compose.yml
+# - name: Run Docker composite file
+#   raw: cd ~ && docker-compose up -d
+# 
+# TODO Unable to use docker-compose.yml version 2.
+# The newest version of docker-compose is not available on Ubuntu 16 (and there was no package source for it)
+# Thus, start containers manually.
 
   - name: Run app containerr
     raw: docker run --name voimala-app -d jarzka/voimala.org-app
