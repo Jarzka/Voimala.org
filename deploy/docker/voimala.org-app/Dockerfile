@@ -1,6 +1,9 @@
 FROM ubuntu:xenial
 MAINTAINER Jari Hanhela <jarihanhela@gmail.com>
 
+# Build this image in the root directory of the project using the following command:
+# docker build -t <name> -f deploy/docker/voimala.org-app/Dockerfile .
+
 # Install necessary software applications
 RUN apt-get update && \ 
     apt-get -y install \
@@ -36,9 +39,9 @@ RUN cd tmp/Voimala.org && \
 RUN mv tmp/Voimala.org/target/uberjar/voimala-0.1.0-SNAPSHOT-standalone.jar /var/www/Voimala.org/voimala.jar
 
 # Copy assets
-COPY images /var/www/Voimala.org/public/images
-COPY projects /var/www/Voimala.org/public/projects
-COPY aarrearkku /var/www/Voimala.org/public/aarrearkku
+COPY resources/public/images /var/www/Voimala.org/public/images
+COPY resources/public/projects /var/www/Voimala.org/public/projects
+COPY resources/public/aarrearkku /var/www/Voimala.org/public/aarrearkku
 
 # chmod
 RUN cd /var/www && \
@@ -49,10 +52,10 @@ RUN cd /var/www && \
 RUN rm -r tmp/Voimala.org
 
 # Configure nginx
-COPY nginx.conf /etc/nginx/nginx.conf
+COPY deploy/docker/voimala.org-app/nginx.conf /etc/nginx/nginx.conf
 
 # Copy run script
-COPY run.sh /var/www/Voimala.org/run.sh
+COPY deploy/docker/voimala.org-app/run.sh /var/www/Voimala.org/run.sh
 
 # Run
 CMD sh /var/www/Voimala.org/run.sh
