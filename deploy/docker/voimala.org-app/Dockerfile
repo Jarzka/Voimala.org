@@ -57,5 +57,8 @@ COPY deploy/docker/voimala.org-app/nginx.conf /etc/nginx/nginx.conf
 # Copy run script
 COPY deploy/docker/voimala.org-app/run.sh /var/www/Voimala.org/run.sh
 
+# Minify
+RUN apt-get -y autoremove;
+
 # Run
 CMD sh /var/www/Voimala.org/run.sh
