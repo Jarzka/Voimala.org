@@ -26,7 +26,6 @@
   :repl-options {:port 1339
                  :timeout 120000}
   :cljsbuild {:builds [{:id           "dev"
-                        :main         'voimala.main
                         :source-paths ["src/cljs"]
                         :figwheel     {:websocket-host   "localhost"
                                        :heads-up-display false}
@@ -35,7 +34,6 @@
                                        :optimizations :none
                                        :pretty-print  true}}
                        {:id           "production"
-                        :main         'voimala.main
                         :source-paths ["src/cljs"]
                         :compiler     {:output-to     "resources/public/js/voimala.js"
                                        :output-dir    "resources/public/js/out"
@@ -45,7 +43,6 @@
                                      "resources/public/js/voimala.js"
                                      "resources/public/js/out"]
   :figwheel {:http-server-root "public"
-             :build-ids ["dev"]
              :css-dirs ["resources/public/css"]}
   :source-paths ["src/clj" "src/cljc"]
   :test-paths ["test/clj"]

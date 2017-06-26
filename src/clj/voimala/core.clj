@@ -49,18 +49,22 @@
                  (view-fn req))))))
 
 (defroutes all-routes
-  ; Views
-  (GET "/" [] handle-view)
-  (GET "/home" [] handle-view)
-  (GET "/software" [] handle-view)
-  (GET "/photographs" [] handle-view)
-  (GET "/writing" [] handle-view)
-  (GET "/blog" [] handle-view)
-  (GET "/contact" [] handle-view)
-  ; 404
-  (not-found "<p>Page not found.</p>"))
+           ; Views
+           (GET "/" [] handle-view)
+           (GET "/home" [] handle-view)
+           (GET "/software" [] handle-view)
+           (GET "/photographs" [] handle-view)
+           (GET "/writing" [] handle-view)
+           (GET "/blog" [] handle-view)
+           (GET "/contact" [] handle-view)
+           ; 404
+           (not-found "<p>Page not found.</p>"))
 
 (defn -main [& [dev-mode]]
   (when dev-mode
     (reset! settings/dev-mode? true))
-  (reset! server (run-server (site #'all-routes) {:port 81})))
+
+  (reset! server (run-server (site #'all-routes)
+                             {:port (if dev-mode
+                                      8081
+                                      80)})))
