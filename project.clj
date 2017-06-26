@@ -18,7 +18,7 @@
   :plugins [[lein-haml-sass "0.2.7-SNAPSHOT"]
             [lein-cljsbuild "1.1.2"]
             [lein-ancient "0.6.10"]
-            [lein-figwheel "0.5.0-6"]]
+            [lein-figwheel "0.5.10"]]
   :scss {:src              "dev-resources/sass"
          :output-directory "resources/public/css"
          :output-extension "css"
