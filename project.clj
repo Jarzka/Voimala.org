@@ -2,21 +2,22 @@
   :description "Voimala.org Clojure Edition"
   :url "http://www.voimala.org"
   :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.7.228"]
-                 [reagent "0.5.1"]
-                 [ring "1.2.1"]
-                 [http-kit "2.1.19"]
+                 [org.clojure/clojurescript "1.9.562"]
+                 [reagent "0.6.2"]
+                 [ring "1.6.1"]
+                 [http-kit "2.2.0"]
                  [hiccup "1.0.5"]
-                 [clj-time "0.11.0"]
-                 [com.andrewmcveigh/cljs-time "0.3.14"]
-                 [com.taoensso/timbre "4.1.4"]
-                 [compojure "1.4.0"]]
+                 [clj-time "0.13.0"]
+                 [com.andrewmcveigh/cljs-time "0.5"]
+                 [com.taoensso/timbre "4.10.0"]
+                 [compojure "1.6.0"]]
   :main voimala.core
   :aot :all
   :auto-clean false ; For uberjar
   :target-path "target/%s"
   :plugins [[lein-haml-sass "0.2.7-SNAPSHOT"]
             [lein-cljsbuild "1.1.2"]
+            [lein-ancient "0.6.10"]
             [lein-figwheel "0.5.0-6"]]
   :scss {:src              "dev-resources/sass"
          :output-directory "resources/public/css"
