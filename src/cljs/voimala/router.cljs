@@ -25,10 +25,10 @@
 (defn change-page!
   ([new-page] (change-page! new-page true))
   ([new-page push-state?]
-  (reset! current-page new-page)
-  (when push-state?
-    (push-state new-page))
-  (update-title! new-page)))
+   (reset! current-page new-page)
+   (when push-state?
+     (push-state new-page))
+   (update-title! new-page)))
 
 (defn match-page-from-uri []
   (let [path (-> js/window .-location .-pathname)
@@ -45,4 +45,4 @@
 (defn listen-state-changes! []
   (set! (.-onpopstate js/window)
         #(change-page! (or (match-page-from-uri) :home)
-                      false)))
+                       false)))
