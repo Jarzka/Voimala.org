@@ -18,7 +18,7 @@
      :photographs [photographs/photographs]
      :contact [contact/contact])])
 
-(defn nav-link [page-id href current-page]
+(defn nav-link [page-id current-page href]
   [:li
    [:a {:href href :class (when (= current-page page-id) "selected")
         :on-click #(do (.preventDefault %)
