@@ -8,9 +8,24 @@
 
 (def tab-fmt
   {:web "Web"
-  :game "Games"
-  :mobile "Mobile"
-  :desktop "Desktop"})
+   :game "Games"
+   :mobile "Mobile"
+   :desktop "Desktop"
+   :library "Libraries"})
+
+(defn- libraries []
+  [:div
+   [:ul
+    [:li
+     [:a {:href "https://github.com/Jarzka/namespacefy"}
+      "namespacefy"]
+     [:span " "]
+     "is a simple Clojure(Script) library which aims to make it easy to keep keys namespaced."]
+    [:li
+     [:a {:href "https://github.com/Jarzka/stylefy"}
+      "stylefy"]
+     [:span " "]
+     " makes it possible to define UI component styles as Clojure data."]]])
 
 (defn- project [project]
   [:span
@@ -69,7 +84,9 @@
        [project project-data])]))
 
 (defn- tab-content [selected-tab]
-  [filtered-projects-by-tag selected-tab])
+  (case selected-tab
+    :library [libraries]
+    [filtered-projects-by-tag selected-tab]))
 
 (defn- tab [tab-id selected-tab-atom]
   [:li [:span.link {:class (when (= @selected-tab-atom tab-id) "tabs-active-tab")
@@ -82,7 +99,8 @@
    [tab :web selected-tab-atom]
    [tab :game selected-tab-atom]
    [tab :mobile selected-tab-atom]
-   [tab :desktop selected-tab-atom]])
+   [tab :desktop selected-tab-atom]
+   [tab :library selected-tab-atom]])
 
 (defn software []
   [:div
