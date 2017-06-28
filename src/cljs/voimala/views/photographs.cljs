@@ -1,10 +1,8 @@
 (ns voimala.views.photographs)
 
-(defn photographs [req]
-  [:span
-   [:header.page-main-header
-    [:h1.headline "Photographs"]]
-   [:blockquote "\n    &quot;A photograph has picked up a fact of life, and that fact will live forever.&quot;\n    "
+(defn photographs []
+  [:div
+   [:blockquote "\"A photograph has picked up a fact of life, and that fact will live forever.\""
     [:br] "Raghu Rai\n"]
 
    [:p "More photos can be found from my "

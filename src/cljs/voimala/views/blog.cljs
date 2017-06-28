@@ -1,6 +1,6 @@
 (ns voimala.views.blog)
 
-(defn blog [req]
+(defn blog []
   [:span
    [:article.blog-post
     [:h1 "Do image pixels matter on the web?"]

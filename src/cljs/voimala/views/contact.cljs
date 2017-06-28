@@ -1,10 +1,7 @@
 (ns voimala.views.contact)
 
-(defn contact [req]
-  [:span
-   [:header.page-main-header
-    [:h1.headline "Contact"]]
-   [:h1 "Contact info"]
+(defn contact []
+  [:div
    [:p "You can contact me by email: jarihanhela (at) gmail.com."]
    [:h1 "Social media"]
    [:a.some.some-github {:href "https://github.com/Jarzka"} "Github"]
