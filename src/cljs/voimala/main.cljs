@@ -5,7 +5,8 @@
             [voimala.views.photographs :as photographs]
             [voimala.views.contact :as contact]
             [voimala.router :as router]
-            [reagent.core :as r]))
+            [reagent.core :as r]
+            [voimala.router-utils :as router-utils]))
 
 
 
@@ -23,7 +24,7 @@
    [:a {:href href :class (when (= current-page page-id) "selected")
         :on-click #(do (.preventDefault %)
                        (router/change-page! page-id))}
-    (router/fmt-page page-id)]])
+    (router-utils/fmt-page page-id)]])
 
 (defn- site-body []
   (let [current-page @router/current-page]
@@ -43,7 +44,7 @@
      [:div.page-content
       [:main
        [:header.page-main-header
-        [:h1.headline (router/fmt-page current-page)]]
+        [:h1.headline (router-utils/fmt-page current-page)]]
        [page current-page]]
       [:footer.site-footer
        "Copyright © Jari Hanhela 2012-"]]]))

@@ -1,10 +1,14 @@
 (ns voimala.views.index
-  (:require [voimala.settings :as settings]))
+  (:require [voimala.settings :as settings]
+            [voimala.router-utils :as router-utils]))
 
-(defn index []
+(defn index [req]
   [:html
    [:head
-    [:title#app-title "Voimala.org"]
+    [:title#app-title (str "Voimala.org" (when-let [page-name (router-utils/fmt-page
+                                                                (router-utils/match-page-from-path
+                                                                  (:uri req)))]
+                                           (str " - " page-name)))]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1, maximum-scale=1"}]
 
     ; Links

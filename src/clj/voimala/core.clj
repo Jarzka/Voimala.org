@@ -17,22 +17,11 @@
     (@server :timeout 100)
     (reset! server nil)))
 
-;; TODO Resolve in front
-#_(defn resolve-view-name [req-uri]
-  (case req-uri
-    "/" "Home"
-    "/home" "Home"
-    "/software" "Software"
-    "/photographs" "Photographs"
-    "/blog" "Blog"
-    "/contact" "Contact"
-    "/writing" "Writing"))
-
 (defn app [req]
   {:status 200
    :headers {"Content-Type" "text/html"}
    :body (str "<!DOCTYPE html>"
-              (html (index/index)))})
+              (html (index/index req)))})
 
 (defn -main [& [dev-mode]]
   (when dev-mode
