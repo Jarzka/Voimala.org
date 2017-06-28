@@ -24,8 +24,8 @@
 
 (defn change-page! [new-page]
   (reset! current-page new-page)
-  (update-title! @current-page)
-  (update-uri new-page))
+  (update-uri new-page)
+  (update-title! new-page))
 
 (defn read-page-from-uri! []
   (let [path (-> js/window .-location .-pathname)
@@ -36,5 +36,8 @@
                               pages))]
     (change-page! (or matched-page :home))))
 
-
-
+(defn listen-state-changes! []
+  (set!(.-onpopstate js/window)
+       (fn [event]
+         (.log js/console (-> js/document .-location .-pathname))
+         (read-page-from-uri!))))

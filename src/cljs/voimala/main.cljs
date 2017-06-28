@@ -52,7 +52,8 @@
   [site-body])
 
 (defn- init []
-  (router/read-page-from-uri!))
+  (router/read-page-from-uri!)
+  (router/listen-state-changes!))
 
 (defn ^:export start []
   (init)
