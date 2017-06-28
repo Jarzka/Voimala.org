@@ -16,28 +16,34 @@
   (set! (.-innerHTML (.getElementById js/document "app-title"))
         (str "Voimala.org - " (fmt-page current-page))))
 
-(defn update-uri [current-page]
+(defn push-state [current-page]
   (.pushState js/history
               {}
               (fmt-page current-page)
               (str "/" (name current-page))))
 
-(defn change-page! [new-page]
+(defn change-page!
+  ([new-page] (change-page! new-page true))
+  ([new-page push-state?]
   (reset! current-page new-page)
-  (update-uri new-page)
-  (update-title! new-page))
+  (when push-state?
+    (push-state new-page))
+  (update-title! new-page)))
 
-(defn read-page-from-uri! []
+(defn match-page-from-uri []
   (let [path (-> js/window .-location .-pathname)
         matched-page (first (filter
                               (fn [page-key]
                                 (= (str "/" (name page-key))
                                    path))
                               pages))]
-    (change-page! (or matched-page :home))))
+    matched-page))
+
+(defn read-page-from-uri! []
+  (change-page! (or (match-page-from-uri) :home)))
 
 (defn listen-state-changes! []
-  (set!(.-onpopstate js/window)
-       (fn [event]
-         (.log js/console (-> js/document .-location .-pathname))
-         (read-page-from-uri!))))
+  (set! (.-onpopstate js/window)
+        (fn [event]
+          (change-page! (or (match-page-from-uri) :home)
+                        false))))
