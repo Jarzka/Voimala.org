@@ -7,12 +7,7 @@
             [voimala.router :as router]
             [reagent.core :as r]))
 
-(def fmt-page
-  {:home "Home"
-   :software "Software"
-   :writing "Writing"
-   :photographs "Photographs"
-   :contact "Contact"})
+
 
 (defn page [current-page]
   [:article
@@ -27,8 +22,8 @@
   [:li
    [:a {:href href :class (when (= current-page page-id) "selected")
         :on-click #(do (.preventDefault %)
-                       (router/change-page page-id))}
-    (fmt-page page-id)]])
+                       (router/change-page! page-id))}
+    (router/fmt-page page-id)]])
 
 (defn- site-body []
   (let [current-page @router/current-page]
@@ -48,7 +43,7 @@
      [:div.page-content
       [:main
        [:header.page-main-header
-        [:h1.headline (fmt-page current-page)]]
+        [:h1.headline (router/fmt-page current-page)]]
        [page current-page]]
       [:footer.site-footer
        "Copyright © Jari Hanhela 2012-"]]]))
@@ -56,5 +51,9 @@
 (defn- main-content []
   [site-body])
 
+(defn- init []
+  (router/read-page-from-uri!))
+
 (defn ^:export start []
+  (init)
   (r/render main-content (.getElementById js/document "app")))
