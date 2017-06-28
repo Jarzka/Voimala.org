@@ -12,11 +12,11 @@
    :photographs "Photographs"
    :contact "Contact"})
 
-(defn update-title! [current-page]
+(defn- update-title! [current-page]
   (set! (.-innerHTML (.getElementById js/document "app-title"))
         (str "Voimala.org - " (fmt-page current-page))))
 
-(defn push-state [current-page]
+(defn- push-state [current-page]
   (.pushState js/history
               {}
               (fmt-page current-page)
@@ -44,6 +44,5 @@
 
 (defn listen-state-changes! []
   (set! (.-onpopstate js/window)
-        (fn [event]
-          (change-page! (or (match-page-from-uri) :home)
-                        false))))
+        #(change-page! (or (match-page-from-uri) :home)
+                      false)))
