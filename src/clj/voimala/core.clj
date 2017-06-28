@@ -30,4 +30,4 @@
   (reset! server (run-server app
                              {:port (if dev-mode
                                       8081
-                                      80)})))
+                                      81)})))
