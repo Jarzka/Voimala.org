@@ -43,6 +43,8 @@
                                      "resources/public/js/dev/out"
                                      "resources/public/js/voimala.js"
                                      "resources/public/js/out"]
+  :figwheel {:http-server-root "public"
+             :css-dirs ["resources/public/css"]}
   :source-paths ["src/clj" "src/cljc"]
   :test-paths ["test/clj"]
 
