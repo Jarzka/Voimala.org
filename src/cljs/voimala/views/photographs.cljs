@@ -3,7 +3,7 @@
 (defn photographs []
   [:div
    [:blockquote "\"A photograph has picked up a fact of life, and that fact will live forever.\""
-    [:br] "Raghu Rai\n"]
+    [:br] "- Raghu Rai\n"]
 
    [:p "More photos can be found from my "
     [:a {:href "http://jarzka.deviantart.com/gallery/"} "deviantART profile"] "."]
