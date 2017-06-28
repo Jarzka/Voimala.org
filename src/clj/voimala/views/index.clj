@@ -4,7 +4,7 @@
 (defn index []
   [:html
    [:head
-    [:title "Voimala.org"]
+    [:title#app-title "Voimala.org"]
     [:meta {:name "viewport" :content "width=device-width, initial-scale=1, maximum-scale=1"}]
 
     ; Links

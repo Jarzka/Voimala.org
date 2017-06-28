@@ -6,9 +6,16 @@
 
 (defonce selected-tab (r/atom :web))
 
-(defn project-component [project]
+(def tab-fmt
+  {:web "Web"
+  :game "Games"
+  :mobile "Mobile"
+  :desktop "Desktop"})
+
+(defn- project [project]
   [:span
    [:h2 (:name project)]
+
    [:div.col-wrapper
     [:div.col1
      (when (:image-url project)
@@ -21,6 +28,7 @@
             :github ^{:key link} [:a.button.button-github {:href (get-in project [:links link])} "GitHub"]
             :view ^{:key link} [:a.button.button-view {:href (get-in project [:links link])} "Live Demo"]
             :download ^{:key link} [:a.button.button-download {:href (get-in project [:links link])} "Download"]))])]
+
     [:div.col2
      [:span [project :description-hiccup]]
      [:span.project-small-info
@@ -50,53 +58,31 @@
                                                               (str (:familiar-name browser-info) " " (:version browser))))
                                                           (:tested-browsers project))))])]]]])
 
-(defn filtered-projects-by-tag [tag]
+(defn- filtered-projects-by-tag [tag]
   (let [filtered-projects (reverse (sort-by :importance (filter
                                                           (fn [project]
                                                             ((:tags project) tag))
                                                           software/projects)))]
     [:span
-     (for [project filtered-projects]
-       ^{:key (:name project)}
-       [project-component project])]))
+     (for [project-data filtered-projects]
+       ^{:key (:name project-data)}
+       [project project-data])]))
 
-(defn web []
-  [filtered-projects-by-tag :web])
+(defn- tab-content [selected-tab]
+  [filtered-projects-by-tag selected-tab])
 
-(defn games []
-  [filtered-projects-by-tag :game])
+(defn- tab [tab-id selected-tab-atom]
+  [:li [:span.link {:class (when (= @selected-tab-atom tab-id) "tabs-active-tab")
+                    :on-click (fn []
+                                (reset! selected-tab-atom tab-id))}
+        (tab-fmt tab-id)]])
 
-(defn mobile []
-  [filtered-projects-by-tag :mobile])
-
-(defn desktop []
-  [filtered-projects-by-tag :desktop])
-
-(defn tab-content []
-  (case @selected-tab
-    :web [web]
-    :games [games]
-    :mobile [mobile]
-    :desktop [desktop]))
-
-(defn navigation []
+(defn navigation [selected-tab-atom]
   [:ul.tabs.software-navigation
-   [:li [:span.link {:class (when (= @selected-tab :web) "tabs-active-tab")
-                     :on-click (fn []
-                                 (reset! selected-tab :web))}
-         "Web"]]
-   [:li [:span.link {:class (when (= @selected-tab :games) "tabs-active-tab")
-                     :on-click (fn []
-                                 (reset! selected-tab :games))}
-         "Games"]]
-   [:li [:span.link {:class (when (= @selected-tab :mobile) "tabs-active-tab")
-                     :on-click (fn []
-                                 (reset! selected-tab :mobile))}
-         "Mobile"]]
-   [:li [:span.link {:class (when (= @selected-tab :desktop) "tabs-active-tab")
-                     :on-click (fn []
-                                 (reset! selected-tab :desktop))}
-         "Desktop"]]])
+   [tab :web selected-tab-atom]
+   [tab :game selected-tab-atom]
+   [tab :mobile selected-tab-atom]
+   [tab :desktop selected-tab-atom]])
 
 (defn software []
   [:div
@@ -107,5 +93,5 @@
      [:br] "- Bjarne Stroustrup"]]
 
    [:div
-    [navigation]
-    [tab-content]]])
+    [navigation selected-tab]
+    [tab-content @selected-tab]]])
