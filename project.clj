@@ -19,15 +19,12 @@
             [lein-cljsbuild "1.1.2"]
             [lein-ancient "0.6.10"]
             [lein-figwheel "0.5.10"]]
-  :scss {:src              "dev-resources/sass"
-         :output-directory "resources/public/css"
-         :output-extension "css"
-         :auto-compile-delay 250}
   :repl-options {:port 1339
                  :timeout 120000}
   :cljsbuild {:builds [{:id           "dev"
                         :source-paths ["src/cljs"]
-                        :figwheel     {:websocket-host   "localhost"
+                        :figwheel     {:on-jsload "voimala.main/start"
+                                       :websocket-host   "localhost"
                                        :heads-up-display false}
                         :compiler     {:output-to     "resources/public/js/dev/voimala.js"
                                        :output-dir    "resources/public/js/dev/out"
@@ -42,8 +39,6 @@
                                      "resources/public/js/dev/out"
                                      "resources/public/js/voimala.js"
                                      "resources/public/js/out"]
-  :figwheel {:http-server-root "public"
-             :css-dirs ["resources/public/css"]}
   :source-paths ["src/clj" "src/cljc"]
   :test-paths ["test/clj"]
 

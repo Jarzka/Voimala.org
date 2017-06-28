@@ -82,20 +82,20 @@
 (defn navigation []
   [:ul.tabs.software-navigation
    [:li [:span.link {:class (when (= @selected-tab :web) "tabs-active-tab")
-             :on-click (fn []
-                         (reset! selected-tab :web))}
+                     :on-click (fn []
+                                 (reset! selected-tab :web))}
          "Web"]]
    [:li [:span.link {:class (when (= @selected-tab :games) "tabs-active-tab")
-             :on-click (fn []
-                         (reset! selected-tab :games))}
+                     :on-click (fn []
+                                 (reset! selected-tab :games))}
          "Games"]]
    [:li [:span.link { :class (when (= @selected-tab :mobile) "tabs-active-tab")
-             :on-click (fn []
-                         (reset! selected-tab :mobile))}
+                     :on-click (fn []
+                                 (reset! selected-tab :mobile))}
          "Mobile"]]
    [:li [:span.link {:class (when (= @selected-tab :desktop) "tabs-active-tab")
-             :on-click (fn []
-                         (reset! selected-tab :desktop))}
+                     :on-click (fn []
+                                 (reset! selected-tab :desktop))}
          "Desktop"]]])
 
 (defn software-content []
