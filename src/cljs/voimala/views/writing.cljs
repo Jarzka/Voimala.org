@@ -1,7 +1,7 @@
 (ns voimala.views.writing)
 
-(defn writing [req]
-  [:span
+(defn writing []
+  [:div
    [:h1 "/dev/solita"]
    [:ul
     [:li

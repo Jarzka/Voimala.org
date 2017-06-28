@@ -89,7 +89,7 @@
                      :on-click (fn []
                                  (reset! selected-tab :games))}
          "Games"]]
-   [:li [:span.link { :class (when (= @selected-tab :mobile) "tabs-active-tab")
+   [:li [:span.link {:class (when (= @selected-tab :mobile) "tabs-active-tab")
                      :on-click (fn []
                                  (reset! selected-tab :mobile))}
          "Mobile"]]
@@ -98,10 +98,14 @@
                                  (reset! selected-tab :desktop))}
          "Desktop"]]])
 
-(defn software-content []
-  [:span
-   [navigation]
-   [tab-content]])
-
 (defn software []
-  (r/render [software-content] (js/document.getElementById "software-page-content")))
+  [:div
+   [:a {:name "page-top"}]
+
+   [:blockquote
+    [:p "Our civilization depends critically on software; it had better be quality software."
+     [:br] "- Bjarne Stroustrup"]]
+
+   [:div
+    [navigation]
+    [tab-content]]])

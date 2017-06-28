@@ -1,15 +1,36 @@
 (ns voimala.main
   (:require [voimala.views.home :as home]
             [voimala.views.software :as software]
+            [voimala.views.writing :as writing]
+            [voimala.views.photographs :as photographs]
+            [voimala.views.contact :as contact]
             [voimala.router :as router]
             [reagent.core :as r]))
 
+(def fmt-page
+  {:home "Home"
+   :software "Software"
+   :writing "Writing"
+   :photographs "Photographs"
+   :contact "Contact"})
+
 (defn page [current-page]
   [:article
-   (when (= current-page :home)
-     [home/home])])
+   (case current-page
+     :home [home/home]
+     :software [software/software]
+     :writing [writing/writing]
+     :photographs [photographs/photographs]
+     :contact [contact/contact])])
 
-(defn- main-content []
+(defn nav-link [page-id href current-page]
+  [:li
+   [:a {:href href :class (when (= current-page page-id) "selected")
+        :on-click #(do (.preventDefault %)
+                       (router/change-page page-id))}
+    (fmt-page page-id)]])
+
+(defn- site-body []
   (let [current-page @router/current-page]
     [:div
      [:header.site-header
@@ -18,23 +39,22 @@
        [:span.site-description "Portfolio of Jari Hanhela"]]
       [:nav.site-navigation
        [:ul
-        [:li
-         [:a {:href "/home" :class (when (= current-page :home) "selected")} "Home"]]
-        [:li
-         [:a {:href "/software" :class (when (= current-page :oftware) "selected")} "Software"]]
-        [:li
-         [:a {:href "/photographs" :class (when (= current-page :photographs) "selected")} "Photographs"]]
-        [:li
-         [:a {:href "/writing" :class (when (= current-page :writing) "selected")} "Writing"]]
-        [:li
-         [:a {:href "/contact" :class (when (= current-page :contact) "selected")} "Contact"]]]]]
+        [nav-link :home current-page "/home"]
+        [nav-link :software  current-page"/software"]
+        [nav-link :photographs current-page "/photographs"]
+        [nav-link :writing current-page "/writing"]
+        [nav-link :contact current-page "/contact"]]]]
 
      [:div.page-content
       [:main
+       [:header.page-main-header
+        [:h1.headline (fmt-page current-page)]]
        [page current-page]]
       [:footer.site-footer
-       "Copyright © Jari Hanhela 2012-"]]
-     ]))
+       "Copyright © Jari Hanhela 2012-"]]]))
+
+(defn- main-content []
+  [site-body])
 
 (defn ^:export start []
   (r/render main-content (.getElementById js/document "app")))
