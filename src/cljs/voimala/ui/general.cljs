@@ -22,7 +22,7 @@
    content])
 
 (defn a [{:keys [selected?] :as options} & content]
-  [:a (merge options
+  [:a (merge (dissoc options :selected?)
              (stylefy/use-style (if selected? g-styles/a-selected g-styles/a)))
    content])
 
