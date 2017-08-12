@@ -8,6 +8,7 @@
                  [http-kit "2.2.0"]
                  [hiccup "1.0.5"]
                  [clj-time "0.13.0"]
+                 [stylefy "0.7.3"]
                  [com.andrewmcveigh/cljs-time "0.5.0"]
                  [com.taoensso/timbre "4.10.0"]
                  [compojure "1.6.0"]]
@@ -15,14 +16,9 @@
   :aot :all
   :auto-clean false ; For uberjar
   :target-path "target/%s"
-  :plugins [[lein-haml-sass "0.2.7-SNAPSHOT"]
-            [lein-cljsbuild "1.1.2"]
+  :plugins [[lein-cljsbuild "1.1.2"]
             [lein-ancient "0.6.10"]
             [lein-figwheel "0.5.10"]]
-  :scss {:src              "dev-resources/sass"
-         :output-directory "resources/public/css"
-         :output-extension "css"
-         :auto-compile-delay 250}
   :repl-options {:port 1339
                  :timeout 120000}
   :cljsbuild {:builds [{:id           "dev"

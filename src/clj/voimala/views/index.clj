@@ -3,6 +3,7 @@
             [voimala.router-utils :as router-utils]))
 
 (defn index [req]
+  (println "REQ: " (pr-str req))
   [:html
    [:head
     [:title#app-title (str "Voimala.org" (when-let [page-name (router-utils/fmt-page
@@ -14,9 +15,10 @@
 
     ; Links
     [:link {:href "images/icon.jpg", :rel "shortcut icon"}]
-    [:link {:rel "stylesheet" :type "text/css" :href "css/main.css"}]
     [:link {:href "js/lightbox/css/lightbox.css", :rel "stylesheet"}]
 
+    [:style {:id "_stylefy-constant-styles_"}]
+    [:style {:id "_stylefy-styles_"}]
     [:script {:src "js/jquery/jquery.js"}]
     [:script {:src "js/lightbox/js/lightbox.js"}]]
    [:body {:onload "voimala.main.start();"}

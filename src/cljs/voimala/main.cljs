@@ -4,6 +4,7 @@
             [voimala.views.writing :as writing]
             [voimala.views.photographs :as photographs]
             [voimala.views.contact :as contact]
+            [voimala.styles.global :as g-styles]
             [voimala.router :as router]
             [reagent.core :as r]
             [voimala.router-utils :as router-utils]))
@@ -54,7 +55,8 @@
 
 (defn- init []
   (router/read-page-from-uri!)
-  (router/listen-state-changes!))
+  (router/listen-state-changes!)
+  (g-styles/init-styles))
 
 (defn ^:export start []
   (init)
