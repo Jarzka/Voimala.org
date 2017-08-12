@@ -3,7 +3,6 @@
             [voimala.router-utils :as router-utils]))
 
 (defn index [req]
-  (println "REQ: " (pr-str req))
   [:html
    [:head
     [:title#app-title (str "Voimala.org" (when-let [page-name (router-utils/fmt-page
