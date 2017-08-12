@@ -54,3 +54,13 @@
                        :line-height "2em"
                        ::stylefy/media {{:max-width media-breakpoint}
                                         {:display "block"}}}}})
+
+(def page-content (merge dark-box
+                         {:margin-left "auto"
+                          :margin-right "auto"
+                          :margin-top "20px"
+                          :max-width "1024px"
+                          :box-shadow "0 -1px 5px rgba(0, 0, 0, 0.5) inset"
+                          :padding "16px"}))
+
+(def site-footer {:text-align "center"})

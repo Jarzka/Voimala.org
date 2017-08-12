@@ -18,12 +18,12 @@
                       :font-style "italic"})
   (stylefy/font-face {:font-family "open_sans"
                       :src "url('../fonts/OpenSans-Bold-webfont.woff') format('woff')"
-                      :font-weight "normal"
-                      :font-style "italic"})
+                      :font-weight "bold"
+                      :font-style "normal"})
   (stylefy/font-face {:font-family "open_sans"
                       :src "url('../fonts/OpenSans-Italic-webfont.woff') format('woff')"
-                      :font-weight "bold"
-                      :font-style "normal"}))
+                      :font-weight "normal"
+                      :font-style "italic"}))
 
 ;; ****************************************************************
 ;; Text
@@ -38,9 +38,12 @@
 
 (def h {:color (:header shared-styles/colors)})
 
-(def headline (merge h
-                     {:border-bottom (str "1px solid "
-                                          (:header shared-styles/colors))}))
+(def page-headline (merge h
+                          {:border-bottom (str "1px solid "
+                                               (:header shared-styles/colors))
+                           :text-align "center"
+                           :text-transform "uppercase"
+                           :letter-spacing "0.1em"}))
 
 (def h1 (merge h
                {:margin-top "0.8em"

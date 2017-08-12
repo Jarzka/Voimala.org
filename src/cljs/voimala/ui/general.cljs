@@ -18,7 +18,7 @@
    content])
 
 (defn headline [& content]
-  [:h1 (use-style g-styles/headline)
+  [:h1 (use-style g-styles/page-headline)
    content])
 
 (defn a [{:keys [selected?] :as options} & content]

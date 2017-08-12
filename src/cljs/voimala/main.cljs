@@ -46,12 +46,12 @@
         [nav-link :writing current-page "/writing"]
         [nav-link :contact current-page "/contact"]]]]
 
-     [:div.page-content
+     [:div (use-style layout/page-content)
       [:main
        [:header.page-main-header
         [ui/headline (router-utils/fmt-page current-page)]]
        [page current-page]]
-      [:footer.site-footer
+      [:footer (use-style layout/site-footer)
        "Copyright © Jari Hanhela 2012-"]]]))
 
 (defn- main-content []
