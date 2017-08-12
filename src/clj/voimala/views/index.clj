@@ -1,5 +1,6 @@
 (ns voimala.views.index
   (:require [voimala.settings :as settings]
+            [voimala.styles.shared :as shared-styles]
             [voimala.router-utils :as router-utils]))
 
 (defn index [req]
@@ -21,11 +22,19 @@
     [:script {:src "js/jquery/jquery.js"}]
     [:script {:src "js/lightbox/js/lightbox.js"}]]
    [:body {:onload "voimala.main.start();"
-           :style "padding: 0; margin: 0;"}
+           :style (str "font-family: open_sans, Verdana, Helvetica, sans-serif;
+                   color: " (:text shared-styles/colors) ";"
+                   "background-color: black;
+                   background: url(\"../images/background.jpg \");
+                   background-repeat: no-repeat ;
+                   background-position: center ;
+                   background-attachment: fixed ;
+                   background-size: cover ;
+                   margin: 0 ;
+                   padding: 0 ;")}
     [:div#app
      [:div {:style "background-color: rgba(0,0,0,0.5);
                     padding: 10px;
-                    width: 100px;
                     position: absolute;
                     top: 50%;
                     left: 50%;

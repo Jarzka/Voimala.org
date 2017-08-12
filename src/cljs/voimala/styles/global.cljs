@@ -1,5 +1,6 @@
 (ns voimala.styles.global
   (:require [stylefy.core :as stylefy]
+            [voimala.styles.shared :as shared-styles]
             [garden.color :as color]))
 
 ;; ****************************************************************
@@ -24,11 +25,6 @@
                       :font-weight "bold"
                       :font-style "normal"}))
 
-(def colors {:text "#FFFFFF"
-             :link "#46aee5"
-             :header "#FFFFFF"})
-
-
 ;; ****************************************************************
 ;; Text
 ;; ****************************************************************
@@ -36,16 +32,27 @@
 (def p {:margin-top "0"
         :margin-bottom "1em"})
 
-(def note {:font-style "italic"})
 
 ;; ****************************************************************
-;; Headers
+;; Images
 ;; ****************************************************************
 
-(def h {:color (:header colors)})
+(def logo {:display :block ;
+           :margin-left "auto"
+           :margin-right "auto"
+           :width "100%"
+           :max-height "93px"
+           :max-width "500px"})
+
+;; ****************************************************************
+;; Headings
+;; ****************************************************************
+
+(def h {:color (:header shared-styles/colors)})
 
 (def headline (merge h
-                     {:border-bottom (str "1px solid " (:header colors))}))
+                     {:border-bottom (str "1px solid "
+                                          (:header shared-styles/colors))}))
 
 (def h1 (merge h
                {:margin-top "0.8em"
@@ -68,33 +75,19 @@
 ;; Links
 ;; ****************************************************************
 
-(def a {:color (:link colors)
+(def a {:color (:link shared-styles/colors)
         :text-decoration "none"
         :transition-property "color"
         :transition-duration "0.3s"
-        ::stylefy/mode {:hover {:color (-> (:link colors)
+        ::stylefy/mode {:hover {:color (-> (:link shared-styles/colors)
                                            (color/lighten 20)
                                            (color/as-hex))}}})
 
 (def a-selected (merge a
-                       {:color (-> (:link colors)
+                       {:color (-> (:link shared-styles/colors)
                                    (color/lighten 30)
                                    (color/as-hex))}))
 
-;; ****************************************************************
-;; Root
-;; ****************************************************************
-
-(def root {:font-family "open_sans, Verdana, Helvetica, sans-serif"
-           :color (:text colors)
-           :background-color "black"
-           :background "url(\"../images/background.jpg\")"
-           :background-repeat "no-repeat"
-           :background-position "center"
-           :background-attachment "fixed"
-           :background-size "cover"})
-
 (defn init-styles []
   (stylefy/init)
-  (define-fonts)
-  #_(stylefy/font-face))
+  (define-fonts))

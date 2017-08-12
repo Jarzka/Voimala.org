@@ -1,6 +1,6 @@
 (ns voimala.main
   (:require
-    [stylefy.core :as stylefy]
+    [stylefy.core :as stylefy :refer [use-style]]
     [voimala.views.home :as home]
     [voimala.views.software :as software]
     [voimala.views.writing :as writing]
@@ -30,10 +30,11 @@
 
 (defn- site-body []
   (let [current-page @router/current-page]
-    [:div (stylefy/use-style g-styles/root)
+    [:div
      [:header.site-header
       [:div.logo-and-description
-       [:img.logo {:alt "Voimala.org", :src "images/logo.png"}]
+       [:img (merge (use-style g-styles/logo)
+                    {:alt "Voimala.org", :src "images/logo.png"})]
        [:span.site-description "Portfolio of Jari Hanhela"]]
       [:nav.site-navigation
        [:ul
