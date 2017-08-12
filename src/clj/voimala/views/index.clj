@@ -20,7 +20,8 @@
     [:style {:id "_stylefy-styles_"}]
     [:script {:src "js/jquery/jquery.js"}]
     [:script {:src "js/lightbox/js/lightbox.js"}]]
-   [:body {:onload "voimala.main.start();"}
+   [:body {:onload "voimala.main.start();"
+           :style "padding: 0; margin: 0;"}
     [:div#app
      [:div {:style "background-color: rgba(0,0,0,0.5);
                     padding: 10px;
@@ -29,9 +30,7 @@
                     top: 50%;
                     left: 50%;
                     transform: translateX(-50%) translateY(-100px);"}
-      [:img.loading-icon {:src "images/loading.gif"}]
-      [:p {:style "text-align: center"}
-       "Loading..."]]]
+      [:img.loading-icon {:src "images/loading.gif"}]]]
 
     (when-not @settings/dev-mode?
       [:script {:src "js/voimala.js"}])

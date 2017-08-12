@@ -1,13 +1,15 @@
 (ns voimala.main
-  (:require [voimala.views.home :as home]
-            [voimala.views.software :as software]
-            [voimala.views.writing :as writing]
-            [voimala.views.photographs :as photographs]
-            [voimala.views.contact :as contact]
-            [voimala.styles.global :as g-styles]
-            [voimala.router :as router]
-            [reagent.core :as r]
-            [voimala.router-utils :as router-utils]))
+  (:require
+    [stylefy.core :as stylefy]
+    [voimala.views.home :as home]
+    [voimala.views.software :as software]
+    [voimala.views.writing :as writing]
+    [voimala.views.photographs :as photographs]
+    [voimala.views.contact :as contact]
+    [voimala.styles.global :as g-styles]
+    [voimala.router :as router]
+    [reagent.core :as r]
+    [voimala.router-utils :as router-utils]))
 
 
 
@@ -29,7 +31,7 @@
 
 (defn- site-body []
   (let [current-page @router/current-page]
-    [:div
+    [:div (stylefy/use-style g-styles/root)
      [:header.site-header
       [:div.logo-and-description
        [:img.logo {:alt "Voimala.org", :src "images/logo.png"}]
@@ -37,7 +39,7 @@
       [:nav.site-navigation
        [:ul
         [nav-link :home current-page "/home"]
-        [nav-link :software  current-page"/software"]
+        [nav-link :software current-page "/software"]
         [nav-link :photographs current-page "/photographs"]
         [nav-link :writing current-page "/writing"]
         [nav-link :contact current-page "/contact"]]]]

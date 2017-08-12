@@ -19,6 +19,19 @@
                       :font-weight "bold"
                       :font-style "normal"}))
 
+(def colors {:text "#FFFFFF"
+             :link "#46aee5"
+             :header "#FFFFFF"})
+
+(def root {:font-family "open_sans, Verdana, Helvetica, sans-serif"
+           :color (:text colors)
+           :background-color "black"
+           :background "url(\"../images/background.jpg\")"
+           :background-repeat "no-repeat"
+           :background-position "center"
+           :background-attachment "fixed"
+           :background-size "cover"})
+
 (defn init-styles []
   (stylefy/init)
   (define-fonts)
