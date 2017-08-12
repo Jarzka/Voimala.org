@@ -6,7 +6,7 @@
   [:p (stylefy/use-style g-styles/p)
    (map-indexed
      (fn [index element]
-       ^{:key inde}
+       ^{:key index}
        [:span element])
      content)])
 
