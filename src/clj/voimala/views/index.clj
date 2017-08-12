@@ -38,8 +38,10 @@
                     position: absolute;
                     top: 50%;
                     left: 50%;
+                    text-align: center;
                     transform: translateX(-50%) translateY(-100px);"}
-      [:img.loading-icon {:src "images/loading.gif"}]]]
+      [:img {:src "images/loading.gif"}]
+      [:p "Loading"]]]
 
     (when-not @settings/dev-mode?
       [:script {:src "js/voimala.js"}])
