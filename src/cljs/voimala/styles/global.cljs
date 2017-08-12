@@ -72,12 +72,14 @@
         :text-decoration "none"
         :transition-property "color"
         :transition-duration "0.3s"
-        ;;::stylefy/mode {:hover {:color (color/lighten (:link colors) 20)}}
-        })
+        ::stylefy/mode {:hover {:color (-> (:link colors)
+                                           (color/lighten 20)
+                                           (color/as-hex))}}})
 
 (def a-selected (merge a
-                       ;{:color (color/lighten (:link colors) 30)}
-                       ))
+                       {:color (-> (:link colors)
+                                   (color/lighten 30)
+                                   (color/as-hex))}))
 
 ;; ****************************************************************
 ;; Root
