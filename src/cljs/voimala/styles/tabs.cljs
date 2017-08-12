@@ -3,7 +3,7 @@
             [voimala.styles.shared :as shared-styles]
             [garden.color :as color]))
 
-(def media-breakpoint "780px")
+(def media-breakpoint "800px")
 
 (def dark-box {:border-radius "5px"
                :background-color "rgba(0, 0, 0, 0.9)"
