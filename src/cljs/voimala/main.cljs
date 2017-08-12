@@ -23,7 +23,7 @@
      :contact [contact/contact])])
 
 (defn nav-link [page-id current-page href]
-  [:li
+  [:li (use-sub-style layout/navigation :li)
    [ui/a {:href href :selected? (= current-page page-id)
           :on-click #(do (.preventDefault %)
                          (router/change-page! page-id))}
@@ -38,8 +38,8 @@
                     {:alt "Voimala.org", :src "images/logo.png"})]
        [:span (use-sub-style layout/site-header :site-description)
         "Portfolio of Jari Hanhela"]]
-      [:nav (use-sub-style layout/site-header :site-navigation)
-       [:ul
+      [:nav (use-style layout/navigation)
+       [:ul (use-sub-style layout/navigation :ul)
         [nav-link :home current-page "/home"]
         [nav-link :software current-page "/software"]
         [nav-link :photographs current-page "/photographs"]

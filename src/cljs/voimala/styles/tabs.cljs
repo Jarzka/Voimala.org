@@ -30,11 +30,24 @@
              :max-width "500px"}
       :site-description {:padding-top "5px"
                          :padding-bottom "5px"}
-      :site-navigation {:padding-left "25px"
-                        :Padding-right "25px"
-                        ::stylefy/media {{:max-width media-breakpoint}
-                                         {:padding-top "10px"
-                                          :padding-bottom "10px"}}}}
-     ::stylefy/media {{:max-width media-breakpoint}
-                      {:flex-direction :column
-                       :height "auto"}}}))
+      ::stylefy/media {{:max-width media-breakpoint}
+                       {:flex-direction :column
+                        :height "auto"}}}}))
+
+(def navigation {:padding-left "25px"
+                 :padding-right "25px"
+                 ::stylefy/media {{:max-width media-breakpoint}
+                                  {:padding-top "10px"
+                                   :padding-bottom "10px"}}
+                 ::stylefy/sub-styles
+                 {:ul {:margin-top 0
+                       :margin-bottom 0
+                       :list-style-type "none"
+                       :padding-left 0
+                       :margin-left 0}
+                  :li {:display "inline-block"
+                       :padding "7px"
+                       :text-decoration "none"
+                       :text-transform "uppercase"
+                       :font-size "16px"
+                       :line-height "2em"}}})
