@@ -18,12 +18,12 @@
   [:div
    [:ul
     [:li
-     [:a {:href "https://github.com/Jarzka/namespacefy"}
+     [ui/a {:href "https://github.com/Jarzka/namespacefy"}
       "namespacefy"]
      [:span " "]
      "is a simple Clojure(Script) library which aims to make it easy to keep keys namespaced."]
     [:li
-     [:a {:href "https://github.com/Jarzka/stylefy"}
+     [ui/a {:href "https://github.com/Jarzka/stylefy"}
       "stylefy"]
      [:span " "]
      " makes it possible to define UI component styles as Clojure data."]]])
@@ -35,15 +35,15 @@
    [:div.col-wrapper
     [:div.col1
      (when (:image-url project)
-       [:a {:href (:image-url project) :title (:name project) :data-lightbox (:name project)}
+       [ui/a {:href (:image-url project) :title (:name project) :data-lightbox (:name project)}
         [:img.screenshot {:src (:image-url project) :alt ""}]])
      (when (:links project)
        [:span
         (for [link (keys (:links project))]
           (case link
-            :github ^{:key link} [:a.button.button-github {:href (get-in project [:links link])} "GitHub"]
-            :view ^{:key link} [:a.button.button-view {:href (get-in project [:links link])} "Live Demo"]
-            :download ^{:key link} [:a.button.button-download {:href (get-in project [:links link])} "Download"]))])]
+            :github ^{:key link} [ui/button :github {:href (get-in project [:links link])} "GitHub"]
+            :view ^{:key link} [ui/button :view {:href (get-in project [:links link])} "Live Demo"]
+            :download ^{:key link} [ui/button :download {:href (get-in project [:links link])} "Download"]))])]
 
     [:div.col2
      [:span [project :description-hiccup]]
@@ -105,7 +105,7 @@
 
 (defn software []
   [:div
-   [:a {:name "page-top"}]
+   [ui/a {:name "page-top"}]
 
    [:blockquote
     [ui/p "Our civilization depends critically on software; it had better be quality software."

@@ -1,5 +1,6 @@
 (ns voimala.styles.global
-  (:require [stylefy.core :as stylefy]))
+  (:require [stylefy.core :as stylefy]
+            [garden.color :as color]))
 
 ;; ****************************************************************
 ;; Fonts & Colors
@@ -37,7 +38,6 @@
 
 (def note {:font-style "italic"})
 
-
 ;; ****************************************************************
 ;; Headers
 ;; ****************************************************************
@@ -57,16 +57,27 @@
                 :font-size "1.2em"}))
 
 (def h3 (merge h
-               {:margin-top "0.6em"
-                :margin-bottom "0.4em"
-                :font-size "1.2em"}))
-
-(def h3 (merge h
                {:font-size "1.1em"}))
 
 (def h4 (merge h
                {:font-size "1.0em"
                 :margin-bottom "0"}))
+
+
+;; ****************************************************************
+;; Links
+;; ****************************************************************
+
+(def a {:color (:link colors)
+        :text-decoration "none"
+        :transition-property "color"
+        :transition-duration "0.3s"
+        ;;::stylefy/mode {:hover {:color (color/lighten (:link colors) 20)}}
+        })
+
+(def a-selected (merge a
+                       ;{:color (color/lighten (:link colors) 30)}
+                       ))
 
 ;; ****************************************************************
 ;; Root

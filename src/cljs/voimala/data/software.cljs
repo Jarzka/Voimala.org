@@ -40,7 +40,7 @@
                 :links              {:github "https://github.com/Jarzka/JarzkaChess"}
                 :description-hiccup [:span
                                      [ui/p "A chess game which includes an artifical intelligence to challenge beginning chess players."]
-                                     [ui/p [:a {:href "https://www.youtube.com/watch?v=viFZeI8uAVU"} "Watch gameplay video on YouTube"]]]
+                                     [ui/p [ui/a {:href "https://www.youtube.com/watch?v=viFZeI8uAVU"} "Watch gameplay video on YouTube"]]]
                 :date-released         (t/date-time 2014 2 15)
                 :technologies-used  #{:java :libgdx}
                 :tags               #{:game}
@@ -50,7 +50,7 @@
                 :links              {:github "https://github.com/Jarzka/MyRTS"}
                 :description-hiccup [:span
                                      [ui/p "MyRTS is a multi player Real Time Strategy game prototype. The game is currently in very early stage but some core features have been implemented already like giving simple commands to units and synchronizing the game over network using simultaneous simulations with lockstep-like model. This kind of architectural style has been used in many classic RTS games like Age of Empires."]
-                                     [ui/p [:a {:href "https://www.youtube.com/watch?v=OEy6PhbeE_Y"} "Watch gameplay video on YouTube"]]]
+                                     [ui/p [ui/a {:href "https://www.youtube.com/watch?v=OEy6PhbeE_Y"} "Watch gameplay video on YouTube"]]]
                 :date-released         (t/date-time 2014 7 24)
                 :technologies-used  #{:java :libgdx}
                 :tags               #{:game}
@@ -68,7 +68,7 @@
                 :links              {:github "https://github.com/Jarzka/Multithreaded-Game-of-Life"}
                 :description-hiccup [:span
                                      [ui/p "Multithreaded version of popular Game of Life simulation. The app outputs individual generations to the console window and also saves them to a gif file for visual presentation."]
-                                     [ui/p [:a {:href "images/game_of_life_example.gif"} "View example output GIF"]]]
+                                     [ui/p [ui/a {:href "images/game_of_life_example.gif"} "View example output GIF"]]]
                 :date-released         (t/date-time 2014 4 18)
                 :technologies-used  #{:java}
                 :tags               #{:game}
@@ -115,11 +115,11 @@
                 :image-url          "images/trade_wars_3.jpg"
                 :description-hiccup [:span
                                      [ui/p "Trade Wars 3 is puzzle-solving game that has been inspired by the games of Lemmings franchise. The game was released in 2008."]
-                                     [ui/p [:a {:href "http://www.youtube.com/watch?v=8R-gvi1MddY"} "Watch trailer on YouTube"]]
+                                     [ui/p [ui/a {:href "http://www.youtube.com/watch?v=8R-gvi1MddY"} "Watch trailer on YouTube"]]
                                      [ui/p "There is an article about this game in "
-                                      [:a {:href "http://games.softpedia.com/get/Freeware-Games/Trade-Wars-3.shtml"} "Softpedia"] ", "
-                                      [:a {:href "http://www.novinky.cz/internet-a-pc/138621-hrajeme-zdarma-trade-wars-3-akcni-lemmings.html"} "Novinky"] " and "
-                                      [:a {:href "http://plnehry.idnes.cz/trade-wars-3-lemmings-ve-vojenskem-drf-/Clanek.aspx?c=A080423_124626_bw-plneHry-logicke_bw"} "CZC"] "."]]
+                                      [ui/a {:href "http://games.softpedia.com/get/Freeware-Games/Trade-Wars-3.shtml"} "Softpedia"] ", "
+                                      [ui/a {:href "http://www.novinky.cz/internet-a-pc/138621-hrajeme-zdarma-trade-wars-3-akcni-lemmings.html"} "Novinky"] " and "
+                                      [ui/a {:href "http://plnehry.idnes.cz/trade-wars-3-lemmings-ve-vojenskem-drf-/Clanek.aspx?c=A080423_124626_bw-plneHry-logicke_bw"} "CZC"] "."]]
                 :year-released         2008
                 :technologies-used  #{:multimedia-fusion-2}
                 :tags               #{:game}
@@ -129,7 +129,7 @@
                 :description-hiccup [:span
                                      [ui/p "A puzzle-solving game inspired by Lemmings franchise. The game was released on 3th of June, 2006."]
                                      [ui/p "This game was the game of the week in "
-                                      [:a {:href "images/tradewars2gotw.jpg"} "The Daily Click "] " in June 2006."]]
+                                      [ui/a {:href "images/tradewars2gotw.jpg"} "The Daily Click "] " in June 2006."]]
                 :date-released         (t/date-time 2005 6 3)
                 :technologies-used  #{:multimedia-fusion-2}
                 :tags               #{:game}
@@ -139,7 +139,7 @@
                 :description-hiccup [:span
                                      [ui/p "Finnish ice-fishing game and a Pro Pilkki clone. The game was developed using The Games Factory."]
                                      [ui/p "The game was reviewed in Finnish magazine "
-                                      [:a {:href "images/real_pilkki_mbnet_2005.jpg"} "Mikrobitti"] " in 2005."]]
+                                      [ui/a {:href "images/real_pilkki_mbnet_2005.jpg"} "Mikrobitti"] " in 2005."]]
                 :year-released         2005
                 :technologies-used  #{:multimedia-fusion-2}
                 :tags               #{:game}
@@ -155,7 +155,7 @@
                 :links              {:github "https://github.com/Jarzka/MertaScript"}
                 :description-hiccup [:span
                                      [ui/p "Commentator Script for CSGO. This script makes it possible to use a commentator in Counter-Strike: Global Offensive. The commentator can comment the game when something interesting happens. The script supports regular server/client model and is meant to be used in online multiplayer mode. More info and a documentation included in the readme file."]
-                                     [ui/p "There is " [:a {:href "http://www.youtube.com/watch?v=p4RFxspj2Pk"} "a demostration video available on YouTube"] " in which the script is used with Antero Mertaranta's voice."]]
+                                     [ui/p "There is " [ui/a {:href "http://www.youtube.com/watch?v=p4RFxspj2Pk"} "a demostration video available on YouTube"] " in which the script is used with Antero Mertaranta's voice."]]
                 :date-released       (t/date-time 2013 8 3)
                 :technologies-used  #{:python}
                 :tags               #{:game}

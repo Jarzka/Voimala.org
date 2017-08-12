@@ -23,9 +23,9 @@
 
 (defn nav-link [page-id current-page href]
   [:li
-   [:a {:href href :class (when (= current-page page-id) "selected")
-        :on-click #(do (.preventDefault %)
-                       (router/change-page! page-id))}
+   [ui/a {:href href :class (when (= current-page page-id) "selected")
+          :on-click #(do (.preventDefault %)
+                         (router/change-page! page-id))}
     (router-utils/fmt-page page-id)]])
 
 (defn- site-body []
