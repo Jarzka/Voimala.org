@@ -37,7 +37,8 @@
 (def navigation {:padding-left "25px"
                  :padding-right "25px"
                  ::stylefy/media {{:max-width media-breakpoint}
-                                  {:padding-top "10px"
+                                  {:text-align "center"
+                                   :padding-top "10px"
                                    :padding-bottom "10px"}}
                  ::stylefy/sub-styles
                  {:ul {:margin-top 0
@@ -50,4 +51,6 @@
                        :text-decoration "none"
                        :text-transform "uppercase"
                        :font-size "16px"
-                       :line-height "2em"}}})
+                       :line-height "2em"
+                       ::stylefy/media {{:max-width media-breakpoint}
+                                        {:display "block"}}}}})
