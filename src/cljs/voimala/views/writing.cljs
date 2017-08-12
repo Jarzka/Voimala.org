@@ -1,8 +1,9 @@
-(ns voimala.views.writing)
+(ns voimala.views.writing
+  (:require [voimala.ui.general :as ui]))
 
 (defn writing []
   [:div
-   [:h1 "/dev/solita"]
+   [ui/h1 "/dev/solita"]
    [:ul
     [:li
      [:a {:href "http://dev.solita.fi/2017/07/14/a-tale-of-a-clojurescript-stack-components-and-domain-management.html"} "14.7.2017 - A Tale of a ClojureScript Stack: Components & Domain Management "]]

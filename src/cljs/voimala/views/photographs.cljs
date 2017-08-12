@@ -9,7 +9,7 @@
    [ui/p "More photos can be found from my "
     [:a {:href "http://jarzka.deviantart.com/gallery/"} "deviantART profile"] "."]
 
-   [:h1 "Nature"]
+   [ui/h1 "Nature"]
 
    [:a {:href "images/carousel_photography_2.jpg", :title "Snowy Bridge", :data-lightbox "photography"}
     [:img.photography-photo {:src "images/carousel_photography_2.jpg", :alt ""}]]
@@ -21,7 +21,7 @@
     [:img.photography-photo {:src "images/carousel_photography_7.jpg", :alt ""}]]
 
    [:div.float-fix]
-   [:h1 "Animals"]
+   [ui/h1 "Animals"]
 
    [:a {:href "images/carousel_photography_1.jpg", :title "A Pair of Mallards", :data-lightbox "photography"}
     [:img.photography-photo {:src "images/carousel_photography_1.jpg", :alt ""}]]

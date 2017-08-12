@@ -9,9 +9,8 @@
     [voimala.styles.global :as g-styles]
     [voimala.router :as router]
     [reagent.core :as r]
+    [voimala.ui.general :as ui]
     [voimala.router-utils :as router-utils]))
-
-
 
 (defn page [current-page]
   [:article
@@ -47,7 +46,7 @@
      [:div.page-content
       [:main
        [:header.page-main-header
-        [:h1.headline (router-utils/fmt-page current-page)]]
+        [ui/headline (router-utils/fmt-page current-page)]]
        [page current-page]]
       [:footer.site-footer
        "Copyright © Jari Hanhela 2012-"]]]))

@@ -43,12 +43,10 @@
 ;; ****************************************************************
 
 (def h {:color (:header colors)})
-;; TODO
-; article h1:not(.headline) {
-; border-bottom: 1px solid $colorHeaders;
-; }
 
-;; TODO First child: margin-top 0?
+(def headline (merge h
+                     {:border-bottom (str "1px solid " (:header colors))}))
+
 (def h1 (merge h
                {:margin-top "0.8em"
                 :margin-bottom "0.6em"}))

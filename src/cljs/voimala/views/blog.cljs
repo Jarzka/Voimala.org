@@ -4,7 +4,7 @@
 (defn blog []
   [:span
    [:article.blog-post
-    [:h1 "Do image pixels matter on the web?"]
+    [ui/h1 "Do image pixels matter on the web?"]
     [ui/p "When people are creating web sites and uploading images to the web they often tend to ask what is the proper size for images, i.e. what is the proper image resolution for images to be uploaded to the web. I believe there is no one right answer to this question and I could ask that does the resolution even matter for web images?"]
     [ui/p "As you probably know, " [:a {:href "http://designshack.net/articles/layouts/vector-vs-raster-what-do-i-use"} "vector images have many strengths"] " and you should always consider using them instead of pure raster images. But if you have to use raster images on the web, you should know the difference between image resolution and the physical size of the image on a web page."]
     [ui/p "When I was taking my first web development course in high school I was taught that the more pixels I use for images the bigger they will appear on web page. And yes, it is true because browsers tend to use the image&#39;s width and height for determining the physical image size to be drawn on the screen. However I would suggest to use CSS to determine the size of the image on a web page rather than trusting the browser to do it. Here is why:"]
