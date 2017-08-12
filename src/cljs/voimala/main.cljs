@@ -23,7 +23,7 @@
 
 (defn nav-link [page-id current-page href]
   [:li
-   [ui/a {:href href :class (when (= current-page page-id) "selected")
+   [ui/a {:href href :selected? (= current-page page-id)
           :on-click #(do (.preventDefault %)
                          (router/change-page! page-id))}
     (router-utils/fmt-page page-id)]])

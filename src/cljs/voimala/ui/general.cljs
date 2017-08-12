@@ -21,9 +21,9 @@
   [:h1 (stylefy/use-style g-styles/headline)
    content])
 
-(defn a [options & content]
+(defn a [{:keys [selected?] :as options} & content]
   [:a (merge options
-             (stylefy/use-style g-styles/a))
+             (stylefy/use-style (if selected? g-styles/a-selected g-styles/a)))
    content])
 
 (defn a-some [options & content]
