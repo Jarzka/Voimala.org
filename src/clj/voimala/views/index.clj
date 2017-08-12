@@ -36,12 +36,13 @@
      [:div {:style "background-color: rgba(0,0,0,0.5);
                     padding: 10px;
                     position: absolute;
+                    width: 100px;
                     top: 50%;
                     left: 50%;
                     text-align: center;
                     transform: translateX(-50%) translateY(-100px);"}
       [:img {:src "images/loading.gif"}]
-      [:p "Loading"]]]
+      [:p "Loading..."]]]
 
     (when-not @settings/dev-mode?
       [:script {:src "js/voimala.js"}])
