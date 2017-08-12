@@ -28,12 +28,13 @@
 
 (defn a-some [options & content]
   ;; TODO USE SOME STYLE
-  [:a (merge options
-             (use-style g-styles/a))
+  [:a (use-style g-styles/a)
    content])
 
-(defn button-link [options & content]
+(defn button-link [type & content]
   ;; TODO USE BUTTON STYLE
-  [:a (merge options
-             (use-style g-styles/a))
+  [:a (use-style g-styles/a)
    content])
+
+(defn clearfix []
+  [:div (use-style g-styles/clearfix)])
