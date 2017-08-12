@@ -1,12 +1,13 @@
 (ns voimala.main
   (:require
-    [stylefy.core :as stylefy :refer [use-style]]
+    [stylefy.core :as stylefy :refer [use-style use-sub-style]]
     [voimala.views.home :as home]
     [voimala.views.software :as software]
     [voimala.views.writing :as writing]
     [voimala.views.photographs :as photographs]
     [voimala.views.contact :as contact]
     [voimala.styles.global :as g-styles]
+    [voimala.styles.layout :as layout]
     [voimala.router :as router]
     [reagent.core :as r]
     [voimala.ui.general :as ui]
@@ -30,13 +31,14 @@
 
 (defn- site-body []
   (let [current-page @router/current-page]
-    [:div
-     [:header.site-header
-      [:div.logo-and-description
-       [:img (merge (use-style g-styles/logo)
+    [:divrt
+     [:header (use-style layout/site-header)
+      [:div (use-sub-style layout/site-header :logo-and-description)
+       [:img (merge (use-sub-style layout/site-header :logo)
                     {:alt "Voimala.org", :src "images/logo.png"})]
-       [:span.site-description "Portfolio of Jari Hanhela"]]
-      [:nav.site-navigation
+       [:span (use-sub-style layout/site-header :site-description)
+        "Portfolio of Jari Hanhela"]]
+      [:nav (use-sub-style layout/site-header :site-navigation)
        [:ul
         [nav-link :home current-page "/home"]
         [nav-link :software current-page "/software"]
