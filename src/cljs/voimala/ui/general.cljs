@@ -2,13 +2,16 @@
   (:require [stylefy.core :as stylefy]
             [voimala.styles.global :as g-styles]))
 
+(defn- with-unique-keys [content]
+  (map-indexed
+    (fn [index element]
+      ^{:key index}
+      [:span element])
+    content))
+
 (defn p [& content]
   [:p (stylefy/use-style g-styles/p)
-   (map-indexed
-     (fn [index element]
-       ^{:key index}
-       [:span element])
-     content)])
+   (with-unique-keys content)])
 
 (defn h1 [& content]
   [:h1 (stylefy/use-style g-styles/h1)
