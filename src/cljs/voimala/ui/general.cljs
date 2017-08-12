@@ -26,10 +26,14 @@
              (use-style (if selected? g-styles/a-selected g-styles/a)))
    (with-unique-keys content)])
 
-(defn a-some [options & content]
-  ;; TODO USE SOME STYLE
-  [:a (use-style g-styles/a)
-   content])
+(defn a-some [some-type & content]
+  [:a (use-style (merge-with merge
+                             g-styles/a-some
+                             (g-styles/a-some-before some-type)))
+   (.log js/console "--> " (pr-str (merge-with merge
+                                               g-styles/a-some
+                                               (g-styles/a-some-before some-type))))
+   (rest content)])
 
 (defn button-link [type & content]
   ;; TODO USE BUTTON STYLE

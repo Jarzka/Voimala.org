@@ -78,6 +78,21 @@
                                    (color/lighten 30)
                                    (color/as-hex))}))
 
+(defn a-some-before [some]
+  {::stylefy/mode
+   {:before
+    {:background-image (str "url(\"images/some_" (name some) ".png\")")
+     :background-repeat "no-repeat"
+     :background-size "80%"
+     :content "\"\""
+     :padding-left "25px"}}})
+
+(def a-some (merge a
+                   {:display "block"
+                    :margin-top 0
+                    :margin-bottom 0
+                    :height "2em"
+                    :width "220px"}))
 
 
 ;; ****************************************************************
