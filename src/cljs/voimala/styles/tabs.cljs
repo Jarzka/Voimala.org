@@ -29,10 +29,10 @@
              :max-height "93px"
              :max-width "500px"}
       :site-description {:padding-top "5px"
-                         :padding-bottom "5px"}
+                         :padding-bottom "5px"}}
       ::stylefy/media {{:max-width media-breakpoint}
                        {:flex-direction :column
-                        :height "auto"}}}}))
+                        :height "auto"}}}))
 
 (def navigation {:padding-left "25px"
                  :padding-right "25px"
