@@ -41,9 +41,9 @@
        [:span
         (for [link (keys (:links project))]
           (case link
-            :github ^{:key link} [ui/button :github {:href (get-in project [:links link])} "GitHub"]
-            :view ^{:key link} [ui/button :view {:href (get-in project [:links link])} "Live Demo"]
-            :download ^{:key link} [ui/button :download {:href (get-in project [:links link])} "Download"]))])]
+            :github ^{:key link} [ui/button-link :github {:href (get-in project [:links link])} "GitHub"]
+            :view ^{:key link} [ui/button-link :view {:href (get-in project [:links link])} "Live Demo"]
+            :download ^{:key link} [ui/button-link :download {:href (get-in project [:links link])} "Download"]))])]
 
     [:div.col2
      [:span [project :description-hiccup]]

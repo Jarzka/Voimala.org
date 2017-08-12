@@ -24,7 +24,7 @@
 (defn a [{:keys [selected?] :as options} & content]
   [:a (merge (dissoc options :selected?)
              (use-style (if selected? g-styles/a-selected g-styles/a)))
-   content])
+   (with-unique-keys content)])
 
 (defn a-some [options & content]
   ;; TODO USE SOME STYLE
@@ -32,7 +32,7 @@
              (use-style g-styles/a))
    content])
 
-(defn button [options & content]
+(defn button-link [options & content]
   ;; TODO USE BUTTON STYLE
   [:a (merge options
              (use-style g-styles/a))
