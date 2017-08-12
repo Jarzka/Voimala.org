@@ -1,8 +1,9 @@
-(ns voimala.views.contact)
+(ns voimala.views.contact
+  (:require [voimala.ui.general :as ui]))
 
 (defn contact []
   [:div
-   [:p "You can contact me by email: jarihanhela (at) gmail.com."]
+   [ui/p "You can contact me by email: jarihanhela (at) gmail.com."]
    [:h1 "Social media"]
    [:a.some.some-github {:href "https://github.com/Jarzka"} "Github"]
    [:a.some.some-linkedin {:href "http://lnkd.in/5JP3nQ"} "LinkedIn"]

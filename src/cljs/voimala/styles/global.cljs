@@ -1,6 +1,10 @@
 (ns voimala.styles.global
   (:require [stylefy.core :as stylefy]))
 
+;; ****************************************************************
+;; Fonts & Colors
+;; ****************************************************************
+
 (defn define-fonts []
   (stylefy/font-face {:font-family "open_sans"
                       :src "url('../fonts/OpenSans-Regular-webfont.woff') format('woff')"
@@ -22,6 +26,53 @@
 (def colors {:text "#FFFFFF"
              :link "#46aee5"
              :header "#FFFFFF"})
+
+
+;; ****************************************************************
+;; Text
+;; ****************************************************************
+
+(def p {:margin-top "0"
+        :margin-bottom "1em"})
+
+(def note {:font-style "italic"})
+
+
+;; ****************************************************************
+;; Headers
+;; ****************************************************************
+
+(def h {:color (:header colors)})
+;; TODO
+; article h1:not(.headline) {
+; border-bottom: 1px solid $colorHeaders;
+; }
+
+;; TODO First child: margin-top 0?
+(def h1 (merge h
+               {:margin-top "0.8em"
+                :margin-bottom "0.6em"}))
+
+(def h2 (merge h
+               {:margin-top "0.6em"
+                :margin-bottom "0.4em"
+                :font-size "1.2em"}))
+
+(def h3 (merge h
+               {:margin-top "0.6em"
+                :margin-bottom "0.4em"
+                :font-size "1.2em"}))
+
+(def h3 (merge h
+               {:font-size "1.1em"}))
+
+(def h4 (merge h
+               {:font-size "1.0em"
+                :margin-bottom "0"}))
+
+;; ****************************************************************
+;; Root
+;; ****************************************************************
 
 (def root {:font-family "open_sans, Verdana, Helvetica, sans-serif"
            :color (:text colors)

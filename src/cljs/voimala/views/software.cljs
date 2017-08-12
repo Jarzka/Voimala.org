@@ -2,6 +2,7 @@
   (:require [reagent.core :as r]
             [cljs-time.core :as t]
             [cljs-time.format :as f]
+            [voimala.ui.general :as ui]
             [voimala.data.software :as software]))
 
 (defonce selected-tab (r/atom :web))
@@ -107,7 +108,7 @@
    [:a {:name "page-top"}]
 
    [:blockquote
-    [:p "Our civilization depends critically on software; it had better be quality software."
+    [ui/p "Our civilization depends critically on software; it had better be quality software."
      [:br] "- Bjarne Stroustrup"]]
 
    [:div
