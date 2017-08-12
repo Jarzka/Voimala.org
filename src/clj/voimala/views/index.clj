@@ -26,12 +26,12 @@
                    color: " (:text shared-styles/colors) ";"
                    "background-color: black;
                    background: url(\"../images/background.jpg \");
-                   background-repeat: no-repeat ;
-                   background-position: center ;
-                   background-attachment: fixed ;
-                   background-size: cover ;
-                   margin: 0 ;
-                   padding: 0 ;")}
+                   background-repeat: no-repeat;
+                   background-position: center;
+                   background-attachment: fixed;
+                   background-size: cover;
+                   margin: 0;
+                   padding: 0;")}
     [:div#app
      [:div {:style "background-color: rgba(0,0,0,0.5);
                     padding: 10px;
