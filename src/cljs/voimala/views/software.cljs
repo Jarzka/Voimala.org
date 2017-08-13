@@ -52,7 +52,7 @@
             ^{:key link}
             [ui/button-link
              {:extra-styles g-styles/inline-block
-              :href (get-in project [:links link])} "Project on GitHub"]
+              :href (get-in project [:links link])} "View on GitHub"]
 
             :view
             ^{:key link}
