@@ -25,7 +25,7 @@ RUN cd tmp && \
 
 # Compile frontend
 RUN cd tmp/Voimala.org && \
-    lein do clean, scss once, cljsbuild once production;
+    lein do clean, cljsbuild once production;
 
 # Move compiled frontend to the right place
 RUN mkdir -p /var/www/Voimala.org/ && \
