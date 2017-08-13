@@ -2,9 +2,10 @@
   (:require [reagent.core :as r]
             [cljs-time.core :as t]
             [cljs-time.format :as f]
-            [stylefy.core :refer [use-style use-sub-style]]
+            [stylefy.core :refer [use-style sub-style use-sub-style]]
             [voimala.ui.general :as ui]
             [voimala.styles.tabs :as tabs]
+            [voimala.styles.software :as software-styles]
             [voimala.data.software :as software]))
 
 (defonce selected-tab (r/atom :web))
@@ -34,11 +35,14 @@
   [:span
    [:h2 (:name project)]
 
-   [:div.col-wrapper
-    [:div.col1
+   [:div (use-style software-styles/project-content-container)
+    [:div (use-sub-style software-styles/project-content-container :col1)
      (when (:image-url project)
        [ui/a {:href (:image-url project) :title (:name project) :data-lightbox (:name project)}
-        [:img.screenshot {:src (:image-url project) :alt ""}]])
+        [:img (merge
+                (use-style (sub-style software-styles/project-content-container
+                                      :col1 :image))
+                {:src (:image-url project) :alt ""})]])
      (when (:links project)
        [:span
         (for [link (keys (:links project))]
@@ -47,7 +51,7 @@
             :view ^{:key link} [ui/button-link :view {:href (get-in project [:links link])} "Live Demo"]
             :download ^{:key link} [ui/button-link :download {:href (get-in project [:links link])} "Download"]))])]
 
-    [:div.col2
+    [:div (use-sub-style software-styles/project-content-container :col2)
      [:span [project :description-hiccup]]
      [:span.project-small-info
       (when (:date-released project)
