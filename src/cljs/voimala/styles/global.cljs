@@ -65,12 +65,14 @@
 ;; Links & Buttons
 ;; ****************************************************************
 
+(def clickable {:cursor "pointer"})
+
 (def a {:color (:link shared-styles/colors)
         :text-decoration "none"
         :transition-property "color"
         :transition-duration "0.3s"
         ::stylefy/mode {:hover {:color (-> (:link shared-styles/colors)
-                                           (color/lighten 20)
+                                           (color/lighten 10)
                                            (color/as-hex))}}})
 
 (def a-selected (merge a

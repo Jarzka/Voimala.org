@@ -2,7 +2,9 @@
   (:require [reagent.core :as r]
             [cljs-time.core :as t]
             [cljs-time.format :as f]
+            [stylefy.core :refer [use-style use-sub-style]]
             [voimala.ui.general :as ui]
+            [voimala.styles.tabs :as tabs]
             [voimala.data.software :as software]))
 
 (defonce selected-tab (r/atom :web))
@@ -90,13 +92,17 @@
     [filtered-projects-by-tag selected-tab]))
 
 (defn- tab [tab-id selected-tab-atom]
-  [:li [:span.link {:class (when (= @selected-tab-atom tab-id) "tabs-active-tab")
-                    :on-click (fn []
-                                (reset! selected-tab-atom tab-id))}
-        (tab-fmt tab-id)]])
+  [:li (use-sub-style tabs/tab-bar :li)
+   [:span (merge (use-sub-style tabs/tab-bar
+                                (if (= @selected-tab-atom tab-id)
+                                  :link-active
+                                  :link))
+                 {:on-click (fn []
+                              (reset! selected-tab-atom tab-id))})
+    (tab-fmt tab-id)]])
 
 (defn navigation [selected-tab-atom]
-  [:ul.tabs.software-navigation
+  [:ul (use-style tabs/tab-bar)
    [tab :web selected-tab-atom]
    [tab :game selected-tab-atom]
    [tab :mobile selected-tab-atom]
