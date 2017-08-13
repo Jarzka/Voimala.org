@@ -6,7 +6,8 @@
             [voimala.ui.general :as ui]
             [voimala.styles.tabs :as tabs]
             [voimala.styles.software :as software-styles]
-            [voimala.data.software :as software]))
+            [voimala.data.software :as software]
+            [voimala.styles.global :as g-styles]))
 
 (defonce selected-tab (r/atom :web))
 
@@ -47,9 +48,23 @@
        [:span
         (for [link (keys (:links project))]
           (case link
-            :github ^{:key link} [ui/button-link :github {:href (get-in project [:links link])} "GitHub"]
-            :view ^{:key link} [ui/button-link :view {:href (get-in project [:links link])} "Live Demo"]
-            :download ^{:key link} [ui/button-link :download {:href (get-in project [:links link])} "Download"]))])]
+            :github
+            ^{:key link}
+            [ui/button-link
+             {:extra-styles g-styles/inline-block
+              :href (get-in project [:links link])} "Project on GitHub"]
+
+            :view
+            ^{:key link}
+            [ui/button-link
+             {:extra-styles g-styles/inline-block
+              :href (get-in project [:links link])} "Live Demo"]
+
+            :download
+            ^{:key link}
+            [ui/button-link
+             {:extra-styles g-styles/inline-block
+              :href (get-in project [:links link])} "Download"]))])]
 
     [:div (use-sub-style software-styles/project-content-container :col2)
      [:span [project :description-hiccup]]

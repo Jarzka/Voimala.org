@@ -29,13 +29,15 @@
 (defn a-some [{:keys [some-type] :as options} & content]
   [:a (merge (dissoc options :some-type)
              (use-style (merge-with merge
-                              g-styles/a-some
-                              (g-styles/a-some-before some-type))))
+                                    g-styles/a-some
+                                    (g-styles/a-some-before some-type))))
    content])
 
-(defn button-link [type & content]
-  ;; TODO USE BUTTON STYLE
-  [:a (use-style g-styles/a)
+(defn button-link [{:keys [button-icon extra-styles] :as options} & content]
+  [:a (merge (dissoc options :button-icon :extra-styles)
+             (use-style (merge
+                          g-styles/a-button
+                          extra-styles)))
    content])
 
 (defn clearfix []

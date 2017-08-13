@@ -4,6 +4,18 @@
             [garden.color :as color]))
 
 ;; ****************************************************************
+;; Utils
+;; ****************************************************************
+
+(def clearfix {:display "block"
+               :clear "both"})
+
+(def center-block {:margin-left "auto"
+                   :margin-right "auto"})
+
+(def inline-block {:display "inline-block"})
+
+;; ****************************************************************
 ;; Fonts & Colors
 ;; ****************************************************************
 
@@ -96,13 +108,31 @@
                     :height "2em"
                     :width "220px"}))
 
+(def a-button {:display "block"
+               :overflow "hidden"
+               :min-width "120px"
+               :height "35px"
+               :color "#FFFFFF"
+               :margin-right "5px"
+               :margin-bottom "5px"
+               :text-align "center"
+               :padding-top "5px"
+               :padding-bottom "5px"
+               :padding-left "10px"
+               :padding-right "10px"
+               :text-decoration "none"
+               :box-shadow "0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7)"
+               :text-shadow "0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3)"
+               :background "linear-gradient(to bottom, #b0abe0 0%, #8f8bb6)"
+               ::stylefy/mode {:hover
+                               {:background "linear-gradient(to bottom, #c9c3ff 0%, #a4a0d1)"}}
+               :box-sizing "border-box"
+               :border "1px solid black"
+               :border-radius "5px"})
 
 ;; ****************************************************************
-;; Utils
+;; API
 ;; ****************************************************************
-
-(def clearfix {:display "block"
-               :clear "both"})
 
 (defn init-styles []
   (stylefy/init)
