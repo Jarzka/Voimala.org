@@ -4,7 +4,7 @@ To build the project, use the following commands:
 
 ```bash
 lein do clean, repl :headless :port 1338
-lein figwheel (or lein clsj build auto)
+lein figwheel (or lein clsjbuild auto)
 ```
 
 Start the server in the REPL
