@@ -55,6 +55,7 @@
                                                (:header shared-styles/colors))
                            :text-align "center"
                            :text-transform "uppercase"
+                           :padding "7px"
                            :letter-spacing "0.1em"}))
 
 (def h1 (merge h

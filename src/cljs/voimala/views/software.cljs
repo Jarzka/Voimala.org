@@ -22,12 +22,12 @@
   [:div
    [:ul
     [:li
-     [ui/a {:href "https://github.com/Jarzka/namespacefy"}
+     [ui/link {:href "https://github.com/Jarzka/namespacefy"}
       "namespacefy"]
      [:span " "]
      "is a simple Clojure(Script) library which aims to make it easy to keep keys namespaced."]
     [:li
-     [ui/a {:href "https://github.com/Jarzka/stylefy"}
+     [ui/link {:href "https://github.com/Jarzka/stylefy"}
       "stylefy"]
      [:span " "]
      " makes it possible to define UI component styles as Clojure data."]]])
@@ -39,7 +39,7 @@
    [:div (use-style software-styles/project-content-container)
     [:div (use-sub-style software-styles/project-content-container :col1)
      (when (:image-url project)
-       [ui/a {:href (:image-url project) :title (:name project) :data-lightbox (:name project)}
+       [ui/link {:href (:image-url project) :title (:name project) :data-lightbox (:name project)}
         [:img (merge
                 (use-style (sub-style software-styles/project-content-container
                                       :col1 :image))
@@ -130,7 +130,7 @@
 
 (defn software []
   [:div
-   [ui/a {:name "page-top"}]
+   [ui/link {:name "page-top"}]
 
    [:blockquote
     [ui/p "Our civilization depends critically on software; it had better be quality software."

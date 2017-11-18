@@ -3,36 +3,47 @@
             [stylefy.core :refer [use-style]]
             [voimala.styles.photographs :as photographs-style]))
 
+(defn- photo [file style]
+  [:a (merge (use-style style)
+             {:href (str "images/photos/" file ".jpg")
+              :title "" :data-lightbox "photography"})
+   [:img (merge {:src (str "images/photos/" file "_thumb.jpg"), :alt ""}
+                (use-style photographs-style/photo-img))]])
+
 (defn photographs []
   [:div
    [:blockquote "\"A photograph has picked up a fact of life, and that fact will live forever.\""
     [:br] "- Raghu Rai\n"]
 
-   [ui/h1 "Nature"]
+   [ui/h1 "Summer"]
 
-   [ui/a {:href "images/carousel_photography_2.jpg", :title "Snowy Bridge", :data-lightbox "photography"}
-    [:img (merge {:src "images/carousel_photography_2.jpg", :alt ""}
-                 (use-style photographs-style/photo))]]
-   [ui/a {:href "images/carousel_photography_3.jpg", :title "Easter Bonfire", :data-lightbox "photography"}
-    [:img (merge {:src "images/carousel_photography_3.jpg", :alt ""}
-                 (use-style photographs-style/photo))]]
-   [ui/a {:href "images/carousel_photography_6.jpg", :title "Dark Sunset", :data-lightbox "photography"}
-    [:img (merge {:src "images/carousel_photography_6.jpg", :alt ""}
-                 (use-style photographs-style/photo))]]
-   [ui/a {:href "images/carousel_photography_7.jpg", :title "Käpy", :data-lightbox "photography"}
-    [:img (merge {:src "images/carousel_photography_7.jpg", :alt ""}
-                 (use-style photographs-style/photo))]]
+   [:div (use-style photographs-style/photo-group)
+    [photo "summer1" photographs-style/photo-1-2]
+    [photo "summer2" photographs-style/photo-1-2]
+    [photo "summer3" photographs-style/photo-full]
+    [photo "summer4" photographs-style/photo-full]
+    [photo "summer5" photographs-style/photo-1-2]
+    [photo "summer6" photographs-style/photo-1-2]]
 
-   [ui/clearfix]
+   [ui/h1 "Autumn"]
+
+   [:div (use-style photographs-style/photo-group)
+    [photo "autumn1" photographs-style/photo-full]]
+
+   [ui/h1 "Winter"]
+
+   [:div (use-style photographs-style/photo-group)
+    [photo "winter1" photographs-style/photo-1-2]
+    [photo "winter2" photographs-style/photo-1-2]
+    [photo "winter3" photographs-style/photo-full]
+    [photo "winter4" photographs-style/photo-1-3]
+    [photo "winter5" photographs-style/photo-1-3]
+    [photo "winter6" photographs-style/photo-1-3]
+    [photo "winter7" photographs-style/photo-full]]
+
    [ui/h1 "Animals"]
 
-   [ui/a {:href "images/carousel_photography_1.jpg", :title "A Pair of Mallards", :data-lightbox "photography"}
-    [:img (merge {:src "images/carousel_photography_1.jpg", :alt ""}
-                 (use-style photographs-style/photo))]]
-   [ui/a {:href "images/carousel_photography_5.jpg", :title "Flying Seagull", :data-lightbox "photography"}
-    [:img (merge {:src "images/carousel_photography_5.jpg", :alt ""}
-                 (use-style photographs-style/photo))]]
-   [ui/a {:href "images/carousel_photography_4.jpg", :title "Flying Seagull 2", :data-lightbox "photography"}
-    [:img (merge {:src "images/carousel_photography_4.jpg", :alt ""}
-                 (use-style photographs-style/photo))]]
-   [ui/clearfix]])
+   [:div (use-style photographs-style/photo-group)
+    [photo "animals1" photographs-style/photo-1-2]
+    [photo "animals2" photographs-style/photo-1-2]
+    [photo "animals3" photographs-style/photo-full]]])

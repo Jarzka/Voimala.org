@@ -24,7 +24,7 @@
 
 (defn nav-link [page-id current-page href]
   [:li (use-sub-style layout/navigation :li)
-   [ui/a {:href href :selected? (= current-page page-id)
+   [ui/link {:href href :selected? (= current-page page-id)
           :on-click #(do (.preventDefault %)
                          (router/change-page! page-id))}
     (router-utils/fmt-page page-id)]])
@@ -34,8 +34,9 @@
     [:divrt
      [:header (use-style layout/site-header)
       [:div (use-sub-style layout/site-header :logo-and-description)
-       [:img (merge (use-sub-style layout/site-header :logo)
-                    {:alt "Voimala.org", :src "images/logo.png"})]
+       [ui/link {:href "http://www.voimala.org"}
+        [:img (merge (use-sub-style layout/site-header :logo)
+                    {:alt "Voimala.org" :src "images/logo.png"})]]
        [:span (use-sub-style layout/site-header :site-description)
         "Portfolio of Jari Hanhela"]]
       [:nav (use-style layout/navigation)

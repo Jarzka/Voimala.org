@@ -21,7 +21,7 @@
   [:h1 (use-style g-styles/page-headline)
    content])
 
-(defn a [{:keys [selected?] :as options} & content]
+(defn link [{:keys [selected?] :as options} & content]
   [:a (merge (dissoc options :selected?)
              (use-style (if selected? g-styles/a-selected g-styles/a)))
    (with-unique-keys content)])
