@@ -7,13 +7,14 @@ lein do clean, repl :headless :port 1338
 lein figwheel (or lein clsjbuild auto)
 ```
 
-Start the server in the REPL
+Start the REPL server:
+
 ```bash
 (in-ns 'voimala.core)
 (-main true)
 ```
 
-Then take a look at the dev-server folder; there is an nginx web server ready to be used in a Docker container. Run it and point your browser to localhost:8080.
+Then take a look at the dev-server folder; there is an nginx web server ready to be used in a Docker container. Make sure you have a symbolic link /home/<user>/voimala-app pointing to the project directory. Run Dockerfile and point your browser to localhost:8080.
 
 Please note, that assets (images etc.) are not included in this repo,
 
