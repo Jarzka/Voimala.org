@@ -136,5 +136,6 @@
 ;; ****************************************************************
 
 (defn init-styles []
-  (stylefy/init)
+  (stylefy/init {:use-caching? true
+                 :cache-options {:expires 600000}}) ; ~1 week
   (define-fonts))
