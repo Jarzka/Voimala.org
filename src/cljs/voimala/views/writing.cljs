@@ -6,7 +6,9 @@
    [ui/h1 "/dev/solita"]
    [:ul
     [:li
-     [ui/link {:href "http://dev.solita.fi/2017/07/14/a-tale-of-a-clojurescript-stack-components-and-domain-management.html"} "14.7.2017 - A Tale of a ClojureScript Stack: Components & Domain Management "]]
+     [ui/link {:href "http://dev.solita.fi/2018/02/06/unreliable-network.html"} "6.2.2018 - Quick Tips for App Developers on Surviving with Unreliable Network"]]
+    [:li
+     [ui/link {:href "http://dev.solita.fi/2017/07/14/a-tale-of-a-clojurescript-stack-components-and-domain-management.html"} "14.7.2017 - A Tale of a ClojureScript Stack: Components & Domain Management"]]
     [:li
      [ui/link {:href "http://dev.solita.fi/2017/04/10/making-software-testing-easier-with-clojure.html"} "10.4.2017 - Making Software Testing Easier with Clojure"]]
     [:li
