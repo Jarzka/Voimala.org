@@ -4,11 +4,11 @@
             [voimala.styles.photographs :as photographs-style]))
 
 (defn- photo [file style]
-  [:a (merge (use-style style)
-             {:href (str "images/photos/" file ".jpg")
-              :title "" :data-lightbox "photography"})
-   [:img (merge {:src (str "images/photos/" file "_thumb.jpg"), :alt ""}
-                (use-style photographs-style/photo-img))]])
+  [:a (use-style style
+                 {:href (str "images/photos/" file ".jpg")
+                  :title "" :data-lightbox "photography"})
+   [:img (use-style photographs-style/photo-img
+                    {:src (str "images/photos/" file "_thumb.jpg"), :alt ""})]])
 
 (defn photographs []
   [:div

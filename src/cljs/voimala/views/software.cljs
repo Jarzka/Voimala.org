@@ -40,10 +40,9 @@
     [:div (use-sub-style software-styles/project-content-container :col1)
      (when (:image-url project)
        [ui/link {:href (:image-url project) :title (:name project) :data-lightbox (:name project)}
-        [:img (merge
-                (use-style (sub-style software-styles/project-content-container
-                                      :col1 :image))
-                {:src (:image-url project) :alt ""})]])
+        [:img (use-style (sub-style software-styles/project-content-container
+                                    :col1 :image)
+                         {:src (:image-url project) :alt ""})]])
      (when (:links project)
        [:span
         (for [link (keys (:links project))]
