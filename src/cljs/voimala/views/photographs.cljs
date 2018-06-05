@@ -15,6 +15,11 @@
    [:blockquote "\"A photograph has picked up a fact of life, and that fact will live forever.\""
     [:br] "- Raghu Rai\n"]
 
+   [:p "More photos available "
+    [:a {:href "https://www.facebook.com/media/set/?set=a.2160608547288244.1073741832.100000173586073&type=1&l=b81257d4eb"}
+     "here"]
+    "."]
+
    [ui/h1 "Summer"]
 
    [:div (use-style photographs-style/photo-group)

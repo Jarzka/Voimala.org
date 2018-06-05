@@ -8,7 +8,7 @@
                  [http-kit "2.2.0"]
                  [hiccup "1.0.5"]
                  [clj-time "0.13.0"]
-                 [stylefy "1.3.0-beta1"]
+                 [stylefy "1.5.1"]
                  [garden "1.3.2"]
                  [com.andrewmcveigh/cljs-time "0.5.0"]
                  [com.taoensso/timbre "4.10.0"]
