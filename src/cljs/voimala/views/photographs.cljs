@@ -1,6 +1,7 @@
 (ns voimala.views.photographs
   (:require [voimala.ui.general :as ui]
             [stylefy.core :refer [use-style]]
+            [voimala.ui.general :refer [link]]
             [voimala.styles.photographs :as photographs-style]))
 
 (defn- photo [file style]
@@ -16,7 +17,7 @@
     [:br] "- Raghu Rai\n"]
 
    [:p "More photos available "
-    [:a {:href "https://www.facebook.com/media/set/?set=a.2160608547288244.1073741832.100000173586073&type=1&l=b81257d4eb"}
+    [link {:href "https://www.facebook.com/media/set/?set=a.2160608547288244.1073741832.100000173586073&type=1&l=b81257d4eb"}
      "here"]
     "."]
 
