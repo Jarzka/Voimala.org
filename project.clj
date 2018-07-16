@@ -1,9 +1,9 @@
 (defproject voimala "0.1.0-SNAPSHOT"
   :description "Voimala.org Clojure Edition"
   :url "http://www.voimala.org"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.9.562"]
-                 [reagent "0.6.2"]
+  :dependencies [[org.clojure/clojure "1.9.0"]
+                 [org.clojure/clojurescript "1.10.339"]
+                 [reagent "0.8.1"]
                  [ring "1.6.1"]
                  [http-kit "2.2.0"]
                  [hiccup "1.0.5"]
