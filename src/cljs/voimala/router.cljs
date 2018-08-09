@@ -20,12 +20,12 @@
    (reset! current-page new-page)
    (when push-state?
      (push-state new-page))
-   (update-title! new-page)))
+   (update-title! new-page))
 
-(defn read-page-from-uri! []
-  (change-page! (or (router-utils/match-page-from-path
-                      (-> js/window .-location .-pathname))
-                    :home)))
+  (defn read-page-from-uri! []
+    (change-page! (or (router-utils/match-page-from-path
+                        (-> js/window .-location .-pathname))
+                      :home))))
 
 (defn listen-state-changes! []
   (set! (.-onpopstate js/window)
