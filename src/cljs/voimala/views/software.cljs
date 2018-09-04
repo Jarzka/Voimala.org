@@ -4,7 +4,8 @@
             [cljs-time.format :as f]
             [stylefy.core :refer [use-style sub-style use-sub-style]]
             [voimala.ui.general :as ui]
-            [voimala.styles.views.software :as pstyle]))
+            [voimala.styles.views.software :as pstyle]
+            [voimala.styles.global :as g-styles]))
 
 (defn- libraries []
   [:div
@@ -21,12 +22,33 @@
      [:span " "]
      " makes it possible to define UI component styles as Clojure data."]]])
 
-(defn project-card [{:keys [title image-file desc]}]
+(defn- other-projects []
+  [:div
+   [ui/h2 "Other projects"]
+   [:ul
+    [:li
+     [ui/link {:href "projects/presentation_app"}
+      "PresentationApp"]
+     [:span " "]
+     "A simple HTML5 application that can be used to create PowerPoint-like presentations. 25.8.2014"]
+    [:li
+     [ui/link {:href "projects/thissimplemarquee/"}
+      "ThisSimpleMarquee"]
+     [:span " "]
+     "A simple HTML5 marquee library. 4.9.2014."]]])
+
+(defn project-card [{:keys [title date live-demo source-code image-file desc]}]
   [:div.card (use-style pstyle/card)
    [:img.card-img-top {:alt "", :src (str "images/" image-file)}]
    [:div.card-body
     [:h5.card-title title]
-    [:p.card-text desc]]])
+    [:p.card-text desc]
+    (when live-demo
+      [:a.card-link (use-style g-styles/a {:href live-demo}) "Live demo"])
+    (when source-code
+      [:a.card-link (use-style g-styles/a {:href source-code}) "Source code"])
+    ]
+   [:div.card-footer [:small.text-muted date]]])
 
 (defn software []
   [:div
@@ -35,14 +57,29 @@
     "Our civilization depends critically on software; it had better be quality software."
     "Bjarne Stroustrup"]
 
+   [ui/h2 "Featured"]
    [:div.card-deck
-    [project-card {:title "Ajokit" :image-file "ajokit.jpg" :desc "A simple grid-based traffic simulation application which also has a real-time map editing capability."}]
-    [project-card {:title "JarzkaChess" :image-file "jarzkachess.png" :desc "A chess game which includes an artifical intelligence to challenge beginning chess players."}]
-    [project-card {:title "MyRTS" :image-file "myrts.jpg" :desc "MyRTS is a multi player Real Time Strategy game prototype. The game is currently in very early stage but some core features have been implemented already like giving simple commands to units and synchronizing the game over network using simultaneous simulations with lockstep-like model. This kind of architectural style has been used in many classic RTS games like Age of Empires."}]]
+    [project-card {:title "Ajokit"
+                   :source-code "https://github.com/Jarzka/Ajokit"
+                   :live-demo "projects/ajokit"
+                   :image-file "ajokit.jpg"
+                   :date "10.10.2015"
+                   :desc "A simple grid-based traffic simulation application which also has a real-time map editing capability."}]
+    [project-card {:title "JarzkaChess"
+                   :source-code "https://github.com/Jarzka/JarzkaChess"
+                   :image-file "jarzkachess.png"
+                   :date "15.2.2014"
+                   :desc "A chess game which includes an artifical intelligence to challenge beginning chess players."}]
+    [project-card {:title "MyRTS"
+                   :source-code "https://github.com/Jarzka/MyRTS"
+                   :image-file "myrts.jpg"
+                   :date "18.4.2014"
+                   :desc "MyRTS is a multi player Real Time Strategy game prototype. The architecture supports some basic features like giving simple commands to units and synchronizing the game over network using simultaneous simulations with lockstep-like model. This kind of architectural style has been used in many classic RTS games like Age of Empires."}]]
 
+   [other-projects]
    [libraries]
 
-   [ui/p "More software projects available on my"
+   [ui/p "Find all of my software projects on my"
     " "
     [ui/link {:href "https://github.com/Jarzka"} "GitHub profile"]
     "."]])
