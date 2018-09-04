@@ -106,8 +106,7 @@
                    {:display "block"
                     :margin-top 0
                     :margin-bottom 0
-                    :height "2rem"
-                    :width "10rem"}))
+                    :height "2rem"}))
 
 (def a-button {:display "block"
                :overflow "hidden"
