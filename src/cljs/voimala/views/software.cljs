@@ -4,11 +4,11 @@
             [cljs-time.format :as f]
             [stylefy.core :refer [use-style sub-style use-sub-style]]
             [voimala.ui.general :as ui]
-            [voimala.data.software :as software]
-            [voimala.styles.global :as g-styles]))
+            [voimala.styles.views.software :as pstyle]))
 
 (defn- libraries []
   [:div
+   [ui/h2 "Software libraries"]
    [:ul
     [:li
      [ui/link {:href "https://github.com/Jarzka/namespacefy"}
@@ -21,81 +21,28 @@
      [:span " "]
      " makes it possible to define UI component styles as Clojure data."]]])
 
-(defn- project [project]
-  [:span
-   [:h2 (:name project)]
-
-   [:div
-    [:div
-     (when (:image-url project)
-       [ui/link {:href (:image-url project) :title (:name project) :data-lightbox (:name project)}
-        [:img (use-style (sub-style software-styles/project-content-container
-                                    :col1 :image)
-                         {:src (:image-url project) :alt ""})]])
-     (when (:links project)
-       [:span
-        (for [link (keys (:links project))]
-          (case link
-            :github
-            ^{:key link}
-            [ui/button-link
-             {:extra-styles g-styles/inline-block
-              :href (get-in project [:links link])} "View on GitHub"]
-
-            :view
-            ^{:key link}
-            [ui/button-link
-             {:extra-styles g-styles/inline-block
-              :href (get-in project [:links link])} "Live Demo"]
-
-            :download
-            ^{:key link}
-            [ui/button-link
-             {:extra-styles g-styles/inline-block
-              :href (get-in project [:links link])} "Download"]))])]
-
-    [:div (use-sub-style software-styles/project-content-container :col2)
-     [:span [project :description-hiccup]]
-     [:span.project-small-info
-      (when (:date-released project)
-        (let [formatter (f/formatter "dd.MM.yyyy")]
-          [:div.date-released (str "Released: " (f/unparse formatter (:date-released project)))]))
-      (when (:year-released project)
-        [:div.date-released (str "Released: " (:year-released project))])
-      [:div.technologies-used (str "Technologies: "
-                                   (clojure.string/join ", "
-                                                        (mapv
-                                                          (fn [technology]
-                                                            (:name (first (filter
-                                                                            (fn [tech]
-                                                                              (= (:id tech) technology))
-                                                                            software/technologies))))
-                                                          (:technologies-used project))))]
-      (when (:tested-browsers project)
-        [:div.tested-browsers (str "Tested: "
-                                   (clojure.string/join ", "
-                                                        (mapv
-                                                          (fn [browser]
-                                                            (let [browser-info (first (filter
-                                                                                        (fn [b]
-                                                                                          (= (:id b) (:id browser)))
-                                                                                        software/browsers))]
-                                                              (str (:familiar-name browser-info) " " (:version browser))))
-                                                          (:tested-browsers project))))])]]]])
-
-(defn- filtered-projects-by-tag [tag]
-  (let [filtered-projects (reverse (sort-by :importance (filter
-                                                          (fn [project]
-                                                            ((:tags project) tag))
-                                                          software/projects)))]
-    [:span
-     (for [project-data filtered-projects]
-       ^{:key (:name project-data)}
-       [project project-data])]))
+(defn project-card [{:keys [title image-file desc]}]
+  [:div.card (use-style pstyle/card)
+   [:img.card-img-top {:alt "", :src (str "images/" image-file)}]
+   [:div.card-body
+    [:h5.card-title title]
+    [:p.card-text desc]]])
 
 (defn software []
   [:div
    [ui/h1 "Software"]
    [ui/blockquote
     "Our civilization depends critically on software; it had better be quality software."
-    "Bjarne Stroustrup"]])
+    "Bjarne Stroustrup"]
+
+   [:div.card-deck
+    [project-card {:title "Ajokit" :image-file "ajokit.jpg" :desc "A simple grid-based traffic simulation application which also has a real-time map editing capability."}]
+    [project-card {:title "JarzkaChess" :image-file "jarzkachess.png" :desc "A chess game which includes an artifical intelligence to challenge beginning chess players."}]
+    [project-card {:title "MyRTS" :image-file "myrts.jpg" :desc "MyRTS is a multi player Real Time Strategy game prototype. The game is currently in very early stage but some core features have been implemented already like giving simple commands to units and synchronizing the game over network using simultaneous simulations with lockstep-like model. This kind of architectural style has been used in many classic RTS games like Age of Empires."}]]
+
+   [libraries]
+
+   [ui/p "More software projects available on my"
+    " "
+    [ui/link {:href "https://github.com/Jarzka"} "GitHub profile"]
+    "."]])

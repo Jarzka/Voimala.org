@@ -34,4 +34,6 @@
                           :box-shadow "0 -0.1rem 0.4rem rgba(0, 0, 0, 0.5) inset"
                           :padding "0.8rem"}))
 
-(def site-footer {:text-align "center"})
+(def site-footer {:margin-top "1rem"
+                  :font-size "0.9rem"
+                  :text-align "center"})

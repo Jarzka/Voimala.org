@@ -23,7 +23,13 @@
 
 (defn- site-footer []
   [:footer (use-style layout/site-footer)
-   "Copyright © Jari Hanhela 2012-"])
+   "Copyright © Jari Hanhela 2012-"
+   [ui/p "This website is powered by "
+    [ui/link {:href "http://clojurescript.org"} "ClojureScript"]
+    ". "
+    "Source code available "
+    [ui/link {:href "https://github.com/Jarzka/Voimala.org"} "here"]
+    "."]])
 
 (defn- site-body []
   [:div

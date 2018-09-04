@@ -35,6 +35,7 @@
 
 (def colors {:text "#FFFFFF"
              :link "#46aee5"
+             :background-secondary "rgba(14, 31, 40, 0.85)"
              :header "#FFFFFF"})
 
 ;; ****************************************************************

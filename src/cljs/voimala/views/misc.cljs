@@ -6,7 +6,11 @@
   [:div
    [ui/h1 "Misc"]
    [ui/h2 "Worms Vorg Soundbanks"]
-   [ui/p "Finnish soundbanks for Worms Armageddon. This soundbank was originally created in 2009, but it has been updated since then many more times."]
+   [ui/p "Finnish soundbanks for"
+    " "
+    [ui/link {:href "https://store.steampowered.com/app/217200/Worms_Armageddon/"}
+     "Worms Armageddon game"]
+    ". This soundbank was originally created in 2009, but it has been updated many times since then."]
    [ui/p "Download it"
     " "
     [ui/link {:href "http://voimala.org/aarrearkku"}

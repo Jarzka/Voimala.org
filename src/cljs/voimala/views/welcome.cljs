@@ -6,10 +6,5 @@
   [:div
    [ui/h1 "Welcome!"]
    [ui/p "This is a personal website / portfolio of Jari Hanhela, also known as Jarzka."]
-   [ui/p "The site consists of my projects of various topics (software, photography, writing etc). Feel free to explore!"]
-   [ui/p "This website is powered by "
-    [ui/link {:href "http://clojurescript.org"} "ClojureScript"]
-    ". "
-    "Source code available "
-    [ui/link {:href "https://github.com/Jarzka/Voimala.org"} "here"]
-    "."]])
+   [ui/p "The site consists of my projects of various topics (software, photography, writing, games etc). Feel free to explore!"]
+   [ui/p "Contents updated: 4.9.2018."]])
