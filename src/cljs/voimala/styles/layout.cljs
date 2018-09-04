@@ -12,27 +12,26 @@
     {:display "flex"
      :flex-direction "row"
      :justify-content "center"
-     :height "80px"
+     :height "7rem"
      :align-items "center"
-     :padding-bottom "7px"
-     :padding-top "7px"
+     :padding-bottom "1rem"
+     :padding-top "1rem"
      ::stylefy/sub-styles
      {:logo-and-description {:text-align "center"}
       :logo {:display :block
              :margin-left "auto"
              :margin-right "auto"
-             :width "290px"
-             :max-width "100%"
-             :max-height "93px"}
-      :site-description {:padding-top "5px"
-                         :padding-bottom "5px"}}}))
+             :width "18rem"
+             :max-width "100%"}
+      :site-description {:padding-top "0.3rem"
+                         :padding-bottom "0.3rem"}}}))
 
 (def page-content (merge dark-box
                          {:margin-left "auto"
                           :margin-right "auto"
-                          :margin-top "20px"
+                          :margin-top "1rem"
                           :max-width "1024px"
-                          :box-shadow "0 -1px 5px rgba(0, 0, 0, 0.5) inset"
-                          :padding "16px"}))
+                          :box-shadow "0 -0.1rem 0.4rem rgba(0, 0, 0, 0.5) inset"
+                          :padding "0.8rem"}))
 
 (def site-footer {:text-align "center"})

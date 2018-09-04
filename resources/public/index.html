@@ -6,15 +6,19 @@
     <meta charset="utf-8"/>
 
     <link href="images/icon.jpg" rel="shortcut icon"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="js/lightbox/css/lightbox.css" rel="stylesheet"/>
 
     <style id="_stylefy-constant-styles_"></style>
     <style id="_stylefy-styles_"></style>
 
-    <script src="js/jquery/jquery.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="js/lightbox/js/lightbox.js"></script>
 </head>
-<body onload="voimala.main.start();" style="font-family: open_sans, Verdana, Helvetica, sans-serif;
+<body onload="voimala.main.start();" style="
+                   font-family: open_sans, Verdana, Helvetica, sans-serif;
                    color: #FFFFFF;
                    background: black url(&quot;../images/background.jpg &quot;);
                    background-repeat: no-repeat;
@@ -25,14 +29,15 @@
                    padding: 0;">
     <div id="app">
         <div style="background-color: rgba(0,0,0,0.5);
-                        padding: 10px;
-                        position: absolute;
-                        width: 100px;
-                        top: 50%;
-                        left: 50%;
-                        text-align: center;
-                        transform: translateX(-50%) translateY(-100px);"><img src="images/loading.gif"/>
-            <p>Loading...</p></div>
+                            padding: 10px;
+                            position: absolute;
+                            width: 100px;
+                            top: 50%;
+                            left: 50%;
+                            text-align: center;
+                            transform: translateX(-50%) translateY(-100px);"><img src="images/loading.gif"/>
+            <p style="margin-top: 1rem">Loading...</p>
+        </div>
     </div>
     <script src="js/voimala.js"></script>
 </body>

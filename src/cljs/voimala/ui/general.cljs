@@ -39,3 +39,8 @@
                    extra-styles)
                  (dissoc options :button-icon :extra-styles))
    content])
+
+(defn blockquote [text person]
+  [:blockquote (use-style g-styles/blockquote)
+   [p (str "\"" text "\"")
+    [:br] (str "- " person)]])

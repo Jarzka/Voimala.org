@@ -42,7 +42,10 @@
 ;; ****************************************************************
 
 (def p {:margin-top "0"
-        :margin-bottom "1em"})
+        :margin-bottom "1rem"})
+
+(def blockquote {:font-style :italic
+                 :padding-left "1rem"})
 
 ;; ****************************************************************
 ;; Headings
@@ -51,21 +54,24 @@
 (def h {:color (:header colors)})
 
 (def h1 (merge h
-               {:margin-top "1.5em"
-                :margin-bottom "0.6em"
-                :padding "7px"
-                :border-bottom (str "1px solid " (:header colors))}))
+               {:margin-top "1.5rem"
+                :margin-bottom "0.6rem"
+                :padding "0.5rem"
+                :font-size "1.6rem"
+                :font-weight :bold
+                ::stylefy/mode {:first-of-type {:margin-top 0}}
+                :border-bottom (str "0.1rem solid " (:header colors))}))
 
 (def h2 (merge h
-               {:margin-top "0.6em"
-                :margin-bottom "0.4em"
-                :font-size "1.2em"}))
+               {:margin-top "1rem"
+                :margin-bottom "1rem"
+                :font-size "1.2rem"}))
 
 (def h3 (merge h
-               {:font-size "1.1em"}))
+               {:font-size "1.1rem"}))
 
 (def h4 (merge h
-               {:font-size "1.0em"
+               {:font-size "1.0rem"
                 :margin-bottom "0"}))
 
 ;; ****************************************************************
@@ -94,14 +100,14 @@
      :background-repeat "no-repeat"
      :background-size "80%"
      :content "\"\""
-     :padding-left "25px"}}})
+     :padding-left "2rem"}}})
 
 (def a-some (merge a
                    {:display "block"
                     :margin-top 0
                     :margin-bottom 0
-                    :height "2em"
-                    :width "220px"}))
+                    :height "2rem"
+                    :width "10rem"}))
 
 (def a-button {:display "block"
                :overflow "hidden"

@@ -95,8 +95,7 @@
 
 (defn software []
   [:div
-   [ui/link {:name "page-top"}]
-
-   [:blockquote
-    [ui/p "Our civilization depends critically on software; it had better be quality software."
-     [:br] "- Bjarne Stroustrup"]]])
+   [ui/h1 "Software"]
+   [ui/blockquote
+    "Our civilization depends critically on software; it had better be quality software."
+    "Bjarne Stroustrup"]])
