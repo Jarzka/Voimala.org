@@ -17,6 +17,10 @@
   [:h1 (use-style g-styles/h1)
    content])
 
+(defn h2 [& content]
+  [:h2 (use-style g-styles/h2)
+   content])
+
 (defn headline [& content]
   [:h1 (use-style g-styles/page-headline)
    content])
@@ -39,6 +43,3 @@
                    extra-styles)
                  (dissoc options :button-icon :extra-styles))
    content])
-
-(defn clearfix []
-  [:div (use-style g-styles/clearfix)])

@@ -6,7 +6,7 @@
 (def media-breakpoint-phone {:max-width "800px"})
 
 (def dark-box {:border-radius "5px"
-               :background-color "rgba(0, 0, 0, 0.9)"
+               :background-color "rgba(0, 0, 0, 0.85)"
                :border "1px solid rgba(255, 255, 255, 0.1)"})
 
 (def site-header
@@ -33,27 +33,6 @@
       ::stylefy/media {media-breakpoint-phone
                        {:flex-direction :column
                         :height "auto"}}}))
-
-(def navigation {:padding-left "25px"
-                 :padding-right "25px"
-                 ::stylefy/media {media-breakpoint-phone
-                                  {:text-align "center"
-                                   :padding-top "10px"
-                                   :padding-bottom "10px"}}
-                 ::stylefy/sub-styles
-                 {:ul {:margin-top 0
-                       :margin-bottom 0
-                       :list-style-type "none"
-                       :padding-left 0
-                       :margin-left 0}
-                  :li {:display "inline-block"
-                       :padding "7px"
-                       :text-decoration "none"
-                       :text-transform "uppercase"
-                       :font-size "16px"
-                       :line-height "2em"
-                       ::stylefy/media {media-breakpoint-phone
-                                        {:display "block"}}}}})
 
 (def page-content (merge dark-box
                          {:margin-left "auto"

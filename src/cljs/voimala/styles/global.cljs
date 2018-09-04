@@ -7,9 +7,6 @@
 ;; Utils
 ;; ****************************************************************
 
-(def clearfix {:display "block"
-               :clear "both"})
-
 (def center-block {:margin-left "auto"
                    :margin-right "auto"})
 
@@ -59,7 +56,7 @@
                            :letter-spacing "0.1em"}))
 
 (def h1 (merge h
-               {:margin-top "0.8em"
+               {:margin-top "1.5em"
                 :margin-bottom "0.6em"}))
 
 (def h2 (merge h

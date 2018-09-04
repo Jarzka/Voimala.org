@@ -4,19 +4,9 @@
             [cljs-time.format :as f]
             [stylefy.core :refer [use-style sub-style use-sub-style]]
             [voimala.ui.general :as ui]
-            [voimala.styles.tabs :as tabs]
             [voimala.styles.software :as software-styles]
             [voimala.data.software :as software]
             [voimala.styles.global :as g-styles]))
-
-(defonce selected-tab (r/atom :web))
-
-(def tab-fmt
-  {:web "Web"
-   :game "Games"
-   :mobile "Mobile"
-   :desktop "Desktop"
-   :library "Libraries"})
 
 (defn- libraries []
   [:div
@@ -109,32 +99,10 @@
     :library [libraries]
     [filtered-projects-by-tag selected-tab]))
 
-(defn- tab [tab-id selected-tab-atom]
-  [:li (use-sub-style tabs/tab-bar :li)
-   [:span (merge (use-sub-style tabs/tab-bar
-                                (if (= @selected-tab-atom tab-id)
-                                  :link-active
-                                  :link))
-                 {:on-click (fn []
-                              (reset! selected-tab-atom tab-id))})
-    (tab-fmt tab-id)]])
-
-(defn navigation [selected-tab-atom]
-  [:ul (use-style tabs/tab-bar)
-   [tab :web selected-tab-atom]
-   [tab :game selected-tab-atom]
-   [tab :mobile selected-tab-atom]
-   [tab :desktop selected-tab-atom]
-   [tab :library selected-tab-atom]])
-
 (defn software []
   [:div
    [ui/link {:name "page-top"}]
 
    [:blockquote
     [ui/p "Our civilization depends critically on software; it had better be quality software."
-     [:br] "- Bjarne Stroustrup"]]
-
-   [:div
-    [navigation selected-tab]
-    [tab-content @selected-tab]]])
+     [:br] "- Bjarne Stroustrup"]]])
