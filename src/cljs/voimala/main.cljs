@@ -21,13 +21,19 @@
 
 
      [ui/h1 "Welcome!"]
-     [ui/p "This is a personal website / portfolio of Jari Hanhela, also known as Jarzka. The site consists of my projects of various topics (software, photography, writing etc). Feel free to explore!"]
+     [ui/p "This is a personal website / portfolio of Jari Hanhela, also known as Jarzka."]
+     [ui/p "The site consists of my projects of various topics (software, photography, writing etc). Feel free to explore!"]
      [ui/p "This website is powered by "
-      [ui/link {:href "http://clojure.org"} "Clojure"]
+      [ui/link {:href "http://clojurescript.org"} "ClojureScript"]
       ". "
       "Source code available "
       [ui/link {:href "https://github.com/Jarzka/Voimala.org"} "here"]
       "."]
+
+     [ui/h1 "Software"]
+     [:blockquote
+      [ui/p "Our civilization depends critically on software; it had better be quality software."
+       [:br] "- Bjarne Stroustrup"]]
 
      [ui/h1 "Writing"]
      [ui/h2 "/dev/solita (Solita Developer Blog)"]
@@ -44,7 +50,6 @@
        [ui/link {:href "http://dev.solita.fi/2016/02/01/testing-clojurescript-concurrency-with-servant.html"} "1.2.2016 - Testing ClojureScript Concurrency with Servant"]]
       [:li
        [ui/link {:href "http://dev.solita.fi/2015/08/14/solita-rooms.html"} "14.10.2015 - Making of Solita Rooms - our in-house meeting room scheduling system"]]]
-
 
      [ui/h1 "Photography"]
      [:blockquote "\"A photograph has picked up a fact of life, and that fact will live forever.\""

@@ -1,6 +1,5 @@
 (ns voimala.styles.global
   (:require [stylefy.core :as stylefy]
-            [voimala.styles.shared :as shared-styles]
             [garden.color :as color]))
 
 ;; ****************************************************************
@@ -34,6 +33,10 @@
                       :font-weight "normal"
                       :font-style "italic"}))
 
+(def colors {:text "#FFFFFF"
+             :link "#46aee5"
+             :header "#FFFFFF"})
+
 ;; ****************************************************************
 ;; Text
 ;; ****************************************************************
@@ -45,19 +48,13 @@
 ;; Headings
 ;; ****************************************************************
 
-(def h {:color (:header shared-styles/colors)})
-
-(def page-headline (merge h
-                          {:border-bottom (str "1px solid "
-                                               (:header shared-styles/colors))
-                           :text-align "center"
-                           :text-transform "uppercase"
-                           :padding "7px"
-                           :letter-spacing "0.1em"}))
+(def h {:color (:header colors)})
 
 (def h1 (merge h
                {:margin-top "1.5em"
-                :margin-bottom "0.6em"}))
+                :margin-bottom "0.6em"
+                :padding "7px"
+                :border-bottom (str "1px solid " (:header colors))}))
 
 (def h2 (merge h
                {:margin-top "0.6em"
@@ -77,16 +74,16 @@
 
 (def clickable {:cursor "pointer"})
 
-(def a {:color (:link shared-styles/colors)
+(def a {:color (:link colors)
         :text-decoration "none"
         :transition-property "color"
         :transition-duration "0.3s"
-        ::stylefy/mode {:hover {:color (-> (:link shared-styles/colors)
+        ::stylefy/mode {:hover {:color (-> (:link colors)
                                            (color/lighten 10)
                                            (color/as-hex))}}})
 
 (def a-selected (merge a
-                       {:color (-> (:link shared-styles/colors)
+                       {:color (-> (:link colors)
                                    (color/lighten 30)
                                    (color/as-hex))}))
 

@@ -4,7 +4,6 @@
             [cljs-time.format :as f]
             [stylefy.core :refer [use-style sub-style use-sub-style]]
             [voimala.ui.general :as ui]
-            [voimala.styles.software :as software-styles]
             [voimala.data.software :as software]
             [voimala.styles.global :as g-styles]))
 
@@ -26,8 +25,8 @@
   [:span
    [:h2 (:name project)]
 
-   [:div (use-style software-styles/project-content-container)
-    [:div (use-sub-style software-styles/project-content-container :col1)
+   [:div
+    [:div
      (when (:image-url project)
        [ui/link {:href (:image-url project) :title (:name project) :data-lightbox (:name project)}
         [:img (use-style (sub-style software-styles/project-content-container
@@ -93,11 +92,6 @@
      (for [project-data filtered-projects]
        ^{:key (:name project-data)}
        [project project-data])]))
-
-(defn- tab-content [selected-tab]
-  (case selected-tab
-    :library [libraries]
-    [filtered-projects-by-tag selected-tab]))
 
 (defn software []
   [:div

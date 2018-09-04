@@ -1,9 +1,6 @@
 (ns voimala.styles.layout
   (:require [stylefy.core :as stylefy]
-            [voimala.styles.shared :as shared-styles]
             [garden.color :as color]))
-
-(def media-breakpoint-phone {:max-width "800px"})
 
 (def dark-box {:border-radius "5px"
                :background-color "rgba(0, 0, 0, 0.85)"
@@ -21,18 +18,14 @@
      :padding-top "7px"
      ::stylefy/sub-styles
      {:logo-and-description {:text-align "center"}
-      :logo {:display :block ;
+      :logo {:display :block
              :margin-left "auto"
              :margin-right "auto"
              :width "290px"
-             :height "55px"
-             :max-height "93px"
-             :max-width "500px"}
+             :max-width "100%"
+             :max-height "93px"}
       :site-description {:padding-top "5px"
-                         :padding-bottom "5px"}}
-      ::stylefy/media {media-breakpoint-phone
-                       {:flex-direction :column
-                        :height "auto"}}}))
+                         :padding-bottom "5px"}}}))
 
 (def page-content (merge dark-box
                          {:margin-left "auto"

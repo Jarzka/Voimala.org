@@ -21,10 +21,6 @@
   [:h2 (use-style g-styles/h2)
    content])
 
-(defn headline [& content]
-  [:h1 (use-style g-styles/page-headline)
-   content])
-
 (defn link [{:keys [selected?] :as options} & content]
   [:a (use-style (if selected? g-styles/a-selected g-styles/a)
                  (dissoc options :selected?))
