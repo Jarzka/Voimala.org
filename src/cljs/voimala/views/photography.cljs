@@ -27,14 +27,20 @@
 
    [:div {:class "row"}
     [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "summer1"]]
+     [photo "1"]]
     [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "summer2"]]
+     [photo "2"]]
     [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "summer3"]]
+     [photo "3"]]
     [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "winter1"]]
+     [photo "4"]]
     [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "winter2"]]
+     [photo "5"]]
     [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "autumn1"]]]])
+     [photo "6"]]
+    [:div {:class "col-12 col-md-6 col-lg-4"}
+     [photo "7"]]
+    [:div {:class "col-12 col-md-6 col-lg-4"}
+     [photo "8"]]
+    [:div {:class "col-12 col-md-6 col-lg-4"}
+     [photo "9"]]]])
