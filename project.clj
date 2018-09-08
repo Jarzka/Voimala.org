@@ -42,7 +42,12 @@
                                      "resources/public/js/out"]
   :figwheel {:http-server-root "public"
              :css-dirs ["resources/public/css"]}
+
   :source-paths ["src/clj" "src/cljc"]
   :test-paths ["test/clj"]
 
-  :jvm-opts ^:replace ["-Xmx1g" "-server"]) ; To prevent out of memory errors
+  :jvm-opts ~(let [version     (System/getProperty "java.version")
+                   [major _ _] (clojure.string/split version #"\.")]
+               (if (>= (java.lang.Integer/parseInt major) 9)
+                 ["--add-modules" "java.xml.bind"]
+                 [])))
