@@ -7,4 +7,4 @@
    [ui/h1 "Welcome!"]
    [ui/p "This is a personal website / portfolio of Jari Hanhela, also known as Jarzka."]
    [ui/p "The site consists of my projects of various topics (software, photography, writing, games etc). Feel free to explore!"]
-   [ui/p "Contents updated: 4.9.2018."]])
+   [ui/p "Contents updated: 8.9.2018."]])
