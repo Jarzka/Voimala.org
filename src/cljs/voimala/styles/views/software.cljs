@@ -4,3 +4,5 @@
             [garden.color :as color]))
 
 (def card {:background-color (:background-secondary g-styles/colors)})
+
+(def card-deck {:margin-bottom "1rem !important"})

@@ -23,19 +23,7 @@
      " makes it possible to define UI component styles as Clojure data."]]])
 
 (defn- other-projects []
-  [:div
-   [ui/h2 "Other projects"]
-   [:ul
-    [:li
-     [ui/link {:href "projects/presentation_app"}
-      "PresentationApp"]
-     [:span " "]
-     "A simple HTML5 application that can be used to create PowerPoint-like presentations. 25.8.2014"]
-    [:li
-     [ui/link {:href "projects/thissimplemarquee/"}
-      "ThisSimpleMarquee"]
-     [:span " "]
-     "A simple HTML5 marquee library. 4.9.2014."]]])
+  [:div])
 
 (defn project-card [{:keys [title date live-demo video source-code image-file desc]}]
   [:div.card (use-style pstyle/card)
@@ -54,25 +42,44 @@
 (defn- featured []
   [:div
    [ui/h2 "Featured"]
-   [:div.card-deck
-        [project-card {:title "Ajokit"
-                       :source-code "https://github.com/Jarzka/Ajokit"
-                       :live-demo "projects/ajokit"
-                       :image-file "ajokit.jpg"
-                       :date "10.10.2015"
-                       :desc "A simple grid-based traffic simulation application which also has a real-time map editing capability."}]
-        [project-card {:title "JarzkaChess"
-                       :source-code "https://github.com/Jarzka/JarzkaChess"
-                       :image-file "jarzkachess.png"
-                       :date "15.2.2014"
-                       :video "https://www.youtube.com/watch?v=viFZeI8uAVU"
-                       :desc "A chess game which includes an artifical intelligence to challenge beginning chess players."}]
-        [project-card {:title "MyRTS"
-                       :source-code "https://github.com/Jarzka/MyRTS"
-                       :image-file "myrts.jpg"
-                       :date "18.4.2014"
-                       :video "https://www.youtube.com/watch?v=OEy6PhbeE_Y"
-                       :desc "MyRTS is a multi player Real Time Strategy game prototype. The architecture supports some basic features like giving simple commands to units and synchronizing the game over network using simultaneous simulations with lockstep-like model. This kind of architectural style has been used in many classic RTS games like Age of Empires."}]]])
+   [:div.card-deck (use-style pstyle/card-deck)
+    [project-card {:title "Ajokit"
+                   :source-code "https://github.com/Jarzka/Ajokit"
+                   :live-demo "projects/ajokit"
+                   :image-file "ajokit.jpg"
+                   :date "10.10.2015"
+                   :desc "A simple grid-based traffic simulation application which also has a real-time map editing capability."}]
+    [project-card {:title "Solita Rooms"
+                   :source-code "https://github.com/solita/solita-rooms"
+                   :image-file "rooms2.png"
+                   :date "1.5.2018"
+                   :desc "Solita Rooms is a web application which can be used to view Microsoft Exchange room bookings.\n"}]
+    [project-card {:title "MyRTS"
+                   :source-code "https://github.com/Jarzka/MyRTS"
+                   :image-file "myrts.jpg"
+                   :date "18.4.2014"
+                   :video "https://www.youtube.com/watch?v=OEy6PhbeE_Y"
+                   :desc [:span
+                          "Multiplayer RTS prototype. The architecture supports some basic features like giving simple commands to units and synchronizing the game over network using simultaneous simulations with"
+                          " " [ui/link {:href "https://www.gamasutra.com/view/feature/131503/1500_archers_on_a_288_network_.php"} "lockstep-like model"]
+                          ". "]}]]
+   [:div.card-deck (use-style pstyle/card-deck)
+    [project-card {:title "PresentationApp "
+                   :image-file "presentation_app.png"
+                   :source-code "https:/ github.com/Jarzka/PresentationApp"
+                   :date "25.8.2014 "
+                   :desc "A simple HTML5 application that can be used to create PowerPoint-like presentations."}]
+    [project-card {:title " JarzkaChess "
+                   :source-code "https://github.com/Jarzka/JarzkaChess"
+                   :image-file "jarzkachess.png"
+                   :date "15.2.2014 "
+                   :video "https://www.youtube.com/watch?v=viFZeI8uAVU"
+                   :desc "A chess game which includes an artifical intelligence to challenge beginning chess players."}]
+    [project-card {:title "ThisSimpleMarquee"
+                   :image-file "thissimplemarquee.png"
+                   :source-code "https://github.com/Jarzka/ThisSimpleMarquee"
+                   :date "4.9.2014"
+                   :desc "A simple HTML5 marquee library."}]]])
 
 (defn software []
   [:div
