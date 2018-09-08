@@ -64,20 +64,22 @@
                           " " [ui/link {:href "https://www.gamasutra.com/view/feature/131503/1500_archers_on_a_288_network_.php"} "lockstep-like model"]
                           ". "]}]]
    [:div.card-deck (use-style pstyle/card-deck)
-    [project-card {:title "PresentationApp "
+    [project-card {:title "PresentationApp"
                    :image-file "presentation_app.png"
-                   :source-code "https:/ github.com/Jarzka/PresentationApp"
-                   :date "25.8.2014 "
+                   :source-code "https://github.com/Jarzka/PresentationApp"
+                   :date "25.8.2014"
+                   :live-demo "projects/presentation_app"
                    :desc "A simple HTML5 application that can be used to create PowerPoint-like presentations."}]
-    [project-card {:title " JarzkaChess "
+    [project-card {:title "JarzkaChess"
                    :source-code "https://github.com/Jarzka/JarzkaChess"
                    :image-file "jarzkachess.png"
-                   :date "15.2.2014 "
+                   :date "15.2.2014"
                    :video "https://www.youtube.com/watch?v=viFZeI8uAVU"
                    :desc "A chess game which includes an artifical intelligence to challenge beginning chess players."}]
     [project-card {:title "ThisSimpleMarquee"
                    :image-file "thissimplemarquee.png"
                    :source-code "https://github.com/Jarzka/ThisSimpleMarquee"
+                   :live-demo "projects/thissimplemarquee/"
                    :date "4.9.2014"
                    :desc "A simple HTML5 marquee library."}]]])
 
@@ -88,11 +90,11 @@
     "Our civilization depends critically on software; it had better be quality software."
     "Bjarne Stroustrup"]
 
-   [featured]
-   [other-projects]
-   [libraries]
-
-   [ui/p "Find all of my software projects on my"
+   [ui/p "See all of my public software projects on my"
     " "
     [ui/link {:href "https://github.com/Jarzka"} "GitHub profile"]
-    "."]])
+    "."]
+
+   [featured]
+   [other-projects]
+   [libraries]])
