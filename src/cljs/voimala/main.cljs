@@ -37,9 +37,9 @@
    [:div (use-style layout/page-content)
     [:main
      [welcome-view/welcome]
+     [photography-view/photography]
      [software-view/software]
      [writing-view/writing]
-     [photography-view/photography]
      [misc-view/misc]
      [contact-view/contact]]
     [site-footer]]])
