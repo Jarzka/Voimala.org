@@ -1,14 +1,14 @@
 (defproject voimala "0.1.0-SNAPSHOT"
   :description "Voimala.org Clojure Edition"
   :url "http://www.voimala.org"
-  :dependencies [[org.clojure/clojure "1.8.0"]
-                 [org.clojure/clojurescript "1.10.339"]
+  :dependencies [[org.clojure/clojure "1.10.0"]
+                 [org.clojure/clojurescript "1.10.439"]
                  [reagent "0.8.1"]
                  [ring "1.6.1"]
                  [http-kit "2.2.0"]
                  [hiccup "1.0.5"]
                  [clj-time "0.13.0"]
-                 [stylefy "1.10.0"]
+                 [stylefy "1.10.1"]
                  [garden "1.3.2"]
                  [com.andrewmcveigh/cljs-time "0.5.0"]
                  [com.taoensso/timbre "4.10.0"]
@@ -17,9 +17,9 @@
   :aot :all
   :auto-clean false ; For uberjar
   :target-path "target/%s"
-  :plugins [[lein-cljsbuild "1.1.2"]
+  :plugins [[lein-cljsbuild "1.1.7"]
             [lein-ancient "0.6.10"]
-            [lein-figwheel "0.5.10"]]
+            [lein-figwheel "0.5.18"]]
   :repl-options {:port 1339
                  :timeout 120000}
   :cljsbuild {:builds [{:id           "dev"
@@ -44,10 +44,4 @@
              :css-dirs ["resources/public/css"]}
 
   :source-paths ["src/clj" "src/cljc"]
-  :test-paths ["test/clj"]
-
-  :jvm-opts ~(let [version     (System/getProperty "java.version")
-                   [major _ _] (clojure.string/split version #"\.")]
-               (if (>= (java.lang.Integer/parseInt major) 9)
-                 ["--add-modules" "java.xml.bind"]
-                 [])))
+  :test-paths ["test/clj"])
