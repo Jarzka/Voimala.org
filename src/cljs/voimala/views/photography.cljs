@@ -26,7 +26,7 @@
     ". Some of my new photos are also uploaded to "
     [ui/link {:href "https://www.instagram.com/jarzka.90"}
      "Instagram"]
-    ["."]]
+    "."]
 
    [:div {:class "row"}
     [:div {:class "col-12 col-md-6 col-lg-4"}
