@@ -9,15 +9,15 @@
 
 (defn- libraries []
   [:div
-   [ui/h2 "Software libraries"]
+   [:h2 "Software libraries"]
    [:ul
     [:li
-     [ui/link {:href "https://github.com/Jarzka/namespacefy"}
+     [:a {:href "https://github.com/Jarzka/namespacefy"}
       "namespacefy"]
      [:span " "]
      "is a simple Clojure(Script) library which aims to make it easy to keep keys namespaced."]
     [:li
-     [ui/link {:href "https://github.com/Jarzka/stylefy"}
+     [:a {:href "https://github.com/Jarzka/stylefy"}
       "stylefy"]
      [:span " "]
      " makes it possible to define UI component styles as Clojure data."]]])
@@ -41,7 +41,7 @@
 
 (defn- featured []
   [:div
-   [ui/h2 "Featured"]
+   [:h2 "Featured"]
    [:div.card-deck (use-style pstyle/card-deck)
     [project-card {:title "Ajokit"
                    :source-code "https://github.com/Jarzka/Ajokit"
@@ -61,7 +61,7 @@
                    :video "https://www.youtube.com/watch?v=OEy6PhbeE_Y"
                    :desc [:span
                           "Multiplayer RTS prototype. The architecture supports some basic features like giving simple commands to units and synchronizing the game over network using simultaneous simulations with"
-                          " " [ui/link {:href "https://www.gamasutra.com/view/feature/131503/1500_archers_on_a_288_network_.php"} "lockstep-like model"]
+                          " " [:a {:href "https://www.gamasutra.com/view/feature/131503/1500_archers_on_a_288_network_.php"} "lockstep-like model"]
                           ". "]}]]
    [:div.card-deck (use-style pstyle/card-deck)
     [project-card {:title "PresentationApp"
@@ -85,14 +85,14 @@
 
 (defn software []
   [:div
-   [ui/h1 "Software"]
+   [:h1 "Software"]
    [ui/blockquote
     "Our civilization depends critically on software; it had better be quality software."
     "Bjarne Stroustrup"]
 
-   [ui/p "See all of my public software projects on my"
+   [:p "See all of my public software projects on my"
     " "
-    [ui/link {:href "https://github.com/Jarzka"} "GitHub profile"]
+    [:a {:href "https://github.com/Jarzka"} "GitHub profile"]
     "."]
 
    [featured]

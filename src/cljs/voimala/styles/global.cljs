@@ -15,23 +15,22 @@
 ;; Fonts & Colors
 ;; ****************************************************************
 
-(defn define-fonts []
-  (stylefy/font-face {:font-family "open_sans"
-                      :src "url('../fonts/OpenSans-Regular-webfont.woff') format('woff')"
-                      :font-weight "normal"
-                      :font-style "normal"})
-  (stylefy/font-face {:font-family "open_sans"
-                      :src "url('../fonts/OpenSans-BoldItalic-webfont.woff') format('woff')"
-                      :font-weight "bold"
-                      :font-style "italic"})
-  (stylefy/font-face {:font-family "open_sans"
-                      :src "url('../fonts/OpenSans-Bold-webfont.woff') format('woff')"
-                      :font-weight "bold"
-                      :font-style "normal"})
-  (stylefy/font-face {:font-family "open_sans"
-                      :src "url('../fonts/OpenSans-Italic-webfont.woff') format('woff')"
-                      :font-weight "normal"
-                      :font-style "italic"}))
+(stylefy/font-face {:font-family "open_sans"
+                    :src "url('../fonts/OpenSans-Regular-webfont.woff') format('woff')"
+                    :font-weight "normal"
+                    :font-style "normal"})
+(stylefy/font-face {:font-family "open_sans"
+                    :src "url('../fonts/OpenSans-BoldItalic-webfont.woff') format('woff')"
+                    :font-weight "bold"
+                    :font-style "italic"})
+(stylefy/font-face {:font-family "open_sans"
+                    :src "url('../fonts/OpenSans-Bold-webfont.woff') format('woff')"
+                    :font-weight "bold"
+                    :font-style "normal"})
+(stylefy/font-face {:font-family "open_sans"
+                    :src "url('../fonts/OpenSans-Italic-webfont.woff') format('woff')"
+                    :font-weight "normal"
+                    :font-style "italic"})
 
 (def colors {:text "#FFFFFF"
              :link "#46aee5"
@@ -42,11 +41,11 @@
 ;; Text
 ;; ****************************************************************
 
-(def p {:margin-top "0"
-        :margin-bottom "1rem"})
+(stylefy/tag "p" {:margin-top "0"
+                  :margin-bottom "1rem"})
 
-(def blockquote {:font-style :italic
-                 :padding-left "1rem"})
+(stylefy/tag "blockquote" {:font-style :italic
+                           :padding-left "1rem"})
 
 ;; ****************************************************************
 ;; Headings
@@ -54,45 +53,41 @@
 
 (def h {:color (:header colors)})
 
-(def h1 (merge h
-               {:margin-top "1.5rem"
-                :margin-bottom "0.6rem"
-                :padding "0.5rem"
-                :font-size "1.6rem"
-                :font-weight :bold
-                ::stylefy/mode {:first-of-type {:margin-top 0}}
-                :border-bottom (str "0.1rem solid " (:header colors))}))
+(stylefy/tag "h1" (merge h
+                         {:margin-top "1.5rem"
+                          :margin-bottom "0.6rem"
+                          :padding "0.5rem"
+                          :font-size "1.6rem"
+                          :font-weight :bold
+                          ::stylefy/mode {:first-of-type {:margin-top 0}}
+                          :border-bottom (str "0.1rem solid " (:header colors))}))
 
-(def h2 (merge h
-               {:margin-top "1rem"
-                :margin-bottom "1rem"
-                :font-size "1.2rem"}))
+(stylefy/tag "h2" (merge h
+                         {:margin-top "1rem"
+                          :margin-bottom "1rem"
+                          :font-size "1.2rem"}))
 
-(def h3 (merge h
-               {:font-size "1.1rem"}))
+(stylefy/tag "h3" (merge h
+                         {:font-size "1.1rem"}))
 
-(def h4 (merge h
-               {:font-size "1.0rem"
-                :margin-bottom "0"}))
+(stylefy/tag "h4" (merge h
+                         {:font-size "1.0rem"
+                          :margin-bottom "0"}))
 
 ;; ****************************************************************
 ;; Links & Buttons
 ;; ****************************************************************
 
 (def clickable {:cursor "pointer"})
+(def link {:color (:link colors)
+           :text-decoration "none"
+           :transition-property "color"
+           :transition-duration "0.3s"
+           ::stylefy/mode {:hover {:color (-> (:link colors)
+                                              (color/lighten 10)
+                                              (color/as-hex))}}})
 
-(def a {:color (:link colors)
-        :text-decoration "none"
-        :transition-property "color"
-        :transition-duration "0.3s"
-        ::stylefy/mode {:hover {:color (-> (:link colors)
-                                           (color/lighten 10)
-                                           (color/as-hex))}}})
-
-(def a-selected (merge a
-                       {:color (-> (:link colors)
-                                   (color/lighten 30)
-                                   (color/as-hex))}))
+(stylefy/tag "a" link)
 
 (defn a-some-before [some]
   {::stylefy/mode
@@ -103,7 +98,7 @@
      :content "\"\""
      :padding-left "2rem"}}})
 
-(def a-some (merge a
+(def a-some (merge link
                    {:display "block"
                     :margin-top 0
                     :margin-bottom 0
@@ -136,5 +131,4 @@
 ;; ****************************************************************
 
 (defn init-styles []
-  (stylefy/init)
-  (define-fonts))
+  (stylefy/init))

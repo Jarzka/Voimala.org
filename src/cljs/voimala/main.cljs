@@ -15,7 +15,7 @@
 (defn- site-header []
   [:header (use-style layout/site-header)
    [:div (use-sub-style layout/site-header :logo-and-description)
-    [ui/link {:href "http://www.voimala.org"}
+    [:a {:href "http://www.voimala.org"}
      [:img (merge (use-sub-style layout/site-header :logo)
                   {:alt "Voimala.org" :src "images/logo.png"})]]
     [:span (use-sub-style layout/site-header :site-description)
@@ -24,11 +24,11 @@
 (defn- site-footer []
   [:footer (use-style layout/site-footer)
    "Copyright © Jari Hanhela 2012-"
-   [ui/p "This website is powered by "
-    [ui/link {:href "http://clojurescript.org"} "ClojureScript"]
+   [:p "This website is powered by "
+    [:a {:href "http://clojurescript.org"} "ClojureScript"]
     ". "
     "Source code available "
-    [ui/link {:href "https://github.com/Jarzka/Voimala.org"} "here"]
+    [:a {:href "https://github.com/Jarzka/Voimala.org"} "here"]
     "."]])
 
 (defn- site-body []

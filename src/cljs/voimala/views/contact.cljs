@@ -4,12 +4,12 @@
 
 (defn contact []
   [:div
-   [ui/h1 "Contact"]
-   [ui/h2 "Email"]
-   [ui/p "You can contact me by email: jarihanhela (at) gmail.com."]
-   [ui/h2 "Social media"]
-   [ui/a-some {:some-type :github :href "https://github.com/Jarzka"} "GitHub"]
-   [ui/a-some {:some-type :gitlab :href "https://gitlab.com/Jarzka"} "GitLab"]
-   [ui/a-some {:some-type :linkedin :href "http://lnkd.in/5JP3nQ"} "LinkedIn"]
-   [ui/a-some {:some-type :twitter :href "https://twitter.com/jarzka"} "Twitter"]
-   [ui/a-some {:some-type :youtube :href "https://www.youtube.com/user/VoimalaOrg"} "YouTube (JarzkaCodes)"]])
+   [:h1 "Contact"]
+   [:h2 "Email"]
+   [:p "You can contact me by email: jarihanhela (at) gmail.com."]
+   [:h2 "Social media"]
+   [ui/social-media-link {:some-type :github :href "https://github.com/Jarzka"} "GitHub"]
+   [ui/social-media-link {:some-type :gitlab :href "https://gitlab.com/Jarzka"} "GitLab"]
+   [ui/social-media-link {:some-type :linkedin :href "http://lnkd.in/5JP3nQ"} "LinkedIn"]
+   [ui/social-media-link {:some-type :twitter :href "https://twitter.com/jarzka"} "Twitter"]
+   [ui/social-media-link {:some-type :youtube :href "https://www.youtube.com/channel/UC1xtM_UXTnSuqmvoBem-cFA"} "YouTube (JarzkaCodes)"]])
