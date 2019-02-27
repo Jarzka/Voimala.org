@@ -39,7 +39,7 @@
             {:allowFullScreen "allowfullscreen"
              :allow "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
              :frameBorder "0"
-             :src "https://www.youtube-nocookie.com/embed/BdxeatW4OcQ"
+             :src "https://www.youtube-nocookie.com/embed/T6d-NYWpIRM"
              :height "315"
              :width "560"}]]
           [:div (use-style iframe-wrapper)
@@ -47,7 +47,7 @@
             {:allowFullScreen "allowfullscreen"
              :allow "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
              :frameBorder "0"
-             :src "https://www.youtube-nocookie.com/embed/T6d-NYWpIRM"
+             :src "https://www.youtube-nocookie.com/embed/BdxeatW4OcQ"
              :height "315"
              :width "560"}]]])
 
