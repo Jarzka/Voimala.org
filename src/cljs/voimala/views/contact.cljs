@@ -12,4 +12,5 @@
    [ui/social-media-link {:some-type :gitlab :href "https://gitlab.com/Jarzka"} "GitLab"]
    [ui/social-media-link {:some-type :linkedin :href "http://lnkd.in/5JP3nQ"} "LinkedIn"]
    [ui/social-media-link {:some-type :twitter :href "https://twitter.com/jarzka"} "Twitter"]
-   [ui/social-media-link {:some-type :youtube :href "https://www.youtube.com/channel/UC1xtM_UXTnSuqmvoBem-cFA"} "YouTube (JarzkaCodes)"]])
+   [ui/social-media-link {:some-type :youtube :href "https://www.youtube.com/channel/UC1xtM_UXTnSuqmvoBem-cFA"} "YouTube (JarzkaCodes)"]
+   [ui/social-media-link {:some-type :youtube :href "https://www.youtube.com/channel/UCLY7kXdrpY_9RONQPN0J71w"} "YouTube (JarzkaPlays)"]])

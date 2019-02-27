@@ -9,6 +9,7 @@
     [voimala.views.misc :as misc-view]
     [voimala.views.contact :as contact-view]
     [voimala.views.software :as software-view]
+    [voimala.views.music :as music-view]
     [reagent.core :as r]
     [voimala.ui.general :as ui]))
 
@@ -40,6 +41,7 @@
      [photography-view/photography]
      [software-view/software]
      [writing-view/writing]
+     [music-view/music]
      [misc-view/misc]
      [contact-view/contact]]
     [site-footer]]])
