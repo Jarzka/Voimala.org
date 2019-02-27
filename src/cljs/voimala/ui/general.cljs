@@ -23,6 +23,13 @@
                  (dissoc options :button-icon :extra-styles))
    content])
 
+(defn button [{:keys [button-icon extra-styles] :as options} & content]
+  [:button (use-style (merge
+                   g-styles/a-button
+                   extra-styles)
+                 (dissoc options :button-icon :extra-styles))
+   content])
+
 (defn blockquote [text person]
   [:blockquote
    [:p (str "\"" text "\"")

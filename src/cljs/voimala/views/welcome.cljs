@@ -7,4 +7,4 @@
    [:h1 "Welcome!"]
    [:p "This is a personal website / portfolio of Jari Hanhela, also known as Jarzka."]
    [:p "The site consists of my projects of various topics (photography, software, writing, games etc). Feel free to explore!"]
-   [:p "Contents updated: 30.12.2018."]])
+   [:p "Contents updated: 27.2.2019."]])

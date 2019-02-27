@@ -17,17 +17,6 @@
     "A photograph has picked up a fact of life, and that fact will live forever."
     "Raghu Rain"]
 
-   [:p "See my full photo gallery either on "
-    [:a {:href "https://www.facebook.com/media/set/?set=a.2160608547288244.1073741832.100000173586073&type=1&l=b81257d4eb"}
-     "Facebook"]
-    " or "
-    [:a {:href "https://www.dropbox.com/sh/spbl6pmblklrmsh/AAAxMrdQsZ-P9ADdSE-odjQka?dl=0"}
-     "Dropbox"]
-    ". Some of my new photos are also uploaded to "
-    [:a {:href "https://www.instagram.com/jarzka.90"}
-     "Instagram"]
-    "."]
-
    [:div {:class "row"}
     [:div {:class "col-12 col-md-6 col-lg-4"}
      [photo "1"]]
@@ -46,4 +35,15 @@
     [:div {:class "col-12 col-md-6 col-lg-4"}
      [photo "8"]]
     [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "9"]]]])
+     [photo "9"]]]
+
+   [:p "See my full photo gallery either on "
+    [:a {:href "https://www.facebook.com/media/set/?set=a.2160608547288244.1073741832.100000173586073&type=1&l=b81257d4eb"}
+     "Facebook"]
+    " or "
+    [:a {:href "https://www.dropbox.com/sh/spbl6pmblklrmsh/AAAxMrdQsZ-P9ADdSE-odjQka?dl=0"}
+     "Dropbox"]
+    ". Some of my new photos are also uploaded to "
+    [:a {:href "https://www.instagram.com/jarzka.90"}
+     "Instagram"]
+    "."]])

@@ -104,27 +104,29 @@
                     :margin-bottom 0
                     :height "2rem"}))
 
-(def a-button {:display "block"
-               :overflow "hidden"
-               :min-width "120px"
-               :height "35px"
-               :color "#FFFFFF"
-               :margin-right "5px"
-               :margin-bottom "5px"
-               :text-align "center"
-               :padding-top "5px"
-               :padding-bottom "5px"
-               :padding-left "10px"
-               :padding-right "10px"
-               :text-decoration "none"
-               :box-shadow "0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7)"
-               :text-shadow "0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3)"
-               :background "linear-gradient(to bottom, #b0abe0 0%, #8f8bb6)"
-               ::stylefy/mode {:hover
-                               {:background "linear-gradient(to bottom, #c9c3ff 0%, #a4a0d1)"}}
-               :box-sizing "border-box"
-               :border "1px solid black"
-               :border-radius "5px"})
+(def a-button (merge
+                clickable
+                {:display "block"
+                :overflow "hidden"
+                :min-width "120px"
+                :height "35px"
+                :color "#FFFFFF"
+                :margin-right "5px"
+                :margin-bottom "5px"
+                :text-align "center"
+                :padding-top "5px"
+                :padding-bottom "5px"
+                :padding-left "10px"
+                :padding-right "10px"
+                :text-decoration "none"
+                :box-shadow "0px 1px 3px rgba(000,000,000,0.5), inset 0px 0px 2px rgba(255,255,255,0.7)"
+                :text-shadow "0px -1px 0px rgba(000,000,000,0.4), 0px 1px 0px rgba(255,255,255,0.3)"
+                :background "linear-gradient(to bottom, #46a9de 0%, #1a527a)"
+                ::stylefy/mode {:hover
+                                {:background "linear-gradient(to bottom, #51bffb 0%, #216ca2)"}}
+                :box-sizing "border-box"
+                :border "1px solid black"
+                :border-radius "5px"}))
 
 ;; ****************************************************************
 ;; API

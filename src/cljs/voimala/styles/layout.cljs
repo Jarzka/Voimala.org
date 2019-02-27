@@ -12,7 +12,7 @@
     {:display "flex"
      :flex-direction "row"
      :justify-content "center"
-     :height "7rem"
+     :height "5rem"
      :align-items "center"
      :padding-bottom "1rem"
      :padding-top "1rem"
@@ -21,7 +21,7 @@
       :logo {:display :block
              :margin-left "auto"
              :margin-right "auto"
-             :width "18rem"
+             :width "12rem"
              :max-width "100%"}
       :site-description {:padding-top "0.3rem"
                          :padding-bottom "0.3rem"}}}))
