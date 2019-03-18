@@ -4,6 +4,7 @@
 
 (defn misc []
   [:div
+   [:a {:id "misc"}]
    [:h1 "Miscelanous"]
 
    [:h2 "Worms Vorg Soundbanks"]

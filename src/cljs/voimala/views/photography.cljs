@@ -1,49 +1,123 @@
 (ns voimala.views.photography
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
+            [reagent.core :as r]
             [voimala.styles.views.photography :as pstyle]
+            [voimala.styles.global :as s-global]
             [voimala.ui.general :as ui]))
 
-(defn- photo [file]
-  [:a {:href (str "images/photos/" file ".jpg")
-       :title "" :data-lightbox "photography"}
-   [:img (use-style pstyle/photo
-                    {:src (str "images/photos/" file "_thumb.jpg")
-                     :alt ""})]])
+(defn- photo [file title alt]
+  (let [alt (or alt title)]
+    [:a {:href (str "images/photos/" file ".jpg")
+         :data-title title
+         :data-alt alt
+         :data-lightbox "photography"}
+     [:img (use-style pstyle/photo
+                      {:src (str "images/photos/" file "_thumb.jpg")
+                       :title title
+                       :alt alt})]]))
 
 (defn photography []
-  [:div
-   [:h1 "Photography"]
-   [ui/blockquote
-    "A photograph has picked up a fact of life, and that fact will live forever."
-    "Raghu Rain"]
+  (let [show-more? (r/atom false)
+        row-class "col-12 col-md-6 col-lg-4"]
+    (fn []
+      [:div
+       [:a {:id "photography"}]
+       [:h1 "Photography"]
+       [ui/blockquote
+        "A photograph has picked up a fact of life, and that fact will live forever."
+        "Raghu Rain"]
 
-   [:div {:class "row"}
-    [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "1"]]
-    [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "2"]]
-    [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "3"]]
-    [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "4"]]
-    [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "5"]]
-    [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "6"]]
-    [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "7"]]
-    [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "8"]]
-    [:div {:class "col-12 col-md-6 col-lg-4"}
-     [photo "9"]]]
+       [:div {:class "row"}
+        [:div {:class row-class}
+         [photo "1" "Salamajärven kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "2" "Salamajärven kansallispuisto, Koirasalmen nuotiopaikka"]]
+        [:div {:class row-class}
+         [photo "3" "Kolin kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "4" "Pyhä-Luoston kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "5" "Hillosenselkä, Orilammen Maja ja Lomakeskus"]]
+        [:div {:class row-class}
+         [photo "6" "Riisitunturin kansallispuisto, Posio"]]
+        [:div {:class row-class}
+         [photo "7" "Riisitunturin kansallispuisto, autiotupa"]]
+        [:div {:class row-class}
+         [photo "8" "Riisitunturin kansallispuisto, Posio"]]
+        [:div {:class row-class}
+         [photo "9" "Korouma, Posio"]]]
 
-   [:p "See my full photo gallery either on "
-    [:a {:href "https://www.facebook.com/media/set/?set=a.2160608547288244.1073741832.100000173586073&type=1&l=b81257d4eb"}
-     "Facebook"]
-    " or "
-    [:a {:href "https://www.dropbox.com/sh/spbl6pmblklrmsh/AAAxMrdQsZ-P9ADdSE-odjQka?dl=0"}
-     "Dropbox"]
-    ". Some of my new photos are also uploaded to "
-    [:a {:href "https://www.instagram.com/jarzka.90"}
-     "Instagram"]
-    "."]])
+       [:div (use-style (when-not @show-more? s-global/hidden)
+                        {:class "row"})
+        [:div {:class row-class}
+         [photo "_MG_5966" "Pyhä-Luoston kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "_MG_6339-HDR" "Pyhä-Luoston kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "_MG_6087-Pano" "Pyhä-Luoston kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "_MG_6311-Pano-2" "Pyhä-Luoston kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "winter7" "Urho Kekkosen kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "_MG_1101" "Ritajärven luonnonsuojelualue, Sastamala"]]
+        [:div {:class row-class}
+         [photo "IMG_7634-Pano" "Torronsuon kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "IMG_7548-Pano" "Torronsuon kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "IMG_7536-Pano" "Torronsuon kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "_MG_0302" "Salamajärven kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "_MG_0480-HDR" "Salamajärven kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "IMG_5582" "Metsäpolku"]]
+        [:div {:class row-class}
+         [photo "IMG_5516-Pano" "Pukalan virkistysmetsä"]]
+        [:div {:class row-class}
+         [photo "IMG_5433"]]
+        [:div {:class row-class}
+         [photo "_MG_6881" "Kolin kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "_MG_6977" "Pirunkirkko, Kolin kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "_MG_6766-Pano" "Repoveden kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "IMG_5061" "Iso Helvetinjärvi, Helvetinjärven kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "IMG_5079" "Helvetinkolu, Helvetinjärven kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "IMG_5195-Pano" "Luomajärvi, Helvetinjärven kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "20180616_223201" "Luomajärvi, Helvetinjärven kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "IMG_4948-Pano" "Liesjärven kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "IMG_4720" "Iso-Melkutin, Melkuttimien reitit"]]
+        [:div {:class row-class}
+         [photo "animals3" "Lokki"]]
+        [:div {:class row-class}
+         [photo "20180107_121717" "Koitelinkoski"]]
+        [:div {:class row-class}
+         [photo "_MG_7194" "Virolainen, Tampere"]]
+        [:div {:class row-class}
+         [photo "_MG_4493" "Isojärven kansallispuisto"]]
+        [:div {:class row-class}
+         [photo "_MG_1702" "Ruskea virta, Korouma"]]
+        [:div {:class row-class}
+         [photo "_MG_1302" "Täyden kuun valossa, Sonkajärvi"]]
+        [:div {:class row-class}
+         [photo "_MG_0911-HDR" "Kivilinna, Sastamala"]]]
+
+       (when-not @show-more?
+         [ui/button {:on-click #(reset! show-more? true)} "Show more photos"])
+
+       [:br]
+       [:p "I mostly photograph the beauty of the Finnish nature. Please notice that all of my photos are copyrighted and you are not allowed to use them without permission. If you want to license my photos, please "
+        [:a {:href "#contact"} "contact me"]
+        [:span "."]]
+       [:p "Follow me on "
+        [:a {:href "https://www.instagram.com/jarzka.90"}
+         "Instagram"]
+        " if you want to see my new photos first."]])))

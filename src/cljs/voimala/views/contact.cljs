@@ -4,10 +4,12 @@
 
 (defn contact []
   [:div
+   [:a {:id "contact"}]
    [:h1 "Contact"]
    [:h2 "Email"]
    [:p "You can contact me by email: jarihanhela (at) gmail.com."]
    [:h2 "Social media"]
+   [ui/social-media-link {:some-type :instagram :href "https://instagram.com/jarzka.90"} "Instagram"]
    [ui/social-media-link {:some-type :github :href "https://github.com/Jarzka"} "GitHub"]
    [ui/social-media-link {:some-type :gitlab :href "https://gitlab.com/Jarzka"} "GitLab"]
    [ui/social-media-link {:some-type :linkedin :href "http://lnkd.in/5JP3nQ"} "LinkedIn"]

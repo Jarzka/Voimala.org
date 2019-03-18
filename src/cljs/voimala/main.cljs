@@ -13,15 +13,6 @@
     [reagent.core :as r]
     [voimala.ui.general :as ui]))
 
-(defn- site-header []
-  [:header (use-style layout/site-header)
-   [:div (use-sub-style layout/site-header :logo-and-description)
-    [:a {:href "http://www.voimala.org"}
-     [:img (merge (use-sub-style layout/site-header :logo)
-                  {:alt "Voimala.org" :src "images/logo.png"})]]
-    [:span (use-sub-style layout/site-header :site-description)
-     "Portfolio of Jari Hanhela"]]])
-
 (defn- site-footer []
   [:footer (use-style layout/site-footer)
    "Copyright © Jari Hanhela 2012-"
@@ -34,7 +25,6 @@
 
 (defn- site-body []
   [:div
-   [site-header]
    [:div (use-style layout/page-content)
     [:main
      [welcome-view/welcome]
