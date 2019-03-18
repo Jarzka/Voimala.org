@@ -114,7 +114,7 @@
          [ui/button {:on-click #(reset! show-more? true)} "Show more photos"])
 
        [:br]
-       [:p "I mostly photograph the beauty of the Finnish nature. Please notice that all of my photos are copyrighted and you are not allowed to use them without permission. If you want to license my photos, please "
+       [:p "I mostly photograph the natural beauty of Finland. Please notice that all of my photos are copyrighted and you are not allowed to use them without permission. If you want to license my photos, please "
         [:a {:href "#contact"} "contact me"]
         [:span "."]]
        [:p "Follow me on "
