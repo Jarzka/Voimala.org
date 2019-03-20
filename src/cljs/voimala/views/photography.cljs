@@ -90,7 +90,7 @@
         [:div {:class row-class}
          [photo "IMG_5195-Pano" "Luomajärvi, Helvetinjärven kansallispuisto"]]
         [:div {:class row-class}
-         [photo "20180616_223201" "Luomajärvi, Helvetinjärven kansallispuisto"]]
+         [photo "_MG_2401-HDR" "Maaliskuun Auringonlasku Vuoreksessa"]]
         [:div {:class row-class}
          [photo "IMG_4948-Pano" "Liesjärven kansallispuisto"]]
         [:div {:class row-class}
