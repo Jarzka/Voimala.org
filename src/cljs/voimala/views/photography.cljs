@@ -4,7 +4,9 @@
             [voimala.styles.views.photography :as pstyle]
             [voimala.styles.global :as s-global]
             [voimala.ui.general :as ui]
-            [voimala.ui.modal :as modal]))
+            [voimala.ui.modal :as modal])
+  (:require-macros
+    [cljs.core.async.macros :refer [go]]))
 
 (defn- photo [file text webp?]
   (let [image-ready? (r/atom false)
@@ -15,18 +17,19 @@
          :on-click
          (fn [event]
            (.preventDefault event)
-           (modal/show!
-             (fn []
-               [:div
-                (when-not @image-ready?
-                  [ui/loading-spinner])
-                [:div (if @image-ready? {:display :block} {:display :none})
-                 [:picture {:onLoad show-image!}
-                  (when webp?
-                    [:source (use-style pstyle/photo-in-modal {:type "image/webp" :alt text :srcSet webp-url})])
-                  [:source (use-style pstyle/photo-in-modal {:type "image/jpeg" :alt text :srcSet jpeg-url})]
-                  [:img (use-style pstyle/photo-in-modal {:alt text :src jpeg-url :onLoad show-image!})]]]
-                [:footer (use-style pstyle/photo-text) text]])))}
+           (modal/hide!)
+           (go (modal/show!
+                 (fn []
+                   [:div
+                    (when-not @image-ready?
+                      [ui/loading-spinner])
+                    [:div (if @image-ready? {:display :block} {:display :none})
+                     [:picture {:onLoad show-image!}
+                      (when webp?
+                        [:source (use-style pstyle/photo-in-modal {:type "image/webp" :alt text :srcSet webp-url})])
+                      [:source (use-style pstyle/photo-in-modal {:type "image/jpeg" :alt text :srcSet jpeg-url})]
+                      [:img (use-style pstyle/photo-in-modal {:alt text :src jpeg-url :onLoad show-image!})]]]
+                    [:footer (use-style pstyle/photo-text) text]]))))}
      [:img (use-style pstyle/photo
                       {:src (str "images/photos/" file "_thumb.jpg")
                        :title text

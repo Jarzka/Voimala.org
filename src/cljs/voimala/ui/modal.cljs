@@ -19,3 +19,6 @@
 (defn show! [contents]
   (reset! modal-contents contents)
   (.modal (jquery ".modal") "show"))
+
+(defn hide! []
+  (reset! modal-contents nil))
