@@ -122,7 +122,7 @@
         [:div {:class row-class}
          [photo "_MG_1702" "Ruskea virta, Korouma"]]
         [:div {:class row-class}
-         [photo "_MG_1302" "Täyden kuun valossa, Sonkajärvi" true]]
+         [photo "_MG_1302" "Täyden kuun valossa, Sonkajärvi"]]
         [:div {:class row-class}
          [photo "_MG_0911-HDR" "Kivilinna, Sastamala"]]]
 
