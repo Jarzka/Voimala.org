@@ -3,7 +3,7 @@
             [voimala.ui.general :as ui]))
 
 (defn misc []
-  [:div
+  [:section
    [:a {:id "misc"}]
    [:h1 "Miscelanous"]
 

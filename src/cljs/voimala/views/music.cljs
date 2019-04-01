@@ -22,7 +22,7 @@
             video-width (str (if (>= @utils/width (+ video-width-full 20))
                                video-width-full
                                video-width-mobile))]
-        [:div
+        [:section
          [:a {:id "music"}]
          [:h1 "Music"]
          [ui/blockquote

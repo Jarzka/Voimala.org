@@ -4,3 +4,9 @@
 
 (def photo {:width "100%"
             :margin-bottom "0.5rem"})
+
+(def photo-in-modal {:display :block
+                     :margin-left "auto"
+                     :margin-right "auto"
+                     :max-width "100%"
+                     :max-height "90vh"})

@@ -10,6 +10,7 @@
     [voimala.views.contact :as contact-view]
     [voimala.views.software :as software-view]
     [voimala.views.music :as music-view]
+    [voimala.ui.modal :as modal]
     [reagent.core :as r]
     [voimala.ui.general :as ui]))
 
@@ -25,6 +26,7 @@
 
 (defn- site-body []
   [:div
+   [modal/modal-lg]
    [:div (use-style layout/page-content)
     [:main
      [welcome-view/welcome]

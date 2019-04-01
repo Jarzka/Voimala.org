@@ -3,24 +3,46 @@
             [reagent.core :as r]
             [voimala.styles.views.photography :as pstyle]
             [voimala.styles.global :as s-global]
-            [voimala.ui.general :as ui]))
+            [voimala.ui.general :as ui]
+            [voimala.ui.modal :as modal]))
 
-(defn- photo [file title alt]
-  (let [alt (or alt title)]
-    [:a {:href (str "images/photos/" file ".jpg")
-         :data-title title
-         :data-alt alt
-         :data-lightbox "photography"}
+(defn- photo [file text webp?]
+  (let [webp-url (str "images/photos/" file ".webp")
+        jpeg-url (str "images/photos/" file ".jpg")]
+    ; a wrapper is mainly for SEO purposes
+    [:a {:href jpeg-url
+         :on-click (fn [event]
+                     (.preventDefault event)
+                     (.log js/console "CLICK")
+                     (modal/show
+                       [:picture
+                        (when webp?
+                          [:source (use-style pstyle/photo-in-modal
+                                              {:type "image/webp" :alt text :title text :srcSet webp-url})])
+                        [:source (use-style pstyle/photo-in-modal
+                                            {:type "image/jpeg" :alt text :title text :srcSet jpeg-url})]
+                        [:img (use-style pstyle/photo-in-modal
+                                         {:alt text :title text :src jpeg-url})]]))}
      [:img (use-style pstyle/photo
                       {:src (str "images/photos/" file "_thumb.jpg")
-                       :title title
-                       :alt alt})]]))
+                       :title text
+                       :alt text})]])
+
+  #_(let [alt (or alt title)]
+      [:a {:href (str "images/photos/" file ".jpg")
+           :data-title title
+           :data-alt alt
+           :data-lightbox "photography"}
+       [:img (use-style pstyle/photo
+                        {:src (str "images/photos/" file "_thumb.jpg")
+                         :title title
+                         :alt alt})]]))
 
 (defn photography []
   (let [show-more? (r/atom false)
         row-class "col-12 col-md-6 col-lg-4"]
     (fn []
-      [:div
+      [:section
        [:a {:id "photography"}]
        [:h1 "Photography"]
        [ui/blockquote
@@ -31,7 +53,7 @@
         [:div {:class row-class}
          [photo "1" "Salamajärven kansallispuisto"]]
         [:div {:class row-class}
-         [photo "2" "Salamajärven kansallispuisto, Koirasalmen nuotiopaikka"]]
+         [photo "2" "Salamajärven kansallispuisto, Koirasalmen nuotiopaikka" true]]
         [:div {:class row-class}
          [photo "3" "Kolin kansallispuisto"]]
         [:div {:class row-class}
@@ -41,11 +63,11 @@
         [:div {:class row-class}
          [photo "6" "Riisitunturin kansallispuisto, Posio"]]
         [:div {:class row-class}
-         [photo "7" "Riisitunturin kansallispuisto, autiotupa"]]
+         [photo "7" "Riisitunturin kansallispuisto, autiotupa" true]]
         [:div {:class row-class}
-         [photo "8" "Riisitunturin kansallispuisto, Posio"]]
+         [photo "8" "Riisitunturin kansallispuisto, Posio" true]]
         [:div {:class row-class}
-         [photo "9" "Korouma, Posio"]]]
+         [photo "9" "Korouma, Posio" true]]]
 
        [:div (use-style (when-not @show-more? s-global/hidden)
                         {:class "row"})
@@ -70,7 +92,7 @@
         [:div {:class row-class}
          [photo "_MG_0302" "Salamajärven kansallispuisto"]]
         [:div {:class row-class}
-         [photo "_MG_0480-HDR" "Salamajärven kansallispuisto"]]
+         [photo "_MG_0480-HDR" "Salamajärven kansallispuisto" true]]
         [:div {:class row-class}
          [photo "IMG_5582" "Metsäpolku"]]
         [:div {:class row-class}
@@ -106,7 +128,7 @@
         [:div {:class row-class}
          [photo "_MG_1702" "Ruskea virta, Korouma"]]
         [:div {:class row-class}
-         [photo "_MG_1302" "Täyden kuun valossa, Sonkajärvi"]]
+         [photo "_MG_1302" "Täyden kuun valossa, Sonkajärvi" true]]
         [:div {:class row-class}
          [photo "_MG_0911-HDR" "Kivilinna, Sastamala"]]]
 

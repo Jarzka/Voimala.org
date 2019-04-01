@@ -3,7 +3,7 @@
             [voimala.ui.general :as ui]))
 
 (defn contact []
-  [:div
+  [:section
    [:a {:id "contact"}]
    [:h1 "Contact"]
    [:h2 "Email"]

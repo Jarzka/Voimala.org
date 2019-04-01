@@ -93,7 +93,7 @@
          [ui/button {:on-click #(reset! show-more? true)} "Show more software projects"])])))
 
 (defn software []
-  [:div
+  [:section
    [:a {:id "software"}]
    [:h1 "Software"]
    [ui/blockquote

@@ -7,7 +7,7 @@
 (defn writing []
   (let [show-more? (r/atom false)]
     (fn []
-      [:div
+      [:section
        [:a {:id "writing"}]
        [:h1 "Writing"]
        [:h2 "/dev/solita (Solita's software development blog)"]
