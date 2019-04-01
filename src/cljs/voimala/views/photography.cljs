@@ -7,36 +7,35 @@
             [voimala.ui.modal :as modal]))
 
 (defn- photo [file text webp?]
-  (let [webp-url (str "images/photos/" file ".webp")
+  (let [;image-ready? (r/atom false)
+        ;show (fn []
+        ;       (reset! image-ready? true))
+        ;visibility (if @image-ready? {:visibility :visible} {:visibility :hidden})
+        webp-url (str "images/photos/" file ".webp")
         jpeg-url (str "images/photos/" file ".jpg")]
-    ; a wrapper is mainly for SEO purposes
-    [:a {:href jpeg-url
-         :on-click (fn [event]
-                     (.preventDefault event)
-                     (.log js/console "CLICK")
-                     (modal/show
-                       [:picture
-                        (when webp?
-                          [:source (use-style pstyle/photo-in-modal
-                                              {:type "image/webp" :alt text :title text :srcSet webp-url})])
-                        [:source (use-style pstyle/photo-in-modal
-                                            {:type "image/jpeg" :alt text :title text :srcSet jpeg-url})]
-                        [:img (use-style pstyle/photo-in-modal
-                                         {:alt text :title text :src jpeg-url})]]))}
-     [:img (use-style pstyle/photo
-                      {:src (str "images/photos/" file "_thumb.jpg")
-                       :title text
-                       :alt text})]])
-
-  #_(let [alt (or alt title)]
-      [:a {:href (str "images/photos/" file ".jpg")
-           :data-title title
-           :data-alt alt
-           :data-lightbox "photography"}
+    (fn [file text webp?]
+      ; a wrapper is mainly for SEO purposes
+      [:a {:href jpeg-url
+           :on-click
+           (fn [event]
+             (.preventDefault event)
+             (modal/show
+               [:div
+                ;(when-not @image-ready?
+                ;  [ui/loading-spinner])
+                [:div ;(use-style visibility)
+                 [:picture ;{:onLoad show}
+                  (when webp?
+                    [:source (use-style pstyle/photo-in-modal {:type "image/webp" :alt text :srcSet webp-url})])
+                  [:source (use-style pstyle/photo-in-modal {:type "image/jpeg" :alt text :srcSet jpeg-url})]
+                  [:img (use-style pstyle/photo-in-modal {:alt text :src jpeg-url
+                                                          ;:onLoad show
+                                                          })]]]
+                [:footer (use-style pstyle/photo-text) text]]))}
        [:img (use-style pstyle/photo
                         {:src (str "images/photos/" file "_thumb.jpg")
-                         :title title
-                         :alt alt})]]))
+                         :title text
+                         :alt text})]])))
 
 (defn photography []
   (let [show-more? (r/atom false)

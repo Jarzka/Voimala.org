@@ -6,6 +6,7 @@
                  [reagent "0.8.1"]
                  [ring "1.6.1"]
                  [http-kit "2.2.0"]
+                 [javax.xml.bind/jaxb-api "2.4.0-b180830.0359"]
                  [hiccup "1.0.5"]
                  [clj-time "0.13.0"]
                  [stylefy "1.12.0"]

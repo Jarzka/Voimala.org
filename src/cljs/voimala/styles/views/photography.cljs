@@ -10,3 +10,9 @@
                      :margin-right "auto"
                      :max-width "100%"
                      :max-height "90vh"})
+
+(def photo-text {:margin-top "0.5rem"
+                 :margin-bottom "0.5rem"
+                 :text-align :center
+                 :color :grey
+                 :font-size "0.85rem"})

@@ -8,10 +8,6 @@
 
 (defn modal-lg []
   [:div.modal.fade
-   {:aria-hidden "true",
-    :aria-labelledby "myLargeModalLabel",
-    :role "dialog",
-    :tabIndex "-1"}
    [:div.modal-dialog.modal-lg.modal-dialog-centered
     (use-style {:max-width "95% !important"})
     [:div.modal-content
