@@ -7,35 +7,30 @@
             [voimala.ui.modal :as modal]))
 
 (defn- photo [file text webp?]
-  (let [;image-ready? (r/atom false)
-        ;show (fn []
-        ;       (reset! image-ready? true))
-        ;visibility (if @image-ready? {:visibility :visible} {:visibility :hidden})
+  (let [image-ready? (r/atom false)
+        show-image! (fn [] (reset! image-ready? true))
         webp-url (str "images/photos/" file ".webp")
         jpeg-url (str "images/photos/" file ".jpg")]
-    (fn [file text webp?]
-      ; a wrapper is mainly for SEO purposes
-      [:a {:href jpeg-url
-           :on-click
-           (fn [event]
-             (.preventDefault event)
-             (modal/show
+    [:a {:href jpeg-url
+         :on-click
+         (fn [event]
+           (.preventDefault event)
+           (modal/show!
+             (fn []
                [:div
-                ;(when-not @image-ready?
-                ;  [ui/loading-spinner])
-                [:div ;(use-style visibility)
-                 [:picture ;{:onLoad show}
+                (when-not @image-ready?
+                  [ui/loading-spinner])
+                [:div (if @image-ready? {:display :block} {:display :none})
+                 [:picture {:onLoad show-image!}
                   (when webp?
                     [:source (use-style pstyle/photo-in-modal {:type "image/webp" :alt text :srcSet webp-url})])
                   [:source (use-style pstyle/photo-in-modal {:type "image/jpeg" :alt text :srcSet jpeg-url})]
-                  [:img (use-style pstyle/photo-in-modal {:alt text :src jpeg-url
-                                                          ;:onLoad show
-                                                          })]]]
-                [:footer (use-style pstyle/photo-text) text]]))}
-       [:img (use-style pstyle/photo
-                        {:src (str "images/photos/" file "_thumb.jpg")
-                         :title text
-                         :alt text})]])))
+                  [:img (use-style pstyle/photo-in-modal {:alt text :src jpeg-url :onLoad show-image!})]]]
+                [:footer (use-style pstyle/photo-text) text]])))}
+     [:img (use-style pstyle/photo
+                      {:src (str "images/photos/" file "_thumb.jpg")
+                       :title text
+                       :alt text})]]))
 
 (defn photography []
   (let [show-more? (r/atom false)
