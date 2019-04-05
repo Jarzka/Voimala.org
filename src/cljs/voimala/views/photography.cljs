@@ -101,6 +101,8 @@
              [photo-thumb photo-data index]])
           photodata/photos)]
 
+       ; TODO Convert to Clojure map
+       ; TODO Make the dialog code pretty
        #_[:div (use-style (when-not @show-more? s-global/hidden)
                           {:class "row"})
           [:div {:class row-class}
