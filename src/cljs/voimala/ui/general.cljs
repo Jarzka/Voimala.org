@@ -6,7 +6,7 @@
   (map-indexed
     (fn [index element]
       ^{:key index}
-      [:span element])
+      element)
     content))
 
 (defn social-media-link [{:keys [some-type] :as options} & content]

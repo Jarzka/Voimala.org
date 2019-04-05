@@ -16,7 +16,7 @@
      (when @modal-contents
        [@modal-contents])]]])
 
-(defn show! [contents]
+(defn show-contents! [contents]
   (reset! modal-contents contents)
   (.modal (jquery ".modal") "show"))
 
