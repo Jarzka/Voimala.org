@@ -9,8 +9,9 @@
     [cljs.core.async.macros :refer [go]]))
 
 (defn- photo [file text webp?]
-  (let [image-ready? (r/atom false)
-        show-image! (fn [] (reset! image-ready? true))
+  (let [image-loaded? (r/atom false)
+        show-image! (fn []
+                      (reset! image-loaded? true))
         webp-url (str "images/photos/" file ".webp")
         jpeg-url (str "images/photos/" file ".jpg")]
     [:a {:href jpeg-url
@@ -21,9 +22,9 @@
            (go (modal/show!
                  (fn []
                    [:div
-                    (when-not @image-ready?
+                    (when-not @image-loaded?
                       [ui/loading-spinner])
-                    [:div (if @image-ready? {:display :block} {:display :none})
+                    [:div (use-style (if @image-loaded? {:display :block} {:display :none}))
                      [:picture {:onLoad show-image!}
                       (when webp?
                         [:source (use-style pstyle/photo-in-modal {:type "image/webp" :alt text :srcSet webp-url})])
