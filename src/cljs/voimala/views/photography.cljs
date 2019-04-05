@@ -39,7 +39,17 @@
             {:keys [file-name description formats] :as photo} (get photodata/photos current-index)
             webp? (boolean (:webp formats))
             webp-url (str "images/photos/" file-name ".webp")
-            jpeg-url (str "images/photos/" file-name ".jpg")]
+            jpeg-url (str "images/photos/" file-name ".jpg")
+            previous (fn [event]
+                       (.preventDefault event)
+                       (when-not @current-image-loaded?
+                         (when (previous-index)
+                           (reset! current-image-loaded? false))))
+            next (fn [event]
+                   (.preventDefault event)
+                   (when-not @current-image-loaded?
+                     (when (next-index)
+                       (reset! current-image-loaded? false))))]
         [:div (use-style {:position :relative})
          (when-not @current-image-loaded?
            [:div (use-style (when-not @first-image-loaded?
@@ -51,7 +61,9 @@
                               :transform "translateX(-50%) translateY(-80%)"})
              [ui/loading-spinner]]])
          [:div (use-style (if @first-image-loaded? {:display :block} {:display :none}))
-          [:picture {:onLoad show-image!}
+          [:picture (use-style s-global/clickable
+                               {:onLoad show-image!
+                                :on-click next})
            (when webp?
              [:source (use-style pstyle/photo-in-modal {:type "image/webp" :alt description :srcSet webp-url})])
            [:source (use-style pstyle/photo-in-modal {:type "image/jpeg" :alt description :srcSet jpeg-url})]
@@ -59,16 +71,10 @@
          [:footer (use-style pstyle/photo-text)
           [:div description]
           [:div
-           [:a {:href "#" :on-click (fn [event]
-                                      (.preventDefault event)
-                                      (when (previous-index)
-                                        (reset! current-image-loaded? false)))}
+           [:a {:href "#" :on-click previous}
             "<"]
            [:span (use-style {:margin-left "1rem" :margin-right "1rem"}) " "]
-           [:a {:href "#" :on-click (fn [event]
-                                      (.preventDefault event)
-                                      (when (next-index)
-                                        (reset! current-image-loaded? false)))}
+           [:a {:href "#" :on-click next}
             ">"]]]]))))
 
 (defn view-photo-in-modal [index]
