@@ -24,8 +24,7 @@
   (let [next-index (dec @selected-photo-index)
         next-index-fixed (if (< next-index 0) 0 next-index)]
     (if (not= next-index-fixed @selected-photo-index)
-      (do
-        (reset! selected-photo-index next-index-fixed)
+      (do (reset! selected-photo-index next-index-fixed)
           true)
       false)))
 
