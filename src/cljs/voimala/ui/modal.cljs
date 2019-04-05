@@ -18,7 +18,7 @@
 
 (defn show-contents! [contents]
   (reset! modal-contents contents)
-  (.modal (jquery ".modal") "show"))
+  (js-invoke (jquery ".modal") "modal" "show"))
 
 (defn hide! []
   (reset! modal-contents nil))
