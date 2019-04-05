@@ -37,7 +37,7 @@
     (fn []
       (let [current-index @selected-photo-index
             {:keys [file-name description formats] :as photo} (get photodata/photos current-index)
-            webp? (boolean (formats photo))
+            webp? (boolean (:webp formats))
             webp-url (str "images/photos/" file-name ".webp")
             jpeg-url (str "images/photos/" file-name ".jpg")]
         [:div (use-style {:position :relative})
