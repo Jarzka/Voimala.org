@@ -23,35 +23,47 @@
     (reset! selected-photo-index next-index-fixed)))
 
 (defn photo-in-modal []
-  (let [image-loaded? (r/atom false)
-        show-image! (fn [] (reset! image-loaded? true))]
+  (let [first-image-loaded? (r/atom false)
+        current-image-loaded? (r/atom false)
+        show-image! (fn []
+                      (reset! first-image-loaded? true)
+                      (reset! current-image-loaded? true))]
     (fn []
       (let [current-index @selected-photo-index
             {:keys [file-name description formats] :as photo} (get photodata/photos current-index)
             webp? (boolean (formats photo))
             webp-url (str "images/photos/" file-name ".webp")
             jpeg-url (str "images/photos/" file-name ".jpg")]
-        [:div
-        (when-not @image-loaded?
-          [ui/loading-spinner])
-        [:div (use-style (if @image-loaded? {:display :block} {:display :none}))
-         [:picture {:onLoad show-image!}
-          (when webp?
-            [:source (use-style pstyle/photo-in-modal {:type "image/webp" :alt description :srcSet webp-url})])
-          [:source (use-style pstyle/photo-in-modal {:type "image/jpeg" :alt description :srcSet jpeg-url})]
-          [:img (use-style pstyle/photo-in-modal {:alt description :src jpeg-url :onLoad show-image!})]]]
-        [:footer (use-style pstyle/photo-text)
-         [:div description]
-         [:div
-          [:a {:href "#" :on-click (fn [event]
-                                     (.preventDefault event)
-                                     (previous-index))}
-           "<"]
-          [:span (use-style {:margin-left "1rem" :margin-right "1rem"}) " "]
-          [:a {:href "#" :on-click (fn [event]
-                                     (.preventDefault event)
-                                     (next-index))}
-           ">"]]]]))))
+        [:div (use-style {:position :relative})
+         (when-not @current-image-loaded?
+           [:div (use-style (when-not @first-image-loaded?
+                              {:margin-top "4rem"}))
+            [:div (use-style {:position :absolute
+                              :z-index 1000
+                              :top "50%"
+                              :left "50%"
+                              :transform "translateX(-50%) translateY(-80%)"})
+             [ui/loading-spinner]]])
+         [:div (use-style (if @first-image-loaded? {:display :block} {:display :none}))
+          [:picture {:onLoad show-image!}
+           (when webp?
+             [:source (use-style pstyle/photo-in-modal {:type "image/webp" :alt description :srcSet webp-url})])
+           [:source (use-style pstyle/photo-in-modal {:type "image/jpeg" :alt description :srcSet jpeg-url})]
+           [:img (use-style pstyle/photo-in-modal {:alt description :src jpeg-url :onLoad show-image!})]]]
+         [:footer (use-style pstyle/photo-text)
+          [:div description]
+          [:div
+           [:a {:href "#" :on-click (fn [event]
+                                      (.preventDefault event)
+                                      (reset! current-image-loaded? false)
+                                      (previous-index))}
+            "<"]
+           [:span (use-style {:margin-left "1rem" :margin-right "1rem"}) " "]
+           [:a {:href "#" :on-click (fn [event]
+                                      (.preventDefault event)
+                                      (reset! current-image-loaded? false)
+                                      (next-index))}
+            ">"]]]]))))
 
 (defn view-photo-in-modal [index]
   (modal/hide!)
