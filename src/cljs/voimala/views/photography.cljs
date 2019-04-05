@@ -15,12 +15,18 @@
   (let [max-possible-index (- (count photodata/photos) 1)
         next-index (inc @selected-photo-index)
         next-index-fixed (if (> next-index max-possible-index) max-possible-index next-index)]
-    (reset! selected-photo-index next-index-fixed)))
+    (if (not= next-index-fixed @selected-photo-index)
+      (do (reset! selected-photo-index next-index-fixed)
+          true)
+      false)))
 
 (defn previous-index []
   (let [next-index (dec @selected-photo-index)
         next-index-fixed (if (< next-index 0) 0 next-index)]
-    (reset! selected-photo-index next-index-fixed)))
+    (if (not= next-index-fixed @selected-photo-index)
+      (do (reset! selected-photo-index next-index-fixed)
+          true)
+      false)))
 
 (defn photo-in-modal []
   (let [first-image-loaded? (r/atom false)
@@ -56,13 +62,14 @@
            [:a {:href "#" :on-click (fn [event]
                                       (.preventDefault event)
                                       (reset! current-image-loaded? false)
-                                      (previous-index))}
+                                      (if (previous-index)
+                                        (reset! current-image-loaded? false)))}
             "<"]
            [:span (use-style {:margin-left "1rem" :margin-right "1rem"}) " "]
            [:a {:href "#" :on-click (fn [event]
                                       (.preventDefault event)
-                                      (reset! current-image-loaded? false)
-                                      (next-index))}
+                                      (if (next-index)
+                                        (reset! current-image-loaded? false)))}
             ">"]]]]))))
 
 (defn view-photo-in-modal [index]
@@ -99,72 +106,16 @@
             ^{:key index}
             [:div {:class row-class}
              [photo-thumb photo-data index]])
-          photodata/photos)]
+          (take 9 photodata/photos))]
 
-       ; TODO Convert to Clojure map
-       ; TODO Make the dialog code pretty
-       #_[:div (use-style (when-not @show-more? s-global/hidden)
-                          {:class "row"})
-          [:div {:class row-class}
-           [photo-thumb "_MG_5966" "Pyhä-Luoston kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_6339-HDR" "Pyhä-Luoston kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_6087-Pano" "Pyhä-Luoston kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_6311-Pano-2" "Pyhä-Luoston kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "winter7" "Urho Kekkosen kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_1101" "Ritajärven luonnonsuojelualue, Sastamala"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_7634-Pano" "Torronsuon kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_7548-Pano" "Torronsuon kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_7536-Pano" "Torronsuon kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_0302" "Salamajärven kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_0480-HDR" "Salamajärven kansallispuisto" true]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_5582" "Metsäpolku"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_5516-Pano" "Pukalan virkistysmetsä"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_5433"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_6881" "Kolin kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_6977" "Pirunkirkko, Kolin kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_6766-Pano" "Repoveden kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_5061" "Iso Helvetinjärvi, Helvetinjärven kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_5079" "Helvetinkolu, Helvetinjärven kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_5195-Pano" "Luomajärvi, Helvetinjärven kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_2401-HDR" "Maaliskuun Auringonlasku Vuoreksessa"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_4948-Pano" "Liesjärven kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "IMG_4720" "Iso-Melkutin, Melkuttimien reitit"]]
-          [:div {:class row-class}
-           [photo-thumb "animals3" "Lokki"]]
-          [:div {:class row-class}
-           [photo-thumb "20180107_121717" "Koitelinkoski"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_7194" "Virolainen, Tampere"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_4493" "Isojärven kansallispuisto"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_1702" "Ruskea virta, Korouma"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_1302" "Täyden kuun valossa, Sonkajärvi"]]
-          [:div {:class row-class}
-           [photo-thumb "_MG_0911-HDR" "Kivilinna, Sastamala"]]]
+       [:div (use-style (when-not @show-more? s-global/hidden)
+                        {:class "row"})
+        (map-indexed
+          (fn [index photo-data]
+            ^{:key index}
+            [:div {:class row-class}
+             [photo-thumb photo-data index]])
+          (subvec photodata/photos 9))]
 
        (when-not @show-more?
          [ui/button {:on-click #(reset! show-more? true)} "Show more photos"])
