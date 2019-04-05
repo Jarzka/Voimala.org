@@ -24,7 +24,8 @@
   (let [next-index (dec @selected-photo-index)
         next-index-fixed (if (< next-index 0) 0 next-index)]
     (if (not= next-index-fixed @selected-photo-index)
-      (do (reset! selected-photo-index next-index-fixed)
+      (do
+        (reset! selected-photo-index next-index-fixed)
           true)
       false)))
 
@@ -61,14 +62,13 @@
           [:div
            [:a {:href "#" :on-click (fn [event]
                                       (.preventDefault event)
-                                      (reset! current-image-loaded? false)
-                                      (if (previous-index)
+                                      (when (previous-index)
                                         (reset! current-image-loaded? false)))}
             "<"]
            [:span (use-style {:margin-left "1rem" :margin-right "1rem"}) " "]
            [:a {:href "#" :on-click (fn [event]
                                       (.preventDefault event)
-                                      (if (next-index)
+                                      (when (next-index)
                                         (reset! current-image-loaded? false)))}
             ">"]]]]))))
 
@@ -114,7 +114,7 @@
           (fn [index photo-data]
             ^{:key index}
             [:div {:class row-class}
-             [photo-thumb photo-data index]])
+             [photo-thumb photo-data (+ index 9)]])
           (subvec photodata/photos 9))]
 
        (when-not @show-more?
