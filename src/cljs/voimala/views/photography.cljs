@@ -42,12 +42,12 @@
             jpeg-url (str "images/photos/" file-name ".jpg")
             previous (fn [event]
                        (.preventDefault event)
-                       (when-not @current-image-loaded?
+                       (when @current-image-loaded?
                          (when (previous-index)
                            (reset! current-image-loaded? false))))
             next (fn [event]
                    (.preventDefault event)
-                   (when-not @current-image-loaded?
+                   (when @current-image-loaded?
                      (when (next-index)
                        (reset! current-image-loaded? false))))]
         [:div (use-style {:position :relative})
