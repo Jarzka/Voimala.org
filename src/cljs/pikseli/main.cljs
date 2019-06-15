@@ -1,18 +1,18 @@
-(ns voimala.main
+(ns pikseli.main
   (:require
     [stylefy.core :as stylefy :refer [use-style use-sub-style]]
-    [voimala.styles.global :as g-styles]
-    [voimala.styles.layout :as layout]
-    [voimala.views.welcome :as welcome-view]
-    [voimala.views.writing :as writing-view]
-    [voimala.views.photography :as photography-view]
-    [voimala.views.misc :as misc-view]
-    [voimala.views.contact :as contact-view]
-    [voimala.views.software :as software-view]
-    [voimala.views.music :as music-view]
-    [voimala.ui.modal :as modal]
+    [pikseli.styles.global :as g-styles]
+    [pikseli.styles.layout :as layout]
+    [pikseli.views.welcome :as welcome-view]
+    [pikseli.views.writing :as writing-view]
+    [pikseli.views.photography :as photography-view]
+    [pikseli.views.misc :as misc-view]
+    [pikseli.views.contact :as contact-view]
+    [pikseli.views.software :as software-view]
+    [pikseli.views.music :as music-view]
+    [pikseli.ui.modal :as modal]
     [reagent.core :as r]
-    [voimala.ui.general :as ui]))
+    [pikseli.ui.general :as ui]))
 
 (defn- site-footer []
   [:footer (use-style layout/site-footer)
@@ -21,7 +21,7 @@
     [:a {:href "http://clojurescript.org"} "ClojureScript"]
     ". "
     "Source code available "
-    [:a {:href "https://github.com/Jarzka/Voimala.org"} "here"]
+    [:a {:href "https://github.com/Jarzka/pikseli.org"} "here"]
     "."]])
 
 (defn- site-body []

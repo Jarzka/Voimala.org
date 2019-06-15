@@ -1,8 +1,8 @@
-(ns voimala.views.writing
+(ns pikseli.views.writing
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [voimala.ui.general :as ui]
+            [pikseli.ui.general :as ui]
             [reagent.core :as r]
-            [voimala.styles.global :as g-styles]))
+            [pikseli.styles.global :as g-styles]))
 
 (defn writing []
   (let [show-more? (r/atom false)]

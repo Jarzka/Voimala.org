@@ -1,4 +1,4 @@
-(ns voimala.ui.modal
+(ns pikseli.ui.modal
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [reagent.core :as r]))
 

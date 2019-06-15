@@ -1,6 +1,6 @@
-(ns voimala.data.software
+(ns pikseli.data.software
   (:require [cljs-time.core :as t]
-            [voimala.ui.general :as ui]))
+            [pikseli.ui.general :as ui]))
 
 
 (def technologies [{:id :jquery :name "jQuery" :url nil}

@@ -1,15 +1,15 @@
-(ns voimala.views.welcome
+(ns pikseli.views.welcome
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [voimala.ui.general :as ui]
-            [voimala.styles.layout :as layout]))
+            [pikseli.ui.general :as ui]
+            [pikseli.styles.layout :as layout]))
 
 (defn welcome []
   [:div
    [:header
     [:div (use-sub-style layout/site-header :logo-and-description)
-     [:a {:href "http://www.voimala.org"}
+     [:a {:href "http://www.pikseli.org"}
       [:img (merge (use-sub-style layout/site-header :logo)
-                   {:alt "Voimala.org" :src "images/logo.png"})]]
+                   {:alt "pikseli.org" :src "images/logo.png"})]]
      [:span (use-sub-style layout/site-header :site-description)
       "Portfolio of Jari Hanhela"]]]
 

@@ -1,12 +1,12 @@
-(ns voimala.views.music
+(ns pikseli.views.music
   (:require [reagent.core :as r]
             [cljs-time.core :as t]
             [cljs-time.format :as f]
             [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [voimala.ui.general :as ui]
-            [voimala.utils :as utils]
-            [voimala.styles.views.software :as pstyle]
-            [voimala.styles.global :as g-styles]))
+            [pikseli.ui.general :as ui]
+            [pikseli.utils :as utils]
+            [pikseli.styles.views.software :as pstyle]
+            [pikseli.styles.global :as g-styles]))
 
 (def videos-wrapper {:display :flex
                      :align-items :center

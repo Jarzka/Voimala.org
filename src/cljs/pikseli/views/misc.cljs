@@ -1,6 +1,6 @@
-(ns voimala.views.misc
+(ns pikseli.views.misc
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [voimala.ui.general :as ui]))
+            [pikseli.ui.general :as ui]))
 
 (defn misc []
   [:section
@@ -15,7 +15,7 @@
     ". This soundbank was originally created in 2009, but it has been updated many times since then. Warning: contains lots of cursing. :-)"]
    [:p "Download it"
     " "
-    [:a {:href "http://voimala.org/aarrearkku"}
+    [:a {:href "http://pikseli.org/aarrearkku"}
      "here"]
     ". See the trailer"
     " "

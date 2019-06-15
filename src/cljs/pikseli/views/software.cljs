@@ -1,11 +1,11 @@
-(ns voimala.views.software
+(ns pikseli.views.software
   (:require [reagent.core :as r]
             [cljs-time.core :as t]
             [cljs-time.format :as f]
             [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [voimala.ui.general :as ui]
-            [voimala.styles.views.software :as pstyle]
-            [voimala.styles.global :as g-styles]))
+            [pikseli.ui.general :as ui]
+            [pikseli.styles.views.software :as pstyle]
+            [pikseli.styles.global :as g-styles]))
 
 (defn- libraries []
   [:div

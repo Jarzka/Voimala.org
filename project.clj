@@ -1,6 +1,6 @@
-(defproject voimala "0.1.0-SNAPSHOT"
-  :description "Voimala.org Clojure Edition"
-  :url "http://www.voimala.org"
+(defproject Pikseli "1.0.0-SNAPSHOT"
+  :description "Pikseli.org"
+  :url "https://www.pikseli.org"
   :dependencies [[org.clojure/clojure "1.10.0"]
                  [org.clojure/clojurescript "1.10.439"]
                  [reagent "0.8.1"]
@@ -13,8 +13,8 @@
                  [garden "1.3.2"]
                  [com.andrewmcveigh/cljs-time "0.5.0"]
                  [com.taoensso/timbre "4.10.0"]
-                 [compojure "1.6.0"]]
-  :main voimala.core
+                 [compojure "1.6.0"]]vo
+  :main pikseli.core
   :aot :all
   :auto-clean false ; For uberjar
   :target-path "target/%s"
@@ -25,21 +25,21 @@
                  :timeout 120000}
   :cljsbuild {:builds [{:id           "dev"
                         :source-paths ["src/cljs"]
-                        :figwheel     {:on-jsload "voimala.main/start"
+                        :figwheel     {:on-jsload "pikseli.main/start"
                                        :websocket-host   "localhost"
                                        :heads-up-display false}
-                        :compiler     {:output-to     "resources/public/js/dev/voimala.js"
+                        :compiler     {:output-to     "resources/public/js/dev/pikseli.js"
                                        :output-dir    "resources/public/js/dev/out"
                                        :optimizations :none
                                        :pretty-print  true}}
                        {:id           "production"
                         :source-paths ["src/cljs"]
-                        :compiler     {:output-to     "resources/public/js/voimala.js"
+                        :compiler     {:output-to     "resources/public/js/pikseli.js"
                                        :output-dir    "resources/public/js/out"
                                        :optimizations :advanced}}]}
-  :clean-targets #^{:protect false} ["resources/public/js/dev/voimala.js"
+  :clean-targets #^{:protect false} ["resources/public/js/dev/pikseli.js"
                                      "resources/public/js/dev/out"
-                                     "resources/public/js/voimala.js"
+                                     "resources/public/js/pikseli.js"
                                      "resources/public/js/out"]
   :figwheel {:http-server-root "public"
              :css-dirs ["resources/public/css"]}

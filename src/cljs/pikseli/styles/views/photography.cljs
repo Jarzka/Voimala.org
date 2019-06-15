@@ -1,4 +1,4 @@
-(ns voimala.styles.views.photography
+(ns pikseli.styles.views.photography
   (:require [stylefy.core :as stylefy]
             [garden.color :as color]))
 

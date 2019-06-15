@@ -1,6 +1,6 @@
-(ns voimala.ui.general
+(ns pikseli.ui.general
   (:require [stylefy.core :as stylefy :refer [use-style]]
-            [voimala.styles.global :as g-styles]))
+            [pikseli.styles.global :as g-styles]))
 
 (defn- with-unique-keys [content]
   (map-indexed

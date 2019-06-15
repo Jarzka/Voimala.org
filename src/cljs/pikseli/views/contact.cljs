@@ -1,6 +1,6 @@
-(ns voimala.views.contact
+(ns pikseli.views.contact
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [voimala.ui.general :as ui]))
+            [pikseli.ui.general :as ui]))
 
 (defn contact []
   [:section

@@ -1,4 +1,4 @@
-(ns voimala.data.photography)
+(ns pikseli.data.photography)
 
 (def photos
   [; Shown by default

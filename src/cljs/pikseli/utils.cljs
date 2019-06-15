@@ -1,4 +1,4 @@
-(ns voimala.utils
+(ns pikseli.utils
   (:require [reagent.core :as r]))
 
 (def width (r/atom (.-innerWidth js/window)))

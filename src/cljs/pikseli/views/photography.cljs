@@ -1,11 +1,11 @@
-(ns voimala.views.photography
+(ns pikseli.views.photography
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [reagent.core :as r]
-            [voimala.styles.views.photography :as pstyle]
-            [voimala.styles.global :as s-global]
-            [voimala.data.photography :as photodata]
-            [voimala.ui.general :as ui]
-            [voimala.ui.modal :as modal])
+            [pikseli.styles.views.photography :as pstyle]
+            [pikseli.styles.global :as s-global]
+            [pikseli.data.photography :as photodata]
+            [pikseli.ui.general :as ui]
+            [pikseli.ui.modal :as modal])
   (:require-macros
     [cljs.core.async.macros :refer [go]]))
 

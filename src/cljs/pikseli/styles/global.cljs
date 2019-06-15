@@ -1,4 +1,4 @@
-(ns voimala.styles.global
+(ns pikseli.styles.global
   (:require [stylefy.core :as stylefy]
             [garden.color :as color]))
 
