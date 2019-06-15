@@ -12,7 +12,7 @@
                  [garden "1.3.2"]
                  [com.andrewmcveigh/cljs-time "0.5.0"]
                  [com.taoensso/timbre "4.10.0"]
-                 [compojure "1.6.0"]]vo
+                 [compojure "1.6.0"]]
   :main pikseli.core
   :aot :all
   :auto-clean false ; For uberjar
