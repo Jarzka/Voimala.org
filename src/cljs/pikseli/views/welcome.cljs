@@ -23,4 +23,4 @@
      [:a {:href "#music"} "music"] [:span ", "]
      [:a {:href "#misc"} "games"] [:span " etc. "]
      [:span "Feel free to explore!"]]
-    [:p "Contents updated: 17.3.2019."]]])
+    [:p "Contents updated: 16.6.2019."]]])

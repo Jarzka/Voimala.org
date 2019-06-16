@@ -126,8 +126,8 @@
          [ui/button {:on-click #(reset! show-more? true)} "Show more photos"])
 
        [:br]
-       [:p "I mostly photograph the natural beauty of Finland. Please notice that all of my photos are copyrighted and you are not allowed to use them without permission. If you want to license my photos, please "
-        [:a {:href "#contact"} "contact me"]
+       [:p "I mostly photograph the natural beauty of Finland. Please notice that all my photos are copyrighted and you are not allowed to use them without permission. If you want to support my work, consider buying a print by"
+        [:a {:href "#contact"} "contacting me"]
         [:span "."]]
        [:p "Follow me on "
         [:a {:href "https://www.instagram.com/jarzka.90"}
