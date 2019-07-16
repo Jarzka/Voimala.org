@@ -2,23 +2,20 @@
 
 (def photos
   [; Shown by default
-   {:file-name "1"
-    :description "Salamajärven kansallispuisto"
-    :formats #{:jpg}}
    {:file-name "2"
     :description "Salamajärven kansallispuisto, Koirasalmen nuotiopaikka"
     :formats #{:jpg :webp}}
-   {:file-name "3"
-    :description "Kolin kansallispuisto"
+   {:file-name "_MG_5995-HDR"
+    :description "Auringonlasku, Puurijärven ja Isonsuon kansallispuisto"
     :formats #{:jpg}}
-   {:file-name "4"
-    :description "Pyhä-Luoston kansallispuisto"
-    :formats #{:jpg}}
-   {:file-name "5"
-    :description "Hillosenselkä, Orilammen Maja ja Lomakeskus"
+   {:file-name "_MG_3563-HDR"
+    :description "Auringonlasku, Kurjenrahkan kansallispuisto"
     :formats #{:jpg}}
    {:file-name "6"
     :description "Riisitunturin kansallispuisto, Posio"
+    :formats #{:jpg}}
+   {:file-name "5"
+    :description "Hillosenselkä, Orilammen Maja ja Lomakeskus"
     :formats #{:jpg}}
    {:file-name "7"
     :description "Riisitunturin kansallispuisto, autiotupa"
@@ -29,6 +26,9 @@
    {:file-name "9"
     :description "Korouma, Posio"
     :formats #{:jpg :webp}}
+   {:file-name "_MG_1302"
+    :description "Täyden kuun valossa, Sonkajärvi"
+    :formats #{:jpg}}
 
    ; "More photos"
 
@@ -42,6 +42,9 @@
     :description "Pyhä-Luoston kansallispuisto"
     :formats #{:jpg}}
    {:file-name "_MG_6311-Pano-2"
+    :description "Pyhä-Luoston kansallispuisto"
+    :formats #{:jpg}}
+   {:file-name "4"
     :description "Pyhä-Luoston kansallispuisto"
     :formats #{:jpg}}
    {:file-name "winter7"
@@ -65,6 +68,9 @@
    {:file-name "_MG_0480-HDR"
     :description "Salamajärven kansallispuisto"
     :formats #{:jpg :webp}}
+   {:file-name "1"
+    :description "Salamajärven kansallispuisto"
+    :formats #{:jpg}}
    {:file-name "IMG_5582"
     :description "Metsäpolku"
     :formats #{:jpg}}
@@ -74,14 +80,14 @@
    {:file-name "_MG_6881"
     :description "Kolin kansallispuisto"
     :formats #{:jpg}}
+   {:file-name "3"
+    :description "Kolin kansallispuisto"
+    :formats #{:jpg}}
    {:file-name "_MG_6977"
     :description "Pirunkirkko, Kolin kansallispuisto"
     :formats #{:jpg}}
    {:file-name "_MG_6766-Pano"
     :description "Repoveden kansallispuisto"
-    :formats #{:jpg}}
-   {:file-name "IMG_5079"
-    :description "Helvetinkolu, Helvetinjärven kansallispuisto"
     :formats #{:jpg}}
    {:file-name "IMG_5195-Pano"
     :description "Luomajärvi, Helvetinjärven kansallispuisto"
@@ -98,9 +104,6 @@
    {:file-name "animals3"
     :description "Lokki"
     :formats #{:jpg}}
-   {:file-name "20180107_121717"
-    :description "Koitelinkoski"
-    :formats #{:jpg}}
    {:file-name "_MG_7194"
     :description "Virolainen, Tampere"
     :formats #{:jpg}}
@@ -110,18 +113,12 @@
    {:file-name "_MG_1702"
     :description "Ruskea virta, Korouma"
     :formats #{:jpg}}
-   {:file-name "_MG_1302"
-    :description "Täyden kuun valossa, Sonkajärvi"
-    :formats #{:jpg}}
    {:file-name "_MG_0911-HDR"
     :description "Kivilinna, Sastamala"
     :formats #{:jpg}}
    {:file-name "_MG_2523"
     :description "Maaseudun yö, lähellä Isojärven kansallispuistoa"
     :formats #{:jpg :webp}}
-   {:file-name "_MG_3563-HDR"
-    :description "Auringonlasku, Kurjenrahkan kansallispuisto"
-    :formats #{:jpg}}
    {:file-name "_MG_4295-HDR"
     :description "Öljylamppu, Kurjenrahkan kansallispuisto"
     :formats #{:jpg}}
@@ -136,9 +133,6 @@
     :formats #{:jpg}}
    {:file-name "_MG_5841-HDR"
     :description "Koski, Puurijärven ja Isonsuon kansallispuisto"
-    :formats #{:jpg}}
-   {:file-name "_MG_5995-HDR"
-    :description "Auringonlasku, Puurijärven ja Isonsuon kansallispuisto"
     :formats #{:jpg}}
    {:file-name "_MG_6004-HDR"
     :description "Lehmät, Puurijärven ja Isonsuon kansallispuisto"
