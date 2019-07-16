@@ -26,7 +26,7 @@
            :frameBorder "0"
            :src "https://www.youtube-nocookie.com/embed/bpmaJs93E88"
            :height "315"
-           :width layout-style/video-width}]]]
+           :width (layout-style/video-width)}]]]
 
        [:div (use-style (merge layout-style/videos-wrapper (when-not @show-more? g-styles/hidden)))
         [:div (use-style layout-style/iframe-wrapper)
@@ -36,7 +36,7 @@
            :frameBorder "0"
            :src "https://www.youtube-nocookie.com/embed/4mSYxiA6LAY"
            :height "315"
-           :width layout-style/video-width}]]
+           :width (layout-style/video-width)}]]
         [:div (use-style layout-style/iframe-wrapper)
          [:iframe
           {:allowFullScreen "allowfullscreen"
@@ -44,7 +44,7 @@
            :frameBorder "0"
            :src "https://www.youtube-nocookie.com/embed/BdxeatW4OcQ"
            :height "315"
-           :width layout-style/video-width}]]]
+           :width (layout-style/video-width)}]]]
 
        (when-not @show-more?
          [ui/button {:on-click #(reset! show-more? true)} "Show more music"])])))

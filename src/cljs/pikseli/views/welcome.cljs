@@ -21,6 +21,6 @@
      [:a {:href "#filming"} "filming"] [:span ", "]
      [:a {:href "#software"} "software"] [:span ", "]
      [:a {:href "#writing"} "writing"] [:span " and "]
-     [:a {:href "#music"} "music"] [:span "."]
+     [:a {:href "#music"} "music"] [:span ". "]
      [:span "Feel free to explore!"]]
     [:p "Contents updated: 16.7.2019."]]])

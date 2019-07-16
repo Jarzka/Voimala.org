@@ -17,4 +17,4 @@
        :frameBorder "0"
        :src "https://www.youtube-nocookie.com/embed/bdM4cXxxZb8"
        :height "315"
-       :width layout-style/video-width}]]]])
+       :width (layout-style/video-width)}]]]])
