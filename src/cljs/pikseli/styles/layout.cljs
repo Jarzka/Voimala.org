@@ -1,6 +1,7 @@
 (ns pikseli.styles.layout
   (:require [stylefy.core :as stylefy]
-            [garden.color :as color]))
+            [garden.color :as color]
+            [pikseli.utils :as utils]))
 
 (def dark-box {:border-radius "5px"
                :background-color "rgba(0, 0, 0, 0.85)"
@@ -37,3 +38,16 @@
 (def site-footer {:margin-top "1rem"
                   :font-size "0.9rem"
                   :text-align "center"})
+
+(def videos-wrapper {:display :flex
+                     :align-items :center
+                     :flex-direction :column})
+
+(def iframe-wrapper {:margin-bottom "1rem"})
+
+(defn video-width []
+  (let [video-width-full 560
+        video-width-mobile 320]
+    (str (if (>= @utils/width (+ video-width-full 20))
+           video-width-full
+           video-width-mobile))))

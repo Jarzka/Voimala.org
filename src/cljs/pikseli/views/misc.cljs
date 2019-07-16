@@ -23,8 +23,8 @@
      "here"]
     "."]
 
-   [:h2 "Steam Workshop items"]
-   [:p "My"
+   #_[:h2 "Steam Workshop items"]
+   #_[:p "My"
     " "
     [:a {:href "https://steamcommunity.com/id/jarzka/myworkshopfiles/"}
      "Steam Workshop files"]

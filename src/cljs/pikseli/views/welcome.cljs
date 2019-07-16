@@ -18,9 +18,9 @@
     [:p "This is a personal website / portfolio of Jari Hanhela, also known as Jarzka."]
     [:p "The site is the result of my creative mind. It contains projects related to "
      [:a {:href "#photography"} "photography"] [:span ", "]
+     [:a {:href "#filming"} "filming"] [:span ", "]
      [:a {:href "#software"} "software"] [:span ", "]
-     [:a {:href "#writing"} "writing"] [:span ", "]
-     [:a {:href "#music"} "music"] [:span ", "]
-     [:a {:href "#misc"} "games"] [:span " etc. "]
+     [:a {:href "#writing"} "writing"] [:span " and "]
+     [:a {:href "#music"} "music"] [:span "."]
      [:span "Feel free to explore!"]]
-    [:p "Contents updated: 16.6.2019."]]])
+    [:p "Contents updated: 16.7.2019."]]])

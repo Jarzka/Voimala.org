@@ -10,6 +10,7 @@
     [pikseli.views.contact :as contact-view]
     [pikseli.views.software :as software-view]
     [pikseli.views.music :as music-view]
+    [pikseli.views.filming :as filming-view]
     [pikseli.ui.modal :as modal]
     [reagent.core :as r]
     [pikseli.ui.general :as ui]))
@@ -31,6 +32,7 @@
     [:main
      [welcome-view/welcome]
      [photography-view/photography]
+     [filming-view/filming]
      [software-view/software]
      [writing-view/writing]
      [music-view/music]
