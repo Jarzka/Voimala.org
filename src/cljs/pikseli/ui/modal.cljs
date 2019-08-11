@@ -21,4 +21,5 @@
   (js-invoke (jquery ".modal") "modal" "show"))
 
 (defn hide! []
+  (js-invoke (jquery ".modal") "modal" "hide")
   (reset! modal-contents nil))

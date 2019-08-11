@@ -49,7 +49,10 @@
                    (.preventDefault event)
                    (when @current-image-loaded?
                      (when (next-index)
-                       (reset! current-image-loaded? false))))]
+                       (reset! current-image-loaded? false))))
+            close (fn [event]
+                    (.preventDefault event)
+                    (modal/hide!))]
         [:div (use-style {:position :relative})
          (when-not @current-image-loaded?
            [:div (use-style (when-not @first-image-loaded?
@@ -75,7 +78,10 @@
             "<"]
            [:span (use-style {:margin-left "1rem" :margin-right "1rem"}) " "]
            [:a {:href "#" :on-click next}
-            ">"]]]]))))
+            ">"]
+           [:span (use-style {:margin-left "1rem" :margin-right "1rem"}) " "]
+           [:a {:href "#" :on-click close}
+            "Close"]]]]))))
 
 (defn view-photo-in-modal [index]
   (modal/hide!)
@@ -96,7 +102,8 @@
 
 (defn photography []
   (let [show-more? (r/atom false)
-        row-class "col-12 col-md-6 col-lg-4"]
+        row-class "col-12 col-md-6 col-lg-4"
+        show-n-photos-by-default 9]
     (fn []
       [:section
        [:a {:id "photography"}]
@@ -111,7 +118,7 @@
             ^{:key index}
             [:div {:class row-class}
              [photo-thumb photo-data index]])
-          (take 9 photodata/photos))]
+          (take show-n-photos-by-default photodata/photos))]
 
        [:div (use-style (when-not @show-more? s-global/hidden)
                         {:class "row"})
@@ -119,8 +126,8 @@
           (fn [index photo-data]
             ^{:key index}
             [:div {:class row-class}
-             [photo-thumb photo-data (+ index 9)]])
-          (subvec photodata/photos 9))]
+             [photo-thumb photo-data (+ index show-n-photos-by-default)]])
+          (subvec photodata/photos show-n-photos-by-default))]
 
        (when-not @show-more?
          [ui/button {:on-click #(reset! show-more? true)} "Show more photos"])
