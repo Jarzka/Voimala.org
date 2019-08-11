@@ -8,8 +8,8 @@
    {:file-name "_MG_5995-HDR"
     :description "Auringonlasku, Puurijärven ja Isonsuon kansallispuisto"
     :formats #{:jpg}}
-   {:file-name "_MG_3563-HDR"
-    :description "Auringonlasku, Kurjenrahkan kansallispuisto"
+   {:file-name "_MG_9486-HDR"
+    :description "Päijänne hiljenee"
     :formats #{:jpg}}
    {:file-name "6"
     :description "Riisitunturin kansallispuisto, Posio"
@@ -34,22 +34,22 @@
 
    {:file-name "DJI_0015-HDR-Pano"
     :description "Selkä-Sarvi, Perämeren kansallispuisto"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "DJI_0158-HDR"
     :description "Saana"
     :formats #{:jpg}}
    {:file-name "DJI_0380-HDR"
     :description "Lemmenjoki, Lemmenjoen kansallispuisto"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_8003"
     :description "Lemmenjoen tunnelmissa"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_8238-HDR"
     :description "Metsäpolku Lemmenjoella"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "DJI_0500-HDR-Pano"
     :description "Utö, Suomen eteläisin vakituisesti asuttu saari"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_8970"
     :description "Utön majakka iltahämärässä"
     :formats #{:jpg}}
@@ -58,25 +58,25 @@
     :formats #{:jpg}}
    {:file-name "_MG_9057"
     :description "Yössä loistaa Utön majakka"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "DJI_0575-HDR-Pano"
     :description "Päijänteen kansallispuiston maisemia"
     :formats #{:jpg}}
    {:file-name "DJI_0755-Pano"
     :description "Selkämeri (kuvattu Porissa)"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_7088-Pano-2"
     :description "Selkämeren rantaa"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_6628-HDR"
     :description "Juhannuksellinen auringonlasku"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_7373"
     :description "Auringonlasku jossain päin Torniota"
     :formats #{:jpg}}
    {:file-name "_MG_7445"
     :description "Kostea metsäpolku Torniossa"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_7555"
     :description "Lampaita Perämeren kansallispuistossa"
     :formats #{:jpg}}
@@ -85,16 +85,16 @@
     :formats #{:jpg}}
    {:file-name "_MG_7675"
     :description "Metsäpolku Selkä-Sarvessa"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_7698"
     :description "Poro Pallas-Ylläksellä"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_8594-Pano"
     :description "Pyhä-Luoston kansallispuiston maisemia"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_8664-Pano"
     :description "Isokuru, Pyhä-Luoston kansallispuisto"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_6311-Pano-2"
     :description "Pyhä-Luoston kansallispuisto"
     :formats #{:jpg}}
@@ -103,7 +103,7 @@
     :formats #{:jpg}}
    {:file-name "_MG_8842-HDR"
     :description "Pyhä-Luoston suomaisemaa"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "4"
     :description "Pyhä-Luoston kansallispuisto"
     :formats #{:jpg}}
@@ -112,15 +112,15 @@
     :formats #{:jpg}}
    {:file-name "_MG_9138-HDR"
     :description "Hiljaisuus"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_9280"
     :description "Kelventeen metsäpolku, Päijänteen kansallispuisto"
-    :formats #{:jpg}}
+    :formats #{:jpg :webp}}
    {:file-name "_MG_9353"
     :description "Kelventeen harjuja, Päijänteen kansallispuisto"
     :formats #{:jpg}}
-   {:file-name "_MG_9486-HDR"
-    :description "Päijänne hiljenee"
+   {:file-name "_MG_3563-HDR"
+    :description "Auringonlasku, Kurjenrahkan kansallispuisto"
     :formats #{:jpg}}
    {:file-name "winter7"
     :description "Urho Kekkosen kansallispuisto"
