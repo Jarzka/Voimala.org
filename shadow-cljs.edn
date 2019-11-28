@@ -19,4 +19,5 @@
  {:frontend
   {:target :browser
    :output-dir "resources/public/js"
+   :devtools {:after-load pikseli.main/start}
    :modules {:main {:init-fn pikseli.main/start}}}}}
