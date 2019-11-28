@@ -48,7 +48,7 @@
     :description "Metsäpolku Lemmenjoella"
     :formats #{:jpg :webp}}
    {:file-name "DJI_0500-HDR-Pano"
-    :description "Utö, Suomen eteläisin vakituisesti asuttu saari (kuva otettu ilmakuvauskieltoalueelle Puolustusvoimien luvalla)."
+    :description "Utö, Suomen eteläisin vakituisesti asuttu saari (kuva otettu ilmakuvauskieltoalueella Puolustusvoimien luvalla)."
     :formats #{:jpg :webp}}
    {:file-name "_MG_8970"
     :description "Utön majakka iltahämärässä"
