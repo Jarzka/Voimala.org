@@ -72,7 +72,7 @@
            [:source (use-style pstyle/photo-in-modal {:type "image/jpeg" :alt description :srcSet jpeg-url})]
            [:img (use-style pstyle/photo-in-modal {:alt description :src jpeg-url :onLoad show-image!})]]]
          [:footer (use-style pstyle/photo-text)
-          [:div description]
+          [:div (if @current-image-loaded? description "Loading...")]
           [:div
            [:a {:href "#" :on-click previous}
             "<"]
