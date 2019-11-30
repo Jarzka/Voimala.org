@@ -223,4 +223,79 @@
     :formats #{:jpg}}
    {:file-name "_MG_6479"
     :description "Iltausva"
-    :formats #{:jpg}}])
+    :formats #{:jpg}}
+   {:file-name "_MG_0079"
+    :description "Syksyinen polku, Seitsemisen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_9961"
+    :description "Sienet puussa, Seitsemisen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "DJI_0621"
+    :description "Järvet, Seitsemisen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_0138"
+    :description "Sieni, Seitsemisen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_0148"
+    :description "Rakennukset, Seitsemisen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_9940"
+    :description "Kaatunut puu, Seitsemisen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_0429"
+    :description "Halaajasieni, Pyhä-Häkin kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_0451"
+    :description "Lävistetty sieni, Pyhä-Häkin kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_0536"
+    :description "Kaatuneita puita, Pyhä-Häkin kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_0581-HDR"
+    :description "Auringonlasku laituria vasten, Pyhä-Häkin kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_0656-HDR"
+    :description "Täysikuu, lähellä Pyhä-Häkin kansallispuistoa"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_0768-HDR"
+    :description "Metsämaisema, Leivonmäen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_0816"
+    :description "Aukio keskellä metsää, Leivonmäen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1048"
+    :description "Puu kurottaa kohti ojaa"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1094-HDR"
+    :description "Hiljaisuus"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1160"
+    :description "Koski, Leivonmäen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1185"
+    :description "Koski, Leivonmäen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1192"
+    :description "Laituri, Leivonmäen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "DJI_0668-HDR"
+    :description "Joutsniemi, Leivonmäen kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1406-HDR"
+    :description "Auringonlasku, lähellä Leivonmäen kansallispuistoa"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1515"
+    :description "Täyden kuun valossa on hyvä nukahtaa."
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1602"
+    :description "Syksyinen metsä, Isojärven kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1656"
+    :description "Usvainen syysmetsä, Isojärven kansallispuisto"
+    :formats #{:jpg :webp}}
+   {:file-name "_MG_1997"
+    :description "Marraskuu. Kuvattu Mulkkujärven kierroksella."
+    :formats #{:jpg :webp}}
+
+
+   ])
