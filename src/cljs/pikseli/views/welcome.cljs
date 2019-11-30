@@ -1,6 +1,6 @@
 (ns pikseli.views.welcome
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [pikseli.ui.general :as ui]
+            [pikseli.styles.global :as g-styles]
             [pikseli.styles.layout :as layout]))
 
 (defn welcome []
@@ -23,4 +23,4 @@
      [:a {:href "#writing"} "writing"] [:span " and "]
      [:a {:href "#music"} "music"] [:span ". "]
      [:span "Feel free to explore!"]]
-    [:p "Contents updated: 30.11.2019."]]])
+    [:p (use-style g-styles/text-small) "Contents updated: 30.11.2019."]]])
