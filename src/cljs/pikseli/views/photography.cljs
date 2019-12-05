@@ -45,6 +45,7 @@
      (when webp?
        [:source {:type "image/webp" :alt description :srcSet webp-url}])
      [:source {:type "image/jpeg" :alt description :srcSet jpeg-url}]
+     ^{:key image-index} ; Important: we want to display the buffered image, also helps Firefox to render the image correctly
      [:img (use-style style {:alt description :src jpeg-url :onLoad show-image!})]]))
 
 (defn photo-in-modal []
