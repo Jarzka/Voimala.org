@@ -5,6 +5,10 @@
 (def photo {:width "100%"
             :margin-bottom "0.5rem"})
 
+(def buffer-photo {:visibility :hidden
+                   :width "0 !important"
+                   :height "0 !important"})
+
 (def photo-in-modal {:display :block
                      :margin-left "auto"
                      :margin-right "auto"

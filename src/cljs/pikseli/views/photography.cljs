@@ -11,22 +11,41 @@
 
 (def selected-photo-index (r/atom nil))
 
-(defn next-index []
+(defn next-index [index]
   (let [max-possible-index (- (count photodata/photos) 1)
-        next-index (inc @selected-photo-index)
+        next-index (inc index)
         next-index-fixed (if (> next-index max-possible-index) max-possible-index next-index)]
-    (if (not= next-index-fixed @selected-photo-index)
-      (do (reset! selected-photo-index next-index-fixed)
+    next-index-fixed))
+
+(defn previous-index [index]
+  (let [next-index (dec index)
+        next-index-fixed (if (< next-index 0) 0 next-index)]
+    next-index-fixed))
+
+(defn set-next-index! []
+  (let [next-index (next-index @selected-photo-index)]
+    (if (not= next-index @selected-photo-index)
+      (do (reset! selected-photo-index next-index)
           true)
       false)))
 
-(defn previous-index []
-  (let [next-index (dec @selected-photo-index)
-        next-index-fixed (if (< next-index 0) 0 next-index)]
-    (if (not= next-index-fixed @selected-photo-index)
-      (do (reset! selected-photo-index next-index-fixed)
+(defn set-previous-index! []
+  (let [next-index (previous-index @selected-photo-index)]
+    (if (not= next-index @selected-photo-index)
+      (do (reset! selected-photo-index next-index)
           true)
       false)))
+
+(defn- picture [{:keys [picture-attributes style image-index show-image!]}]
+  (let [{:keys [file-name description formats] :as photo} (get photodata/photos image-index)
+        webp-url (str "images/photos/" file-name ".webp")
+        jpeg-url (str "images/photos/" file-name ".jpg")
+        webp? (boolean (:webp formats))]
+    [:picture picture-attributes
+     (when webp?
+       [:source {:type "image/webp" :alt description :srcSet webp-url}])
+     [:source {:type "image/jpeg" :alt description :srcSet jpeg-url}]
+     [:img (use-style style {:alt description :src jpeg-url :onLoad show-image!})]]))
 
 (defn photo-in-modal []
   (let [first-image-loaded? (r/atom false)
@@ -35,24 +54,24 @@
                       (reset! first-image-loaded? true)
                       (reset! current-image-loaded? true))]
     (fn []
-      (let [current-index @selected-photo-index
-            {:keys [file-name description formats] :as photo} (get photodata/photos current-index)
-            webp? (boolean (:webp formats))
-            webp-url (str "images/photos/" file-name ".webp")
-            jpeg-url (str "images/photos/" file-name ".jpg")
+      (let [previous-index-value (previous-index @selected-photo-index)
+            current-index-value @selected-photo-index
+            next-index-value (next-index @selected-photo-index)
+            {:keys [description] :as photo} (get photodata/photos current-index-value)
             previous (fn [event]
                        (.preventDefault event)
                        (when @current-image-loaded?
-                         (when (previous-index)
+                         (when (set-previous-index!)
                            (reset! current-image-loaded? false))))
             next (fn [event]
                    (.preventDefault event)
                    (when @current-image-loaded?
-                     (when (next-index)
+                     (when (set-next-index!)
                        (reset! current-image-loaded? false))))
             close (fn [event]
                     (.preventDefault event)
                     (modal/hide!))]
+
         [:div (use-style {:position :relative})
          (when-not @current-image-loaded?
            [:div (use-style (when-not @first-image-loaded?
@@ -64,13 +83,16 @@
                               :transform "translateX(-50%) translateY(-80%)"})
              [ui/loading-spinner]]])
          [:div (use-style (if @first-image-loaded? {:display :block} {:display :none}))
-          [:picture (use-style s-global/clickable
-                               {:onLoad show-image!
-                                :on-click next})
-           (when webp?
-             [:source (use-style pstyle/photo-in-modal {:type "image/webp" :alt description :srcSet webp-url})])
-           [:source (use-style pstyle/photo-in-modal {:type "image/jpeg" :alt description :srcSet jpeg-url})]
-           [:img (use-style pstyle/photo-in-modal {:alt description :src jpeg-url :onLoad show-image!})]]]
+          [picture {:image-index previous-index-value
+                    :style pstyle/buffer-photo}]
+          [picture {:picture-attributes (use-style s-global/clickable
+                                           {:onLoad show-image!
+                                            :on-click next})
+                    :image-index current-index-value
+                    :show-image! show-image!
+                    :style pstyle/photo-in-modal}]
+          [picture {:image-index next-index-value
+                    :style pstyle/buffer-photo}]]
          [:footer (use-style pstyle/photo-text)
           [:div (if @current-image-loaded? description "Loading...")]
           [:div
