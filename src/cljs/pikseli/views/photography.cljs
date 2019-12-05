@@ -85,6 +85,7 @@
              [ui/loading-spinner]]])
          [:div (use-style (if @first-image-loaded? {:display :block} {:display :none}))
           [picture {:image-index previous-index-value
+                    :picture-attributes (use-style pstyle/buffer-photo)
                     :style pstyle/buffer-photo}]
           [picture {:picture-attributes (use-style s-global/clickable
                                            {:onLoad show-image!
@@ -93,6 +94,7 @@
                     :show-image! show-image!
                     :style pstyle/photo-in-modal}]
           [picture {:image-index next-index-value
+                    :picture-attributes (use-style pstyle/buffer-photo)
                     :style pstyle/buffer-photo}]]
          [:footer (use-style pstyle/photo-text)
           [:div (if @current-image-loaded? description "Loading...")]

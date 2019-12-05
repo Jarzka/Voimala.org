@@ -6,6 +6,7 @@
             :margin-bottom "0.5rem"})
 
 (def buffer-photo {:visibility :hidden
+                   :display :block
                    :width "0 !important"
                    :height "0 !important"})
 
