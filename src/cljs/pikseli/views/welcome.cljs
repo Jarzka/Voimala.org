@@ -23,4 +23,4 @@
      [:a {:href "#writing"} "writing"] [:span " and "]
      [:a {:href "#music"} "music"] [:span ". "]
      [:span "Feel free to explore!"]]
-    [:p (use-style g-styles/text-small) "Contents updated: 30.11.2019."]]])
+    [:p (use-style g-styles/text-small) "Contents updated: 29.2.2020."]]])
