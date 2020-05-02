@@ -8,7 +8,7 @@
 
 (defn GET! [url {:keys [ok error] :as options}]
   (go
-    (let [{:keys [status body]} (<! (http-get "blog/posts.txt"))]
+    (let [{:keys [status body]} (<! (http-get url))]
       (if (= status 200)
         (ok body)
         (if error
