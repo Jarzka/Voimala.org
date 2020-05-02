@@ -35,20 +35,12 @@
      [main-content/content])])
 
 (defn- site-body []
-  (let [hash (r/atom (router/read-hash))] ; Update contents on hash change
-    (r/create-class
-      {:component-did-mount (fn []
-                              (reset! hash (router/read-hash))
-                              (router/on-hash-change!
-                                #(reset! hash (router/read-hash))))
-       :render
-       (fn []
-         [:div
-          [modal/modal-lg]
-          [:div (use-style layout/page-content)
-           [:main
-            [content]]
-           [site-footer]]])})))
+  [:div
+   [modal/modal-lg]
+   [:div (use-style layout/page-content)
+    [:main
+     [content]]
+    [site-footer]]])
 
 (defn- main-content []
   [site-body])

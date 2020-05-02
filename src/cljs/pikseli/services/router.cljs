@@ -1,16 +1,21 @@
 (ns pikseli.services.router
-  (:require [clojure.string :as string]))
+  (:require [clojure.string :as string]
+            [reagent.core :as r]))
 
 (def domain #{"pikseli" "pikselidev"})
 
-(defn read-hash []
+(defn- read-hash []
   (-> js/window
       .-location
       .-hash
       (string/replace "#" "")))
 
+(def hash-text (r/atom (read-hash))) ; Components can listen to the changes easily
+
 (defn on-hash-change! [changed]
   (set! (.. js/window -onhashchange) changed))
+
+(on-hash-change! #(reset! hash-text (read-hash)))
 
 (defn hash-valid? []
   (string/starts-with? (read-hash) "/"))
@@ -28,8 +33,6 @@
         blog-subdomains #{"blog" "metsassa" "metsässä" "kotonaikimetsassa" "kotonaikimetsässä"}]
     (boolean (when subdomain
                (blog-subdomains subdomain)))))
-
-
 
 (defn hash-points-to-blog? []
   (let [hash-first-part (first (hash-parts))

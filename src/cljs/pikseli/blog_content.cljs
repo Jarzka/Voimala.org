@@ -11,7 +11,8 @@
             [cljs.core.async :refer [<!]]
             [clojure.string :as string]
             [pikseli.styles.layout :as layout]
-            [pikseli.services.router :as router]))
+            [pikseli.services.router :as router]
+            [pikseli.styles.global :as g-styles]))
 
 (def loaded-posts (r/atom {}))
 
@@ -62,7 +63,9 @@
                metadata (when post
                           (:metadata (js->clj (metadata-parser post) :keywordize-keys true)))]
            [:article
-            (when post [:h1 (:title metadata)]) ; TODO Link to single post
+            (when post [:a {:href (str "#/blog/" post-id)}
+                        [:h1 (use-style g-styles/link)
+                         (:title metadata)]])
             (when-not post [blog-loader])
             ; Template needs to be rendered so that it is ready when to contents is set!
             [:div (use-style
@@ -106,7 +109,8 @@
               :default [blog-loader])]))})))
 
 (defn content []
-  (let [blog-post-id (router/blog-post-id)]
+  (let [hash @router/hash-text ; Listen changes!
+        blog-post-id (router/blog-post-id)]
     [:div
      [:header (use-style blog-style/header)
       [:a (use-style blog-style/back-to-pikseli {:href "http://www.pikseli.org"})
