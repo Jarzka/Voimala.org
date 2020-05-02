@@ -68,6 +68,6 @@
             [:img (merge (use-sub-style layout/site-header :logo)
                          {:alt "Kotona ikimetsässä" :src "images/logo.png"})]
             (cond
-              (nil? @posts) [loader/loader]
+              (empty? @posts) [loader/loader]
               error? "Virhe"
               all-files-loaded? [post-list @posts])]))})))
