@@ -38,7 +38,7 @@
                                       content (:content post)
                                       element (.getElementById js/document (str "postaus-" post-index))
                                       parsed (marked content)]
-                                  (println "Parsed: " parsed)
+                                  #_(println "Parsed: " parsed)
                                   ; TODO Include metadata and title in HTML page
                                   (set! (.. element -innerHTML) parsed))))
        :render

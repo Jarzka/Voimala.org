@@ -28,14 +28,14 @@
     [:a {:href "https://github.com/Jarzka/pikseli.org"} "here"]
     "."]])
 
-(defn content [hash]
+(defn content []
   [:div
-   (if (router/url-is-blog? hash)
+   (if (router/url-is-blog?)
      [blog-content/content]
      [main-content/content])])
 
 (defn- site-body []
-  (let [hash (r/atom (router/read-hash))]
+  (let [hash (r/atom (router/read-hash))] ; Update contents on hash change
     (r/create-class
       {:component-did-mount (fn []
                               (reset! hash (router/read-hash))
@@ -47,7 +47,7 @@
           [modal/modal-lg]
           [:div (use-style layout/page-content)
            [:main
-            [content @hash]]
+            [content]]
            [site-footer]]])})))
 
 (defn- main-content []
