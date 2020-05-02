@@ -51,6 +51,10 @@
 (stylefy/tag "blockquote" {:font-style :italic
                            :padding-left "1rem"})
 
+(def text-center {:text-align :center})
+
+(def text-smaller {:font-size "0.8rem"})
+
 ;; ****************************************************************
 ;; Headings
 ;; ****************************************************************
