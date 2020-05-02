@@ -1,11 +1,18 @@
 (ns pikseli.styles.layout
   (:require [stylefy.core :as stylefy]
             [garden.color :as color]
-            [pikseli.utils :as utils]))
+            [pikseli.utils :as utils]
+            [pikseli.styles.settings :as style-settings]))
 
 (def dark-box {:border-radius "5px"
                :background-color "rgba(0, 0, 0, 0.85)"
                :border "1px solid rgba(255, 255, 255, 0.1)"})
+
+(def light-box {:border-radius "5px"
+                :background-color "rgba(250, 250, 250, 0.95)"
+                :border "1px solid rgba(255, 255, 255, 0.9)"})
+
+(def themed-box (if style-settings/dark-mode? dark-box light-box))
 
 (def logo
   {:display :block
@@ -16,7 +23,7 @@
 
 (def site-header
   (merge
-    dark-box
+    themed-box
     {:display "flex"
      :flex-direction "row"
      :justify-content "center"
@@ -32,7 +39,7 @@
       :site-description {:padding-top "0.3rem"
                          :padding-bottom "0.3rem"}}}))
 
-(def page-content (merge dark-box
+(def page-content (merge themed-box
                          {:margin-left "auto"
                           :margin-right "auto"
                           :margin-top "1rem"
@@ -41,7 +48,7 @@
                           :padding "0.8rem"}))
 
 (def site-footer {:margin-top "1rem"
-                  :font-size "0.9rem"
+                  :font-size "0.75rem"
                   :text-align "center"})
 
 (def videos-wrapper {:display :flex

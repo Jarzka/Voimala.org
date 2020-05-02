@@ -1,5 +1,6 @@
 (ns pikseli.styles.global
   (:require [stylefy.core :as stylefy]
+            [pikseli.styles.settings :as style-settings]
             [garden.color :as color]))
 
 ;; ****************************************************************
@@ -12,6 +13,12 @@
 (def inline-block {:display "inline-block"})
 
 (def hidden {:display "none"})
+
+(def phone-width "400px")
+
+(defn on-mobile [style]
+  {::stylefy/media {{:max-width phone-width}
+                    style}})
 
 ;; ****************************************************************
 ;; Fonts & Colors
@@ -34,16 +41,18 @@
                     :font-weight "normal"
                     :font-style "italic"})
 
-(def colors {:text "#FFFFFF"
-             :link "#46aee5"
+(def colors {:text (if style-settings/dark-mode? "#eaeaea" "#121212")
+             :link (if style-settings/dark-mode? "#46aee5" "#b9511a")
              :background-secondary "rgba(14, 31, 40, 0.85)"
-             :header "#FFFFFF"})
+             :header (if style-settings/dark-mode? "#eaeaea" "#121212")})
 
 (def text-small {:font-size "0.8rem"})
 
 ;; ****************************************************************
 ;; Text
 ;; ****************************************************************
+
+(stylefy/class "body-loaded" {:color (:text colors)})
 
 (stylefy/tag "p" {:margin-top "0"
                   :margin-bottom "1rem"})
@@ -118,7 +127,7 @@
                 :overflow "hidden"
                 :min-width "120px"
                 :height "35px"
-                :color "#FFFFFF"
+                :color (:text colors)
                 :margin-right "5px"
                 :margin-bottom "5px"
                 :text-align "center"

@@ -1,12 +1,14 @@
 (ns pikseli.blog-content
   (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
+  (:require ["marked" :as marked]
+            ["markdown-yaml-metadata-parser" :as metadata-parser]
+            [stylefy.core :refer [use-style sub-style use-sub-style]]
             [pikseli.components.loader :as loader]
             [pikseli.services.ajax :as ajax]
+            [pikseli.styles.views.blog :as blog-style]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
-            ["marked" :as marked]
-            ["markdown-yaml-metadata-parser" :as metadata-parser]
+
             [clojure.string :as string]
             [pikseli.styles.layout :as layout]))
 
@@ -33,9 +35,11 @@
                               (doseq [post-index (range 0 (count parsed-posts))]
                                 (let [post (get parsed-posts post-index)
                                       content (:content post)
-                                      element (.getElementById js/document (str "postaus-" post-index))]
+                                      element (.getElementById js/document (str "postaus-" post-index))
+                                      parsed (marked content)]
+                                  (println "Parsed: " parsed)
                                   ; TODO Include metadata and title in HTML page
-                                  (set! (.. element -innerHTML) (marked content)))))
+                                  (set! (.. element -innerHTML) parsed))))
        :render
        (fn []
          [:div
@@ -45,7 +49,8 @@
               [:article
                ; TODO Link to single post
                [:h1 (:title metadata)]
-               [:div {:id (str "postaus-" index)}]])
+               [:div (use-style blog-style/blog-post
+                                {:id (str "postaus-" index)})]])
             parsed-posts)])})))
 
 (defn content []
@@ -70,7 +75,7 @@
            [:div
             [:a {:href "http://www.pikseli.org"}
              [:img (use-sub-style layout/site-header :logo-blog
-                                  {:alt "Kotona ikimetsässä" :src "images/logo_blog.png"})]]
+                                  {:alt "Kotona ikimetsässä" :src "images/logo_blog_dark.png"})]]
             (cond
               (empty? @posts) [loader/loader {:text "Odota hetki..."}]
               error? "Virhe"
