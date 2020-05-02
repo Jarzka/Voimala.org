@@ -9,30 +9,40 @@
     <link href="images/icon.jpg" rel="shortcut icon"/>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <!-- Loading screen -->
+    <style>
+        .init-body {
+            font-family: open_sans, Verdana, Helvetica, sans-serif;
+            color: #FFFFFF;
+            background: black url('images/background2.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .init-spinner {
+            background-color: rgba(0,0,0,0.5);
+            padding: 15px;
+            position: absolute;
+            width: 80px;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translateX(-50%) translateY(-100px);
+        }
+    </style>
     <style id="_stylefy-constant-styles_"></style>
     <style id="_stylefy-styles_"></style>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
-<body style="font-family: open_sans, Verdana, Helvetica, sans-serif;
-             color: #FFFFFF;
-             background: black url('images/background2.jpg');
-             background-repeat: no-repeat;
-             background-position: center;
-             background-attachment: fixed;
-             background-size: cover;
-             margin: 0;
-             padding: 0;">
+<body class="init-body body-loaded">
 <div id="app">
-    <div style="background-color: rgba(0,0,0,0.5);
-                            padding: 15px;
-                            position: absolute;
-                            width: 80px;
-                            top: 50%;
-                            left: 50%;
-                            text-align: center;
-                            transform: translateX(-50%) translateY(-100px);">
+    <div class="init-spinner">
         <img style="width: 100%" src="images/loading.gif"/>
     </div>
 </div>

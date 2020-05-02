@@ -12,3 +12,9 @@
                                     :width "80%"}]
                                   (at-media {:max-width g-styles/phone-width}
                                             [:img {:width "100%"}])]})
+
+(def header {:position :relative})
+
+(def back-to-pikseli {:position :absolute
+                      :left "0.1rem"
+                      :top "0.1rem"})
