@@ -29,6 +29,8 @@
     (boolean (when subdomain
                (blog-subdomains subdomain)))))
 
+
+
 (defn hash-points-to-blog? []
   (let [hash-first-part (first (hash-parts))
         blog-hash #{"blog" "kotonaikimetsassa" "kotonaikimetsässä"}]
