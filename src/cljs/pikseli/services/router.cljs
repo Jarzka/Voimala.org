@@ -8,4 +8,4 @@
       (string/replace "#" "")))
 
 (defn on-hash-change! [changed]
-  (set! js/window .-onhashchange changed))
+  (set! (.. js/window -onhashchange) changed))

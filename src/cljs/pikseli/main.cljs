@@ -29,29 +29,27 @@
     "."]])
 
 (defn content [hash]
-  (case hash
-    "blog" (blog-content/content)
-    "kotonaikimetsassa" (blog-content/content)
-    "kotonaikimetsässä" (blog-content/content)
-    (main-content/content)))
+  [:div
+   (case hash
+     "blog" (blog-content/content)
+     "kotonaikimetsassa" (blog-content/content)
+     "kotonaikimetsässä" (blog-content/content)
+     (main-content/content))])
 
 (defn- site-body []
   (let [hash (r/atom (router/read-hash))]
-
-    (println "HASH: " hash)
-
     (r/create-class
       {:component-did-mount (fn []
                               (reset! hash (router/read-hash))
                               (router/on-hash-change!
-                                (reset! hash (router/read-hash))))
+                                #(reset! hash (router/read-hash))))
        :render
        (fn []
          [:div
           [modal/modal-lg]
           [:div (use-style layout/page-content)
            [:main
-            [content hash]]
+            [content @hash]]
            [site-footer]]])})))
 
 (defn- main-content []
