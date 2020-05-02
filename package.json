@@ -7,6 +7,6 @@
     "create-react-class": "^15.6.3",
     "marked": "^1.0.0",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react-dom": "^16.11.0"
   }
 }

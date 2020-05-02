@@ -7,6 +7,13 @@
                :background-color "rgba(0, 0, 0, 0.85)"
                :border "1px solid rgba(255, 255, 255, 0.1)"})
 
+(def logo
+  {:display :block
+   :margin-left "auto"
+   :margin-right "auto"
+   :width "12rem"
+   :max-width "100%"})
+
 (def site-header
   (merge
     dark-box
@@ -18,12 +25,10 @@
      :padding-bottom "1rem"
      :padding-top "1rem"
      ::stylefy/sub-styles
-     {:logo-and-description {:text-align "center"}
-      :logo {:display :block
-             :margin-left "auto"
-             :margin-right "auto"
-             :width "12rem"
-             :max-width "100%"}
+     {:logo-and-description {:text-align "center"
+                             :margin-bottom "1rem"}
+      :logo (merge logo {:width "12rem"})
+      :logo-blog (merge logo {:width "29.5rem" :margin-bottom "2rem"})
       :site-description {:padding-top "0.3rem"
                          :padding-bottom "0.3rem"}}}))
 

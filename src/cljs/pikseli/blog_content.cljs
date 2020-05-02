@@ -6,6 +6,7 @@
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
             ["marked" :as marked]
+            ["markdown-yaml-metadata-parser" :as metadata-parser]
             [clojure.string :as string]
             [pikseli.styles.layout :as layout]))
 
@@ -26,24 +27,24 @@
      :error error}))
 
 (defn post-list [posts]
-  (r/create-class
-    {:component-did-mount (fn []
-                            (doseq [post-index (range 0 (count posts))]
-                              (let [post (get posts post-index)
-                                    element (.getElementById js/document (str "postaus-" post-index))]
-                                (set! (.. element -innerHTML) (marked post)))))
-     :render
-     (fn []
-       [:div
-        (map-indexed
-          (fn [index post]
-            ^{:key index}
-            [:article
-             [:h2 "Postaus"]
-             [:div {:id (str "postaus-" index)}]])
-          posts)])})
-
-  )
+  (let [parsed-posts (mapv #(js->clj (metadata-parser %) :keywordize-keys true) posts)]
+    (r/create-class
+      {:component-did-mount (fn []
+                              (doseq [post-index (range 0 (count parsed-posts))]
+                                (let [post (get parsed-posts post-index)
+                                      content (:content post)
+                                      element (.getElementById js/document (str "postaus-" post-index))]
+                                  (set! (.. element -innerHTML) (marked content)))))
+       :render
+       (fn []
+         [:div
+          (map-indexed
+            (fn [index {:keys [metadata] :as post}]
+              ^{:key index}
+              [:article
+               [:h1 (:title metadata)]
+               [:div {:id (str "postaus-" index)}]])
+            parsed-posts)])})))
 
 (defn content []
   (let [post-files (r/atom nil)
@@ -65,8 +66,9 @@
        (fn []
          (let [all-files-loaded? (= (count @posts) (count @post-files))]
            [:div
-            [:img (merge (use-sub-style layout/site-header :logo)
-                         {:alt "Kotona ikimetsässä" :src "images/logo.png"})]
+            [:a {:href "http://www.pikseli.org"}
+             [:img (use-sub-style layout/site-header :logo-blog
+                                  {:alt "Kotona ikimetsässä" :src "images/logo_blog.png"})]]
             (cond
               (empty? @posts) [loader/loader {:text "Odota hetki..."}]
               error? "Virhe"
