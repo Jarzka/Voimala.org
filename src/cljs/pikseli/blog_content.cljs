@@ -75,7 +75,7 @@
            [:div
             [:a {:href "http://www.pikseli.org"}
              [:img (use-sub-style layout/site-header :logo-blog
-                                  {:alt "Kotona ikimetsässä" :src "images/logo_blog_dark.png"})]]
+                                  {:alt "Kotona ikimetsässä" :src "images/logo_blog.png"})]]
             (cond
               (empty? @posts) [loader/loader {:text "Odota hetki..."}]
               error? "Virhe"
