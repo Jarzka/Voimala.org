@@ -7,6 +7,7 @@ The source code of my personal website. Does not include assets (images, project
 ## Develop
 
 ```bash
+npm install
 npx shadow-cljs watch frontend
 ```
 

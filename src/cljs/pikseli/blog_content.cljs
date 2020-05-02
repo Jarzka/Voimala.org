@@ -5,12 +5,12 @@
             [pikseli.services.ajax :as ajax]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
+            ["marked" :as marked]
             [clojure.string :as string]
             [pikseli.styles.layout :as layout]))
 
 (defn get-posts [files ok error]
   (doseq [file files]
-    (println "GET " (str "blog/" file))
     (ajax/GET!
       (str "blog/" file)
       {:ok ok
@@ -26,20 +26,33 @@
      :error error}))
 
 (defn post-list [posts]
-  [:div
-   (map-indexed
-     (fn [index post]
-       ^{:key index}
-       [:article
-        [:h2 "Postaus"]
-        (str post)])
-     posts)])
+  (r/create-class
+    {:component-did-mount (fn []
+                            (doseq [post-index (range 0 (count posts))]
+                              (let [post (get posts post-index)
+                                    element (.getElementById js/document (str "postaus-" post-index))]
+                                (set! (.. element -innerHTML) (marked post)))))
+     :render
+     (fn []
+       [:div
+        (map-indexed
+          (fn [index post]
+            ^{:key index}
+            [:article
+             [:h2 "Postaus"]
+             [:div {:id (str "postaus-" index)}]])
+          posts)])})
+
+  )
 
 (defn content []
   (let [post-files (r/atom nil)
         posts (r/atom [])
         error? false
         handle-error #(reset! error? true)]
+
+    (init-marked!)
+
     (r/create-class
       {:component-did-mount (fn []
                               (get-post-files
@@ -52,8 +65,6 @@
                                 handle-error))
        :render
        (fn []
-         (println "FILES: " @post-files)
-         (println "POSTS: " @posts)
          (let [all-files-loaded? (= (count @posts) (count @post-files))]
            [:div
             [:img (merge (use-sub-style layout/site-header :logo)
