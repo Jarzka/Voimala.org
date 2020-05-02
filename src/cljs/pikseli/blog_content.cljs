@@ -51,8 +51,6 @@
         error? false
         handle-error #(reset! error? true)]
 
-    (init-marked!)
-
     (r/create-class
       {:component-did-mount (fn []
                               (get-post-files
