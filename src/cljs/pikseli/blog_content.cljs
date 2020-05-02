@@ -9,9 +9,9 @@
             [pikseli.utils.dom :as dom]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
-
             [clojure.string :as string]
-            [pikseli.styles.layout :as layout]))
+            [pikseli.styles.layout :as layout]
+            [pikseli.services.router :as router]))
 
 (defn get-posts [files ok error]
   (doseq [file files]
@@ -58,7 +58,8 @@
   (let [post-files (r/atom nil)
         posts (r/atom [])
         error? false
-        handle-error #(reset! error? true)]
+        handle-error #(reset! error? true)
+        blog-post-id (router/blog-post-id)]
 
     (dom/set-title "Kotona ikimetsässä -retkiblogi")
 
