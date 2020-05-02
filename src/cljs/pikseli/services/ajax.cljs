@@ -1,5 +1,15 @@
 (ns pikseli.services.ajax
-  (:require [cljs-http.client :as http]))
+  (:require-macros [cljs.core.async.macros :refer [go]])
+  (:require [cljs-http.client :as http]
+            [cljs.core.async :refer [<!]]))
 
-(defn http-get [{:keys [url]}]
+(defn- http-get [url]
   (http/get url))
+
+(defn GET! [url {:keys [ok error] :as options}]
+  (go
+    (let [{:keys [status body]} (<! (http-get "blog/posts.txt"))]
+      (if (= status 200)
+        (ok body)
+        (if error
+          (error body))))))

@@ -7,17 +7,16 @@
             [clojure.string :as string]))
 
 (defn content []
-  (let [post-files nil
-        posts nil]
+  (let [post-files (r/atom nil)
+        posts (r/atom nil)]
     (r/create-class
       {:component-did-mount (fn []
-                              (go
-                                (let [response (:body (<! (ajax/http-get "blog/posts.txt")))
-                                      files (map #(string/replace % "\n" "")
-                                                 response)]
-                                  (reset! post-files files))))
+                              (ajax/GET!
+                                "blog/posts.txt"
+                                {:ok (fn [response]
+                                       (let [lines (string/split-lines response)]
+                                         (reset! post-files lines)))}))
        :render
        (fn []
-         (println "POST FILES: " post-files)
          (when (nil? posts)
            [loader/loader]))})))

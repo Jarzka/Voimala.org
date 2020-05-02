@@ -31,10 +31,10 @@
 (defn content [hash]
   [:div
    (case hash
-     "blog" (blog-content/content)
-     "kotonaikimetsassa" (blog-content/content)
-     "kotonaikimetsässä" (blog-content/content)
-     (main-content/content))])
+     "blog" [blog-content/content]
+     "kotonaikimetsassa" [blog-content/content]
+     "kotonaikimetsässä" [blog-content/content]
+     [main-content/content])])
 
 (defn- site-body []
   (let [hash (r/atom (router/read-hash))]
