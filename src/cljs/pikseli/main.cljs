@@ -1,6 +1,9 @@
 (ns pikseli.main
   (:require
     [stylefy.core :as stylefy :refer [use-style use-sub-style]]
+    [pikseli.blog-content :as blog-content]
+    [pikseli.main-content :as main-content]
+    [pikseli.services.router :as router]
     [pikseli.styles.global :as g-styles]
     [pikseli.styles.layout :as layout]
     [pikseli.views.welcome :as welcome-view]
@@ -25,20 +28,31 @@
     [:a {:href "https://github.com/Jarzka/pikseli.org"} "here"]
     "."]])
 
+(defn content [hash]
+  (case hash
+    "blog" (blog-content/content)
+    "kotonaikimetsassa" (blog-content/content)
+    "kotonaikimetsässä" (blog-content/content)
+    (main-content/content)))
+
 (defn- site-body []
-  [:div
-   [modal/modal-lg]
-   [:div (use-style layout/page-content)
-    [:main
-     [welcome-view/welcome]
-     [photography-view/photography]
-     [filming-view/filming]
-     [software-view/software]
-     [writing-view/writing]
-     [music-view/music]
-     [misc-view/misc]
-     [contact-view/contact]]
-    [site-footer]]])
+  (let [hash (r/atom (router/read-hash))]
+
+    (println "HASH: " hash)
+
+    (r/create-class
+      {:component-did-mount (fn []
+                              (reset! hash (router/read-hash))
+                              (router/on-hash-change!
+                                (reset! hash (router/read-hash))))
+       :render
+       (fn []
+         [:div
+          [modal/modal-lg]
+          [:div (use-style layout/page-content)
+           [:main
+            [content hash]]
+           [site-footer]]])})))
 
 (defn- main-content []
   [site-body])
