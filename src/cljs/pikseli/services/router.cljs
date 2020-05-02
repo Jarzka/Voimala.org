@@ -9,3 +9,10 @@
 
 (defn on-hash-change! [changed]
   (set! (.. js/window -onhashchange) changed))
+
+(defn url-is-blog? [hash]
+  (case hash
+    "blog" true
+    "kotonaikimetsassa" true
+    "kotonaikimetsässä" true
+    false))

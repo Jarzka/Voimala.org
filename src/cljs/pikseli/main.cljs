@@ -30,10 +30,8 @@
 
 (defn content [hash]
   [:div
-   (case hash
-     "blog" [blog-content/content]
-     "kotonaikimetsassa" [blog-content/content]
-     "kotonaikimetsässä" [blog-content/content]
+   (if (router/url-is-blog? hash)
+     [blog-content/content]
      [main-content/content])])
 
 (defn- site-body []

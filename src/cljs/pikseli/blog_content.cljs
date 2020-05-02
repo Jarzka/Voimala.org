@@ -13,7 +13,7 @@
 (defn get-posts [files ok error]
   (doseq [file files]
     (ajax/GET!
-      (str "blog/" file)
+      (str "blog/" file ".md")
       {:ok ok
        :error error})))
 
@@ -34,6 +34,7 @@
                                 (let [post (get parsed-posts post-index)
                                       content (:content post)
                                       element (.getElementById js/document (str "postaus-" post-index))]
+                                  ; TODO Include metadata and title in HTML page
                                   (set! (.. element -innerHTML) (marked content)))))
        :render
        (fn []
@@ -42,6 +43,7 @@
             (fn [index {:keys [metadata] :as post}]
               ^{:key index}
               [:article
+               ; TODO Link to single post
                [:h1 (:title metadata)]
                [:div {:id (str "postaus-" index)}]])
             parsed-posts)])})))
