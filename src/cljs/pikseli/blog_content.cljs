@@ -38,13 +38,12 @@
      :error error}))
 
 (defn single-full-blog-post [post-id]
-  (let [post-element-id (str "blog-post-" post-id)
+  (let [post-html (r/atom nil)
         set-contents! (fn [post]
                         (let [parsed-post (js->clj (metadata-parser post) :keywordize-keys true)
-                              element (.getElementById js/document post-element-id)
                               parsed (marked (:content parsed-post))]
                           ; TODO Include metadata and title in HTML page
-                          (set! (.. element -innerHTML) parsed)))]
+                          (reset! post-html parsed)))]
     (r/create-class
       {:component-did-mount
        (fn []
@@ -66,7 +65,9 @@
             (when post [:h1 (:title metadata)]) ; TODO Link to single post
             (when-not post [blog-loader])
             ; Template needs to be rendered so that it is ready when to contents is set!
-            [:div (use-style blog-style/blog-post {:id post-element-id})]]))})))
+            [:div (use-style
+                    blog-style/blog-post
+                    {:dangerouslySetInnerHTML {:__html @post-html}})]]))})))
 
 (defn post-list [posts]
   (let [post-ids (keys posts)]
