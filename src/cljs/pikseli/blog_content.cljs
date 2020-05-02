@@ -6,6 +6,7 @@
             [pikseli.components.loader :as loader]
             [pikseli.services.ajax :as ajax]
             [pikseli.styles.views.blog :as blog-style]
+            [pikseli.utils.dom :as dom]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
 
@@ -58,6 +59,8 @@
         posts (r/atom [])
         error? false
         handle-error #(reset! error? true)]
+
+    (dom/set-title "Kotona ikimetsässä -retkiblogi")
 
     (r/create-class
       {:component-did-mount (fn []
