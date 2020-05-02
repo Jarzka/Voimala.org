@@ -113,8 +113,11 @@
         blog-post-id (router/blog-post-id)]
     [:div
      [:header (use-style blog-style/header)
-      [:a (use-style blog-style/back-to-pikseli {:href "http://www.pikseli.org"})
-       "< Pikseli.org"]
+      (if blog-post-id
+        [:a (use-style blog-style/back-to-pikseli {:href "#/blog/"})
+         "< Blogin etusivu"]
+        [:a (use-style blog-style/back-to-pikseli {:href "http://www.pikseli.org"})
+        "< Pikseli.org"])
       [:img (use-sub-style layout/site-header :logo-blog
                            {:alt "Kotona ikimetsässä" :src "images/logo_blog.png"})]]
      (if blog-post-id
