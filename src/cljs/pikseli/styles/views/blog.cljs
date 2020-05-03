@@ -9,6 +9,8 @@
                                    {:display :block
                                     :margin-left :auto
                                     :margin-right :auto
+                                    :margin-top "0.5rem"
+                                    :margin-bottom "0.5rem"
                                     :width "80%"}]
                                   (at-media {:max-width g-styles/phone-width}
                                             [:img {:width "100%"}])]})
