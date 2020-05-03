@@ -21,7 +21,9 @@
      [:head
       [:title {:id "app-title"}
        (if blog?
-         (page-settings/page-title "/blog")
+         (str (when blog-post-id
+                (str (:title blog-post-metadata) " - "))
+              (page-settings/page-title "/blog"))
          (page-settings/page-title "/"))]
 
       [:meta {:content "width=device-width, initial-scale=1, maximum-scale=1", :name "viewport"}]
