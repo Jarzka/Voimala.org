@@ -18,3 +18,9 @@
 (def back-to-pikseli {:position :absolute
                       :left "0.1rem"
                       :top "0.1rem"})
+
+(def author-and-date {:margin-bottom "1rem"
+                      :position :relative
+                      :top "-0.5rem"
+                      :font-size "0.7rem"
+                      :color "#5a5a5a"})

@@ -5,38 +5,22 @@
             [stylefy.core :refer [use-style sub-style use-sub-style]]
             [pikseli.components.loader :as loader]
             [pikseli.services.ajax :as ajax]
+            [pikseli.services.blog :as blog-service]
             [pikseli.styles.views.blog :as blog-style]
             [pikseli.utils.dom :as dom]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
             [clojure.string :as string]
+            [cljs-time.format :as format]
+            [cljs-time.coerce :as tc]
             [pikseli.styles.layout :as layout]
             [pikseli.services.router :as router]
             [pikseli.styles.global :as g-styles]))
 
-(def loaded-posts (r/atom {}))
+(def blog-date-out-formatter (format/formatter "d.M.yyyy"))
 
 (defn blog-loader []
   [loader/loader {:text "Odota hetki..."}])
-
-(defn get-post [file-name ok error]
-  (ajax/GET!
-    (str "blog/" file-name ".md")
-    {:ok #(ok file-name %)
-     :error error}))
-
-(defn get-posts [file-names ok error]
-  (doseq [file-name file-names]
-    (get-post file-name ok error)))
-
-(defn get-post-files [ok error]
-  (ajax/GET!
-    "blog/posts.txt"
-    {:ok (fn [response]
-           (let [lines (string/split-lines response)
-                 lines-stored (sort lines)]
-             (ok lines-stored)))
-     :error error}))
 
 (defn single-full-blog-post [post-id]
   (let [post-html (r/atom nil)
@@ -48,24 +32,26 @@
     (r/create-class
       {:component-did-mount
        (fn []
-         (let [post (get @loaded-posts post-id)]
+         (let [post (get @blog-service/loaded-posts post-id)]
            (if post
              (set-contents! post)
-             (get-post post-id
-                       (fn [file-name contents]
-                         (swap! loaded-posts assoc file-name contents)
-                         (set-contents! contents))
-                       nil ; TODO handle error
-                       ))))
+             (blog-service/get-post post-id
+                                    (fn [file-name contents]
+                                      (swap! blog-service/loaded-posts assoc file-name contents)
+                                      (set-contents! contents))
+                                    nil ; TODO handle error
+                                    ))))
        :render
        (fn []
-         (let [post (get @loaded-posts post-id)
+         (let [post (get @blog-service/loaded-posts post-id)
                metadata (when post
                           (:metadata (js->clj (metadata-parser post) :keywordize-keys true)))]
            [:article
             (when post [:a {:href (str "#/blog/" post-id)}
                         [:h1 (use-style g-styles/link)
                          (:title metadata)]])
+            (when post [:span (use-style blog-style/author-and-date)
+                        (str (:author metadata) " - " (format/unparse blog-date-out-formatter (tc/from-date (:date metadata))))])
             (when-not post [blog-loader])
             ; Template needs to be rendered so that it is ready when to contents is set!
             [:div (use-style
@@ -91,21 +77,21 @@
     (r/create-class
       {:component-did-mount
        (fn []
-         (get-post-files
+         (blog-service/get-post-files
            (fn [file-names]
              (reset! post-file-names file-names)
-             (get-posts file-names
+             (blog-service/get-posts file-names
                         (fn [file-name contents]
-                          (swap! loaded-posts assoc file-name contents))
+                          (swap! blog-service/loaded-posts assoc file-name contents))
                         handle-error))
            handle-error))
        :render
        (fn []
-         (let [all-files-loaded? (= (count (keys @loaded-posts)) (count @post-file-names))]
+         (let [all-files-loaded? (= (count (keys @blog-service/loaded-posts)) (count @post-file-names))]
            [:div
             (cond
               error? "Virhe"
-              all-files-loaded? [post-list @loaded-posts]
+              all-files-loaded? [post-list @blog-service/loaded-posts]
               :default [blog-loader])]))})))
 
 (defn content []
