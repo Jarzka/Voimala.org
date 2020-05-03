@@ -12,7 +12,9 @@
   :plugins [[lein-cljsbuild "1.1.7"]
             [lein-ancient "0.6.10"]
             [lein-figwheel "0.5.18"]]
-  :repl-options {:port 1339
+  :repl-options {:init-ns pikseli.core
+                 :init (pikseli.core/-main)
+                 :port 1339
                  :timeout 120000}
   :cljsbuild {:builds [{:id           "dev"
                         :source-paths ["src/cljs"]

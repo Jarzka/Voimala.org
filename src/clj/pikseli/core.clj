@@ -14,12 +14,14 @@
     (@server :timeout 100)
     (reset! server nil)))
 
-(defn app [req]
+(defn app [request]
   {:status 200
    :headers {"Content-Type" "text/html"}
-   :body (str "<!DOCTYPE html>" (html (index/index req)))})
+   :body (str "<!DOCTYPE html>" (html (index/index request)))})
 
 (defn -main [& []]
   (println "Starting server...")
   (reset! server (run-server app {:port 8081}))
   (println "Server started!"))
+
+(-main)

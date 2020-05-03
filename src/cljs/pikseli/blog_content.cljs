@@ -7,6 +7,7 @@
             [pikseli.services.ajax :as ajax]
             [pikseli.services.blog :as blog-service]
             [pikseli.styles.views.blog :as blog-style]
+            [pikseli.page-settings :as page-settings]
             [pikseli.utils.dom :as dom]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
@@ -72,7 +73,7 @@
         error? false
         handle-error #(reset! error? true)]
 
-    (dom/set-title "Kotona ikimetsässä -retkiblogi")
+    (dom/set-title page-settings/blog-title)
 
     (r/create-class
       {:component-did-mount
