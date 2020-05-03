@@ -15,9 +15,14 @@
 
 (def header {:position :relative})
 
-(def back-to-pikseli {:position :absolute
-                      :left "0.1rem"
-                      :top "0.1rem"})
+(def back (merge
+            {:position :absolute
+            :left "0.1rem"
+            :top "0.1rem"}
+            (g-styles/on-mobile
+              {:position :static
+               :display :block
+               :margin-bottom "1rem"})))
 
 (def author-and-date {:margin-bottom "1rem"
                       :position :relative

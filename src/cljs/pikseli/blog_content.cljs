@@ -128,10 +128,10 @@
     [:div (use-style blog-style/blog-content)
      [:header (use-style blog-style/header)
       (if blog-post-id
-        [app-link {:style blog-style/back-to-pikseli
+        [app-link {:style blog-style/back
                    :uri "/blog/"}
          "< Blogin etusivu"]
-        [:a (use-style blog-style/back-to-pikseli {:href "https://pikseli.org"})
+        [:a (use-style blog-style/back {:href "https://pikseli.org"})
          "< Pikseli.org"])
       [app-link {:uri "/blog/"}
        [:img (use-sub-style layout/site-header :logo-blog
