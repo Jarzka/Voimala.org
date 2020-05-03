@@ -3,6 +3,7 @@
             [compojure.route :refer [files not-found resources]]
             [compojure.handler :refer [site]]
             [pikseli.index :as index]
+            [pikseli.settings :as settings]
             [hiccup.core :refer :all]
             [org.httpkit.server :refer :all])
   (:gen-class))
@@ -20,6 +21,7 @@
    :body (str "<!DOCTYPE html>" (html (index/index request)))})
 
 (defn -main [& []]
+  (settings/read-settings)
   (println "Starting server...")
   (reset! server (run-server app {:port 8081}))
   (println "Server started!"))

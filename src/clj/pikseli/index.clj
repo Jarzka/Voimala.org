@@ -1,11 +1,22 @@
 (ns pikseli.index
   (:require [pikseli.router :as router]
-            [pikseli.page-settings :as page-settings]))
+            [pikseli.page-settings :as page-settings]
+            [clojure.java.io :as io]
+            [pikseli.settings :as settings]
+            [markdown.core :refer [md-to-meta]]))
 
 (defn index [{:keys [uri headers] :as request}]
-  (let [blog? (router/uri-is-blog?
-                (get headers "host")
-                uri)]
+  (let [host (get headers "host")
+        blog? (router/uri-is-blog? host uri)
+        blog-post-id (router/blog-post-id uri)
+        blog-post (when blog-post-id
+                    (slurp (io/file
+                             (str (:resources-path @settings/settings)
+                                  "blog_posts/"
+                                  blog-post-id
+                                  ".md"))))
+        blog-post-metadata (md-to-meta blog-post)]
+
     [:html
      [:head
       [:title {:id "app-title"}
@@ -15,14 +26,16 @@
 
       [:meta {:content "width=device-width, initial-scale=1, maximum-scale=1", :name "viewport"}]
       [:meta {:charset "utf-8"}]
-      [:meta {:name "author", :content "Jari Hanhela"}]
+      [:meta {:name "author", :content (if-let [author (:author blog-post-metadata)]
+                                         author
+                                         "Jari Hanhela")}]
 
-      (when blog? [:meta {:property "og:url", :content "TODO"}])
-      (when blog? [:meta {:property "og:type", :content "blog"}]) ; TODO POST ID?
-      (when blog? [:meta {:property "og:title", :content "TODO"}])
-      (when blog? [:meta {:property "og:description", :content "TODO"}])
-      (when blog? [:meta {:property "twitter:title", :content "TODO"}])
-      (when blog? [:meta {:property "twitter:description", :content "TODO"}])
+      (when blog-post-id [:meta {:property "og:url", :content (str host uri)}])
+      (when blog-post-id [:meta {:property "og:type", :content (if blog-post-id "article" "blog")}])
+      (when blog-post-id [:meta {:property "og:title", :content (:title blog-post-metadata)}])
+      #_(when blog-post-id [:meta {:property "og:description", :content "TODO"}])
+      (when blog-post-id [:meta {:property "twitter:title", :content (:title blog-post-metadata)}])
+      #_(when blog-post-id [:meta {:property "twitter:description", :content "TODO"}])
 
       [:link {:href "/images/icon.jpg", :rel "shortcut icon"}]
       [:link {:rel "stylesheet", :href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :crossorigin "anonymous"}] "<!-- Loading screen -->"
