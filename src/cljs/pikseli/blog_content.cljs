@@ -79,7 +79,12 @@
                   (:title metadata)]]))
 
             (when post [:span (use-style blog-style/author-and-date)
-                        (str (:author metadata) " - " (format/unparse blog-date-out-formatter (tc/from-date (:date metadata))))])
+                        (str
+                          (when (:author metadata)
+                            (:author metadata))
+                         " - "
+                         (when (:date metadata)
+                           (format/unparse blog-date-out-formatter (tc/from-date (:date metadata)))))])
 
             (when-not post [blog-loader])
 
