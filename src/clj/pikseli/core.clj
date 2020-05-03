@@ -23,5 +23,3 @@
 (defn -main [& []]
   (settings/read-settings)
   (reset! server (run-server app {:port 8081})))
-
-(-main)
