@@ -2,13 +2,9 @@
   :description "Pikseli.org"
   :url "https://www.pikseli.org"
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [org.clojure/clojurescript "1.10.520"]
-                 [reagent "0.8.1"]
                  [http-kit "2.2.0"]
-                 [hiccup "1.0.5"]
-                 [stylefy "1.14.1"]
-                 [garden "1.3.2"]
-                 [com.andrewmcveigh/cljs-time "0.5.0"]]
+                 [compojure "1.4.0"]
+                 [hiccup "1.0.5"]]
   :main pikseli.core
   :aot :all
   :auto-clean false ; For uberjar
@@ -36,8 +32,5 @@
                                      "resources/public/js/dev/out"
                                      "resources/public/js/pikseli.js"
                                      "resources/public/js/out"]
-  :figwheel {:http-server-root "public"
-             :css-dirs ["resources/public/css"]}
-
   :source-paths ["src/clj" "src/cljc"]
   :test-paths ["test/clj"])
