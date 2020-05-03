@@ -38,8 +38,8 @@
 
 (defn- picture [{:keys [picture-attributes style image-index show-image!]}]
   (let [{:keys [file-name description formats] :as photo} (get photodata/photos image-index)
-        webp-url (str "images/photos/" file-name ".webp")
-        jpeg-url (str "images/photos/" file-name ".jpg")
+        webp-url (str "/images/photos/" file-name ".webp")
+        jpeg-url (str "/images/photos/" file-name ".jpg")
         webp? (boolean (:webp formats))]
     [:picture picture-attributes
      (when webp?
@@ -115,7 +115,7 @@
     (modal/show-contents! photo-in-modal)))
 
 (defn- photo-thumb [{:keys [file-name description formats] :as photo} index]
-  (let [jpeg-url (str "images/photos/" file-name ".jpg")]
+  (let [jpeg-url (str "/images/photos/" file-name ".jpg")]
     [:a {:href jpeg-url ; For SEO
          :on-click (fn [event]
                      (.preventDefault event)
