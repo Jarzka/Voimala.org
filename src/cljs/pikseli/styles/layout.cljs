@@ -15,10 +15,7 @@
 (def themed-box (if style-settings/dark-mode? dark-box light-box))
 
 (def logo
-  {:display :block
-   :margin-left "auto"
-   :margin-right "auto"
-   :width "12rem"
+  {:width "12rem"
    :max-width "100%"})
 
 (def site-header
@@ -33,11 +30,11 @@
      :padding-top "1rem"
      ::stylefy/sub-styles
      {:logo-and-description {:text-align "center"
-                             :margin-bottom "1rem"}
+                             :margin-bottom "1rem"
+                             :display :flex
+                             :flex-direction :column}
       :logo (merge logo {:width "12rem"})
-      :logo-blog (merge logo {:width "29.5rem" :margin-bottom "2rem"})
-      :site-description {:padding-top "0.3rem"
-                         :padding-bottom "0.3rem"}}}))
+      :logo-blog (merge logo {:width "29.5rem" :margin-bottom "2rem"})}}))
 
 (def page-content (merge themed-box
                          {:margin-left "auto"
