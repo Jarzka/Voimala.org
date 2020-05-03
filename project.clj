@@ -2,8 +2,9 @@
   :description "Pikseli.org"
   :url "https://www.pikseli.org"
   :dependencies [[org.clojure/clojure "1.10.1"]
-                 [http-kit "2.2.0"]
-                 [compojure "1.4.0"]
+                 [ring "1.8.1"]
+                 [http-kit "2.3.0"]
+                 [compojure "1.6.1"]
                  [markdown-clj "1.10.4"]
                  [hiccup "1.0.5"]]
   :main pikseli.core

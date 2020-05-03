@@ -22,8 +22,6 @@
 
 (defn -main [& []]
   (settings/read-settings)
-  (println "Starting server...")
-  (reset! server (run-server app {:port 8081}))
-  (println "Server started!"))
+  (reset! server (run-server app {:port 8081})))
 
 (-main)
