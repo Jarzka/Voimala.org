@@ -2,6 +2,7 @@
   :description "Pikseli.org"
   :url "https://www.pikseli.org"
   :dependencies [[org.clojure/clojure "1.10.1"]
+                 [org.clojure/clojurescript "1.10.520"]
                  [ring "1.8.1"]
                  [http-kit "2.3.0"]
                  [compojure "1.6.1"]
