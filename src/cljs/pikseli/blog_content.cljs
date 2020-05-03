@@ -32,13 +32,21 @@
   (let [post-html (r/atom nil)
         set-contents! (fn [post]
                         (let [parsed-post (parse-blog-post post)
-                              parsed (marked (:content parsed-post))]
-                          ; Update title
+                              parsed (marked (:content parsed-post))
+                              metadata (:metadata parsed-post)]
+
+                          ; Update title & page metadata
                           (when (router/blog-post-id (router-service/read-uri))
                             (dom-service/set-title
                               (page-settings/blog-post-title
-                                (get-in parsed-post [:metadata :title]))))
-                          ; TODO Include metadata
+                                (:title metadata)))
+                            (dom-service/set-meta-tags
+                              {:title (:title metadata)
+                               :type "article"
+                               :uri (router-service/read-uri)
+                               :author (:author metadata)
+                               :keywords (:keywords metadata)}))
+
                           (reset! post-html parsed)))]
     (r/create-class
       {:component-did-mount
@@ -52,6 +60,11 @@
                                       (set-contents! contents))
                                     nil ; TODO handle error
                                     ))))
+       :component-will-unmount
+       (fn []
+         ; Update title and metadata
+         (when-not (router/blog-post-id (router-service/read-uri))
+           (dom-service/clear-meta-tags)))
        :render
        (fn []
          (let [post (get @blog-service/loaded-posts post-id)
@@ -59,12 +72,17 @@
                           (:metadata (parse-blog-post post)))]
            [:article
             (when post
-              [app-link {:uri (str "/blog/" post-id)}
-               [:h1 (use-style g-styles/link)
-                (:title metadata)]])
+              (if (router/blog-post-id (router-service/read-uri))
+                [:h1 (:title metadata)]
+                [app-link {:uri (str "/blog/" post-id)}
+                 [:h1 (use-style g-styles/link)
+                  (:title metadata)]]))
+
             (when post [:span (use-style blog-style/author-and-date)
                         (str (:author metadata) " - " (format/unparse blog-date-out-formatter (tc/from-date (:date metadata))))])
+
             (when-not post [blog-loader])
+
             ; Template needs to be rendered so that it is ready when to contents is set!
             [:div (use-style
                     blog-style/blog-post

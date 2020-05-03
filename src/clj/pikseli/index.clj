@@ -32,14 +32,12 @@
       [:meta {:name "author", :content (if-let [author (:author blog-post-metadata)]
                                          author
                                          "Jari Hanhela")}]
-      #_[:meta {:property "”og:image”" :content "TODO"}]
       [:meta {:name "keywords" :content (:keywords blog-post-metadata)}]
       (when blog-post-id [:meta {:property "og:url", :content (str host uri)}])
       (when blog-post-id [:meta {:property "og:type", :content (if blog-post-id "article" "blog")}])
       (when blog-post-id [:meta {:property "og:title", :content (:title blog-post-metadata)}])
-      #_(when blog-post-id [:meta {:property "og:description", :content "TODO"}])
-      (when blog-post-id [:meta {:property "twitter:title", :content (:title blog-post-metadata)}])
-      #_(when blog-post-id [:meta {:property "twitter:description", :content "TODO"}])
+      #_(when blog-post-id [:meta {:property "og:description", :content ""}])
+      #_[:meta {:property "og:image" :content ""}]
 
       [:link {:href "/images/icon.jpg", :rel "shortcut icon"}]
       [:link {:rel "stylesheet", :href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :crossorigin "anonymous"}] "<!-- Loading screen -->"
