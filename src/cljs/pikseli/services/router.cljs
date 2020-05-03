@@ -6,6 +6,8 @@
 (defn read-uri []
   (.. js/window -location -pathname))
 
+(def uri (r/atom (read-uri)))
+
 (defn uri-is-blog? []
   (router/uri-is-blog?
     (-> js/window .-location .-host)

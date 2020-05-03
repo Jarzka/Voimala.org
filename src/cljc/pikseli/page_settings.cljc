@@ -1,5 +1,10 @@
 (ns pikseli.page-settings
   (:require [clojure.string :as string]))
 
-(def pikseli-title "Pikseli.org - Portfolio of Jari Hanhela")
-(def blog-title "Kotona ikimetsässä -retkiblogi")
+(def page-titles
+  {"/" "Pikseli.org - Portfolio of Jari Hanhela"
+   "/blog/" "Kotona ikimetsässä -retkiblogi" })
+
+(defn page-title [uri]
+  (or (get page-titles uri)
+      (get page-titles (str uri "/"))))

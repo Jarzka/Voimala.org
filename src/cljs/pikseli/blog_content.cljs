@@ -4,6 +4,7 @@
             ["markdown-yaml-metadata-parser" :as metadata-parser]
             [stylefy.core :refer [use-style sub-style use-sub-style]]
             [pikseli.components.loader :as loader]
+            [pikseli.components.app-link :refer [app-link]]
             [pikseli.services.ajax :as ajax]
             [pikseli.services.blog :as blog-service]
             [pikseli.styles.views.blog :as blog-style]
@@ -48,9 +49,10 @@
                metadata (when post
                           (:metadata (js->clj (metadata-parser post) :keywordize-keys true)))]
            [:article
-            (when post [:a {:href (str "/blog/" post-id)}
-                        [:h1 (use-style g-styles/link)
-                         (:title metadata)]])
+            (when post
+              [app-link {:uri (str "/blog/" post-id)}
+               [:h1 (use-style g-styles/link)
+                (:title metadata)]])
             (when post [:span (use-style blog-style/author-and-date)
                         (str (:author metadata) " - " (format/unparse blog-date-out-formatter (tc/from-date (:date metadata))))])
             (when-not post [blog-loader])
@@ -94,14 +96,17 @@
               :default [blog-loader])]))})))
 
 (defn content []
-  (let [blog-post-id (router/blog-post-id (router-service/read-uri))]
+  (let [blog-post-id (router/blog-post-id @router-service/uri)]
     [:div
      [:header (use-style blog-style/header)
       (if blog-post-id
-        [:a (use-style blog-style/back-to-pikseli {:href "/blog/"})
+        [app-link {:style blog-style/back-to-pikseli
+                   :uri "/blog/"}
          "< Blogin etusivu"]
-        [:a (use-style blog-style/back-to-pikseli {:href "http://www.pikseli.org"})
-        "< Pikseli.org"])
+        [app-link {:style blog-style/back-to-pikseli
+                   :uri "/"
+                   :navigate-in-app? false} ; Black theme, currently theme changes are not allowed in runtime
+         "< Pikseli.org"])
       [:img (use-sub-style layout/site-header :logo-blog
                            {:alt "Kotona ikimetsässä" :src "/images/logo_blog.png"})]]
      (if blog-post-id
