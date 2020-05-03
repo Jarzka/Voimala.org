@@ -8,9 +8,11 @@
 
 (def loaded-posts (r/atom {}))
 
+(def blog-posts-location "/blog_posts/")
+
 (defn get-post [file-name ok error]
   (ajax/GET!
-    (str "blog/" file-name ".md")
+    (str blog-posts-location file-name ".md")
     {:ok #(ok file-name %)
      :error error}))
 
@@ -20,7 +22,7 @@
 
 (defn get-post-files [ok error]
   (ajax/GET!
-    "blog/posts.txt"
+    (str blog-posts-location "posts.txt")
     {:ok (fn [response]
            (let [lines (string/split-lines response)
                  lines-stored (sort lines)]

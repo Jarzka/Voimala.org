@@ -2,7 +2,7 @@
   (:require [pikseli.services.router :as router]))
 
 (def light-mode
-  (if (router/url-is-blog?)
+  (if (router/uri-is-blog?)
     :light
     :dark))
 

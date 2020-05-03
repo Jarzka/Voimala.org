@@ -121,7 +121,7 @@
                      (.preventDefault event)
                      (view-photo-in-modal index))}
      [:img (use-style pstyle/photo
-                      {:src (str "images/photos/" file-name "_thumb.jpg")
+                      {:src (str "/images/photos/" file-name "_thumb.jpg")
                        :title description
                        :alt description})]]))
 

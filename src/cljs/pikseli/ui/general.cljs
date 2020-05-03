@@ -43,4 +43,4 @@
                :margin-right :auto
                :margin-top "0.5rem"
                :margin-bottom "0.5rem"}
-              {:src "images/loading.gif"})])
+              {:src "/images/loading.gif"})])

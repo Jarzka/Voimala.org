@@ -30,7 +30,7 @@
 
 (defn content []
   [:div
-   (if (router/url-is-blog?)
+   (if (router/uri-is-blog?)
      [blog-content/content]
      [main-content/content])])
 

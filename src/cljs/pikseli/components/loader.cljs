@@ -7,7 +7,7 @@
 (defn loader [{:keys [text]}]
   [:div
    [:img (use-style loader-style/loader
-                   {:src "images/loading.gif"})]
+                   {:src "/images/loading.gif"})]
    (when text
      [:div (use-style loader-style/loader-text)
       text])])

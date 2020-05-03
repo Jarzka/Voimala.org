@@ -24,7 +24,7 @@
 
 (defn project-card [{:keys [title date live-demo video source-code image-file desc]}]
   [:div.card (use-style pstyle/card)
-   [:img.card-img-top {:alt "", :src (str "images/" image-file)}]
+   [:img.card-img-top {:alt "", :src (str "/images/" image-file)}]
    [:div.card-body
     [:h5.card-title title]
     [:p.card-text desc]

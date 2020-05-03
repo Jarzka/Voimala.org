@@ -109,7 +109,7 @@
 (defn a-some-before [some]
   {::stylefy/mode
    {:before
-    {:background-image (str "url(\"images/some_" (name some) ".png\")")
+    {:background-image (str "url(\"/images/some_" (name some) ".png\")")
      :background-repeat "no-repeat"
      :background-size "80%"
      :content "\"\""

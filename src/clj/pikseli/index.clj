@@ -3,7 +3,7 @@
             [pikseli.page-settings :as page-settings]))
 
 (defn index [{:keys [uri] :as request}]
-  (let [blog? (router/uri-points-to-blog? uri)]
+  (let [blog? (router/uri-points-to-blog? uri)] ; TODO Subdomain?
     [:html
      [:head
       [:title {:id "app-title"}
@@ -22,10 +22,10 @@
       (when blog? [:meta {:property "twitter:title", :content "TODO"}])
       (when blog? [:meta {:property "twitter:description", :content "TODO"}])
 
-      [:link {:href "images/icon.jpg", :rel "shortcut icon"}]
+      [:link {:href "/images/icon.jpg", :rel "shortcut icon"}]
       [:link {:rel "stylesheet", :href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :crossorigin "anonymous"}] "<!-- Loading screen -->"
 
-      [:style ".init-body {\n            font-family: open_sans, Verdana, Helvetica, sans-serif;\n            color: #FFFFFF;\n            background: black url('images/background2.jpg');\n            background-repeat: no-repeat;\n            background-position: center;\n            background-attachment: fixed;\n            background-size: cover;\n            margin: 0;\n            padding: 0;\n        }\n\n        .init-spinner {\n            background-color: rgba(0,0,0,0.5);\n            padding: 15px;\n            position: absolute;\n            width: 80px;\n            top: 50%;\n            left: 50%;\n            text-align: center;\n            transform: translateX(-50%) translateY(-100px);\n        }"]
+      [:style ".init-body {\n            font-family: open_sans, Verdana, Helvetica, sans-serif;\n            color: #FFFFFF;\n            background: black url('/images/background2.jpg');\n            background-repeat: no-repeat;\n            background-position: center;\n            background-attachment: fixed;\n            background-size: cover;\n            margin: 0;\n            padding: 0;\n        }\n\n        .init-spinner {\n            background-color: rgba(0,0,0,0.5);\n            padding: 15px;\n            position: absolute;\n            width: 80px;\n            top: 50%;\n            left: 50%;\n            text-align: center;\n            transform: translateX(-50%) translateY(-100px);\n        }"]
 
       [:style {:id "_stylefy-constant-styles_"}]
       [:style {:id "_stylefy-styles_"}]
@@ -36,5 +36,5 @@
      [:body.init-body.body-loaded
       [:div {:id "app"}
        [:div {:class "init-spinner"}
-        [:img {:style "width: 100%", :src "images/loading.gif"}]]]]
-     [:script {:src "js/main.js"}]]))
+        [:img {:style "width: 100%", :src "/images/loading.gif"}]]]]
+     [:script {:src "/js/main.js"}]]))

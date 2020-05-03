@@ -8,14 +8,14 @@
             [pikseli.services.blog :as blog-service]
             [pikseli.styles.views.blog :as blog-style]
             [pikseli.page-settings :as page-settings]
-            [pikseli.utils.dom :as dom]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
             [clojure.string :as string]
             [cljs-time.format :as format]
             [cljs-time.coerce :as tc]
             [pikseli.styles.layout :as layout]
-            [pikseli.services.router :as router]
+            [pikseli.router :as router]
+            [pikseli.services.router :as router-service]
             [pikseli.styles.global :as g-styles]))
 
 (def blog-date-out-formatter (format/formatter "d.M.yyyy"))
@@ -48,7 +48,7 @@
                metadata (when post
                           (:metadata (js->clj (metadata-parser post) :keywordize-keys true)))]
            [:article
-            (when post [:a {:href (str "#/blog/" post-id)}
+            (when post [:a {:href (str "/blog/" post-id)}
                         [:h1 (use-style g-styles/link)
                          (:title metadata)]])
             (when post [:span (use-style blog-style/author-and-date)
@@ -73,8 +73,6 @@
         error? false
         handle-error #(reset! error? true)]
 
-    (dom/set-title page-settings/blog-title)
-
     (r/create-class
       {:component-did-mount
        (fn []
@@ -96,17 +94,16 @@
               :default [blog-loader])]))})))
 
 (defn content []
-  (let [hash @router/hash-text ; Listen changes!
-        blog-post-id (router/blog-post-id)]
+  (let [blog-post-id (router/blog-post-id (router-service/read-uri))]
     [:div
      [:header (use-style blog-style/header)
       (if blog-post-id
-        [:a (use-style blog-style/back-to-pikseli {:href "#/blog/"})
+        [:a (use-style blog-style/back-to-pikseli {:href "/blog/"})
          "< Blogin etusivu"]
         [:a (use-style blog-style/back-to-pikseli {:href "http://www.pikseli.org"})
         "< Pikseli.org"])
       [:img (use-sub-style layout/site-header :logo-blog
-                           {:alt "Kotona ikimetsässä" :src "images/logo_blog.png"})]]
+                           {:alt "Kotona ikimetsässä" :src "/images/logo_blog.png"})]]
      (if blog-post-id
        [single-full-blog-post blog-post-id]
        [blog-home])]))
