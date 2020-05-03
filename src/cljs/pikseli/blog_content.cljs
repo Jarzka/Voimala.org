@@ -115,8 +115,9 @@
          "< Blogin etusivu"]
         [:a (use-style blog-style/back-to-pikseli {:href "https://pikseli.org"})
          "< Pikseli.org"])
-      [:img (use-sub-style layout/site-header :logo-blog
-                           {:alt "Kotona ikimetsässä" :src "/images/logo_blog.png"})]]
+      [app-link {:uri "/blog/"}
+       [:img (use-sub-style layout/site-header :logo-blog
+                           {:alt "Kotona ikimetsässä" :src "/images/logo_blog.png"})]]]
      (if blog-post-id
        [single-full-blog-post blog-post-id]
        [blog-home])]))
