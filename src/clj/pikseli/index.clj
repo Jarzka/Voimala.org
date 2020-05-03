@@ -2,8 +2,10 @@
   (:require [pikseli.router :as router]
             [pikseli.page-settings :as page-settings]))
 
-(defn index [{:keys [uri] :as request}]
-  (let [blog? (router/uri-points-to-blog? uri)] ; TODO Subdomain?
+(defn index [{:keys [uri headers] :as request}]
+  (let [blog? (router/uri-is-blog?
+                (get headers "host")
+                uri)]
     [:html
      [:head
       [:title {:id "app-title"}
