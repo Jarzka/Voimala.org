@@ -24,3 +24,5 @@
                       :top "-0.5rem"
                       :font-size "0.7rem"
                       :color "#5a5a5a"})
+
+(def blog-content {:min-height "1500px"})

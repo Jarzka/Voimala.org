@@ -97,7 +97,7 @@
 
 (defn content []
   (let [blog-post-id (router/blog-post-id @router-service/uri)]
-    [:div
+    [:div (use-style blog-style/blog-content)
      [:header (use-style blog-style/header)
       (if blog-post-id
         [app-link {:style blog-style/back-to-pikseli
