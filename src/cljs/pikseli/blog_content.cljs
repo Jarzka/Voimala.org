@@ -7,6 +7,7 @@
             [pikseli.components.app-link :refer [app-link]]
             [pikseli.services.ajax :as ajax]
             [pikseli.services.blog :as blog-service]
+            [pikseli.services.dom :as dom-service]
             [pikseli.styles.views.blog :as blog-style]
             [pikseli.page-settings :as page-settings]
             [reagent.core :as r]
@@ -24,12 +25,20 @@
 (defn blog-loader []
   [loader/loader {:text "Odota hetki..."}])
 
+(defn parse-blog-post [post]
+  (js->clj (metadata-parser post) :keywordize-keys true))
+
 (defn single-full-blog-post [post-id]
   (let [post-html (r/atom nil)
         set-contents! (fn [post]
-                        (let [parsed-post (js->clj (metadata-parser post) :keywordize-keys true)
+                        (let [parsed-post (parse-blog-post post)
                               parsed (marked (:content parsed-post))]
-                          ; TODO Include metadata and title in HTML page
+                          ; Update title
+                          (when (router/blog-post-id (router-service/read-uri))
+                            (dom-service/set-title
+                              (page-settings/blog-post-title
+                                (get-in parsed-post [:metadata :title]))))
+                          ; TODO Include metadata
                           (reset! post-html parsed)))]
     (r/create-class
       {:component-did-mount
@@ -47,7 +56,7 @@
        (fn []
          (let [post (get @blog-service/loaded-posts post-id)
                metadata (when post
-                          (:metadata (js->clj (metadata-parser post) :keywordize-keys true)))]
+                          (:metadata (parse-blog-post post)))]
            [:article
             (when post
               [app-link {:uri (str "/blog/" post-id)}
@@ -78,13 +87,14 @@
     (r/create-class
       {:component-did-mount
        (fn []
+         (dom-service/set-title (page-settings/page-title "/blog"))
          (blog-service/get-post-files
            (fn [file-names]
              (reset! post-file-names file-names)
              (blog-service/get-posts file-names
-                        (fn [file-name contents]
-                          (swap! blog-service/loaded-posts assoc file-name contents))
-                        handle-error))
+                                     (fn [file-name contents]
+                                       (swap! blog-service/loaded-posts assoc file-name contents))
+                                     handle-error))
            handle-error))
        :render
        (fn []
@@ -103,9 +113,7 @@
         [app-link {:style blog-style/back-to-pikseli
                    :uri "/blog/"}
          "< Blogin etusivu"]
-        [app-link {:style blog-style/back-to-pikseli
-                   :uri "/"
-                   :navigate-in-app? false} ; Black theme, currently theme changes are not allowed in runtime
+        [:a (use-style blog-style/back-to-pikseli {:href "https://pikseli.org"})
          "< Pikseli.org"])
       [:img (use-sub-style layout/site-header :logo-blog
                            {:alt "Kotona ikimetsässä" :src "/images/logo_blog.png"})]]

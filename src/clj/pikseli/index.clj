@@ -28,10 +28,12 @@
 
       [:meta {:content "width=device-width, initial-scale=1, maximum-scale=1", :name "viewport"}]
       [:meta {:charset "utf-8"}]
+
       [:meta {:name "author", :content (if-let [author (:author blog-post-metadata)]
                                          author
                                          "Jari Hanhela")}]
-
+      #_[:meta {:property "”og:image”" :content "TODO"}]
+      [:meta {:name "keywords" :content (:keywords blog-post-metadata)}]
       (when blog-post-id [:meta {:property "og:url", :content (str host uri)}])
       (when blog-post-id [:meta {:property "og:type", :content (if blog-post-id "article" "blog")}])
       (when blog-post-id [:meta {:property "og:title", :content (:title blog-post-metadata)}])

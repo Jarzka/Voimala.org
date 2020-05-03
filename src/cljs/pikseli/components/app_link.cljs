@@ -14,5 +14,5 @@
                                                   #js {}
                                                   (page-settings/page-title uri)
                                                   uri)
-                                      (reset! router/uri uri)))})
+                                      (router/update-uri! uri)))})
    text])

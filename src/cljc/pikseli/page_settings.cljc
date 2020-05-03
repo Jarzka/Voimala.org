@@ -8,3 +8,6 @@
 (defn page-title [uri]
   (or (get page-titles uri)
       (get page-titles (str uri "/"))))
+
+(defn blog-post-title [title]
+  (str (str title " - ") (page-title "/blog")))
