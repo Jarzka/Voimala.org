@@ -11,7 +11,7 @@
         blog-post-id (router/blog-post-id uri)
         blog-post (when blog-post-id
                     (slurp (io/file
-                             (str (:resources-path @settings/settings)
+                             (str (settings/resources-on-disk)
                                   "blog_posts/"
                                   blog-post-id
                                   ".md"))))

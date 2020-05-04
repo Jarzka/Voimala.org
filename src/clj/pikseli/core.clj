@@ -4,6 +4,7 @@
             [compojure.handler :refer [site]]
             [pikseli.index :as index]
             [pikseli.settings :as settings]
+            [pikseli.api.post-api :as post-api]
             [hiccup.core :refer :all]
             [reitit.ring :as ring]
             [reitit.coercion.spec]
@@ -27,14 +28,15 @@
   (ring/ring-handler
     (ring/router
       ["/api"
-       ["/post" {:get {:responses {200 {:body {:data string?}}}
-                       :handler (fn [_]
-                                  {:status 200
-                                   :body {:data "Post"}})}}]
-       ["/posts" {:get {:responses {200 {:body {:data string?}}}
-                        :handler (fn [_]
-                                   {:status 200
-                                    :body {:data "Posts"}})}}]]
+       ["/post/:id" {:get {:coercion reitit.coercion.spec/coercion
+                           :parameters {:path {:id string?}}
+                           :responses {200 {:metadata map?
+                                            :html string?}}
+                           :handler post-api/get-post}}]
+       ["/posts/:page" {:get {:coercion reitit.coercion.spec/coercion
+                              :parameters {:path {:page int?}}
+                              :responses {200 {:body string?}}
+                              :handler post-api/get-posts}}]]
       ;; Router data effecting all routes
       {:data {:coercion reitit.coercion.spec/coercion
               :middleware [rrc/coerce-exceptions-middleware

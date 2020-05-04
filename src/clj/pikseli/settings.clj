@@ -7,3 +7,6 @@
           (->> "settings.edn"
                slurp
                read-string)))
+
+(defn resources-on-disk []
+  (:resources-path @settings))
