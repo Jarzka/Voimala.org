@@ -6,7 +6,7 @@
             [pikseli.services.ajax :as ajax]
             [clojure.string :as string]))
 
-(def api-uri "api/")
+(def api-uri "/api/")
 
 (defn get-post [file-name ok error]
   (ajax/GET!

@@ -28,7 +28,6 @@
   (let [post-html (r/atom nil)
         set-contents! (fn [post]
                         (let [metadata (:metadata post)]
-
                           ; Update title & page metadata
                           (when (router/blog-post-id (router-service/read-uri))
                             (dom-service/set-title
