@@ -6,6 +6,7 @@
                  [ring "1.8.1"]
                  [http-kit "2.3.0"]
                  [compojure "1.6.1"]
+                 [metosin/reitit "0.4.2"]
                  [markdown-clj "1.10.4"]
                  [hiccup "1.0.5"]]
   :main pikseli.core
