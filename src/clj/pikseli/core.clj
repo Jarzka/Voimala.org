@@ -11,7 +11,8 @@
             [reitit.coercion.spec]
             [reitit.ring.coercion :as rrc]
             [org.httpkit.server :refer :all]
-            [cognitect.transit :as transit])
+            [cognitect.transit :as transit]
+            [clojure.string :as string])
   (:gen-class)
   (:import (java.io ByteArrayOutputStream)))
 
@@ -49,10 +50,10 @@
         (assoc :body (.toString out)))))
 
 (defn app [request]
-  (let [index-uri #{"" "/" "/blog"}]
-    (if (index-uri (:uri request))
-      (index request)
-      (write-transit (handler request)))))
+  (let [api-uri (fn [uri] (string/starts-with? uri "/api"))]
+    (if (api-uri (:uri request))
+      (write-transit (handler request))
+      (index request))))
 
 (defn -main [& []]
   (settings/read-settings)
