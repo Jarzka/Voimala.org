@@ -36,6 +36,7 @@
                             (dom-service/set-meta-tags
                               {:title (:title metadata)
                                :type "article"
+                               :image (:image metadata)
                                :uri (str (router-service/read-host)
                                          (router-service/read-uri))
                                :author (:author metadata)
