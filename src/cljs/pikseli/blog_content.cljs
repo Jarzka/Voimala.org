@@ -36,7 +36,8 @@
                             (dom-service/set-meta-tags
                               {:title (:title metadata)
                                :type "article"
-                               :uri (router-service/read-uri)
+                               :uri (str (router-service/read-host)
+                                         (router-service/read-uri))
                                :author (:author metadata)
                                :keywords (:keywords metadata)}))
 
@@ -135,7 +136,7 @@
       [:div (use-sub-style layout/site-header :logo-and-description)
        [:div [app-link {:uri "/blog"}
         [:img (use-sub-style layout/site-header :logo-blog
-                             {:alt "Kotona ikimetsässä" :src "/images/logo_blog.png"})]]]]]
+                             {:alt "Kotona ikimetsässä" :src page-settings/blog-logo-url})]]]]]
      (if blog-post-id
        [single-full-blog-post blog-post-id]
        [blog-home])]))

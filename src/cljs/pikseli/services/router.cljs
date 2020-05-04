@@ -5,6 +5,9 @@
             [pikseli.page-settings :as page-settings]
             [pikseli.services.dom :as dom-service]))
 
+(defn read-host []
+  (-> js/window .-location .-host))
+
 (defn read-uri []
   (.. js/window -location -pathname))
 
@@ -12,7 +15,7 @@
 
 (defn uri-is-blog? []
   (router/uri-is-blog?
-    (-> js/window .-location .-host)
+    (read-host)
     (read-uri)))
 
 (defn update-title! []

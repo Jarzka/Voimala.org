@@ -7,6 +7,7 @@
 
 (defn index [{:keys [uri headers] :as request}]
   (let [host (get headers "host")
+        logo-url page-settings/blog-logo-url
         blog? (router/uri-is-blog? host uri)
         blog-post-id (router/blog-post-id uri)
         blog-post (when blog-post-id
@@ -37,7 +38,7 @@
       (when blog-post-id [:meta {:property "og:type", :content (if blog-post-id "article" "blog")}])
       (when blog-post-id [:meta {:property "og:title", :content (:title blog-post-metadata)}])
       #_(when blog-post-id [:meta {:property "og:description", :content ""}])
-      #_[:meta {:property "og:image" :content ""}]
+      [:meta {:property "og:image" :content (if blog-post-id (:image blog-post-metadata) logo-url)}]
 
       [:link {:href "/images/icon.jpg", :rel "shortcut icon"}]
       [:link {:rel "stylesheet", :href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :crossorigin "anonymous"}] "<!-- Loading screen -->"

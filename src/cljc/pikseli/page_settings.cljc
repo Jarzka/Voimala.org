@@ -11,3 +11,5 @@
 
 (defn blog-post-title [title]
   (str (str title " - ") (page-title "/blog")))
+
+(def blog-logo-url "/images/logo_blog.png")
