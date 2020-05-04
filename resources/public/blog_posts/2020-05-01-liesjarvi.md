@@ -44,7 +44,7 @@ Kun olin ihaillut kalliolta avautuvia maisemia riittävästi, oli aika aloittaa 
 
 Vajaan kolmen vuoden ajan kestäneen retkeilyharrastuksen aikana olen kokeillut ruoanlaittoon useita erilaisia ratkaisuja. Tähän asti toimivin järjestely on ollut Primus Lite -retkikeitin. Järjestelmä sisältää kaasupulloon kiinnitettävän pienen pannun, jossa vettä lämmitetään. Aiemmin minulla oli käytössä erillinen kattila, ja siihen verrattuna näen tässä järjestelmässä lähes pelkkiä etuja: se vie vähän tilaa ja vesi kiehahtaa pannussa minuuteissa myös tuulisessa säässä. Lisäki kaasua kuluu vähemmän ja ruokaa on helppo hämmentää, koska pannu pysyy varmuudella kiinni kaasupullossa. Ruoka myös pysyy mukavan lämpimänä koko aterioinnin ajan ja tarvittaessa sitä voi hauduttaa kannen alla. Olenkin ollut hyvin tyytyväinen tähän hankintaan. Haittapuolena pannuun ei mahdu juuri yhden ihmisen ateriointia isompaa annosta, mutta sooloretkeilyssähän tämä ei ole ongelma.
 
-Retkiruoaksi valikoitu tällä kertaa Outdoor Gourmet -perunamuusiannos. Monesti retkiruokaa on kiva valmistella kotona itse lämmitettäväksi, mutta välillä mukaan kaipaa jotain helposti valmistuvaa. Mitään halvimpia retkieväitä nämä eivät ole, mutta vaivattomia kyllä ja ihan maukkaitakin.
+Retkiruoaksi valikoitui tällä kertaa Outdoor Gourmet -perunamuusiannos. Monesti retkiruokaa on kiva valmistella kotona itse lämmitettäväksi, mutta välillä mukaan kaipaa jotain helposti valmistuvaa. Mitään halvimpia retkieväitä nämä eivät ole, mutta vaivattomia kyllä ja ihan maukkaitakin.
 
 ![Riippumatto](/images/blog/_N0A0626_thumb.jpg)
 
