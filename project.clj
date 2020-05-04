@@ -8,7 +8,16 @@
                  [compojure "1.6.1"]
                  [metosin/reitit "0.4.2"]
                  [markdown-clj "1.10.4"]
-                 [hiccup "1.0.5"]]
+                 [hiccup "1.0.5"]
+                 [com.cognitect/transit-clj "1.0.324"]
+
+                 ; Remove these when deps.edn is in use:
+                 [reagent "0.8.1"]
+                 [cljs-http "0.1.46"]
+                 [hiccup "1.0.5"]
+                 [stylefy "1.14.1"]
+                 [garden "1.3.2"]
+                 [com.andrewmcveigh/cljs-time "0.5.2"]]
   :main pikseli.core
   :aot :all
   :auto-clean false ; For uberjar

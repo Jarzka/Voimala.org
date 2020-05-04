@@ -7,10 +7,13 @@
             [pikseli.api.post-api :as post-api]
             [hiccup.core :refer :all]
             [reitit.ring :as ring]
+            [reitit.spec :as rs]
             [reitit.coercion.spec]
             [reitit.ring.coercion :as rrc]
-            [org.httpkit.server :refer :all])
-  (:gen-class))
+            [org.httpkit.server :refer :all]
+            [cognitect.transit :as transit])
+  (:gen-class)
+  (:import (java.io ByteArrayOutputStream)))
 
 (defonce server (atom nil))
 
@@ -28,26 +31,28 @@
   (ring/ring-handler
     (ring/router
       ["/api"
-       ["/post/:id" {:get {:coercion reitit.coercion.spec/coercion
-                           :parameters {:path {:id string?}}
-                           :responses {200 {:metadata map?
-                                            :html string?}}
+       ["/post/:id" {:get {:parameters {:path {:id string?}}
+                           ;:responses {200 {:metadata map? :html string?}}
                            :handler post-api/get-post}}]
-       ["/posts/:page" {:get {:coercion reitit.coercion.spec/coercion
-                              :parameters {:path {:page int?}}
-                              :responses {200 {:body string?}}
-                              :handler post-api/get-posts}}]]
-      ;; Router data effecting all routes
-      {:data {:coercion reitit.coercion.spec/coercion
-              :middleware [rrc/coerce-exceptions-middleware
-                           rrc/coerce-request-middleware
-                           rrc/coerce-response-middleware]}})))
+       ["/post-ids/:page" {:get {:parameters {:path {:page int?}}
+                                 ;:responses {200 {:body vector?}}
+                                 :handler post-api/get-posts}}]])))
+
+(defn write-transit [response]
+  (let [out (ByteArrayOutputStream. 4096)
+        writer (transit/writer out :json)]
+
+    (transit/write writer (:body response))
+
+    (-> response
+        (assoc-in [:headers "Content-Type"] "application/transit+json")
+        (assoc :body (.toString out)))))
 
 (defn app [request]
   (let [index-uri #{"" "/" "/blog"}]
     (if (index-uri (:uri request))
       (index request)
-      (handler request))))
+      (write-transit (handler request)))))
 
 (defn -main [& []]
   (settings/read-settings)

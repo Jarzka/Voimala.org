@@ -1,10 +1,9 @@
 (ns pikseli.blog-content
   (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require ["marked" :as marked]
-            ["markdown-yaml-metadata-parser" :as metadata-parser]
-            [stylefy.core :refer [use-style sub-style use-sub-style]]
+  (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [pikseli.components.loader :as loader]
             [pikseli.components.app-link :refer [app-link]]
+            [pikseli.api.post-api :as post-api]
             [pikseli.services.ajax :as ajax]
             [pikseli.services.blog :as blog-service]
             [pikseli.services.dom :as dom-service]
@@ -25,15 +24,10 @@
 (defn blog-loader []
   [loader/loader {:text "Odota hetki..."}])
 
-(defn parse-blog-post [post]
-  (js->clj (metadata-parser post) :keywordize-keys true))
-
 (defn single-full-blog-post [post-id]
   (let [post-html (r/atom nil)
         set-contents! (fn [post]
-                        (let [parsed-post (parse-blog-post post)
-                              parsed (marked (:content parsed-post))
-                              metadata (:metadata parsed-post)]
+                        (let [metadata (:metadata post)]
 
                           ; Update title & page metadata
                           (when (router/blog-post-id (router-service/read-uri))
@@ -47,14 +41,14 @@
                                :author (:author metadata)
                                :keywords (:keywords metadata)}))
 
-                          (reset! post-html parsed)))]
+                          (reset! post-html (:html post))))]
     (r/create-class
       {:component-did-mount
        (fn []
          (let [post (get @blog-service/loaded-posts post-id)]
            (if post
              (set-contents! post)
-             (blog-service/get-post post-id
+             (post-api/get-post post-id
                                     (fn [file-name contents]
                                       (swap! blog-service/loaded-posts assoc file-name contents)
                                       (set-contents! contents))
@@ -68,8 +62,7 @@
        :render
        (fn []
          (let [post (get @blog-service/loaded-posts post-id)
-               metadata (when post
-                          (:metadata (parse-blog-post post)))]
+               metadata (:metadata post)]
            [:article
             (when post
               (if (router/blog-post-id (router-service/read-uri))
@@ -105,19 +98,21 @@
 (defn blog-home []
   (let [post-file-names (r/atom nil)
         error? false
-        handle-error #(reset! error? true)]
+        handle-error (fn [error]
+                       (.error js/console "Error: " error)
+                       (reset! error? true))]
 
     (r/create-class
       {:component-did-mount
        (fn []
          (dom-service/set-title (page-settings/page-title "/blog"))
-         (blog-service/get-post-files
-           (fn [file-names]
-             (reset! post-file-names file-names)
-             (blog-service/get-posts file-names
-                                     (fn [file-name contents]
-                                       (swap! blog-service/loaded-posts assoc file-name contents))
-                                     handle-error))
+         (post-api/get-post-ids
+           (fn [ids]
+             (reset! post-file-names ids)
+             (post-api/get-posts ids
+                                 (fn [file-name contents]
+                                   (swap! blog-service/loaded-posts assoc file-name contents))
+                                 handle-error))
            handle-error))
        :render
        (fn []
@@ -134,12 +129,12 @@
      [:header (use-style blog-style/header)
       (if blog-post-id
         [app-link {:style blog-style/back
-                   :uri "/blog/"}
+                   :uri "/blog"}
          "< Blogin etusivu"]
         [:a (use-style blog-style/back {:href "https://pikseli.org"})
          "< Pikseli.org"])
       [:div (use-sub-style layout/site-header :logo-and-description)
-       [:div [app-link {:uri "/blog/"}
+       [:div [app-link {:uri "/blog"}
         [:img (use-sub-style layout/site-header :logo-blog
                              {:alt "Kotona ikimetsässä" :src "/images/logo_blog.png"})]]]]]
      (if blog-post-id
