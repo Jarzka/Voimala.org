@@ -24,3 +24,8 @@
 (defn update-uri! [new-uri]
   (reset! uri new-uri)
   (update-title!))
+
+; Listen back button
+(.addEventListener js/window "popstate"
+                   (fn []
+                     (update-uri! (read-uri))))
