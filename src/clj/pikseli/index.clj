@@ -40,7 +40,7 @@
       #_(when blog-post-id [:meta {:property "og:description", :content ""}])
       [:meta {:property "og:image" :content (if blog-post-id
                                               (:image blog-post-metadata)
-                                              "/images/background.jpg")}]
+                                              "/images/background2.jpg")}]
 
       [:link {:href "/images/icon.jpg", :rel "shortcut icon"}]
       [:link {:rel "stylesheet", :href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :crossorigin "anonymous"}] "<!-- Loading screen -->"
