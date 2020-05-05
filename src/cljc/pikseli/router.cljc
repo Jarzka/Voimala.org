@@ -14,7 +14,7 @@
   (let [host-splitted (string/split host #"\.")
         subdomain (when (domain (second host-splitted)) ; Sub-domain used
                     (first host-splitted))
-        blog-subdomains #{"blog" "metsassa" "metsässä"}]
+        blog-subdomains #{"blog" "metsassa" "metsässä" "xn--metsss-euac"}]
     (boolean (when subdomain
                (blog-subdomains subdomain)))))
 
