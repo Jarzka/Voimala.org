@@ -58,7 +58,7 @@
                }
 
                .init-spinner {
-                 background-color: rgba(0,0,0,0.5);
+                 background-color: " (if (= theme :dark) "rgba(0,0,0,0.5)" "rgba(255,255,255,0.5)") ";
                  padding: 15px;
                  position: absolute;
                  width: 80px;
