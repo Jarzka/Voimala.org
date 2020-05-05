@@ -129,7 +129,7 @@
       (if blog-post-id
         [app-link {:style blog-style/back
                    :uri "/blog"}
-         "< Blogin etusivu"]
+         "< Etusivu"]
         [:a (use-style blog-style/back {:href "https://pikseli.org"})
          "< Pikseli.org"])
       [:div (use-sub-style layout/site-header :logo-and-description)
