@@ -1,28 +1,26 @@
 (ns pikseli.blog-content
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [pikseli.components.loader :as loader]
             [pikseli.components.app-link :refer [app-link]]
             [pikseli.api.post-api :as post-api]
-            [pikseli.services.ajax :as ajax]
             [pikseli.services.blog :as blog-service]
             [pikseli.services.dom :as dom-service]
             [pikseli.styles.views.blog :as blog-style]
             [pikseli.page-settings :as page-settings]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
-            [clojure.string :as string]
             [cljs-time.format :as format]
             [cljs-time.coerce :as tc]
             [pikseli.styles.layout :as layout]
             [pikseli.router :as router]
             [pikseli.services.router :as router-service]
-            [pikseli.styles.global :as g-styles]))
+            [pikseli.styles.global :as g-styles]
+            [pikseli.ui.general :as ui]))
 
 (def blog-date-out-formatter (format/formatter "d.M.yyyy"))
 
 (defn blog-loader []
-  [loader/loader {:text "Odota hetki..."}])
+  [ui/loader-light {:text "Odota hetki..."}])
 
 (defn single-full-blog-post [post-id]
   (let [post-html (r/atom nil)

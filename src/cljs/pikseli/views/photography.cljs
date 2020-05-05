@@ -82,7 +82,7 @@
                               :top "50%"
                               :left "50%"
                               :transform "translateX(-50%) translateY(-80%)"})
-             [ui/loading-spinner]]])
+             [ui/loader-dark]]])
          [:div (use-style (if @first-image-loaded? {:display :block} {:display :none}))
           [picture {:image-index previous-index-value
                     :picture-attributes (use-style pstyle/buffer-photo)

@@ -30,7 +30,6 @@
      :padding-top "1rem"
      ::stylefy/sub-styles
      {:logo-and-description {:text-align "center"
-                             :margin-bottom "1rem"
                              :display :flex
                              :flex-direction :column}
       :logo (merge logo {:width "12rem"})

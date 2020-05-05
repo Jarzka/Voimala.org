@@ -7,8 +7,8 @@
 
 (defn index [{:keys [uri headers] :as request}]
   (let [host (get headers "host")
-        logo-url page-settings/blog-logo-url
         blog? (router/uri-is-blog? host uri)
+        theme (if blog? :light :dark)
         blog-post-id (router/blog-post-id uri)
         blog-post (when blog-post-id
                     (slurp (io/file
@@ -45,7 +45,28 @@
       [:link {:href "/images/icon.jpg", :rel "shortcut icon"}]
       [:link {:rel "stylesheet", :href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :crossorigin "anonymous"}] "<!-- Loading screen -->"
 
-      [:style ".init-body {\n            font-family: open_sans, Verdana, Helvetica, sans-serif;\n            color: #FFFFFF;\n            background: black url('/images/background2.jpg');\n            background-repeat: no-repeat;\n            background-position: center;\n            background-attachment: fixed;\n            background-size: cover;\n            margin: 0;\n            padding: 0;\n        }\n\n        .init-spinner {\n            background-color: rgba(0,0,0,0.5);\n            padding: 15px;\n            position: absolute;\n            width: 80px;\n            top: 50%;\n            left: 50%;\n            text-align: center;\n            transform: translateX(-50%) translateY(-100px);\n        }"]
+      [:style ".init-body {
+                 font-family: open_sans, Verdana, Helvetica, sans-serif;
+                 color: " (if (= theme :dark) "#eaeaea" "#121212") ";
+                 background: " (if (= theme :dark) "black" "white") " url('/images/background2.jpg');
+                 background-repeat: no-repeat;
+                 background-position: center;
+                 background-attachment: fixed;
+                 background-size: cover;
+                 margin: 0;
+                 padding: 0;
+               }
+
+               .init-spinner {
+                 background-color: rgba(0,0,0,0.5);
+                 padding: 15px;
+                 position: absolute;
+                 width: 80px;
+                 top: 50%;
+                 left: 50%;
+                 text-align: center;
+                 transform: translateX(-50%) translateY(-100px);
+               }"]
 
       [:style {:id "_stylefy-constant-styles_"}]
       [:style {:id "_stylefy-styles_"}]
@@ -56,5 +77,8 @@
      [:body.init-body.body-loaded
       [:div {:id "app"}
        [:div {:class "init-spinner"}
-        [:img {:style "width: 100%", :src "/images/loading.gif"}]]]]
+        [:img {:style "width: 100%", :src
+               (if (= theme :dark)
+                 "/images/loading_dark.gif"
+                 "/images/loading_light.gif")}]]]]
      [:script {:src "/js/main.js"}]]))

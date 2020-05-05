@@ -35,7 +35,7 @@
    [:p (str "\"" text "\"")
     [:br] (str "- " person)]])
 
-(defn loading-spinner []
+(defn loader-dark []
   [:img
    (use-style {:display :block
                :width "40px"
@@ -43,4 +43,19 @@
                :margin-right :auto
                :margin-top "0.5rem"
                :margin-bottom "0.5rem"}
-              {:src "/images/loading.gif"})])
+              {:src "/images/loading_dark.gif"})])
+
+(defn loader-light [{:keys [text]}]
+  [:div
+   [:img (use-style {:width "32px"
+                     :display :block
+                     :margin-top "1rem"
+                     :margin-bottom "1rem"
+                     :margin-left :auto
+                     :margin-right :auto}
+                    {:src "/images/loading_light.gif"})]
+   (when text
+     [:div (use-style (merge
+                        g-styles/text-center
+                        g-styles/text-smaller))
+      text])])
