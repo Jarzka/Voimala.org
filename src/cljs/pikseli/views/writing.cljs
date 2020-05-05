@@ -10,7 +10,14 @@
       [:section
        [:a {:id "writing"}]
        [:h1 "Writing"]
-       [:h2 "/dev/solita (Solita's software development blog)"]
+
+       [:a {:href "https://metsassa.pikseli.org"}
+        [:h2 (use-style g-styles/link) "Kotona ikimetsässä"]]
+       [:p "My little hiking / nature blog (in Finnish)."]
+
+       [:a {:href "https://dev.solita.fi/"}
+        [:h2 (use-style g-styles/link) "/dev/solita (Solita's software development blog)"]]
+       [:p "Articles written by me:"]
        [:ul
         [:li
          [:a {:href "http://dev.solita.fi/2018/02/06/unreliable-network.html"} "6.2.2018 - Quick Tips for App Developers on Surviving with Unreliable Network"]]

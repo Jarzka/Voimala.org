@@ -14,8 +14,8 @@
    [welcome-view/welcome]
    [photography-view/photography]
    [filming-view/filming]
-   [software-view/software]
    [writing-view/writing]
+   [software-view/software]
    [music-view/music]
    [misc-view/misc]
    [contact-view/contact]])

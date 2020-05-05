@@ -18,8 +18,8 @@
     [:p "The site is the result of my creative mind. It contains projects related to "
      [:a {:href "#photography"} "photography"] [:span ", "]
      [:a {:href "#filming"} "filming"] [:span ", "]
-     [:a {:href "#software"} "software"] [:span ", "]
-     [:a {:href "#writing"} "writing"] [:span " and "]
+     [:a {:href "#writing"} "writing"] [:span ", "]
+     [:a {:href "#software"} "software"] [:span " and "]
      [:a {:href "#music"} "music"] [:span ". "]
      [:span "Feel free to explore!"]]
     [:p (use-style g-styles/text-small) "Contents updated: 29.2.2020."]]])
