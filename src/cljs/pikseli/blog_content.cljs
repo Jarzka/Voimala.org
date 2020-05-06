@@ -86,7 +86,7 @@
                     {:dangerouslySetInnerHTML {:__html @post-html}})]]))})))
 
 (defn post-list [posts]
-  (let [post-ids (keys posts)]
+  (let [post-ids (-> posts keys sort reverse vec)]
     [:div
      (map-indexed
        (fn [index post-id]
