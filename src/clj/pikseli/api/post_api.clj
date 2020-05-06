@@ -28,6 +28,6 @@
   (let [contents (slurp (io/file
                           (str (settings/resources-on-disk) "blog_posts/posts.txt")))
         lines (string/split-lines contents)
-        lines-stored (sort lines)]
+        lines-stored (vec (reverse (sort lines)))]
     {:status 200
      :body (vec lines-stored)}))
