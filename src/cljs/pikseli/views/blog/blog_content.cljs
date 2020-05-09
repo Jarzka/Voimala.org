@@ -118,11 +118,13 @@
 (defn- post-list [posts]
   (let [post-ids (-> posts keys sort reverse vec)]
     [:div
+     [:p [:em "(Blogi on vielä työn alla. Lisäilen tänne myös vanhoja retkitarinoita vuodesta 2017 lähtien...)"]]
+     [:div
      (map-indexed
        (fn [index post-id]
          ^{:key index}
          [single-blog-post post-id {:view-mode :excerpt}])
-       post-ids)]))
+       post-ids)]]))
 
 (defn- blog-home []
   (let [post-file-names (r/atom nil)
