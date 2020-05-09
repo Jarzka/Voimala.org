@@ -1,4 +1,5 @@
 2020-05-01-liesjarvi
+2020-02-12-korouma
 2020-02-11-syote
 2019-09-22-leivonmaki
 2019-09-15-pyha-hakki
@@ -9,4 +10,8 @@
 2019-07-02-pallas-yllas
 2019-07-01-perameri
 2019-06-29-selkameri
+2019-05-31-puurijarvi-isosuo
 2019-05-19-lauhanvuori-ja-kauhaneva-pohjankangas
+2019-04-20-kurjenrahka
+2019-02-21-riisitunturi
+2018-11-20-salamajarvi
