@@ -1,4 +1,4 @@
-(ns pikseli.views.music
+(ns pikseli.views.pikseli.music
   (:require [reagent.core :as r]
             [cljs-time.core :as t]
             [cljs-time.format :as f]

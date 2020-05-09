@@ -16,9 +16,7 @@
     (validate-blog-post-id id)
     (let [contents (slurp (io/file
                             (str (settings/resources-on-disk)
-                                 "blog_posts/"
-                                 id
-                                 ".md")))
+                                 "blog_posts/" id ".md")))
           blog-post (md-to-html-string-with-meta contents)]
       {:status 200
        :body blog-post})))

@@ -1,9 +1,9 @@
 ---
 title: Leivonmäen kansallispuisto
 date: 2019-09-22
-image: /images/blog/2019-09-22-leivonmaki/_MG_1406-HDR_thumb.jpg
+image: /images/blog/2019-09-22-leivonmaki/DJI_0668-HDR_thumb.jpg
 author: Jari Hanhela
-excerpt: Leivonmäen kansallispuisto
+excerpt: "Jyväskylän seudulla sijaitsevan Leivonmäen kansallispuiston karttaa tutkiessa voi jo havaita puiston geologisesti ehkä näyttävimmän muodostuman: Sorsanselän järven keskellä sijaitsee vajaan kahden kilometrin pituinen kapeahko harjuniemi, joka yltää lähes vastakkaiselle rannalle asti. Tällaisia muodostumia näkee harvoin, eikä se edes ollut viime viikonloppuisen vierailuni kohokohta."
 keywords: leivonmaki, leivonmäki, leivonmäen kansallispuisto
 ---
 

@@ -1,4 +1,4 @@
-(ns pikseli.views.writing
+(ns pikseli.views.pikseli.writing
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [pikseli.ui.general :as ui]
             [reagent.core :as r]

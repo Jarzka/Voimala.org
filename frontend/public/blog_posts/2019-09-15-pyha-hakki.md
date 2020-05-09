@@ -3,7 +3,7 @@ title: Pyhä-Häkin kansallispuisto
 date: 2019-09-15
 image: /images/blog/2019-09-15-pyha-hakki/_MG_0581-HDR_thumb.jpg
 author: Jari Hanhela
-excerpt: Pyhä-Häkin kansallispuisto
+excerpt: "Pyhä-Häkissä humisee ikimetsä: kansallispuiston vanhimmat hongat ovat yli 400 vuotta vanhoja ja muutama komea ilmestys on merkitty erikseen kartalle luonnonnähtävyydeksi. Tällaisia ikimetsiä on maassamme jäljellä enää kovin vähän, joten tätähän täytyi lähteä katsomaan Saarijärven suunnalle."
 keywords: pyha-hakki, pyhä-häkki, pyha-hakin kansallispuisto, pyhä-häkin kansallispuisto,
 ---
 

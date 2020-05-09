@@ -1,22 +1,13 @@
 (ns pikseli.main
   (:require
     [stylefy.core :as stylefy :refer [use-style use-sub-style]]
-    [pikseli.blog-content :as blog-content]
-    [pikseli.main-content :as main-content]
+    [pikseli.views.blog.blog-content :as blog-content]
+    [pikseli.views.pikseli.pikseli-content :as pikseli-content]
     [pikseli.services.router :as router]
     [pikseli.styles.global :as g-styles]
     [pikseli.styles.layout :as layout]
-    [pikseli.views.welcome :as welcome-view]
-    [pikseli.views.writing :as writing-view]
-    [pikseli.views.photography :as photography-view]
-    [pikseli.views.misc :as misc-view]
-    [pikseli.views.contact :as contact-view]
-    [pikseli.views.software :as software-view]
-    [pikseli.views.music :as music-view]
-    [pikseli.views.filming :as filming-view]
     [pikseli.ui.modal :as modal]
-    [reagent.core :as r]
-    [pikseli.ui.general :as ui]))
+    [reagent.core :as r]))
 
 (defn- site-footer []
   [:footer (use-style layout/site-footer)
@@ -32,7 +23,7 @@
   [:div
    (if (router/uri-is-blog?)
      [blog-content/content]
-     [main-content/content])])
+     [pikseli-content/content])])
 
 (defn- site-body []
   [:div

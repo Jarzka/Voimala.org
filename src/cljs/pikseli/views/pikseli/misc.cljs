@@ -1,4 +1,4 @@
-(ns pikseli.views.misc
+(ns pikseli.views.pikseli.misc
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [pikseli.ui.general :as ui]))
 

@@ -14,5 +14,6 @@
                                                   #js {}
                                                   (page-settings/page-title uri)
                                                   uri)
-                                      (router/update-uri! uri)))})
+                                      (router/update-uri! uri)
+                                      (.scrollTo js/window. #js {:top 0})))})
    text])

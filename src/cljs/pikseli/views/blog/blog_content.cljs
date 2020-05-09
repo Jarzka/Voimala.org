@@ -1,4 +1,4 @@
-(ns pikseli.blog-content
+(ns pikseli.views.blog.blog-content
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [pikseli.components.app-link :refer [app-link]]
@@ -19,10 +19,57 @@
 
 (def blog-date-out-formatter (format/formatter "d.M.yyyy"))
 
-(defn blog-loader []
+(defn- blog-loader []
   [ui/loader-light {:text "Odota hetki..."}])
 
-(defn single-full-blog-post [post-id]
+(defn blog-post-uri [post-id]
+  (str "/blog/" post-id))
+
+(defn- blog-post-title [post-id title clickable?]
+  (if clickable?
+    [app-link {:uri (blog-post-uri post-id)}
+     [:h1 (use-style g-styles/link)
+      title]]
+    [:h1 title]))
+
+(defn- blog-post-author-and-date [metadata]
+  [:span (use-style blog-style/author-and-date)
+   (str
+     (when (:author metadata)
+       (:author metadata))
+     " - "
+     (when (:date metadata)
+       (format/unparse blog-date-out-formatter (tc/from-date (:date metadata)))))])
+
+(defn- single-full-blog-post
+  [post-id post-html]
+  (let [post (get @blog-service/loaded-posts post-id)
+        metadata (:metadata post)]
+    [:article
+     (when post [blog-post-title post-id (:title metadata) false])
+     (when post [blog-post-author-and-date metadata])
+     (when-not post [blog-loader])
+     [:div (use-style blog-style/blog-post-full
+             {:dangerouslySetInnerHTML {:__html post-html}})]]))
+
+(defn- blog-post-excerpt
+  [post-id]
+  (let [post (get @blog-service/loaded-posts post-id)
+        metadata (:metadata post)]
+    [:article
+     (when post [blog-post-title post-id (:title metadata) true])
+     (when post [blog-post-author-and-date metadata])
+     (when-not post [blog-loader])
+     [:div (use-style blog-style/blog-post-excerpt)
+      [:img {:src (:image metadata) :alt (:title metadata)}]
+      [:p (:excerpt metadata)
+       " "
+       [app-link {:uri (blog-post-uri post-id)}
+        "Lue tarina »"]]]]))
+
+(defn- single-blog-post
+  "view-mode  :full / :excerpt"
+  [post-id {:keys [view-mode] :or {view-mode true}}]
   (let [post-html (r/atom nil)
         set-contents! (fn [post]
                         (let [metadata (:metadata post)]
@@ -48,11 +95,11 @@
            (if post
              (set-contents! post)
              (post-api/get-post post-id
-                                    (fn [file-name contents]
-                                      (swap! blog-service/loaded-posts assoc file-name contents)
-                                      (set-contents! contents))
-                                    nil ; TODO handle error
-                                    ))))
+                                (fn [file-name contents]
+                                  (swap! blog-service/loaded-posts assoc file-name contents)
+                                  (set-contents! contents))
+                                nil ; TODO handle error
+                                ))))
        :component-will-unmount
        (fn []
          ; Update title and metadata
@@ -60,41 +107,21 @@
            (dom-service/clear-meta-tags)))
        :render
        (fn []
-         (let [post (get @blog-service/loaded-posts post-id)
-               metadata (:metadata post)]
-           [:article
-            (when post
-              (if (router/blog-post-id (router-service/read-uri))
-                [:h1 (:title metadata)]
-                [app-link {:uri (str "/blog/" post-id)}
-                 [:h1 (use-style g-styles/link)
-                  (:title metadata)]]))
+         [:article
+          (case view-mode
+            :full [single-full-blog-post post-id @post-html]
+            :excerpt [blog-post-excerpt post-id])])})))
 
-            (when post [:span (use-style blog-style/author-and-date)
-                        (str
-                          (when (:author metadata)
-                            (:author metadata))
-                         " - "
-                         (when (:date metadata)
-                           (format/unparse blog-date-out-formatter (tc/from-date (:date metadata)))))])
-
-            (when-not post [blog-loader])
-
-            ; Template needs to be rendered so that it is ready when to contents is set!
-            [:div (use-style
-                    blog-style/blog-post
-                    {:dangerouslySetInnerHTML {:__html @post-html}})]]))})))
-
-(defn post-list [posts]
+(defn- post-list [posts]
   (let [post-ids (-> posts keys sort reverse vec)]
     [:div
      (map-indexed
        (fn [index post-id]
          ^{:key index}
-         [single-full-blog-post post-id])
+         [single-blog-post post-id {:view-mode :excerpt}])
        post-ids)]))
 
-(defn blog-home []
+(defn- blog-home []
   (let [post-file-names (r/atom nil)
         error? false
         handle-error (fn [error]
@@ -137,5 +164,5 @@
         [:img (use-sub-style layout/site-header :logo-blog
                              {:alt "Kotona ikimetsässä" :src page-settings/blog-logo-url})]]]]]
      (if blog-post-id
-       [single-full-blog-post blog-post-id]
+       [single-blog-post blog-post-id {:view-mode :full}]
        [blog-home])]))

@@ -2,7 +2,8 @@
   (:require [stylefy.core :as stylefy]
             [garden.color :as color]
             [pikseli.utils :as utils]
-            [pikseli.styles.settings :as style-settings]))
+            [pikseli.styles.settings :as style-settings]
+            [pikseli.styles.global :as g-styles]))
 
 (def dark-box {:border-radius "5px"
                :background-color "rgba(0, 0, 0, 0.85)"
@@ -36,12 +37,15 @@
       :logo-blog (merge logo {:width "29.5rem" :margin-bottom "2rem"})}}))
 
 (def page-content (merge themed-box
-                         {:margin-left "auto"
-                          :margin-right "auto"
-                          :margin-top "1rem"
-                          :max-width "1024px"
-                          :box-shadow "0 -0.1rem 0.4rem rgba(0, 0, 0, 0.5) inset"
-                          :padding "0.8rem"}))
+                         (merge
+                           {:margin-left "auto"
+                           :margin-right "auto"
+                           :margin-top "1rem"
+                           :max-width "1024px"
+                           :box-shadow "0 -0.1rem 0.4rem rgba(0, 0, 0, 0.5) inset"
+                           :padding "0.8rem"}
+                           (g-styles/on-mobile
+                             {:margin-top "0"}))))
 
 (def site-footer {:margin-top "1rem"
                   :font-size "0.75rem"

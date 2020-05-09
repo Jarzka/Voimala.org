@@ -1,4 +1,4 @@
-(ns pikseli.views.software
+(ns pikseli.views.pikseli.software
   (:require [reagent.core :as r]
             [cljs-time.core :as t]
             [cljs-time.format :as f]

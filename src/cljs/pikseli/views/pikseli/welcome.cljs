@@ -1,4 +1,4 @@
-(ns pikseli.views.welcome
+(ns pikseli.views.pikseli.welcome
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [pikseli.styles.global :as g-styles]
             [pikseli.styles.layout :as layout]))

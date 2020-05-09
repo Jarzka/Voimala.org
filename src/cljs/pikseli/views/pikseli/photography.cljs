@@ -1,4 +1,4 @@
-(ns pikseli.views.photography
+(ns pikseli.views.pikseli.photography
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [reagent.core :as r]
             [pikseli.styles.views.photography :as pstyle]

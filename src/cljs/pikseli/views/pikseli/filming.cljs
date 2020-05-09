@@ -1,4 +1,4 @@
-(ns pikseli.views.filming
+(ns pikseli.views.pikseli.filming
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [reagent.core :as r]
             [pikseli.styles.layout :as layout-style])

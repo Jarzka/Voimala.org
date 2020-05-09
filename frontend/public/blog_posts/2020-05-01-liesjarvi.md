@@ -3,7 +3,7 @@ title: Keväinen retki Liesjärven kansallispuistossa
 date: 2020-05-01
 image: /images/blog/2020-05-01-liesjarvi/_N0A0492_thumb.jpg
 author: Jari Hanhela
-excerpt: Keväinen retki Liesjärven kansallispuistossa
+excerpt: "Ilmojen lämmetessä ja valon lisääntyessä on taas alkanut tehdä mieli viedä itsensä luonnon ääreen retkeilemään. Päiväretkikohteeksi valikoitui tällä kertaa Liesjärven kansallispuisto, jonne on Tampereelta noin puolentoistatunnin ajomatka. Puiston ehkä parhaat palat, Liesjärven selkää halkova Kyynäränharju ja Korteniemen perinnetila, ovat jo tuttuja parin vuoden takaa, mutta mieluusti niitä lähtee katsomaan uudestaankin."
 keywords: liesjärvi, liesjärven kansallispuisto
 ---
 
