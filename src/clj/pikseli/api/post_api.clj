@@ -25,6 +25,7 @@
 
 (defn get-posts [_request]
   ; FIXME Page id is ignored, implement support later
+  (println "RESOURCES: " (settings/resources-on-disk))
   (let [contents (slurp (io/file
                           (str (settings/resources-on-disk) "blog_posts/posts.txt")))
         lines (string/split-lines contents)

@@ -14,11 +14,11 @@
   [com.cognitect/transit-cljs "0.8.264"]
   [com.andrewmcveigh/cljs-time "0.5.2"]]
 
- :dev-http {8080 "resources/public"}
+ :dev-http {8080 "frontend/public"}
 
  :builds
  {:frontend
   {:target :browser
-   :output-dir "resources/public/js"
+   :output-dir "frontend/public/js"
    :devtools {:after-load pikseli.main/start}
    :modules {:main {:init-fn pikseli.main/start}}}}}

@@ -34,18 +34,18 @@
                         :figwheel     {:on-jsload "pikseli.main/start"
                                        :websocket-host   "localhost"
                                        :heads-up-display false}
-                        :compiler     {:output-to     "resources/public/js/dev/pikseli.js"
-                                       :output-dir    "resources/public/js/dev/out"
+                        :compiler     {:output-to     "frontend/public/js/dev/pikseli.js"
+                                       :output-dir    "frontend/public/js/dev/out"
                                        :optimizations :none
                                        :pretty-print  true}}
                        {:id           "production"
                         :source-paths ["src/cljs"]
-                        :compiler     {:output-to     "resources/public/js/pikseli.js"
-                                       :output-dir    "resources/public/js/out"
+                        :compiler     {:output-to     "frontend/public/js/pikseli.js"
+                                       :output-dir    "frontend/public/js/out"
                                        :optimizations :advanced}}]}
-  :clean-targets #^{:protect false} ["resources/public/js/dev/pikseli.js"
-                                     "resources/public/js/dev/out"
-                                     "resources/public/js/pikseli.js"
-                                     "resources/public/js/out"]
+  :clean-targets #^{:protect false} ["frontend/public/js/dev/pikseli.js"
+                                     "frontend/public/js/dev/out"
+                                     "frontend/public/js/pikseli.js"
+                                     "frontend/public/js/out"]
   :source-paths ["src/clj" "src/cljc"]
   :test-paths ["test/clj"])
