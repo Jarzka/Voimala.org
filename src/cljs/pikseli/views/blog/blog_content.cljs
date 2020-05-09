@@ -118,13 +118,11 @@
 (defn- post-list [posts]
   (let [post-ids (-> posts keys sort reverse vec)]
     [:div
-     [:p [:em "(Blogi on vielä työn alla. Lisäilen tänne myös vanhoja retkitarinoita vuodesta 2017 lähtien...)"]]
-     [:div
      (map-indexed
        (fn [index post-id]
          ^{:key index}
          [single-blog-post post-id {:view-mode :excerpt}])
-       post-ids)]]))
+       post-ids)]))
 
 (defn- blog-home []
   (let [post-file-names (r/atom nil)
@@ -147,7 +145,9 @@
            handle-error))
        :render
        (fn []
-         (let [all-files-loaded? (= (count (keys @blog-service/loaded-posts)) (count @post-file-names))]
+         (let [all-files-loaded? (and
+                                   (not (zero? (count (keys @blog-service/loaded-posts))))
+                                   (= (count (keys @blog-service/loaded-posts)) (count @post-file-names)))]
            [:div
             (cond
               error? "Virhe"
