@@ -1,0 +1,1 @@
+{"version":3,"sources":["pikseli/services/blog.cljs"],"mappings":";;;AAGA,AAAKA,AAAa,AAAA,AAACC","names":["pikseli.services.blog/loaded-posts","reagent.core.atom"],"sourcesContent":["(ns pikseli.services.blog\r\n  (:require [reagent.core :as r]))\r\n\r\n(def loaded-posts (r/atom {}))"]}
