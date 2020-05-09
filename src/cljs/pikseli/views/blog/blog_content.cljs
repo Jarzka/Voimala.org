@@ -22,8 +22,8 @@
 (defn- blog-loader []
   [ui/loader-light {:text "Odota hetki..."}])
 
-(defn blog-post-uri [post-id]
-  (str "/blog/" post-id))
+(def blog-uri "/blog")
+(defn blog-post-uri [post-id] (str "/blog/" post-id))
 
 (defn- blog-post-title [post-id title clickable?]
   (if clickable?
@@ -50,7 +50,10 @@
      (when post [blog-post-author-and-date metadata])
      (when-not post [blog-loader])
      [:div (use-style blog-style/blog-post-full
-             {:dangerouslySetInnerHTML {:__html post-html}})]]))
+             {:dangerouslySetInnerHTML {:__html post-html}})]
+     [:div (use-style blog-style/footer-frontpage)
+      [app-link {:uri blog-uri}
+       "Etusivu"]]]))
 
 (defn- blog-post-excerpt
   [post-id]
@@ -155,7 +158,7 @@
      [:header (use-style blog-style/header)
       (if blog-post-id
         [app-link {:style blog-style/back
-                   :uri "/blog"}
+                   :uri blog-uri}
          "< Etusivu"]
         [:a (use-style blog-style/back {:href "https://pikseli.org"})
          "< Pikseli.org"])

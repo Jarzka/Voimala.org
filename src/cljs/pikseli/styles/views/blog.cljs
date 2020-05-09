@@ -43,6 +43,9 @@
                :display :block
                :margin-bottom "1rem"})))
 
+(def footer-frontpage {:font-size "1rem"
+                       :text-align :center})
+
 (def author-and-date {:margin-bottom "1rem"
                       :position :relative
                       :top "-0.5rem"
