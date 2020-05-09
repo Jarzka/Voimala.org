@@ -1,5 +1,5 @@
 ---
-title: Leivonmäen kansallispuisto
+title: "Syksyä vastassa: Leivonmäen kansallispuisto"
 date: 2019-09-22
 image: /images/blog/2019-09-22-leivonmaki/DJI_0668-HDR_thumb.jpg
 author: Jari Hanhela

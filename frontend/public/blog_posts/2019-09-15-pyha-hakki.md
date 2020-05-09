@@ -1,5 +1,5 @@
 ---
-title: Pyhä-Häkin kansallispuisto
+title: "Matka ikimetsään: Pyhä-Häkin kansallispuisto"
 date: 2019-09-15
 image: /images/blog/2019-09-15-pyha-hakki/_MG_0581-HDR_thumb.jpg
 author: Jari Hanhela
