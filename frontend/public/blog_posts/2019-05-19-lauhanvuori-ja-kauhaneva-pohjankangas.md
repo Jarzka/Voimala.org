@@ -11,11 +11,11 @@ Mennyt viikonloppu kului tutustuessa kahteen uuteen kansallispuistoon. Lauhanvuo
 
 ## Lauhanvuori
 
-Retki alkoi lyhyehköllä, reilun viiden kilometrin vaelluksella Spitaalijärvelle, jossa olisi tarkoitus viettää yö teltassa. Se tulisikin olemaan ensimmäinen yö yksin teltassa aikuisiällä, ja vasta toinen yö yksin metsässä yleensä. Ensimmäisen metsäyöni olin nukkunut vajaa vuosi aiemmin Helvetinjärvellä riippumatossa. Kokemus oli positiivinen, mutta tuolloin en ollut täysin varma riippumaton sopivuudesta itselle yöpymisvälineenä mm. ahtaan nukkumatilan takia, joten päätin kokeilla tällä kertaa telttaa.
+Retki alkoi lyhyehköllä, reilun viiden kilometrin vaelluksella Spitaalijärvelle, jossa olisi tarkoitus viettää yö teltassa. Se tulisikin olemaan ensimmäinen yö yksin teltassa, ja vasta toinen yö yksin metsässä yleensä. Ensimmäisen metsäyöni olin nukkunut vajaa vuosi aiemmin Helvetinjärvellä riippumatossa. Kokemus oli positiivinen, mutta tuolloin en ollut täysin varma riippumaton sopivuudesta itselle yöpymisvälineenä mm. ahtaan nukkumatilan takia, joten päätin kokeilla tällä kertaa telttaa.
 
 ![Lauhanvuoren kansallispuisto](/images/blog/2019-05-19-lauhanvuori-ja-kauhaneva-pohjankangas/_MG_4708-Pano_thumb.jpg)
 
-Kävely spitaalijärvelle sujui hyvin, vaikka päiväretkikamppeisiin verrattuna rinkan paino olikin yön yli -retkiin tottumattomalle hieman turhan raskaaksi pakattu. Pääsin kuitenkin perille ilman suurempia ongelmia, ja kieltämättä raskaan rinkan kanssa perille pääseminen on aina hieman palkitsevampaa kuin kohteen saavuttaminen päiväretkillä. Muita retkeilijöitä ei tässä vaiheessa juuri näkynyt, vaikka pelkäsin paikalla olevan ruuhkaa. Spitaalijärven lähelle kun pääsee myös autolla, niin halutessaan.
+Kävely spitaalijärvelle sujui hyvin, vaikka päiväretkikamppeisiin verrattuna rinkka olikin yön yli -retkiin tottumattomalle hieman turhan raskaaksi pakattu. Pääsin kuitenkin perille ilman suurempia ongelmia, ja kieltämättä raskaan rinkan kanssa perille pääseminen on aina hieman palkitsevampaa kuin kohteen saavuttaminen päiväretkillä. Muita retkeilijöitä ei tässä vaiheessa juuri näkynyt, vaikka pelkäsin paikalla olevan ruuhkaa. Spitaalijärven lähelle kun pääsee myös autolla, niin halutessaan.
 
 Ilma oli sen verran lämmin, että uskaltauduin heittään talviturkin pois. Se saattoi hyvinkin olla ensimmäinen kerta, kun turkki lähtee jo toukokuussa, yleensä olen tohjennut uimaan vasta heinäkuussa. Muuten ilta sujui auringonlaskua ihaillessa ja luonnosta nauttien.
 

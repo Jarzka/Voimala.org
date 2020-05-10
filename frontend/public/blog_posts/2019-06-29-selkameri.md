@@ -3,13 +3,13 @@ title: "Selkämeren kansallispuisto maalta käsin"
 date: 2019-06-29
 image: /images/blog/2019-06-29-selkameri/DJI_0755-Pano_thumb.jpg
 author: Jari Hanhela
-excerpt: "Selkämeren kansallispuisto on varmasti yksi niistä kansallispuistoista, joita on kokonsa puolesta mahdotonta kokea saatika esitellä yhdellä reissulla. Puistoalue käsittää 912 neliökilometriä Selkämerta alkaen Merikarvialta ja jatkuen aina Uuteenkaupunkiin asti. Retkeilyalueena puisto on rikkonainen: valtaosa kansallispuistosta on veden peitossa ja varsinaiset kävelyreitit sijaitsevat pääosin saarissa kaukana toisistaan. Ei siis mikään paras madhollinen lähtökohta itselleni kävelyretkikohteeksi."
+excerpt: "Selkämeren kansallispuisto on varmasti yksi niistä kansallispuistoista, joita on kokonsa puolesta mahdotonta kokea saatika esitellä yhdellä reissulla. Puistoalue käsittää 912 neliökilometriä Selkämerta alkaen Merikarvialta ja jatkuen aina Uuteenkaupunkiin asti. Retkeilyalueena puisto on rikkonainen: valtaosa kansallispuistosta on veden peitossa ja varsinaiset kävelyreitit sijaitsevat pääosin saarissa kaukana toisistaan. Ei siis mikään paras mahdollinen lähtökohta itselleni kävelyretkikohteeksi."
 keywords: selkameri, selkämeri, selkämeren kansallispuisto, yyteri, pori
 ---
 
 ![Selkämeri](/images/blog/2019-06-29-selkameri/_MG_7244_thumb.jpg)
 
-Selkämeren kansallispuisto on varmasti yksi niistä kansallispuistoista, joita on kokonsa puolesta mahdotonta kokea saatika esitellä yhdellä reissulla. Puistoalue käsittää 912 neliökilometriä Selkämerta alkaen Merikarvialta ja jatkuen aina Uuteenkaupunkiin asti. Retkeilyalueena puisto on rikkonainen: valtaosa kansallispuistosta on veden peitossa ja varsinaiset kävelyreitit sijaitsevat pääosin saarissa kaukana toisistaan. Ei siis mikään paras madhollinen lähtökohta itselleni kävelyretkikohteeksi.
+Selkämeren kansallispuisto on varmasti yksi niistä kansallispuistoista, joita on kokonsa puolesta mahdotonta kokea saatika esitellä yhdellä reissulla. Puistoalue käsittää 912 neliökilometriä Selkämerta alkaen Merikarvialta ja jatkuen aina Uuteenkaupunkiin asti. Retkeilyalueena puisto on rikkonainen: valtaosa kansallispuistosta on veden peitossa ja varsinaiset kävelyreitit sijaitsevat pääosin saarissa kaukana toisistaan. Ei siis mikään paras mahdollinen lähtökohta itselleni kävelyretkikohteeksi.
 
 ![Selkämeri](/images/blog/2019-06-29-selkameri/_MG_7088-Pano-2_thumb.jpg)
 
