@@ -51,6 +51,7 @@
    view-mode  :full / :excerpt"
   [_post-id _options]
   (let [post-html (r/atom nil)
+        reset-html! #(reset! post-html nil)
         set-contents! (fn [post]
                         (let [metadata (:metadata post)]
                           ; Update title & page metadata if full post is shown
@@ -105,14 +106,16 @@
                               [:div (use-style blog-style/blog-post-frontpage)
                                (when previous-post-id
                                  [app-link {:style blog-style/footer-link
-                                            :uri (str blog-uri "/" previous-post-id)}
+                                            :uri (str blog-uri "/" previous-post-id)
+                                            :on-click reset-html!}
                                   "« Edellinen tarina"])
                                [app-link {:style blog-style/footer-link
                                           :uri blog-uri}
                                 "Etusivu"]
                                (when next-post-id
                                  [app-link {:style blog-style/footer-link
-                                            :uri (str blog-uri "/" next-post-id)}
+                                            :uri (str blog-uri "/" next-post-id)
+                                            :on-click reset-html!}
                                   "Seuraava tarina »"])])]))})))
 
 (defn- blog-post-excerpt

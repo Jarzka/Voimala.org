@@ -5,7 +5,7 @@
     [pikseli.utils :refer [scroll-to-top]]
     [pikseli.services.router :as router]))
 
-(defn app-link [{:keys [style uri navigate-in-app?]} text]
+(defn app-link [{:keys [style uri navigate-in-app? on-click]} text]
   [:a (use-style style {:href uri
                         :on-click (fn [event]
                                     (when-not (false? navigate-in-app?)
@@ -16,5 +16,7 @@
                                                   (page-settings/page-title uri)
                                                   uri)
                                       (router/update-uri! uri)
-                                      (scroll-to-top)))})
+                                      (scroll-to-top))
+                                    (when on-click
+                                      (on-click)))})
    text])
