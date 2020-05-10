@@ -141,7 +141,7 @@
           post-ids-currently-shown)
 
         (when last-index-selected?
-          [:p [:em (use-style {:text-align :center}) "(Tätä vanhemmat retkitarinat lisätään sivulle myöhemmin...)"]])
+          [:p [:em (use-style {:text-align :center}) "(Tätä vanhemmat retkitarinat lisätään blogiin myöhemmin...)"]])
         [pagination]]])))
 
 (defn- blog-home []
