@@ -22,9 +22,7 @@
        :body blog-post})))
 
 (defn get-posts [_request]
-  ; FIXME Page id is ignored, implement support later
-  (let [contents (slurp (io/file
-                          (str (settings/resources-on-disk) "blog_posts/posts.txt")))
+  (let [contents (slurp (io/file (str (settings/resources-on-disk) "blog_posts/posts.txt")))
         lines (string/split-lines contents)
         lines-stored (vec (reverse (sort lines)))]
     {:status 200

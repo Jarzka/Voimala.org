@@ -3,6 +3,7 @@
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
             [pikseli.components.app-link :refer [app-link]]
             [pikseli.api.post-api :as post-api]
+            [pikseli.components.pagination :as pagination]
             [pikseli.services.blog :as blog-service]
             [pikseli.services.dom :as dom-service]
             [pikseli.styles.views.blog :as blog-style]
@@ -18,6 +19,7 @@
             [pikseli.ui.general :as ui]))
 
 (def blog-date-out-formatter (format/formatter "d.M.yyyy"))
+(def posts-per-page 15)
 
 (defn- blog-loader []
   [ui/loader-light {:text "Odota hetki..."}])
@@ -50,7 +52,7 @@
      (when post [blog-post-author-and-date metadata])
      (when-not post [blog-loader])
      [:div (use-style blog-style/blog-post-full
-             {:dangerouslySetInnerHTML {:__html post-html}})]
+                      {:dangerouslySetInnerHTML {:__html post-html}})]
      [:div (use-style blog-style/footer-frontpage)
       [app-link {:uri blog-uri}
        "Etusivu"]]]))
@@ -116,15 +118,31 @@
             :excerpt [blog-post-excerpt post-id])])})))
 
 (defn- post-list [posts]
-  (let [post-ids (-> posts keys sort reverse vec)]
-    [:div
-     [:p [:em "(Blogi on vielä työn alla. Lisäilen tänne myös vanhoja retkitarinoita vuodesta 2017 lähtien...)"]]
-     [:div
-     (map-indexed
-       (fn [index post-id]
-         ^{:key index}
-         [single-blog-post post-id {:view-mode :excerpt}])
-       post-ids)]]))
+  (println "post-list")
+  (r/with-let
+    [current-page-index (r/atom 0)]
+    (let [post-ids (-> posts keys sort reverse vec)
+          post-ids-on-pages (vec (partition-all posts-per-page post-ids))
+          max-page-index (dec (count post-ids-on-pages))
+          post-ids-currently-shown (vec (get post-ids-on-pages @current-page-index))
+          last-index-selected? (= @current-page-index max-page-index)
+          pagination (fn []
+                       [pagination/pagination {:indexes (range 0 (inc max-page-index))
+                                               :active-index @current-page-index
+                                               :on-index-selected (fn [index] (reset! current-page-index index))}])]
+      [:div
+       [pagination]
+       [:div
+
+        (map-indexed
+          (fn [index post-id]
+            ^{:key post-id}
+            [single-blog-post post-id {:view-mode :excerpt}])
+          post-ids-currently-shown)
+
+        (when last-index-selected?
+          [:p [:em (use-style {:text-align :center}) "(Tätä vanhemmat retkitarinat lisätään sivulle myöhemmin)"]])
+        [pagination]]])))
 
 (defn- blog-home []
   (let [post-file-names (r/atom nil)
@@ -168,8 +186,8 @@
          "< Pikseli.org"])
       [:div (use-sub-style layout/site-header :logo-and-description)
        [:div [app-link {:uri "/blog"}
-        [:img (use-sub-style layout/site-header :logo-blog
-                             {:alt "Kotona ikimetsässä" :src page-settings/blog-logo-url})]]]]]
+              [:img (use-sub-style layout/site-header :logo-blog
+                                   {:alt "Kotona ikimetsässä" :src page-settings/blog-logo-url})]]]]]
      (if blog-post-id
        [single-blog-post blog-post-id {:view-mode :full}]
        [blog-home])]))
