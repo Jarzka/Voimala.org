@@ -97,8 +97,6 @@
                             (when-not post [blog-loader])
                             (when @blog-service/error? "Virhe")
 
-                            (println "POST HTML: " @post-html)
-
                             (when @post-html
                               [:div (use-style blog-style/blog-post-full
                                               {:dangerouslySetInnerHTML {:__html @post-html}})])
