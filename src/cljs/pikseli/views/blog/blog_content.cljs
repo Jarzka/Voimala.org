@@ -99,10 +99,10 @@
 
                             (when @post-html
                               [:div (use-style blog-style/blog-post-full
-                                              {:dangerouslySetInnerHTML {:__html @post-html}})])
+                                               {:dangerouslySetInnerHTML {:__html @post-html}})])
 
                             (when post
-                              [:div (use-style blog-style/footer-frontpage)
+                              [:div (use-style blog-style/blog-post-frontpage)
                                (when previous-post-id
                                  [app-link {:style blog-style/footer-link
                                             :uri (str blog-uri "/" previous-post-id)}

@@ -14,11 +14,20 @@
 
 (def hidden {:display "none"})
 
-(def phone-max-width "400px")
+(def phone-max-width "450px")
 (def tablet-max-width "1024px")
 
 (defn on-mobile [style]
   {::stylefy/media {{:max-width tablet-max-width}
+                    style}})
+
+(defn on-tablet [style]
+  {::stylefy/media {{:min-width phone-max-width
+                     :max-width tablet-max-width}
+                    style}})
+
+(defn on-phone [style]
+  {::stylefy/media {{:max-width phone-max-width}
                     style}})
 
 ;; ****************************************************************

@@ -16,7 +16,7 @@
                          :margin-top "0.5rem"
                          :margin-bottom "0.5rem"
                          :width "80%"}]
-                       (at-media {:max-width g-styles/phone-max-width}
+                       (at-media {:max-width g-styles/tablet-max-width}
                                  [:img {:width "100%"}])]}))
 
 (def blog-post-excerpt
@@ -43,11 +43,21 @@
                :display :block
                :margin-bottom "1rem"})))
 
-(def footer-frontpage {:font-size "1rem"
-                       :text-align :center})
+(def blog-post-frontpage {:font-size "1rem"
+                          :text-align :center
+                          :display :flex
+                          :justify-content :center
+                          :flex-wrap :wrap})
 
-(def footer-link {:padding-right "1rem"
-                  :padding-left "1rem"})
+(def footer-link (merge-with merge
+                   {:padding-right "1.3rem"
+                    :padding-left "1.3rem"}
+                   (g-styles/on-tablet
+                     {:padding-right "0.7rem"
+                      :padding-left "0.7rem"})
+                   (g-styles/on-phone
+                     {:width "100%"
+                      :margin-top "0.5rem"})))
 
 (def author-and-date {:margin-bottom "1rem"
                       :position :relative
