@@ -1,6 +1,8 @@
 (ns pikseli.services.blog
   (:require [reagent.core :as r]))
 
+(def current-page-index (r/atom 0))
+
 (def post-ids (r/atom nil))
 
 (def posts (r/atom {}))

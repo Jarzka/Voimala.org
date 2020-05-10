@@ -132,8 +132,7 @@
 (defn- blog-post-list
   "List of blog posts. Always loads posts on current page before renders all of them at once."
   []
-  (let [current-page-index (r/atom 0)
-        resolve-max-page-index (fn []
+  (let [resolve-max-page-index (fn []
                                  (let [post-ids (-> @blog-service/post-ids sort reverse vec)
                                        post-ids-partitioned (vec (partition-all posts-per-page post-ids))
                                        max-page-index (dec (count post-ids-partitioned))]
@@ -141,7 +140,7 @@
         resolve-post-ids-on-current-page (fn []
                                            (let [post-ids (-> @blog-service/post-ids sort reverse vec)
                                                  post-ids-partitioned (vec (partition-all posts-per-page post-ids))
-                                                 post-ids-on-current-page (vec (get post-ids-partitioned @current-page-index))]
+                                                 post-ids-on-current-page (vec (get post-ids-partitioned @blog-service/current-page-index))]
                                              post-ids-on-current-page))
         load-posts-if-needed! (fn []
                                 (let [post-ids (resolve-post-ids-on-current-page)]
@@ -168,15 +167,15 @@
                        post-ids @blog-service/post-ids
                        post-ids-on-current-page (resolve-post-ids-on-current-page)
                        max-page-index (resolve-max-page-index)
-                       last-index-selected? (= @current-page-index max-page-index)
+                       last-index-selected? (= @blog-service/current-page-index max-page-index)
                        loaded? (and (not (empty? post-ids))
                                     (blog-service/posts-loaded? post-ids-on-current-page))
                        pagination (fn []
                                     [pagination/pagination {:indexes (range 0 (inc max-page-index))
-                                                            :active-index @current-page-index
+                                                            :active-index @blog-service/current-page-index
                                                             :on-index-selected (fn [index]
                                                                                  (scroll-to-top)
-                                                                                 (reset! current-page-index index))}])]
+                                                                                 (reset! blog-service/current-page-index index))}])]
                    [:div
                     (when error? "Virhe")
                     (if loaded?
