@@ -22,6 +22,9 @@
 (def blog-date-out-formatter (format/formatter "d.M.yyyy"))
 (def posts-per-page 15)
 
+(defn error-text []
+  [:p (use-style g-styles/error-text) "Virhe"])
+
 (defn- blog-loader []
   [ui/loader-light {:text "Odota hetki..."}])
 
@@ -96,7 +99,7 @@
                             (when post [blog-post-author-and-date metadata])
 
                             (when-not post [blog-loader])
-                            (when @blog-service/error? "Virhe")
+                            (when @blog-service/error? [error-text])
 
                             (when @post-html
                               [:div (use-style blog-style/blog-post-full
@@ -182,7 +185,7 @@
                                                                                          (scroll-to-top)
                                                                                          (reset! blog-service/current-page-index index))}])]
                            [:div
-                            (when error? "Virhe")
+                            (when error? [error-text])
                             (if loaded?
                               [:div
                                [pagination]

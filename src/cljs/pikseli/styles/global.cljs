@@ -54,6 +54,7 @@
 (def colors {:text (if style-settings/dark-mode? "#eaeaea" "#121212")
              :link (if style-settings/dark-mode? "#46aee5" "#b9511a")
              :background-secondary "rgba(14, 31, 40, 0.85)"
+             :error "red"
              :header (if style-settings/dark-mode? "#eaeaea" "#121212")})
 
 (def text-small {:font-size "0.8rem"})
@@ -73,6 +74,12 @@
 (def text-center {:text-align :center})
 
 (def text-smaller {:font-size "0.8rem"})
+
+(def error-text
+  (merge text-center
+         {:color (:error colors)
+          :margin-top "1rem"
+          :margin-bottom "1rem"}))
 
 ;; ****************************************************************
 ;; Headings
