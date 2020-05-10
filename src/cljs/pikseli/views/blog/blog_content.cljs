@@ -8,6 +8,7 @@
             [pikseli.services.dom :as dom-service]
             [pikseli.styles.views.blog :as blog-style]
             [pikseli.page-settings :as page-settings]
+            [pikseli.utils :refer [scroll-to-top]]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
             [cljs-time.format :as format]
@@ -118,7 +119,6 @@
             :excerpt [blog-post-excerpt post-id])])})))
 
 (defn- post-list [posts]
-  (println "post-list")
   (r/with-let
     [current-page-index (r/atom 0)]
     (let [post-ids (-> posts keys sort reverse vec)
@@ -129,7 +129,9 @@
           pagination (fn []
                        [pagination/pagination {:indexes (range 0 (inc max-page-index))
                                                :active-index @current-page-index
-                                               :on-index-selected (fn [index] (reset! current-page-index index))}])]
+                                               :on-index-selected (fn [index]
+                                                                    (scroll-to-top)
+                                                                    (reset! current-page-index index))}])]
       [:div
        [pagination]
        [:div

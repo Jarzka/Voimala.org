@@ -9,3 +9,6 @@
                        (reset! width (.-innerWidth js/window)))))
 
 (listen-window-size)
+
+(defn scroll-to-top []
+  (.scrollTo js/window. #js {:top 0}))

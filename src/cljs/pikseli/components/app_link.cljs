@@ -2,6 +2,7 @@
   (:require
     [stylefy.core :refer [use-style sub-style use-sub-style]]
     [pikseli.page-settings :as page-settings]
+    [pikseli.utils :refer [scroll-to-top]]
     [pikseli.services.router :as router]))
 
 (defn app-link [{:keys [style uri navigate-in-app?]} text]
@@ -15,5 +16,5 @@
                                                   (page-settings/page-title uri)
                                                   uri)
                                       (router/update-uri! uri)
-                                      (.scrollTo js/window. #js {:top 0})))})
+                                      (scroll-to-top)))})
    text])
