@@ -23,7 +23,7 @@
 (def posts-per-page 15)
 
 (defn error-text []
-  [:p (use-style g-styles/error-text) "Virhe"])
+  [:p (use-style g-styles/error-text) "Virhe. Yritä ladata sivu uudelleen."])
 
 (defn- blog-loader []
   [ui/loader-light {:text "Odota hetki..."}])
