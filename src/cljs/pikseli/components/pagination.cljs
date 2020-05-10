@@ -21,17 +21,17 @@
                   :disabled? (= active-index 0)
                   :clicked on-index-selected
                   :text "Edellinen"}]
-      (map-indexed
-        (fn [index]
-          (let [active? (= active-index index)]
-            ^{:key index}
-            [:li.page-item (when active? {:class "active"})
-             [page-item {:index index
-                         :disabled? active?
-                         :clicked on-index-selected
-                         :active active?
-                         :text (inc index)}]]))
-        indexes)
+      (when indexes
+        (map-indexed
+          (fn [index]
+            (let [active? (= active-index index)]
+              ^{:key index}
+              [page-item {:index index
+                          :disabled? active?
+                          :clicked on-index-selected
+                          :active active?
+                          :text (inc index)}]))
+          indexes))
       [page-item {:index max-index
                   :disabled? (= active-index max-index)
                   :clicked on-index-selected

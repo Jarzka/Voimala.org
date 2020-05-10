@@ -10,15 +10,11 @@
 (def post-endpoint "post")
 (def post-ids-endpoint "post-ids")
 
-(defn get-post [file-name ok error]
+(defn get-post [post-id ok error]
   (ajax/GET!
-    (str api-uri post-endpoint "/" file-name)
-    {:ok #(ok file-name %)
+    (str api-uri post-endpoint "/" post-id)
+    {:ok #(ok post-id %)
      :error error}))
-
-(defn get-posts [file-names ok error]
-  (doseq [file-name file-names]
-    (get-post file-name ok error)))
 
 (defn get-post-ids [ok error]
   (ajax/GET!

@@ -22,7 +22,7 @@
 (defn content []
   [:div
    (if (router/uri-is-blog?)
-     [blog-content/content]
+     [blog-content/main]
      [pikseli-content/content])])
 
 (defn- site-body []

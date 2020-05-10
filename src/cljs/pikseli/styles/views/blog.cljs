@@ -46,6 +46,9 @@
 (def footer-frontpage {:font-size "1rem"
                        :text-align :center})
 
+(def footer-link {:padding-right "1rem"
+                  :padding-left "1rem"})
+
 (def author-and-date {:margin-bottom "1rem"
                       :position :relative
                       :top "-0.5rem"
