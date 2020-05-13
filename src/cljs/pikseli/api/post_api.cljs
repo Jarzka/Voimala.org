@@ -8,11 +8,18 @@
 
 (def api-uri "/api/")
 (def post-endpoint "post")
+(def post-metadata-endpoint "post-metadata")
 (def post-ids-endpoint "post-ids")
 
 (defn get-post [post-id ok error]
   (ajax/GET!
     (str api-uri post-endpoint "/" post-id)
+    {:ok #(ok post-id %)
+     :error error}))
+
+(defn get-post-metadata [post-id ok error]
+  (ajax/GET!
+    (str api-uri post-metadata-endpoint "/" post-id)
     {:ok #(ok post-id %)
      :error error}))
 

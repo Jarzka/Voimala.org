@@ -35,8 +35,11 @@
        ["/post/:id" {:get {:parameters {:path {:id string?}}
                            ;:responses {200 {:metadata map? :html string?}}
                            :handler post-api/get-post}}]
+       ["/post-metadata/:id" {:get {:parameters {:path {:id string?}}
+                                    ;:responses {200 {:metadata map? :html string?}}
+                                    :handler post-api/get-post-metadata}}]
        ["/post-ids" {:get {;:responses {200 {:body vector?}}
-                                 :handler post-api/get-posts}}]])))
+                           :handler post-api/get-posts}}]])))
 
 (defn write-transit [response]
   (let [out (ByteArrayOutputStream. 4096)

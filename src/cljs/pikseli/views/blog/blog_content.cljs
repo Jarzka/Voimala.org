@@ -55,6 +55,7 @@
   [_post-id _options]
   (let [post-html (r/atom nil)
         reset-html! #(reset! post-html nil)
+        post-fully-loaded? (fn [post] (boolean (and post (:html post))))
         set-contents! (fn [post]
                         (let [metadata (:metadata post)]
                           ; Update title & page metadata if full post is shown
@@ -74,14 +75,14 @@
                           (reset! post-html (:html post))))
         update-contents! (fn [post-id]
                            (let [post (get @blog-service/posts post-id)]
-                             (if post
+                             (if (post-fully-loaded? post)
                                (set-contents! post)
                                (do
                                  (post-api/get-post post-id
-                                                   (fn [post-id contents]
-                                                     (swap! blog-service/posts assoc post-id contents)
-                                                     (set-contents! contents))
-                                                   (fn [] (reset! blog-service/error? true)))))))]
+                                                    (fn [post-id contents]
+                                                      (swap! blog-service/posts assoc post-id contents)
+                                                      (set-contents! contents))
+                                                    (fn [] (reset! blog-service/error? true)))))))]
     (r/create-class
       {:component-did-update (fn [this]
                                (let [[post-id] (rest (r/argv this))]
@@ -91,21 +92,22 @@
                                 (update-contents! post-id)))
        :reagent-render (fn [post-id]
                          (let [post (get @blog-service/posts post-id)
+                               post-loaded? (post-fully-loaded? post)
                                previous-post-id (blog-service/previous-post-id post-id)
                                next-post-id (blog-service/next-post-id post-id)
                                metadata (:metadata post)]
                            [:article
-                            (when post [blog-post-title post-id (:title metadata) false])
-                            (when post [blog-post-author-and-date metadata])
+                            (when post-loaded? [blog-post-title post-id (:title metadata) false])
+                            (when post-loaded? [blog-post-author-and-date metadata])
 
-                            (when-not post [blog-loader])
+                            (when-not post-loaded? [blog-loader])
                             (when @blog-service/error? [error-text])
 
                             (when @post-html
                               [:div (use-style blog-style/blog-post-full
                                                {:dangerouslySetInnerHTML {:__html @post-html}})])
 
-                            (when post
+                            (when post-loaded?
                               [:div (use-style blog-style/blog-post-frontpage)
                                (when previous-post-id
                                  [app-link {:style blog-style/footer-link
@@ -156,13 +158,13 @@
                                     (when (and
                                             (not (get @blog-service/posts post-id))
                                             (not (@blog-service/posts-loading post-id)))
-                                      (post-api/get-post post-id
-                                                         (fn [post-id contents]
-                                                           (swap! blog-service/posts-loading disj post-id)
-                                                           (swap! blog-service/posts assoc post-id contents))
-                                                         (fn []
-                                                           (swap! blog-service/posts-loading disj post-id)
-                                                           (reset! blog-service/error? true)))
+                                      (post-api/get-post-metadata post-id
+                                                                  (fn [post-id metadata]
+                                                                    (swap! blog-service/posts-loading disj post-id)
+                                                                    (swap! blog-service/posts assoc post-id {:metadata metadata}))
+                                                                  (fn []
+                                                                    (swap! blog-service/posts-loading disj post-id)
+                                                                    (reset! blog-service/error? true)))
                                       (swap! blog-service/posts-loading conj post-id)))))]
     (r/create-class
       {:component-did-mount (fn []
