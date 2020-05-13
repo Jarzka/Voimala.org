@@ -22,3 +22,4 @@ figwheel_server.log
 dev_notes.md
 node_modules
 .shadow-cljs
+setup.md

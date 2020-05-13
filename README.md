@@ -11,8 +11,16 @@ npm install
 npx shadow-cljs watch frontend
 ```
 
+```bash
+lein repl
+```
+
 ## Compile production
 
 ```bash
 npx shadow-cljs release frontend
+```
+
+```bash
+lein uberjar
 ```
