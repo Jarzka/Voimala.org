@@ -16,8 +16,8 @@
        [:p "My little hiking / nature blog (in Finnish)."]
 
        [:a {:href "https://dev.solita.fi/"}
-        [:h2 (use-style g-styles/link) "/dev/solita (Solita's software development blog)"]]
-       [:p "Articles written by me:"]
+        [:h2 (use-style g-styles/link) "/dev/solita"]]
+       [:p "Solita's software development blog. Articles written by me:"]
        [:ul
         [:li
          [:a {:href "http://dev.solita.fi/2018/02/06/unreliable-network.html"} "6.2.2018 - Quick Tips for App Developers on Surviving with Unreliable Network"]]

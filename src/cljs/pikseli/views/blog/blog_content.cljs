@@ -26,7 +26,7 @@
   [:p (use-style g-styles/error-text) "Virhe. Yritä ladata sivu uudelleen."])
 
 (defn- blog-loader []
-  [ui/loader-light {:text "Odota hetki..."}])
+  [ui/loader-light])
 
 (def blog-uri "/blog")
 (defn blog-post-uri [post-id] (str "/blog/" post-id))

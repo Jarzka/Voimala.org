@@ -52,10 +52,15 @@
         (assoc :body (.toString out)))))
 
 (defn app [request]
-  (let [api-uri (fn [uri] (string/starts-with? uri "/api"))]
-    (if (api-uri (:uri request))
-      (write-transit (handler request))
-      (index request))))
+  (let [index-uri? (fn [uri] (or
+                               (= uri "")
+                               (= uri "/")
+                               (string/starts-with? uri "/blog")))
+        api-uri? (fn [uri] (string/starts-with? uri "/api"))]
+    (cond
+      (index-uri? (:uri request)) (index request)
+      (api-uri? (:uri request)) (write-transit (handler request))
+      :default {:status 404 :body "Not found"})))
 
 (defn -main [& []]
   (settings/read-settings)

@@ -29,7 +29,6 @@
   (let [id (:id path-params)
         blog-post (get-post-data id)
         blog-post-meta (:metadata blog-post)]
-    (println "POSTI: " blog-post)
     {:status 200
      :body blog-post-meta}))
 
