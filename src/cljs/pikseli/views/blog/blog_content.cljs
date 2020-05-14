@@ -133,7 +133,8 @@
      (when post [blog-post-author-and-date metadata])
      (when-not post [blog-loader])
      [:div (use-style blog-style/blog-post-excerpt)
-      [:img {:src (:image metadata) :alt (:title metadata)}]
+      [app-link {:uri (blog-post-uri post-id)}
+       [:img {:src (:image metadata) :alt (:title metadata)}]]
       [:p (:excerpt metadata)
        " "
        [app-link {:uri (blog-post-uri post-id)}
