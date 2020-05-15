@@ -29,5 +29,5 @@
   "Parses blog post id from URL, or returns nil if post id was not found"
   [uri]
   (when (and (uri-points-to-blog? uri)
-             (uri-is-blog-about? uri))
+             (not (uri-is-blog-about? uri)))
     (second (uri-parts uri))))
