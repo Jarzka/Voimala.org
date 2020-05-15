@@ -31,6 +31,12 @@
 (def blog-uri "/blog")
 (defn blog-post-uri [post-id] (str "/blog/" post-id))
 
+(defn about []
+  [:div (use-style blog-style/about-page)
+   [:p "Olen Jari Hanhela, 29-vuotias retki- ja valokuvausharrastaja Tampereelta. Tässä blogissa jaan luontoretkilläni syntyneitä kuvia ja ajatuksia. Luonto on minulle rauhoittumisen, hyvinvoinnin ja inspiraation lähde, ja siksi palaan sinne aina uudestaan."]
+   [:p "Haaveenani on kiertää kaikki Suomen 40. kansallispuistoa ja kirjoitaa jokaisesta pieni retkitarina. Tältä matkalta puuttuu vielä 13 kansallispuistoa."]
+   [:p "Löydät minut myös Instagramista: " [:a {:href "https://instagram.com/jari_hanhela"} "jari_hanhela"]]])
+
 (defn- blog-post-title [post-id title clickable?]
   (if clickable?
     [app-link {:uri (blog-post-uri post-id)}
@@ -211,19 +217,27 @@
                               (fn [ids] (reset! blog-service/post-ids ids))
                               (fn [] (reset! blog-service/error? true))))
      :reagent-render (fn []
-                       (let [blog-post-id (router/blog-post-id @router-service/uri)]
+                       (let [blog-post-id (router/blog-post-id @router-service/uri)
+                             about? (router/uri-is-blog-about? @router-service/uri)]
                          [:div (use-style blog-style/blog-content)
                           [:header (use-style blog-style/header)
-                           (if blog-post-id
-                             [app-link {:style blog-style/back
-                                        :uri blog-uri}
-                              "< Etusivu"]
-                             [:a (use-style blog-style/back {:href "https://pikseli.org"})
-                              "< Pikseli.org"])
+
+                           [:div (use-style blog-style/top-links)
+                            (if (or blog-post-id about?)
+                              [app-link {:style blog-style/back
+                                         :uri blog-uri}
+                               "< Etusivu"]
+                              [:a (use-style blog-style/back {:href "https://pikseli.org"})
+                               "< Pikseli.org"])
+                            [app-link {:style blog-style/about
+                                       :uri "/blog/about"}
+                             "Kirjoittajasta"]]
+
                            [:div (use-sub-style layout/site-header :logo-and-description)
                             [:div [app-link {:uri "/blog"}
                                    [:img (use-sub-style layout/site-header :logo-blog
                                                         {:alt "Kotona ikimetsässä" :src page-settings/blog-logo-url})]]]]]
-                          (if blog-post-id
-                            [full-blog-post blog-post-id {:view-mode :full}]
-                            [blog-post-list])]))}))
+                          (cond
+                            about? [about]
+                            blog-post-id [full-blog-post blog-post-id {:view-mode :full}]
+                            :default [blog-post-list])]))}))

@@ -34,14 +34,23 @@
 
 (def header {:position :relative})
 
-(def back (merge
-            {:position :absolute
-             :left "0.1rem"
-             :top "0.1rem"}
-            (g-styles/on-mobile
-              {:position :static
-               :display :block
-               :margin-bottom "1rem"})))
+(def top-links (merge
+                 {:position :absolute
+                  :display :flex
+                  :width "100%"}
+                 (g-styles/on-mobile
+                   {:position :static
+                    :margin-bottom "1rem"})))
+
+(def back {:flex 1
+           :padding "0.1rem"
+           :text-align :left})
+(def about {:flex 1
+            :display :block
+            :padding "0.1rem"
+            :text-align :right})
+
+(def about-page {:margin-top "1rem"})
 
 (def blog-post-frontpage {:font-size "1rem"
                           :text-align :center
@@ -50,14 +59,14 @@
                           :flex-wrap :wrap})
 
 (def footer-link (merge-with merge
-                   {:padding-right "1.3rem"
-                    :padding-left "1.3rem"}
-                   (g-styles/on-tablet
-                     {:padding-right "0.7rem"
-                      :padding-left "0.7rem"})
-                   (g-styles/on-phone
-                     {:width "100%"
-                      :margin-top "0.5rem"})))
+                             {:padding-right "1.3rem"
+                              :padding-left "1.3rem"}
+                             (g-styles/on-tablet
+                               {:padding-right "0.7rem"
+                                :padding-left "0.7rem"})
+                             (g-styles/on-phone
+                               {:width "100%"
+                                :margin-top "0.5rem"})))
 
 (def author-and-date {:margin-bottom "1rem"
                       :position :relative

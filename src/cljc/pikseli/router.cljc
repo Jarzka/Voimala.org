@@ -22,6 +22,9 @@
   (or (subdomain-points-to-blog? host)
       (uri-points-to-blog? uri)))
 
+(defn uri-is-blog-about? [uri]
+  (= uri "/blog/about"))
+
 (defn blog-post-id
   "Parses blog post id from URL, or returns nil if post id was not found"
   [uri]
