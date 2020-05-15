@@ -32,10 +32,18 @@
 (defn blog-post-uri [post-id] (str "/blog/" post-id))
 
 (defn about []
-  [:div (use-style blog-style/about-page)
-   [:p "Olen Jari Hanhela, 29-vuotias retki- ja valokuvausharrastaja Tampereelta. Tässä blogissa jaan luontoretkilläni syntyneitä kuvia ja ajatuksia. Luonto on minulle rauhoittumisen, hyvinvoinnin ja inspiraation lähde, ja siksi palaan sinne aina uudestaan."]
-   [:p "Haaveenani on kiertää kaikki Suomen 40. kansallispuistoa ja kirjoitaa jokaisesta pieni retkitarina. Tältä matkalta puuttuu vielä 13 kansallispuistoa."]
-   [:p "Löydät minut myös Instagramista: " [:a {:href "https://instagram.com/jari_hanhela"} "jari_hanhela"]]])
+  (r/create-class
+    {:component-did-mount (fn []
+                            (dom-service/set-title (page-settings/page-title "/blog/about")))
+     :reagent-render (fn []
+                       [:div (use-style blog-style/about-page)
+                        [:div (use-style blog-style/about-frame)
+                         [:div (use-style blog-style/about-image-frame)
+                          [:img (use-style blog-style/about-image {:src "/images/author.jpg"})]]
+                         [:div (use-style blog-style/about-text)
+                          [:p "Olen Jari Hanhela, 29-vuotias retki- ja valokuvausharrastaja Tampereelta. Tässä blogissa jaan luontoretkilläni syntyneitä kuvia ja ajatuksia. Luonto on minulle rauhoittumisen, hyvinvoinnin ja inspiraation lähde, ja siksi palaan sinne aina uudestaan."]
+                          [:p "Haaveenani on kiertää kaikki Suomen 40. kansallispuistoa ja kirjoitaa jokaisesta pieni retkitarina. Tältä matkalta puuttuu vielä 13 kansallispuistoa."]
+                          [:p "Löydät minut myös Instagramista: " [:a {:href "https://instagram.com/jari_hanhela"} "jari_hanhela"]]]]])}))
 
 (defn- blog-post-title [post-id title clickable?]
   (if clickable?

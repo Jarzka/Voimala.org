@@ -52,6 +52,20 @@
 
 (def about-page {:margin-top "1rem"})
 
+(def about-frame
+  (merge
+    {:display :flex
+    :margin "1rem"}
+    (g-styles/on-phone
+      {:flex-flow :column})))
+
+(def about-image-frame {:flex 1})
+(def about-image {:width "100%"
+                  :padding "1rem"
+                  :border-radius "100%"})
+(def about-text {:flex 3
+                 :margin-top "1rem"})
+
 (def blog-post-frontpage {:font-size "1rem"
                           :text-align :center
                           :display :flex

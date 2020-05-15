@@ -3,7 +3,8 @@
 
 (def page-titles
   {"/" "Pikseli.org - Portfolio of Jari Hanhela"
-   "/blog/" "Kotona ikimetsässä -retkiblogi" })
+   "/blog/" "Kotona ikimetsässä -retkiblogi"
+   "/blog/about/" "Kotona ikimetsässä - Kirjoittajasta"})
 
 (defn page-title [uri]
   (or (get page-titles uri)
