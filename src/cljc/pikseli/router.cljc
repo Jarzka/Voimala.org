@@ -28,5 +28,6 @@
 (defn blog-post-id
   "Parses blog post id from URL, or returns nil if post id was not found"
   [uri]
-  (when (uri-points-to-blog? uri)
+  (when (and (uri-points-to-blog? uri)
+             (uri-is-blog-about? uri))
     (second (uri-parts uri))))
