@@ -63,7 +63,7 @@
                         :margin 0
                         :padding 0}
                        {:class "body-loaded"})
-      [:div {:id " app "}
+      [:div {:id "app"}
        [:div (use-style {:background-color (if (= theme :dark) "rgba(0,0,0,0.5)" "rgba(255,255,255,0.5)")
                          :padding "15px"
                          :position "absolute"
@@ -74,6 +74,6 @@
                          :transform "translateX(-50%) translateY(-100px)"})
         [:img (use-style {:width "100%"}
                          {:src (if (= theme :dark)
-                                 " /images/loading_dark.gif "
-                                 " /images/loading_light.gif ")})]]]]
-     [:script {:src " /js/main.js "}]]))
+                                 "/images/loading_dark.gif"
+                                 "/images/loading_light.gif")})]]]]
+     [:script {:src "/js/main.js"}]]))
