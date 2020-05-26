@@ -44,7 +44,7 @@
                                               "/images/background2.jpg")}]
 
       [:link {:href "/images/icon.jpg", :rel "shortcut icon"}]
-      [:link {:rel "stylesheet", :href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :crossorigin "anonymous"}] "<!-- Loading screen -->"
+      [:link {:rel "stylesheet", :href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :crossorigin "anonymous"}]
 
       [:style {:id "_stylefy-server-styles_"} "_stylefy-server-styles-content_"]
       [:style {:id "_stylefy-constant-styles_"}]
@@ -62,7 +62,7 @@
                         :background-size "cover"
                         :margin 0
                         :padding 0}
-                       {:class :body-loaded})
+                       {:class "body-loaded"})
       [:div {:id " app "}
        [:div (use-style {:background-color (if (= theme :dark) "rgba(0,0,0,0.5)" "rgba(255,255,255,0.5)")
                          :padding "15px"
