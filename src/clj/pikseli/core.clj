@@ -6,6 +6,7 @@
             [pikseli.settings :as settings]
             [pikseli.api.post-api :as post-api]
             [hiccup.core :refer :all]
+            [stylefy.core :as stylefy]
             [reitit.ring :as ring]
             [reitit.spec :as rs]
             [reitit.coercion.spec]
@@ -26,7 +27,9 @@
 (defn index [request]
   {:status 200
    :headers {"Content-Type" "text/html"}
-   :body (str "<!DOCTYPE html>" (html (index/index request)))})
+   :body (str "<!DOCTYPE html>" (stylefy/query-with-styles
+                                  (fn []
+                                    (html (index/index request)))))})
 
 (def handler
   (ring/ring-handler
@@ -64,4 +67,5 @@
 
 (defn -main [& []]
   (settings/read-settings)
+  (stylefy/init)
   (reset! server (run-server app {:port 8081})))
