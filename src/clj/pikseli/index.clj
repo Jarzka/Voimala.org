@@ -53,15 +53,16 @@
       [:script {:src "https://code.jquery.com/jquery-3.3.1.slim.min.js", :integrity "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo", :crossorigin "anonymous"}]
       [:script {:src "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js", :integrity "sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy", :crossorigin "anonymous"}]]
 
-     [:body (use-style {:font-family "open_sans, Verdana, Helvetica, sans-serif"
-                        :color (if (= theme :dark) "#eaeaea" "#121212")
-                        :background (str (if (= theme :dark) "black" "white") " url('/images/background2.jpg')")
-                        :background-repeat "no-repeat"
-                        :background-position "center"
-                        :background-attachment "fixed"
-                        :background-size "cover"
-                        :margin 0
-                        :padding 0}
+     [:body (use-style (sorted-map
+                         :font-family "open_sans, Verdana, Helvetica, sans-serif"
+                         :color (if (= theme :dark) "#eaeaea" "#121212")
+                         :background (str (if (= theme :dark) "black" "white") " url('/images/background2.jpg')")
+                         :background-repeat "no-repeat"
+                         :background-position "center"
+                         :background-attachment "fixed"
+                         :background-size "cover"
+                         :margin 0
+                         :padding 0)
                        {:class "body-loaded"})
       [:div {:id "app"}
        [:div (use-style {:background-color (if (= theme :dark) "rgba(0,0,0,0.5)" "rgba(255,255,255,0.5)")
