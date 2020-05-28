@@ -9,15 +9,11 @@ keywords: rautusvuoma, rautusvuoman kansallispuisto, stabbursdalen
 
 ![Ilmakuva Rautusvuomasta](/images/blog/2019-07-07-rautusvuoma/DJI_0290-HDR-Pano_thumb.jpg)
 
-Rautusvuoma (alkuperäiseltä nimeltään Stabbursdalen) sai kunnian olla ensimmäinen ulkomaille suuntautuva kansallispuistovierailuni. Puisto sijaitsee Norjassa Finnmarkin läänissä, noin puolentoistatunnin ajomatkan päässä rajalta. Itse saavuin tänne Nordkapista, ja vaikka ollaan edelleen varsin pohjoisessa, niin täällä kuitenkin kasvaa puita eikä maasto ole Nordkapin kaltaista lähes kuollutta erämaata. Puiston mäntymetsä onkin tiettävästi maailman pohjoisin mäntymetsä.
+Rautusvuoman kansallispuisto (alkuperäiseltä nimeltään Stabbursdalenin kansallispuisto) sai kunnian olla ensimmäinen ulkomaille suuntautuva kansallispuistovierailuni. Puisto sijaitsee Norjassa Finnmarkin läänissä, noin puolentoistatunnin ajomatkan päässä rajalta. Itse saavuin tänne Nordkapista, ja vaikka ollaan edelleen varsin pohjoisessa, niin täällä kuitenkin kasvaa puita eikä maasto ole Nordkapin kaltaista lähes kuollutta erämaata. Puiston mäntymetsä onkin tiettävästi maailman pohjoisin mäntymetsä.
 
 ![Rautusvuoman metsää](/images/blog/2019-07-07-rautusvuoma/_MG_7785_thumb.jpg)
 
-![Rautusvuoman metsää](/images/blog/2019-07-07-rautusvuoma/_MG_7879_thumb.jpg)
-
-![Kukka](/images/blog/2019-07-07-rautusvuoma/_MG_7941_thumb.jpg)
-
-Ensimmäinen haaste puistoon saavuttuani oli keksiä tapa navigoida siellä. Suomen kansallispuistoissa lähtöpaikalla on usein kartta alueesta ja viralliset kulkureitit merkitty puihin, mutta kumpaakaan en täällä havainnut. Itse asiassa pelkkä puistoon löytäminen oli pieni haaste, sillä paikalle ei ollut selkeää opastekylttiä E6-tien varressa. Todellisia ongelmia nämä eivät kuitenkaan olleet, sillä navigaattori osasi kyllä tuoda minut perille, ja vaikka maastossa navigointiin käyttämäni Maastokartta-sovellus ei tunne Norjan maastoa, pystyin käyttämään erillistä norjalaista karttapalvelua (kannattaa vilkaista www.norgeskart.no jos Norjassa liikkuu).
+Ensimmäinen haaste puistoon saavuttuani oli keksiä tapa navigoida siellä. Suomen kansallispuistoissa lähtöpaikalla on usein kartta alueesta ja viralliset kulkureitit merkitty puihin, mutta kumpaakaan en täällä havainnut. Itse asiassa pelkkä puistoon löytäminen oli pieni haaste, sillä paikalle ei ollut selkeää opastekylttiä E6-tien varressa. Todellisia ongelmia nämä eivät kuitenkaan olleet, sillä navigaattori osasi kyllä tuoda minut perille, ja vaikka maastossa navigointiin käyttämäni Maastokartta-sovellus ei tunne Norjan maastoa, pystyin käyttämään erillistä norjalaista karttapalvelua (kannattaa vilkaista [Norgeskart](https://www.norgeskart.no) jos Norjassa liikkuu).
 
 ![Koski Rautusvuomassa](/images/blog/2019-07-07-rautusvuoma/_MG_7922-HDR_thumb.jpg)
 

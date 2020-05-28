@@ -11,7 +11,7 @@ keywords: salamajarvi, salamajärven kansallispuisto
 
 Suomen luonto on parhaimmillaan marraskuussa. Ei kun miten se meni? No, vaikka marraskuussa on oma ankeutensa, niin olen silti ihan superonnellinen siitä, että sain järjestettyä itselleni taas pienen luontoseikkailun tän syksyisen arjen keskelle vähän kauemmaksi kotoa. Tuntuu kuin tätä reissua olisi odottanut ja tarvinnut jo monta viikkoa. Ikään kuin säännöllisestä metsään pakoilusta olisi tullut tärkeä osa mun hyvinvointia. Ehkä jopa elämäntapa.
 
-Lähdin liikeelle aikaisin aamulla itse laatimaani reittiä. Ylitin kuuraisia soita, hiljalleen virtaavia puroja, kivimöykkiöitä sekä runsaan määrän erilaisia nuotiopaikkoja. Parhaiten mieleen jäi kuitenkin hetki, kun ilman hitaasti lämmetessä kuuntelin järven pinnalle kertyneen jään lempeää naksahtelua aamuauringon yrittäessä sulattaa sitä. Tällaisina hetkinä sitä osaa elää vain tässä hetkessä. Ei ole mennyttä, ei ole tulevaa. On vain tämä hetki.
+Lähdin liikeelle Koirasalmelta aikaisin aamulla itse laatimaani reittiä. Ylitin kuuraisia soita, hiljalleen virtaavia puroja, kivimöykkiöitä sekä runsaan määrän erilaisia nuotiopaikkoja. Parhaiten mieleen jäi kuitenkin hetki, kun ilman hitaasti lämmetessä kuuntelin järven pinnalle kertyneen jään lempeää naksahtelua aamuauringon yrittäessä sulattaa sitä. Tällaisina hetkinä sitä osaa elää vain tässä hetkessä. Ei ole mennyttä, ei ole tulevaa. On vain tämä hetki.
 
 ![Salamajärven kansallispuiston maisemia](/images/blog/2018-11-20-salamajarvi/_MG_0369_thumb.jpg)
 
