@@ -13,7 +13,6 @@ Satakunnassa sijaitseva Puurijärvi-Isosuo on verrattain pieni kansallispuisto. 
 
 ![Puurijärvi-Isosuo](/images/blog/2019-05-31-puurijarvi-isosuo/_MG_5213_thumb.jpg)
 
-
 Retki lähti liikkeelle Isonsuon pitkospuilta, joita pitkin polku kulkee suon läpi parin kilometrin matkalla Kokemäenjoen koskelle. Suo oli hieno, vaikka rikkoutuneilla pitkospuilla kulku oli välillä haastavaa ja suon ainoa lintutornikin oli heikosta kunnosta johtuen poissa pelistä. Koskelle saavuttuani havaitsin koko alueen olevankin aidattu. Tämä oli hämmentävää, sillä kartan mukaan reitti kulkisi aidan kohdalta suoraan koskelle eikä aidasta ollut mitään mainintaa, vain kalastuskiellosta oli paikalla kyltti. Hetken aikaa aitaa kierrettyäni ymmärsin kyseessä olevankin lehmäaitaus, joka jostain syystä peittää reitin koskelle. Pian pari lehmääkin tuli minua tervehtimään, ja voi että he olivat herttaisia. 😍 Löysimme heti jotain yhteistä. Nimittäin ainakin sen, että kyllä siinä on sekä lehmä että ihminen ihmeissään, kun oman reitin tiellä möllöttää aita.
 
 ![Puurijärvi-Isosuo](/images/blog/2019-05-31-puurijarvi-isosuo/_MG_5424-HDR_thumb.jpg)
