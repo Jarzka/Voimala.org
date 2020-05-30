@@ -34,23 +34,6 @@
 ;; Fonts & Colors
 ;; ****************************************************************
 
-(stylefy/font-face {:font-family "open_sans"
-                    :src "url('../fonts/OpenSans-Regular-webfont.woff') format('woff')"
-                    :font-weight "normal"
-                    :font-style "normal"})
-(stylefy/font-face {:font-family "open_sans"
-                    :src "url('../fonts/OpenSans-BoldItalic-webfont.woff') format('woff')"
-                    :font-weight "bold"
-                    :font-style "italic"})
-(stylefy/font-face {:font-family "open_sans"
-                    :src "url('../fonts/OpenSans-Bold-webfont.woff') format('woff')"
-                    :font-weight "bold"
-                    :font-style "normal"})
-(stylefy/font-face {:font-family "open_sans"
-                    :src "url('../fonts/OpenSans-Italic-webfont.woff') format('woff')"
-                    :font-weight "normal"
-                    :font-style "italic"})
-
 (def colors {:text (if style-settings/dark-mode? "#eaeaea" "#121212")
              :link (if style-settings/dark-mode? "#46aee5" "#b9511a")
              :background-secondary "rgba(14, 31, 40, 0.85)"
@@ -64,12 +47,6 @@
 ;; ****************************************************************
 
 (stylefy/class "body-loaded" {:color (:text colors)})
-
-(stylefy/tag "p" {:margin-top "0"
-                  :margin-bottom "1rem"})
-
-(stylefy/tag "blockquote" {:font-style :italic
-                           :padding-left "1rem"})
 
 (def text-center {:text-align :center})
 

@@ -29,6 +29,7 @@
    :headers {"Content-Type" "text/html"}
    :body (str "<!DOCTYPE html>" (stylefy/query-with-styles
                                   (fn []
+                                    (index/create-constant-styles)
                                     (html (index/index request)))))})
 
 (def handler
