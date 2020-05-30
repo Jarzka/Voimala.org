@@ -1,7 +1,9 @@
+2020-05-16-nuuksio
 2020-05-01-liesjarvi
 2020-02-12-korouma
 2020-02-11-syote
 2019-09-22-leivonmaki
+2019-09-08-seitseminen
 2019-09-15-pyha-hakki
 2019-08-04-paijanne
 2019-07-30-saaristomeri
@@ -15,6 +17,7 @@
 2019-04-20-kurjenrahka
 2019-02-21-riisitunturi
 2018-11-20-salamajarvi
+2018-09-23-torronsuo
+2018-09-22-teijo
 2018-08-04-koli
 2018-08-02-repovesi
-2020-05-16-nuuksio
