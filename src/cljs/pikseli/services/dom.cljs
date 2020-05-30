@@ -23,8 +23,9 @@
            meta[property='og:title'],
            meta[property='og:description'],
            meta[property='og:image']")]
-    (doseq [element meta-tags]
-      (.remove element))))
+    (when (coll? meta-tags)
+      (doseq [element meta-tags]
+       (.remove element)))))
 
 
 (defn set-meta-tags [{:keys [title type author uri image description keywords]}]
