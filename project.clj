@@ -12,7 +12,7 @@
                  [com.cognitect/transit-clj "1.0.324"]
 
                  ; Remove these when deps.edn is in use:
-                 [reagent "0.8.1"]
+                 [reagent "0.10.0"]
                  [cljs-http "0.1.46"]
                  [hiccup "1.0.5"]
                  [stylefy "2.2.1"]
