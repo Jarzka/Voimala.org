@@ -212,9 +212,6 @@
                                     ^{:key post-id}
                                     [blog-post-excerpt post-id])
                                   post-ids-on-current-page)
-
-                                (when last-index-selected?
-                                  [:p [:em (use-style {:text-align :center}) "(Tätä vanhemmat retkitarinat lisätään blogiin myöhemmin...)"]])
                                 [pagination]]]
                               [blog-loader])]))})))
 
