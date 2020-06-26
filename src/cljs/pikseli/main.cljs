@@ -7,7 +7,7 @@
     [pikseli.styles.global :as g-styles]
     [pikseli.styles.layout :as layout]
     [pikseli.ui.modal :as modal]
-    [reagent.core :as r]))
+    [reagent.dom :as reagent-dom]))
 
 (defn- site-footer []
   [:footer (use-style layout/site-footer)
@@ -41,4 +41,4 @@
 
 (defn ^:export start []
   (init)
-  (r/render main-content (.getElementById js/document "app")))
+  (reagent-dom/render main-content (.getElementById js/document "app")))

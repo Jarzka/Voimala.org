@@ -3,19 +3,19 @@ title: "Ensimmäinen yö yksin ulkona Helvetinjärven kansallispuistossa"
 date: 2018-06-16
 image: /images/blog/2018-06-16-helvetinjarvi/IMG_5163_thumb.jpg
 author: Jari Hanhela
-excerpt: "Jotakuinkin siitä asti kun aloin harrastaa retkeilyä, on ollut haaveena viettää edes yksi yö yksin metsässä. Harrastus alkoi vakavoitua kuitenkin vasta melko myöhään viime syksynä, joten katsoin paremmaksi kokeilla yöpymistä vasta kesällä, kun ilmat lämpenee riittävästi. Se aika on nyt, ja mikäpäs muu tällaisen reissun kohteeksi olisikaan sopinut paremmin kuin tuo Pirkanmaan kuuluisa Helvetinjärven kansallispuisto. "
+excerpt: "Jotakuinkin siitä asti kun aloin harrastaa retkeilyä, on ollut haaveena viettää edes yksi yö yksin metsässä. Tähän asti kun olen tehnyt ainoastaan päiväretkiä eri kohteissa. Aloin kuitenkin tosissani innostua tästä harrastuksesta vasta melko myöhään viime syksynä, joten katsoin paremmaksi kokeilla yöpymistä vasta kesällä, kun ilmat lämpenee riittävästi. Se aika on nyt, ja mikäpäs muu tällaisen reissun kohteeksi sopisi paremmin kuin tuo Pirkanmaan kuuluisa Helvetinjärven kansallispuisto."
 keywords: helvetinjärvi, helvetinjarvi, helvetinjärven kansallispuisto, helvetinjarven kansallispuisto
 ---
 
-Jotakuinkin siitä asti kun aloin harrastaa retkeilyä, on ollut haaveena viettää edes yksi yö yksin metsässä. Tähän asti kun olen tehnyt ainoastaan päiväretkiä eri kohteissa. Aloin kuitenkin tosissani innostua tästä vasta melko myöhään viime syksynä, joten katsoin paremmaksi kokeilla yöpymistä vasta kesällä, kun ilmat lämpenee riittävästi. Se aika on nyt, ja mikäpäs muu tällaisen reissun kohteeksi olisikaan sopinut paremmin kuin tuo Pirkanmaan kuuluisa Helvetinjärven kansallispuisto. 
+Jotakuinkin siitä asti kun aloin harrastaa retkeilyä, on ollut haaveena viettää edes yksi yö yksin metsässä. Tähän asti kun olen tehnyt ainoastaan päiväretkiä eri kohteissa. Aloin kuitenkin tosissani innostua tästä harrastuksesta vasta melko myöhään viime syksynä, joten katsoin paremmaksi kokeilla yöpymistä vasta kesällä, kun ilmat lämpenee riittävästi. Se aika on nyt, ja mikäpäs muu tällaisen reissun kohteeksi sopisi paremmin kuin tuo Pirkanmaan kuuluisa Helvetinjärven kansallispuisto. 
 
 ![Helvetinjärven kansallispuisto](/images/blog/2018-06-16-helvetinjarvi/IMG_5056_thumb.jpg)
 
-Reissun suunnittelu alkoi pari viikkoa sitten, kun tilasin itselleni riippumattokamat. Useimmille teltta on varmasti tutumpi yöpymisväline, mutta riippumattoretkeilyyn tutustuttuani alkoi tuntua siltä, että se voisi olla enemmän se oma juttu. Kamojen saavuttua aloin harjoitella leirin pystytystä lähimetsässä. Tämä osoittautui todella tärkeäksi, sillä ensimmäinen pystytys ei päässyt oikein edes alkuun kun huomasin, että narujen kiinnitykseen käytettäviä karabiinihakoja on liian vähän. Hätätapauksessa olisi ehkä voinut vain sitoa narut kiinni toisiinsa, mutta hakojen kanssa tuo onnistuu huomattavasti kätevämmin. Toisella harjoituskerralla pystytys sujuikin sitten jo melko hyvin, joten kaikki alkoi olla valmista uutta kokemusta varten.
+Reissun suunnittelu alkoi pari viikkoa sitten, kun tilasin itselleni riippumattokamat. Useimmille teltta on varmasti tutumpi yöpymisväline retkeilyharrastuksen alussa, mutta riippumattoretkeilyyn tutustuttuani alkoi tuntua siltä, että se voisi olla enemmän se oma juttu. Kamojen saavuttua aloin harjoitella leirin pystytystä lähimetsässä. Tämä osoittautui todella tärkeäksi, sillä ensimmäinen pystytys ei päässyt oikein edes alkuun kun huomasin, että narujen kiinnitykseen käytettäviä karabiinihakoja on liian vähän. Hätätapauksessa olisi ehkä voinut vain sitoa narut kiinni toisiinsa, mutta hakojen kanssa tuo onnistuu huomattavasti kätevämmin. Toisella harjoituskerralla pystytys sujuikin sitten jo melko hyvin, joten kaikki alkoi olla valmista uutta kokemusta varten.
 
-Vaelluksen alussa huomasin heti yön yli -reissun haittapuolet: täyteen pakattu rinkka on vain niin paljon painavampi kuin kevyehkö päiväreppu. Olin punninnut rinkan kotona ja todennut sen olevan kannettavissa, mutta reissun päällä rinkka osoittautui olevan juuri siinä oman jaksamisen rajalla. Siltikin mukana oli mielestäni vain kaikki tarpeellinen, kamerateline jotakuinkin ainoana tavarana, jonka olisin voinut kuvitella jättäväni setistä pois. Mukaan sekn kuitenkin tuli, joten näillä mentiin.
+Vaelluksen alussa huomasin heti yön yli -reissun haittapuolet: täyteen pakattu rinkka on vain niin paljon painavampi kuin kevyehkö päiväreppu. Olin punninnut rinkan kotona ja todennut sen olevan kannettavissa, mutta reissun päällä rinkka osoittautui olevan juuri siinä oman jaksamisen rajalla. Siltikin mukana oli mielestäni vain kaikki tarpeellinen, kamerateline jotakuinkin ainoana tavarana, jonka olisin voinut kuvitella jättäväni setistä pois. Mukaan sekin kuitenkin tuli, joten näillä mentiin.
 
-Olin antanut itselleni henkisesti luvan epäonnistua. Vaikka edessä ei mitään ylivoimaista ollutkaan, niin kokemus oli uusi. Kukaan ei kuitenkaan synny retkeilijäksi, vaan kokeneetkin harrastajat ovat sen ensimmäisen yönsä joskus metsässä viettäneet ja varmasti tehneet virheitä.
+Olin antanut itselleni henkisesti luvan epäonnistua. Vaikka edessä ei mitään ylivoimaista ollutkaan, niin kokemus oli uusi. Kukaan ei kuitenkaan synny retkeilijäksi, vaan kokeneetkin harrastajat ovat sen ensimmäisen yönsä joskus metsässä viettäneet ja varmasti moni on niitä virheitäkin tehnyt.
 
 ![Helvetinjärven kansallispuisto](/images/blog/2018-06-16-helvetinjarvi/IMG_5061_thumb.jpg)
 
@@ -29,7 +29,7 @@ Maisemia riittävästi ihailtuani oli aika jatkaa matkaa varsinaiselle leiripaik
 
 ![Helvetinjärven kansallispuisto](/images/blog/2018-06-16-helvetinjarvi/IMG_5133_thumb.jpg)
 
-Perille kuitenkin pääsin, enkä suinkaan ollut ainoa polun kulkenut, sillä leiripaikka-alueella oli myös muutama muu retkeilijä telttoineen. Onneksi vapaata leiriytymistilaa vielä oli, joten pystyin hyvin aterioimaan ennen leirin pystyttämistä. Aikamoista narujen virittelyähän tuo riippumattoleirin pystytys on, mutta kun tietää, mikä on minkäkin narun tarkoitus, sujui homma lopulta melko varmanoloisella otteella.
+Pääsin lopulta perille Luomajärvelle, enkä suinkaan ollut ainoa polun taittanut retkeilijä, sillä alueella oli runsaasti telttoja. Onneksi vapaata leiriytymistilaa vielä oli, joten pystyin hyvin aterioimaan ennen leirin pystyttämistä. Aikamoista narujen virittelyähän tuo riippumattoleirin pystytys on, mutta kun tietää, mikä on minkäkin narun tarkoitus, sujui homma alkutuskailun jälkeen melko kohtuullisesti.
 
 ![Helvetinjärven kansallispuisto](/images/blog/2018-06-16-helvetinjarvi/20180616_160823_thumb.jpg)
 ![Helvetinjärven kansallispuisto](/images/blog/2018-06-16-helvetinjarvi/20180616_165346_thumb.jpg)

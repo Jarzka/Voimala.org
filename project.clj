@@ -12,10 +12,10 @@
                  [com.cognitect/transit-clj "1.0.324"]
 
                  ; Remove these when deps.edn is in use:
-                 [reagent "0.8.1"]
+                 [reagent "0.10.0"]
                  [cljs-http "0.1.46"]
                  [hiccup "1.0.5"]
-                 [stylefy "2.2.0"]
+                 [stylefy "2.2.1"]
                  [garden "1.3.2"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]]
   :main pikseli.core
