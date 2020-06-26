@@ -8,16 +8,16 @@
    [:h1 "Miscelanous"]
 
    [:h2 "Worms Vorg Soundbanks"]
-   [:p "Finnish soundbanks for"
+   [:p "This package contains Finnish soundbanks for"
     " "
     [:a {:href "https://store.steampowered.com/app/217200/Worms_Armageddon/"}
-     "Worms Armageddon game"]
-    ". This soundbank was originally created in 2009, but it has been updated many times since then. Warning: contains lots of cursing. :-)"]
+     "Worms Armageddon"]
+    " game. The soundbank was originally created in 2009, but it has been updated many times since then. Warning: contains lots of cursing. :-)"]
    [:p "Download it"
     " "
     [:a {:href "http://pikseli.org/aarrearkku"}
      "here"]
-    ". See the trailer"
+    ". Watch trailer"
     " "
     [:a {:href "https://www.youtube.com/watch?v=gWrdvquGOY0"}
      "here"]
