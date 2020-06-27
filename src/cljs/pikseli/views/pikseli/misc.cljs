@@ -5,7 +5,7 @@
 (defn misc []
   [:section
    [:a {:id "misc"}]
-   [:h1 "Miscelanous"]
+   [:h1 "Miscellaneous"]
 
    [:h2 "Worms Vorg Soundbanks"]
    [:p "This package contains Finnish soundbanks for"
