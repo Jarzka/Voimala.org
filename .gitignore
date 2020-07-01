@@ -26,3 +26,4 @@ setup.md
 /frontend/filestorage/*
 /lein.bat
 /TODO.md
+.gradle/
