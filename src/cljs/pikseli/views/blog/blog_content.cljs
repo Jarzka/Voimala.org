@@ -6,6 +6,7 @@
             [pikseli.components.pagination :as pagination]
             [pikseli.services.blog :as blog-service]
             [pikseli.services.dom :as dom-service]
+            [pikseli.views.blog.about :as blog-about]
             [pikseli.styles.views.blog :as blog-style]
             [pikseli.page-settings :as page-settings]
             [pikseli.utils :refer [scroll-to-top]]
@@ -30,20 +31,6 @@
 
 (def blog-uri "/blog")
 (defn blog-post-uri [post-id] (str "/blog/" post-id))
-
-(defn about []
-  (r/create-class
-    {:component-did-mount (fn []
-                            (dom-service/set-title (page-settings/page-title "/blog/about")))
-     :reagent-render (fn []
-                       [:div (use-style blog-style/about-page)
-                        [:div (use-style blog-style/about-frame)
-                         [:div (use-style blog-style/about-image-frame)
-                          [:img (use-style blog-style/about-image {:src "/images/author.jpg"})]]
-                         [:div (use-style blog-style/about-text)
-                          [:p "Olen Jari Hanhela, 30-vuotias retki- ja valokuvausharrastaja Tampereelta. Tässä blogissa jaan luontoretkilläni syntyneitä kuvia ja ajatuksia. Luonto on minulle rauhoittumisen, hyvinvoinnin ja inspiraation lähde, ja siksi palaan sinne aina uudestaan."]
-                          [:p "Haaveenani on kiertää kaikki Suomen 40 kansallispuistoa ja kirjoittaa jokaisesta pieni retkitarina. Tältä matkalta puuttuu vielä 11 kansallispuistoa."]
-                          [:p "Löydät minut myös Instagramista: " [:a {:href "https://instagram.com/jari_hanhela"} "jari_hanhela"]]]]])}))
 
 (defn- blog-post-title [post-id title clickable?]
   (if clickable?
@@ -192,7 +179,6 @@
                                post-ids @blog-service/post-ids
                                post-ids-on-current-page (resolve-post-ids-on-current-page)
                                max-page-index (resolve-max-page-index)
-                               last-index-selected? (= @blog-service/current-page-index max-page-index)
                                loaded? (and (not (empty? post-ids))
                                             (blog-service/posts-loaded? post-ids-on-current-page))
                                pagination (fn []
@@ -231,9 +217,7 @@
                             (if (or blog-post-id about?)
                               [app-link {:style blog-style/back
                                          :uri blog-uri}
-                               "< Etusivu"]
-                              [:a (use-style blog-style/back {:href "https://pikseli.org"})
-                               "< Pikseli.org"])
+                               "< Etusivu"])
                             [app-link {:style blog-style/about
                                        :uri "/blog/about"}
                              "Kirjoittajasta"]]
@@ -243,6 +227,6 @@
                                    [:img (use-sub-style layout/site-header :logo-blog
                                                         {:alt "Kotona ikimetsässä" :src page-settings/blog-logo-url})]]]]]
                           (cond
-                            about? [about]
+                            about? [blog-about/about]
                             blog-post-id [full-blog-post blog-post-id {:view-mode :full}]
                             :default [blog-post-list])]))}))
