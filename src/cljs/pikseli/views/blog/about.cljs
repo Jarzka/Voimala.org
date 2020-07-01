@@ -19,7 +19,7 @@
                          [:div (use-style blog-style/about-image-frame)
                           [:img (use-style blog-style/about-image {:src "/images/author.jpg"})]]
                          [:div (use-style blog-style/about-text)
-                          [:p "Olen Jari Hanhela, 30-vuotias retkeily ja valokuvausharrastaja Tampereelta. Tässä blogissa jaan luontoretkilläni syntyneitä kuvia ja ajatuksia. Luonto on minulle rauhoittumisen, hyvinvoinnin ja inspiraation lähde, ja siksi palaan sinne aina uudestaan."]
+                          [:p "Olen Jari Hanhela, 30-vuotias retkeily- ja valokuvausharrastaja Tampereelta. Tässä blogissa jaan luontoretkilläni syntyneitä kuvia ja ajatuksia. Luonto on minulle rauhoittumisen, hyvinvoinnin ja inspiraation lähde, ja siksi palaan sinne aina uudestaan."]
                           [:p "Haaveenani on kiertää kaikki Suomen 40 kansallispuistoa ja kirjoittaa jokaisesta pieni retkitarina. Tältä matkalta puuttuu vielä 11 kansallispuistoa."]
                           [:p "Löydät minut myös täältä:"]
                           [:p "- Instagram: " [:a {:href "https://instagram.com/jari_hanhela"} "jari_hanhela"]
