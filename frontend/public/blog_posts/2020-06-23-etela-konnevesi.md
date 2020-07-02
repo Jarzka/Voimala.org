@@ -15,7 +15,6 @@ Etelä-Konneveden noin 16 kilometrin mittainen Kolmen vuoren vaellusreitti vaiku
 
 Etelä-Konneveden kansallispuisto toivottaa vaeltajan tervetulleeksi. Parkkipaikalta lähdetään etenemään polkua, jota ympäröi tiheä kasvillisuus, kukkaset ja kesän tuoksu. Olo on kuin olisi paratiisin portilla. Se on kuitenkin hämäystä, sillä tuleva vaellusreitti tulisi olemaan kaikkea muuta kuin mitä ensimmäisen kilometrin perusteella voisi odottaa.
 
-
 ![Etelä-Konneveden kansallispuisto](/images/blog/2020-06-23-etela-konnevesi/_N0A1391_thumb.jpg)
 
 Päivän kohteena on saavuttaa Keskilahti, jossa tulen viettämään ensimmäisen yöni. Reitin alku kulkee osana Kalajan kierroksen päiväreittiä, ja tällaisena lämpimänä kesäsunnuntaina väkeä onkin liikkeellä runsaasti. Reittini pikkuhiljaa irtaantuessa päiväreitistä vastaantulijat loppuvat kuitenkin kuin seinään. Valtaosa porukasta on selkeästi tullut vierailulle päiväretkireittiä varten.
@@ -33,7 +32,6 @@ Kolmen vuoren vaelluksen haastavuus alkaa käydä pikkuhiljaa ilmi. Jyrkkää no
 ![Etelä-Konneveden kansallispuisto](/images/blog/2020-06-23-etela-konnevesi/_N0A1481_thumb.jpg)
 
 ![Etelä-Konneveden kansallispuisto](/images/blog/2020-06-23-etela-konnevesi/_N0A1505_thumb.jpg)
-
 
 Saavun Keskilahteen. Paikalla ei näy ketään, joten saan mahdollisuuden valita leiripaikkani vapaasti. Maasto on paikalla melko epätasaista, eikä hyviä telttapaikkoja nähdäkseni liiaksi ole. Omalle riippumatolleni tämä ei kuitenkaan ole ongelma ja leiripaikka löytyy nopeasti kaltevasta rannasta. On aina kiva pystyttää leiri veden äärelle, jossa voi sekä peseytyä että ottaa helposti juomavettä. Muutoinkin niemi vaikuttaa leiripaikkana oikein kivalta ja tunnelmalliselta.
 
