@@ -20,7 +20,7 @@
       [page-item {:index 0
                   :disabled? (= active-index 0)
                   :clicked on-index-selected
-                  :text "Edellinen"}]
+                  :text "⇐"}]
       (when indexes
         (map-indexed
           (fn [index]
@@ -35,4 +35,4 @@
       [page-item {:index max-index
                   :disabled? (= active-index max-index)
                   :clicked on-index-selected
-                  :text "Seuraava"}]]]))
+                  :text "⇒"}]]]))
