@@ -1,6 +1,7 @@
 (ns pikseli.api.post-api
   (:require [clojure.java.io :as io]
             [pikseli.settings :as settings]
+            [pikseli.api.markdown-parser :as markdown-parser]
             [markdown.core :refer [md-to-html-string-with-meta]]
             [clojure.string :as string]))
 
@@ -16,7 +17,7 @@
   (let [contents (slurp (io/file
                           (str (settings/resources-on-disk)
                                "blog_posts/" post-id ".md")))
-        blog-post (md-to-html-string-with-meta contents)]
+        blog-post (markdown-parser/parse-markdown contents)]
     blog-post))
 
 (defn get-post [{:keys [path-params] :as request}]

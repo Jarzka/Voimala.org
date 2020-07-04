@@ -10,6 +10,7 @@
                  [markdown-clj "1.10.4"]
                  [hiccup "1.0.5"]
                  [com.cognitect/transit-clj "1.0.324"]
+                 [org.jsoup/jsoup "1.7.3"]
 
                  ; Remove these when deps.edn is in use:
                  [reagent "0.10.0"]
