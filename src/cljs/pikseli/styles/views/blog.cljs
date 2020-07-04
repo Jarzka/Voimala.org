@@ -88,4 +88,6 @@
                       :font-size "0.7rem"
                       :color "#5a5a5a"})
 
-(def blog-content {:min-height "1500px"})
+(def blog-content {:min-height "1500px"
+                   ::stylefy/manual [[:figcaption {:text-align :center
+                                                   :font-style :italic}]]})

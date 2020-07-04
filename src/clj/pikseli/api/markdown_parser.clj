@@ -17,8 +17,9 @@
               figure (Element. (Tag/valueOf "figure") baseurl)
               figcaption (Element. (Tag/valueOf "figcaption") baseurl)
               _ (.text figcaption imageTitle)
-              _ (.appendChild figure imageClone)
-              _ (.appendChild figure figcaption)]
+              _ (doto figure
+                  (.appendChild imageClone)
+                  (.appendChild figcaption))]
           (.replaceWith parentParagraph figure))))))
 
 (defn parse-markdown [markdown]
