@@ -9,7 +9,7 @@
                                                            :border 0
                                                            :color (:text g-styles/colors)}]]
                                    [:.disabled [:.page-link {:background-color :unset}]]
-                                   [:.page-link {:padding "0.3rem"}]
+                                   [:.page-link {:padding "0.5rem"}]
                                    [:.page-link [:&:active {:background-color :unset
                                                             :border 0
                                                             :color (:text g-styles/colors)}]]]})
