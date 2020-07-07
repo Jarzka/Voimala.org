@@ -55,12 +55,13 @@
 (def about-frame
   (merge
     {:display :flex
-    :margin "1rem"}
+     :margin "1rem"}
     (g-styles/on-phone
       {:flex-flow :column})))
 
 (def about-image-frame {:flex 1})
 (def about-image {:width "100%"
+                  :min-width "12rem"
                   :padding "1rem"
                   :border-radius "100%"})
 (def about-text {:flex 3
@@ -91,3 +92,16 @@
 (def blog-content {:min-height "1500px"
                    ::stylefy/manual [[:figcaption {:text-align :center
                                                    :font-style :italic}]]})
+
+(def national-parks
+  (merge-with merge
+    {:display "block"
+    :margin-top "1.5rem"
+    :margin-bottom "1.5em"
+    :margin-left "auto"
+    :margin-right "auto"
+    :width "400px"}
+    (g-styles/on-tablet
+      {:width "80%"})
+    (g-styles/on-phone
+      {:width "100%"})))
