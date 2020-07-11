@@ -11,8 +11,7 @@
   (let [images (.select document "img")]
     (doseq [image images]
       (when (seq (.attr image "title"))
-        (let [parentParagraph (.parent image)
-              imageClone (.clone image)
+        (let [imageClone (.clone image)
               imageTitle (.attr imageClone "title")
               figure (Element. (Tag/valueOf "figure") baseurl)
               figcaption (Element. (Tag/valueOf "figcaption") baseurl)
@@ -20,7 +19,7 @@
               _ (doto figure
                   (.appendChild imageClone)
                   (.appendChild figcaption))]
-          (.replaceWith parentParagraph figure))))))
+          (.replaceWith image figure))))))
 
 (defn parse-markdown [markdown]
   (let [parsed-md (md-to-html-string-with-meta markdown)
