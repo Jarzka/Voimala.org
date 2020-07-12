@@ -4,18 +4,20 @@
             [garden.stylesheet :refer [at-media]]
             [pikseli.styles.global :as g-styles]))
 
-(def blog-post {:font-family "Georgia, Garamond"})
+(def blog-post {:font-family "Georgia, Garamond"
+                :font-size "1.15rem"})
 
 (def blog-post-full
   (merge
     blog-post
-    {::stylefy/manual [[:img
+    {::stylefy/manual [[:p {:margin-bottom "1.1rem"}]
+                       [:img
                         {:display :block
                          :margin-left :auto
                          :margin-right :auto
                          :margin-top "0.5rem"
                          :margin-bottom "0.5rem"
-                         :width "80%"}]
+                         :width "100%"}]
                        (at-media {:max-width g-styles/tablet-max-width}
                                  [:img {:width "100%"}])]}))
 
