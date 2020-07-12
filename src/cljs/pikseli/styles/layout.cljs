@@ -10,8 +10,8 @@
                :border "1px solid rgba(255, 255, 255, 0.1)"})
 
 (def light-box {:border-radius "5px"
-                :background-color "rgba(250, 250, 250, 0.95)"
-                :border "1px solid rgba(255, 255, 255, 0.9)"})
+                :background-color "rgba(250, 250, 250)"
+                :border "1px solid rgba(255, 255, 255)"})
 
 (def themed-box (if style-settings/dark-mode? dark-box light-box))
 
