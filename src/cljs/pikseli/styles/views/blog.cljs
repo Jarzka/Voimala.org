@@ -9,10 +9,10 @@
 (def blog-post-full
   (merge
     blog-post
-    {::stylefy/manual [[:p {:font-size "1.15rem"
-                            :margin-bottom "1.1rem"}]
-                       [:h2 {:font-weight "bold"}]
-                       [:figcaption {:font-size "1.15rem"}]
+    {:font-size "1.15rem"
+     ::stylefy/manual [[:p {:margin-bottom "1.1rem"}]
+                       [:h2 {:font-weight "bold"
+                             :font-size "1.2rem"}]
                        [:img
                         {:display :block
                          :margin-left :auto
@@ -21,9 +21,8 @@
                          :margin-bottom "0.5rem"
                          :width "100%"}]
                        (at-media {:max-width g-styles/tablet-max-width}
-                                 [:p {:font-size "1rem"
-                                      :margin-bottom "1rem"}]
-                                 [:figcaption {:font-size "1em"}])]}))
+                                 [:& {:font-size "1rem"}]
+                                 [:p {:margin-bottom "1rem"}])]}))
 
 (def blog-post-excerpt
   (merge
