@@ -12,6 +12,7 @@
     {::stylefy/manual [[:p {:font-size "1.15rem"
                             :margin-bottom "1.1rem"}]
                        [:h2 {:font-weight "bold"}]
+                       [:figcaption {:font-size "1.15rem"}]
                        [:img
                         {:display :block
                          :margin-left :auto
