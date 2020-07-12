@@ -11,6 +11,7 @@
     blog-post
     {::stylefy/manual [[:p {:font-size "1.15rem"
                             :margin-bottom "1.1rem"}]
+                       [:h2 {:font-weight "bold"}]
                        [:img
                         {:display :block
                          :margin-left :auto
@@ -19,7 +20,8 @@
                          :margin-bottom "0.5rem"
                          :width "100%"}]
                        (at-media {:max-width g-styles/tablet-max-width}
-                                 [:img {:width "100%"}])]}))
+                                 [:p {:font-size "1rem"
+                                      :margin-bottom "1rem"}])]}))
 
 (def blog-post-excerpt
   (merge
@@ -33,7 +35,10 @@
                          :margin-bottom "0.5rem"
                          :object-fit :cover
                          :width "100%"
-                         :height "23rem"}]]}))
+                         :height "23rem"}]
+                       (at-media {:max-width g-styles/tablet-max-width}
+                                 [:p {:font-size "1rem"
+                                      :margin-bottom "1rem"}])]}))
 
 (def header {:position :relative})
 
