@@ -4,13 +4,13 @@
             [garden.stylesheet :refer [at-media]]
             [pikseli.styles.global :as g-styles]))
 
-(def blog-post {:font-family "Georgia, Garamond"
-                :font-size "1.15rem"})
+(def blog-post {:font-family "Georgia, Garamond"})
 
 (def blog-post-full
   (merge
     blog-post
-    {::stylefy/manual [[:p {:margin-bottom "1.1rem"}]
+    {::stylefy/manual [[:p {:font-size "1.15rem"
+                            :margin-bottom "1.1rem"}]
                        [:img
                         {:display :block
                          :margin-left :auto
@@ -24,7 +24,8 @@
 (def blog-post-excerpt
   (merge
     blog-post
-    {::stylefy/manual [[:img
+    {::stylefy/manual [[:p {:font-size "1.15rem"}]
+                       [:img
                         {:display :block
                          :margin-left :auto
                          :margin-right :auto
