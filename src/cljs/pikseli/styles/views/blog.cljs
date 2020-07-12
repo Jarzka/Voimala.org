@@ -22,7 +22,8 @@
                          :width "100%"}]
                        (at-media {:max-width g-styles/tablet-max-width}
                                  [:p {:font-size "1rem"
-                                      :margin-bottom "1rem"}])]}))
+                                      :margin-bottom "1rem"}]
+                                 [:figcaption {:font-size "1em"}])]}))
 
 (def blog-post-excerpt
   (merge
