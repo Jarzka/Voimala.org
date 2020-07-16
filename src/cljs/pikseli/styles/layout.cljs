@@ -7,6 +7,8 @@
 
 (def dark-box {:border-radius "5px"
                :background-color "rgba(0, 0, 0, 0.85)"
+               :backdrop-filter "blur(10px)"
+               :-webkit-backdrop-filter "blur(10px)"
                :border "1px solid rgba(255, 255, 255, 0.1)"})
 
 (def light-box {:border-radius "5px"
