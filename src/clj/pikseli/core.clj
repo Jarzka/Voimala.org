@@ -8,9 +8,7 @@
             [hiccup.core :refer :all]
             [stylefy.core :as stylefy]
             [reitit.ring :as ring]
-            [reitit.spec :as rs]
             [reitit.coercion.spec]
-            [reitit.ring.coercion :as rrc]
             [org.httpkit.server :refer :all]
             [cognitect.transit :as transit]
             [clojure.string :as string])
