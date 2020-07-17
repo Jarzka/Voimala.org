@@ -9,7 +9,7 @@
     [:div (use-sub-style layout/site-header :logo-and-description)
      [:div
       [:a {:href "http://www.pikseli.org"}
-      [:img (use-sub-style layout/site-header :logo {:alt "pikseli.org" :src "/images/logo.png"})]]]
+      [:img (use-sub-style layout/site-header :logo {:alt "pikseli.org" :src "/images/logo_pikseli.png"})]]]
      [:span "Portfolio of Jari Hanhela"]]]
 
    [:section

@@ -67,7 +67,7 @@
                                               (:image blog-post-metadata)
                                               "/images/background2.jpg")}]
 
-      [:link {:href "/images/icon.jpg", :rel "shortcut icon"}]
+      [:link {:href (if blog? "/images/icon_blog.jpg" "/images/icon_pikseli.jpg") :rel "shortcut icon"}]
       [:link {:rel "stylesheet", :href "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css", :integrity "sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO", :crossorigin "anonymous"}]
 
       [:style {:id "_stylefy-server-styles_"} "_stylefy-server-styles-content_"]
