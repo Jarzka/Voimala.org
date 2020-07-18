@@ -81,7 +81,7 @@ Sillan jälkeen on luvassa lyhyessä ajassa jo kolmas ylityspaikka. Se tuo minut
 
 Kyllähän tällä paikalla viihtyisi vaikka pidempäänkin. Vuokrakämpän ainoa harmitus taitaakin olla se, että retkipolku kulkee suoraan läpi mökin pihasta, joten vilkkaina retkipäivinä paikalla saattaa olla liikennettä.
 
-Uiton kämpältä retki jatkuu Autionkierrokselle. Tämä reilun kolmen kilometrin mittainen polku lähtee suoraan Uiton kämpän pihasta, käy kierroksen metsässä ja palaa takaisin Uiton kämpän pihalle. Kierroksella ensimmäisenä vastaani tulee kansallispuiston toinen historiallinen paikka: laajasti aidattu pihamaa-alue, jonka keskellä tönöttää 1920-luvulta peräisin oleva vanha torppa. Torpan tiedetään olevan sissipäällikkö Olli Tiaisen synnyinpaikka. 
+Uiton kämpältä retki jatkuu Autionkierrokselle. Tämä reilun kolmen kilometrin mittainen polku lähtee suoraan Uiton kämpän pihasta, käy kierroksen metsässä ja palaa takaisin Uiton kämpälle. Kierroksella ensimmäisenä vastaani tulee kansallispuiston toinen historiallinen paikka: laajasti aidattu pihamaa-alue, jonka keskellä tönöttää 1920-luvulta peräisin oleva vanha torppa. Torpan tiedetään olevan sissipäällikkö Olli Tiaisen synnyinpaikka. 
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3651_thumb.jpg)
 
