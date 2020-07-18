@@ -15,7 +15,7 @@ Pohjoisniemen reitin lähtöpaikalle saapuessani sää on varsin kurja: taivas o
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3470_thumb.jpg)
 
-Pohjoisniemi on noin kolmen kilometrin mittainen niemi Tiilikkajärvessä ja se erottuu kartalta selvästi. Niemeä pitkin kulkee mäntymetsäinen polku aina niemen kärkeen saakka. Matkan varrella on nuotipaikka ja historiallinen muistomerkki, mutta eniten odotan sitä, millaiset näkymät niemen kärjestä avautuvat myrskyisälle Tiilikkajärvelle.
+Pohjoisniemi on noin kolmen kilometrin mittainen niemi Tiilikkajärvessä ja se erottuu kartalta selvästi. Niemeä pitkin kulkee mäntymetsäinen polku aina niemen kärkeen saakka. Matkan varrella on nuotiopaikka ja historiallinen muistomerkki, mutta eniten odotan sitä, millaiset näkymät niemen kärjestä avautuvat myrskyisälle Tiilikkajärvelle.
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3476_thumb.jpg "Vaikka sade ei suoranaisesti näy kuvissa, alkaa se kerryttää lätäköitä reitin varrelle")
 
@@ -29,13 +29,13 @@ Pohjoisniemen päätyyn saapuessani yllätyn hieman siitä, ettei siellä ole oi
 
 Seison niemen kärjessä ja katson kuinka myrskypilvet liikkuvat taivaalla ja tuuli nostattaa aallokkoa. Sade piiskaa kasvoja. Olen yksin.
 
-En tiedä sinusta, hyvä lukija, mutta minusta myrskyn kuuntelu ja jopa siihen joutuminen on jotenkin tosi rauhoittava kokemus. Siinä saattaa vain sulkea silmät ja nauttia hetkestä. Silmät kiinni ollessa saatan ainoastaan kuulla ympärillä vellovan myrskyn ja tuntea kuinka sade ja tuuli vihloo kasvoja. Vaikka olen tässä, olen henkisesti  jossain ihan toisessa paikassa. Nautin siitä.
+En tiedä sinusta, hyvä lukija, mutta minusta myrskyn kuuntelu ja jopa siihen joutuminen on jotenkin tosi rauhoittava kokemus. Siinä saattaa vain sulkea silmät ja nauttia hetkestä. Silmät kiinni ollessa saatan ainoastaan kuulla ympärillä vellovan myrskyn ja tuntea kuinka sade ja tuuli vihloo kasvoja. Vaikka olen tässä, tunnen henkisesti olevani jossain ihan muualla. Nautin siitä.
 
 Jossain vaiheessa avaan silmät. En tiedä kuinka kauan olin "poissa", mutta nyt olen jälleen Tiilikkajärvellä. Alkaa pikkuhiljaa tulla kylmä, joten on parempi lähteä talsimaan takaisin.
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3556-Pano_thumb.jpg "Luodelahti")
 
-Pohjoisniemessä sijaitsee yksi kansallispuiston nähtävyyksistä: Täysinnän rauhan rajakivet. Kivien suuntaan on opaste niemessä, mutta ei mitään sen enempää. Olisin toivonut, että jonkinlainen opastekyltti olisi ollut kertomassa paikan historiasta niille, jotka ovat nukkuneet historiantunnilla. Kerrottaan, että alue on ollut muinoin osa Ruotsi-Suomen ja Venäjän välistä rajaseutua, jonka omistuksesta sodittiin. Täyssinän rauha solmittiin vuonna 1595, joten paikalla on historiaa satojen vuosien takaa. Kivet toimivat rajamerkkeinä ja niihin on kaiverrettu eri valtioiden symbolit. Itse kiviä ei kuitenkaan juuri näy. Ne sijaitsevat vedessä melko kaukana rannasta, joten niitä on vaikeaa havaita, ainakin tällä myrskyssäällä. Siksipä en niistä oikein minkäänlaista kuvaakaan saa.
+Pohjoisniemessä sijaitsee yksi kansallispuiston nähtävyyksistä: Täyssinän rauhan rajakivet. Kivien suuntaan on opaste niemessä, mutta ei mitään sen enempää. Olisin toivonut, että jonkinlainen opastekyltti olisi ollut kertomassa paikan historiasta niille, jotka ovat nukkuneet historiantunnilla. Kerrottakoon, että alue on ollut muinoin osa Ruotsi-Suomen ja Venäjän välistä rajaseutua, jonka omistuksesta sodittiin. Täyssinän rauha solmittiin vuonna 1595, joten paikalla on historiaa satojen vuosien takaa. Kivet toimivat rajamerkkeinä ja niihin on kaiverrettu eri valtioiden symbolit. Itse kiviä ei kuitenkaan juuri näy. Ne sijaitsevat melko kaukana rannasta, joten niitä on vaikeaa havaita, ainakin tällä myrskysäällä. Siksipä en niistä oikein minkäänlaista kuvaakaan saa.
 
 Kuljen reittiä takaisin hieman syrjäisempää polkua pitkin, ja saavun lähes huomaamattani paikan ainoalle nuotiopaikalle Kosevaan. Sade yltyy yltymistään, joten haen suojaa nuotiopaikan puuliiteristä.
 
@@ -47,7 +47,7 @@ Vaikka myrskyn ympäröimässä liiterissä aika sujuu varsin viihtyisästi sade
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3539-Pano-2_thumb.jpg)
 
-Liiteriltä lähdettyäni huomaan pian, ketä varten parkkipaikan auto todennäköisesti oli pysäkissä: jonkin matkan päässä nuotipaikalta sijaitsee teltta, joka heiluu kovassa tuulessa. Ketään ei näy, joten olettaisin, että kanssaretkeilijä on paennut myrskysäätä telttaan. Olen salaa jopa hieman kateellinen hänelle, sillä niin kauan kuin teltta pysyy pystyssä, voisi olla kiva viettää siinä aikaa - "turvassa" myrskysäältä. Oma tieni vie kuitenkin takaisin parkkipaikalle. Sanon heipat Pohjoisniemelle, sekä eräälle sammakolle, joka paluumatkalla suostui kameralleni poseeraamaan:
+Liiteriltä lähdettyäni huomaan pian, ketä varten parkkipaikan auto todennäköisesti oli pysäkissä: jonkin matkan päässä nuotipaikalta on teltta, joka heiluu kovassa tuulessa. Ketään ei näy, joten olettaisin, että kanssaretkeilijä on paennut myrskysäätä telttaan. Olen salaa jopa hieman kateellinen hänelle, sillä niin kauan kuin teltta pysyy pystyssä, voisi olla kiva viettää siinä aikaa - "turvassa" myrskysäältä. Oma tieni vie kuitenkin takaisin parkkipaikalle. Sanon heipat Pohjoisniemelle, sekä eräälle sammakolle, joka paluumatkalla suostui kameralleni poseeraamaan:
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3563_thumb.jpg)
 
@@ -69,7 +69,7 @@ Olen kulkenut polkua reilut kolme kilometriä. Sää on mainio, joskin sateen ja
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3616_thumb.jpg)
 
-Sillan jälkeen on luvassa lyhyessä ajassa jo kolmas ylityspaikka. Tällä kertaa se tuo minut Uiton kämpälle. Kyseessä oleva vuokrakämppä sijaitsee kivalla paikalla, metsän syrjällä, Tiilikkajärven ja siitä lähtevän Itkonjoen rannalla. Alueella on myös tulistelupaikka ja uimaranta.
+Sillan jälkeen on luvassa lyhyessä ajassa jo kolmas ylityspaikka. Se tuo minut Uiton kämpälle. Kyseessä oleva vuokrakämppä sijaitsee kivalla paikalla, metsän syrjällä, Tiilikkajärven ja siitä lähtevän Itkonjoen rannalla. Alueella on myös tulistelupaikka ja uimaranta.
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3724_thumb.jpg)
 
@@ -87,7 +87,7 @@ Uiton kämpältä retki jatkuu Autionkierrokselle. Tämä reilun kolmen kilometr
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3646_thumb.jpg)
 
-Pistäydyn sisällä torpassa. Kämppä on varsin vaatimattomasti varusteltu. Pöydällä on iso pino erilaisia artikkeleita kansallispuistosta sekä Tiaisesta. Ikkunasta ulos katsellessa voin havaita, että sadepilvet ovat lähestymässä. Jos tietäisin sadetta olevan luvassa, voisin hyvin pitää sitä kämpässä.
+Pistäydyn sisällä torpassa. Kämppä on varsin vaatimattomasti varusteltu. Pöydällä on iso pino erilaisia artikkeleita kansallispuistosta sekä Tiaisesta. Ikkunasta ulos katsellessa voin havaita, että sadepilvet ovat lähestymässä. Jos tietäisin sadetta olevan luvassa, kämppä voisi olla tunnelmallinen paikka sateen pitämiselle.
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3641_thumb.jpg)
 
