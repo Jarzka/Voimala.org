@@ -14,21 +14,21 @@
 
 ; Helpers
 
-(defn post-ids-from-oldest-to-newest []
+(defn post-ids-from-newest-to-oldest []
   (-> @post-ids sort reverse vec))
 
 (defn post-index [post-id]
-  (let [posts (post-ids-from-oldest-to-newest)]
+  (let [posts (post-ids-from-newest-to-oldest)]
     (.indexOf posts post-id)))
 
-(defn newer-post-id [post-id]
-  (let [posts (post-ids-from-oldest-to-newest)
+(defn older-post-id [post-id]
+  (let [posts (post-ids-from-newest-to-oldest)
         post-index (post-index post-id)
         newer-index (inc post-index)]
     (get posts newer-index)))
 
-(defn older-post-id [post-id]
-  (let [posts (post-ids-from-oldest-to-newest)
+(defn newer-post-id [post-id]
+  (let [posts (post-ids-from-newest-to-oldest)
         post-index (post-index post-id)
         older-index (dec post-index)]
     (get posts older-index)))

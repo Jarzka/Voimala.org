@@ -94,8 +94,8 @@
        :reagent-render       (fn [post-id]
                                (let [post (get @blog-service/posts post-id)
                                      post-loaded? (post-fully-loaded? post)
-                                     older-post-id (blog-service/older-post-id post-id)
                                      newer-post-id (blog-service/newer-post-id post-id)
+                                     older-post-id (blog-service/older-post-id post-id)
                                      metadata (:metadata post)]
                                  [:<>
                                   [:article
@@ -115,7 +115,7 @@
                                         [app-link {:style    blog-style/footer-link
                                                    :uri      (str blog-uri "/" older-post-id)
                                                    :on-click reset-html!}
-                                         "« Seuraava tarina"])
+                                         "« Edellinen tarina"])
                                       [app-link {:style blog-style/footer-link
                                                  :uri   blog-uri}
                                        "Etusivu"]
@@ -123,7 +123,7 @@
                                         [app-link {:style    blog-style/footer-link
                                                    :uri      (str blog-uri "/" newer-post-id)
                                                    :on-click reset-html!}
-                                         "Edellinen tarina »"])])]]))})))
+                                         "Seuraava tarina »"])])]]))})))
 
 (defn- blog-post-excerpt
   "Renders blog post excerpt. Assumes that the post is already loaded."
@@ -146,12 +146,12 @@
   "List of blog posts. Always loads posts on current page before renders all of them at once."
   []
   (let [resolve-max-page-index (fn []
-                                 (let [post-ids (blog-service/post-ids-from-oldest-to-newest)
+                                 (let [post-ids (blog-service/post-ids-from-newest-to-oldest)
                                        post-ids-partitioned (vec (partition-all posts-per-page post-ids))
                                        max-page-index (dec (count post-ids-partitioned))]
                                    max-page-index))
         resolve-post-ids-on-current-page (fn []
-                                           (let [post-ids (blog-service/post-ids-from-oldest-to-newest)
+                                           (let [post-ids (blog-service/post-ids-from-newest-to-oldest)
                                                  post-ids-partitioned (vec (partition-all posts-per-page post-ids))
                                                  post-ids-on-current-page (vec (get post-ids-partitioned @blog-service/current-page-index))]
                                              post-ids-on-current-page))
