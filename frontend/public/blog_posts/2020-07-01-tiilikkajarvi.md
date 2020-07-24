@@ -19,7 +19,7 @@ Pohjoisniemi on noin kolmen kilometrin mittainen niemi Tiilikkajärvessä ja se 
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3476_thumb.jpg "Vaikka sade ei suoranaisesti näy kuvissa, alkaa se kerryttää lätäköitä reitin varrelle")
 
-Kuljen reittiä hissukseen eteenpäin. Ketään ei näy missään. Nuotipaikka sijaitsee hieman syrjässä polulta, joten päätän käydä siellä paluumatkalla. Samoin myös  mainitsemani muistomerkki jätetään tutkittavaksi paluumatkalle.
+Kuljen reittiä hissukseen eteenpäin. Ketään ei näy missään. Nuotiopaikka sijaitsee hieman syrjässä polulta, joten päätän käydä siellä paluumatkalla. Samoin myös  mainitsemani muistomerkki jätetään tutkittavaksi paluumatkalle.
 
 ![Tiilikkajärven kansallispuisto](/images/blog/2020-07-01-tiilikkajarvi/_N0A3498_thumb.jpg "Kärki löytyy noin kolmen kilometrin talsimisen jälkeen")
 
