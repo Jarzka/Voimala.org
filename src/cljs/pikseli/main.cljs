@@ -22,11 +22,7 @@
       [:a {:href "https://pikseli.org"} "Pikseli.org"]
       separator
       [mail/mail]]
-     [:div (use-style layout/copyright)
-      "Copyright © Jari Hanhela"
-      [:p "Source code available "
-       [:a {:href "https://github.com/Jarzka/pikseli.org"} "here"]
-       "."]]]))
+     [:div (use-style layout/copyright) "Copyright © Jari Hanhela"]]))
 
 (defn content []
   [:div

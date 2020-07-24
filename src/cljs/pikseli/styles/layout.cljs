@@ -51,7 +51,6 @@
 
 (def copyright {:margin-top "1rem"
                 :text-align "center"
-                :font-size  "0.7rem"
                 :color      "#5a5a5a"})
 
 (def site-footer {:margin-top "1rem"
