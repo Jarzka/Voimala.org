@@ -94,8 +94,8 @@
        :reagent-render       (fn [post-id]
                                (let [post (get @blog-service/posts post-id)
                                      post-loaded? (post-fully-loaded? post)
-                                     previous-post-id (blog-service/previous-post-id post-id)
-                                     next-post-id (blog-service/next-post-id post-id)
+                                     older-post-id (blog-service/previous-post-id post-id)
+                                     newer-post-id (blog-service/next-post-id post-id)
                                      metadata (:metadata post)]
                                  [:<>
                                   [:article
@@ -111,19 +111,19 @@
 
                                    (when post-loaded?
                                      [:footer (use-style blog-style/blog-post-footer)
-                                      (when previous-post-id
+                                      (when older-post-id
                                         [app-link {:style    blog-style/footer-link
-                                                   :uri      (str blog-uri "/" previous-post-id)
+                                                   :uri      (str blog-uri "/" older-post-id)
                                                    :on-click reset-html!}
-                                         "« Edellinen tarina"])
+                                         "« Seuraava tarina"])
                                       [app-link {:style blog-style/footer-link
                                                  :uri   blog-uri}
                                        "Etusivu"]
-                                      (when next-post-id
+                                      (when newer-post-id
                                         [app-link {:style    blog-style/footer-link
-                                                   :uri      (str blog-uri "/" next-post-id)
+                                                   :uri      (str blog-uri "/" newer-post-id)
                                                    :on-click reset-html!}
-                                         "Seuraava tarina »"])])]]))})))
+                                         "Edellinen tarina »"])])]]))})))
 
 (defn- blog-post-excerpt
   "Renders blog post excerpt. Assumes that the post is already loaded."
