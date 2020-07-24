@@ -9,11 +9,12 @@
       element)
     content))
 
-(defn social-media-link [{:keys [some-type] :as options} & content]
-  [:a (use-style (merge-with merge
-                             g-styles/a-some
-                             (g-styles/a-some-before some-type))
-                 (dissoc options :some-type))
+(defn social-media-link [{:keys [some-type style] :as options} & content]
+  [:a (merge (use-style (merge-with merge
+                                    g-styles/a-some
+                                    (g-styles/a-some-before some-type))
+                        (dissoc options :some-type :style))
+             {:style style})
    content])
 
 (defn button-link [{:keys [button-icon extra-styles] :as options} & content]
@@ -46,7 +47,7 @@
               {:src "/images/loading_dark.gif"})])
 
 (defn loader-light [{:keys [text]}]
-  [:div
+  [:div (use-style {:height "5rem"})
    [:img (use-style {:width "32px"
                      :display :block
                      :margin-top "1rem"

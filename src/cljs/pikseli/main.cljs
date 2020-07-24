@@ -12,10 +12,7 @@
 (defn- site-footer []
   [:footer (use-style layout/site-footer)
    "Copyright © Jari Hanhela"
-   [:p "Powered by "
-    [:a {:href "http://clojurescript.org"} "ClojureScript"]
-    ". "
-    "Source code available "
+   [:p "Source code available "
     [:a {:href "https://github.com/Jarzka/pikseli.org"} "here"]
     "."]])
 

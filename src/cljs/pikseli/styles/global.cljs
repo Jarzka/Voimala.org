@@ -38,7 +38,8 @@
              :link (if style-settings/dark-mode? "#46aee5" "#b9511a")
              :background-secondary "rgba(14, 31, 40, 0.85)"
              :error "red"
-             :header (if style-settings/dark-mode? "#eaeaea" "#121212")})
+             :header (if style-settings/dark-mode? "#eaeaea" "#121212")
+             :line "#5a5a5a"})
 
 (def text-small {:font-size "0.8rem"})
 
@@ -106,8 +107,10 @@
     {:background-image (str "url(\"/images/some_" (name some) ".png\")")
      :background-repeat "no-repeat"
      :background-size "80%"
+     :background-position "center center"
      :content "\"\""
-     :padding-left "2rem"}}})
+     :margin-right "0.2rem"
+     :padding-left "1.5rem"}}})
 
 (def a-some (merge link
                    {:display "block"

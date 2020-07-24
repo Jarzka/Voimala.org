@@ -76,11 +76,12 @@
 (def about-text {:flex 3
                  :margin-top "1rem"})
 
-(def blog-post-frontpage {:font-size "1rem"
-                          :text-align :center
-                          :display :flex
-                          :justify-content :center
-                          :flex-wrap :wrap})
+(def blog-post-footer {:font-size       "1rem"
+                       :text-align      :center
+                       :display         :flex
+                       :justify-content :center
+                       :margin-bottom   "2rem"
+                       :flex-wrap       :wrap})
 
 (def footer-link (merge-with merge
                              {:padding-right "1.3rem"
@@ -98,7 +99,7 @@
                       :font-size "0.7rem"
                       :color "#5a5a5a"})
 
-(def blog-content {:min-height "1500px"
+(def blog-content {:min-height "768px"
                    ::stylefy/manual [[:figcaption {:text-align :center
                                                    :font-style :italic}]]})
 
@@ -114,3 +115,7 @@
       {:width "80%"})
     (g-styles/on-phone
       {:width "100%"})))
+
+(def footer {:border-top (str "1px solid " (:line g-styles/colors))
+             :padding-top "1rem"
+             :text-align :center})

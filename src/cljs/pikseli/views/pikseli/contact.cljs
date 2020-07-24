@@ -1,13 +1,14 @@
 (ns pikseli.views.pikseli.contact
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [pikseli.ui.general :as ui]))
+            [pikseli.ui.general :as ui]
+            [pikseli.components.mail :as mail]))
 
 (defn contact []
   [:section
    [:a {:id "contact"}]
    [:h1 "Contact"]
    [:h2 "Email"]
-   [:p "You can contact me by email: jarihanhela (at) gmail.com."]
+   [:p "You can contact me by email: " [mail/mail]]
    [:h2 "Social media"]
    [ui/social-media-link {:some-type :instagram :href "https://instagram.com/jari_hanhela"} "Instagram"]
    [ui/social-media-link {:some-type :github :href "https://github.com/Jarzka"} "GitHub"]

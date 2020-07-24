@@ -7,6 +7,7 @@
             [pikseli.services.blog :as blog-service]
             [pikseli.services.dom :as dom-service]
             [pikseli.views.blog.about :as blog-about]
+            [pikseli.views.blog.blog-common :as blog-common]
             [pikseli.styles.views.blog :as blog-style]
             [pikseli.page-settings :as page-settings]
             [pikseli.utils :refer [scroll-to-top]]
@@ -65,12 +66,12 @@
                               (page-settings/blog-post-title
                                 (:title metadata)))
                             (dom-service/set-meta-tags
-                              {:title (:title metadata)
-                               :type "article"
-                               :image (:image metadata)
-                               :uri (str (router-service/read-host)
-                                         (router-service/read-uri))
-                               :author (:author metadata)
+                              {:title    (:title metadata)
+                               :type     "article"
+                               :image    (:image metadata)
+                               :uri      (str (router-service/read-host)
+                                              (router-service/read-uri))
+                               :author   (:author metadata)
                                :keywords (:keywords metadata)}))
 
                           (reset! post-html (:html post))))
@@ -88,41 +89,42 @@
       {:component-did-update (fn [this]
                                (let [[post-id] (rest (r/argv this))]
                                  (update-contents! post-id)))
-       :component-did-mount (fn [this]
-                              (let [[post-id] (rest (r/argv this))]
-                                (update-contents! post-id)))
-       :reagent-render (fn [post-id]
-                         (let [post (get @blog-service/posts post-id)
-                               post-loaded? (post-fully-loaded? post)
-                               previous-post-id (blog-service/previous-post-id post-id)
-                               next-post-id (blog-service/next-post-id post-id)
-                               metadata (:metadata post)]
-                           [:article
-                            (when post-loaded? [blog-post-title post-id (:title metadata) false])
-                            (when post-loaded? [blog-post-author-and-date metadata])
+       :component-did-mount  (fn [this]
+                               (let [[post-id] (rest (r/argv this))]
+                                 (update-contents! post-id)))
+       :reagent-render       (fn [post-id]
+                               (let [post (get @blog-service/posts post-id)
+                                     post-loaded? (post-fully-loaded? post)
+                                     previous-post-id (blog-service/previous-post-id post-id)
+                                     next-post-id (blog-service/next-post-id post-id)
+                                     metadata (:metadata post)]
+                                 [:<>
+                                  [:article
+                                   (when post-loaded? [blog-post-title post-id (:title metadata) false])
+                                   (when post-loaded? [blog-post-author-and-date metadata])
 
-                            (when-not post-loaded? [blog-loader])
-                            (when @blog-service/error? [error-text])
+                                   (when-not post-loaded? [blog-loader])
+                                   (when @blog-service/error? [error-text])
 
-                            (when @post-html
-                              [:div (use-style blog-style/blog-post-full
-                                               {:dangerouslySetInnerHTML {:__html @post-html}})])
+                                   (when @post-html
+                                     [:div (use-style blog-style/blog-post-full
+                                                      {:dangerouslySetInnerHTML {:__html @post-html}})])
 
-                            (when post-loaded?
-                              [:div (use-style blog-style/blog-post-frontpage)
-                               (when previous-post-id
-                                 [app-link {:style blog-style/footer-link
-                                            :uri (str blog-uri "/" previous-post-id)
-                                            :on-click reset-html!}
-                                  "« Edellinen tarina"])
-                               [app-link {:style blog-style/footer-link
-                                          :uri blog-uri}
-                                "Etusivu"]
-                               (when next-post-id
-                                 [app-link {:style blog-style/footer-link
-                                            :uri (str blog-uri "/" next-post-id)
-                                            :on-click reset-html!}
-                                  "Seuraava tarina »"])])]))})))
+                                   (when post-loaded?
+                                     [:footer (use-style blog-style/blog-post-footer)
+                                      (when previous-post-id
+                                        [app-link {:style    blog-style/footer-link
+                                                   :uri      (str blog-uri "/" previous-post-id)
+                                                   :on-click reset-html!}
+                                         "« Edellinen tarina"])
+                                      [app-link {:style blog-style/footer-link
+                                                 :uri   blog-uri}
+                                       "Etusivu"]
+                                      (when next-post-id
+                                        [app-link {:style    blog-style/footer-link
+                                                   :uri      (str blog-uri "/" next-post-id)
+                                                   :on-click reset-html!}
+                                         "Seuraava tarina »"])])]]))})))
 
 (defn- blog-post-excerpt
   "Renders blog post excerpt. Assumes that the post is already loaded."
@@ -169,37 +171,37 @@
                                                                     (reset! blog-service/error? true)))
                                       (swap! blog-service/posts-loading conj post-id)))))]
     (r/create-class
-      {:component-did-mount (fn []
-                              (dom-service/set-title (page-settings/page-title "/blog"))
-                              (dom-service/clear-meta-tags)
-                              (load-posts-if-needed!))
+      {:component-did-mount  (fn []
+                               (dom-service/set-title (page-settings/page-title "/blog"))
+                               (dom-service/clear-meta-tags)
+                               (load-posts-if-needed!))
        :component-did-update (fn [] (load-posts-if-needed!))
-       :reagent-render (fn []
-                         (let [error? @blog-service/error?
-                               post-ids @blog-service/post-ids
-                               post-ids-on-current-page (resolve-post-ids-on-current-page)
-                               max-page-index (resolve-max-page-index)
-                               loaded? (and (not (empty? post-ids))
-                                            (blog-service/posts-loaded? post-ids-on-current-page))
-                               pagination (fn []
-                                            [pagination/pagination {:indexes (range 0 (inc max-page-index))
-                                                                    :active-index @blog-service/current-page-index
-                                                                    :on-index-selected (fn [index]
-                                                                                         (scroll-to-top)
-                                                                                         (reset! blog-service/current-page-index index))}])]
-                           [:div
-                            (when error? [error-text])
-                            (if loaded?
-                              [:div
-                               [pagination]
-                               [:div
-                                (map
-                                  (fn [post-id]
-                                    ^{:key post-id}
-                                    [blog-post-excerpt post-id])
-                                  post-ids-on-current-page)
-                                [pagination]]]
-                              [blog-loader])]))})))
+       :reagent-render       (fn []
+                               (let [error? @blog-service/error?
+                                     post-ids @blog-service/post-ids
+                                     post-ids-on-current-page (resolve-post-ids-on-current-page)
+                                     max-page-index (resolve-max-page-index)
+                                     loaded? (and (not (empty? post-ids))
+                                                  (blog-service/posts-loaded? post-ids-on-current-page))
+                                     pagination (fn []
+                                                  [pagination/pagination {:indexes           (range 0 (inc max-page-index))
+                                                                          :active-index      @blog-service/current-page-index
+                                                                          :on-index-selected (fn [index]
+                                                                                               (scroll-to-top)
+                                                                                               (reset! blog-service/current-page-index index))}])]
+                                 [:<>
+                                  (when error? [error-text])
+                                  (if loaded?
+                                    [:<>
+                                     [pagination]
+                                     [:<>
+                                      (map
+                                        (fn [post-id]
+                                          ^{:key post-id}
+                                          [blog-post-excerpt post-id])
+                                        post-ids-on-current-page)
+                                      [pagination]]]
+                                    [blog-loader])]))})))
 
 (defn main []
   (r/create-class
@@ -207,26 +209,28 @@
                             (post-api/get-post-ids
                               (fn [ids] (reset! blog-service/post-ids ids))
                               (fn [] (reset! blog-service/error? true))))
-     :reagent-render (fn []
-                       (let [blog-post-id (router/blog-post-id @router-service/uri)
-                             about? (router/uri-is-blog-about? @router-service/uri)]
-                         [:div (use-style blog-style/blog-content)
-                          [:header (use-style blog-style/header)
+     :reagent-render      (fn []
+                            (let [blog-post-id (router/blog-post-id @router-service/uri)
+                                  about? (router/uri-is-blog-about? @router-service/uri)]
+                              [:div (use-style blog-style/blog-content)
+                               [:header (use-style blog-style/header)
 
-                           [:div (use-style blog-style/top-links)
-                            (if (or blog-post-id about?)
-                              [app-link {:style blog-style/back
-                                         :uri blog-uri}
-                               "< Etusivu"])
-                            [app-link {:style blog-style/about
-                                       :uri "/blog/about"}
-                             "Kirjoittajasta"]]
+                                [:div (use-style blog-style/top-links)
+                                 (if (or blog-post-id about?)
+                                   [app-link {:style blog-style/back
+                                              :uri   blog-uri}
+                                    "< Etusivu"])
+                                 [app-link {:style blog-style/about
+                                            :uri   "/blog/about"}
+                                  "Kirjoittajasta"]]
 
-                           [:div (use-sub-style layout/site-header :logo-and-description)
-                            [:div [app-link {:uri "/blog"}
-                                   [:img (use-sub-style layout/site-header :logo-blog
-                                                        {:alt "Kotona ikimetsässä" :src page-settings/blog-logo-url})]]]]]
-                          (cond
-                            about? [blog-about/about]
-                            blog-post-id [full-blog-post blog-post-id {:view-mode :full}]
-                            :default [blog-post-list])]))}))
+                                [:div (use-sub-style layout/site-header :logo-and-description)
+                                 [:div [app-link {:uri "/blog"}
+                                        [:img (use-sub-style layout/site-header :logo-blog
+                                                             {:alt "Kotona ikimetsässä" :src page-settings/blog-logo-url})]]]]]
+                               (cond
+                                 about? [blog-about/about]
+                                 blog-post-id [full-blog-post blog-post-id {:view-mode :full}]
+                                 :default [blog-post-list])
+
+                               [blog-common/footer]]))}))

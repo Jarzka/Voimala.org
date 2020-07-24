@@ -50,8 +50,9 @@
                              {:margin-top "0"}))))
 
 (def site-footer {:margin-top "1rem"
-                  :font-size "0.75rem"
-                  :text-align "center"})
+                  :text-align "center"
+                  :font-size "0.7rem"
+                  :color "#5a5a5a"})
 
 (def videos-wrapper {:display :flex
                      :align-items :center
