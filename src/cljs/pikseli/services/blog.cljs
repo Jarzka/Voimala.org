@@ -14,24 +14,24 @@
 
 ; Helpers
 
-(defn post-ids-in-order []
+(defn post-ids-from-oldest-to-newest []
   (-> @post-ids sort reverse vec))
 
 (defn post-index [post-id]
-  (let [posts (post-ids-in-order)]
+  (let [posts (post-ids-from-oldest-to-newest)]
     (.indexOf posts post-id)))
 
-(defn next-post-id [post-id]
-  (let [posts (post-ids-in-order)
+(defn newer-post-id [post-id]
+  (let [posts (post-ids-from-oldest-to-newest)
         post-index (post-index post-id)
-        next-index (inc post-index)]
-    (get posts next-index)))
+        newer-index (inc post-index)]
+    (get posts newer-index)))
 
-(defn previous-post-id [post-id]
-  (let [posts (post-ids-in-order)
+(defn older-post-id [post-id]
+  (let [posts (post-ids-from-oldest-to-newest)
         post-index (post-index post-id)
-        previous-index (dec post-index)]
-    (get posts previous-index)))
+        older-index (dec post-index)]
+    (get posts older-index)))
 
 (defn posts-loaded? [given-post-ids]
   (and
