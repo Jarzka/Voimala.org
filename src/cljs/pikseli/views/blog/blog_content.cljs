@@ -48,6 +48,27 @@
      (when (:date metadata)
        (format/unparse blog-date-out-formatter (tc/from-date (:date metadata)))))])
 
+(defn discussion [post-id]
+  (r/create-class
+    {:component-did-mount (fn []
+                            (set! (.-HYVOR_TALK_WEBSITE js/window) 1298)
+
+                            (let [config #js {:url "https://metsassa.pikseli.org" :id post-id}]
+                              (let [hyvor-running? (.getElementById js/document "hyvor")]
+                                (if hyvor-running?
+                                  (.reload (.-hyvor_talk js/window) config)
+                                  (do
+                                    (set! (.-HYVOR_TALK_CONFIG js/window) config)
+                                    (let [hyvor-script (.createElement js/document "script")]
+                                     (set! (.-async hyvor-script) "async")
+                                     (set! (.-id hyvor-script) "hyvor")
+                                     (set! (.-type hyvor-script) "text/javascript")
+                                     (set! (.-src hyvor-script) "https://talk.hyvor.com/web-api/embed")
+                                     (.appendChild (.-body js/document) hyvor-script)))))))
+     :reagent-render      (fn []
+                            [:div#hyvor-talk-view (use-style {:width      "100%"
+                                                              :margin-top "1rem"})])}))
+
 (defn- full-blog-post
   "A single blog post that, given a post id, shows it - or if not loaded, loads it from the server.
    Can be viewed either in full or excerpt mode.
@@ -111,6 +132,7 @@
 
                                    (when post-loaded?
                                      [:footer (use-style blog-style/blog-post-footer)
+
                                       (when older-post-id
                                         [app-link {:style    blog-style/footer-link
                                                    :uri      (str blog-uri "/" older-post-id)
@@ -123,7 +145,9 @@
                                         [app-link {:style    blog-style/footer-link
                                                    :uri      (str blog-uri "/" newer-post-id)
                                                    :on-click reset-html!}
-                                         "Seuraava tarina »"])])]]))})))
+                                         "Seuraava tarina »"])
+
+                                      [discussion post-id]])]]))})))
 
 (defn- blog-post-excerpt
   "Renders blog post excerpt. Assumes that the post is already loaded."
