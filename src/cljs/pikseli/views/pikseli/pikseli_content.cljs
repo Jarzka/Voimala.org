@@ -4,7 +4,6 @@
     [pikseli.views.pikseli.writing :as writing-view]
     [pikseli.views.pikseli.photography :as photography-view]
     [pikseli.views.pikseli.misc :as misc-view]
-    [pikseli.views.pikseli.contact :as contact-view]
     [pikseli.views.pikseli.software :as software-view]
     [pikseli.views.pikseli.music :as music-view]
     [pikseli.views.pikseli.filming :as filming-view]))
@@ -17,5 +16,4 @@
    [writing-view/writing]
    [software-view/software]
    [music-view/music]
-   [misc-view/misc]
-   [contact-view/contact]])
+   [misc-view/misc]])

@@ -49,13 +49,18 @@
                            (g-styles/on-mobile
                              {:margin-top "0"}))))
 
-(def site-footer {:margin-top "1rem"
-                  :text-align "center"
-                  :font-size "0.7rem"
-                  :color "#5a5a5a"})
+(def copyright {:margin-top "1rem"
+                :text-align "center"
+                :font-size  "0.7rem"
+                :color      "#5a5a5a"})
 
-(def videos-wrapper {:display :flex
-                     :align-items :center
+(def site-footer {:margin-top "1rem"
+                  :border-top  (str "1px solid " (:line g-styles/colors))
+                  :padding-top "1rem"
+                  :text-align  :center})
+
+(def videos-wrapper {:display        :flex
+                     :align-items    :center
                      :flex-direction :column})
 
 (def iframe-wrapper {:margin-bottom "1rem"})

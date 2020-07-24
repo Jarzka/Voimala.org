@@ -7,7 +7,6 @@
             [pikseli.services.blog :as blog-service]
             [pikseli.services.dom :as dom-service]
             [pikseli.views.blog.about :as blog-about]
-            [pikseli.views.blog.blog-common :as blog-common]
             [pikseli.styles.views.blog :as blog-style]
             [pikseli.page-settings :as page-settings]
             [pikseli.utils :refer [scroll-to-top]]
@@ -231,6 +230,4 @@
                                (cond
                                  about? [blog-about/about]
                                  blog-post-id [full-blog-post blog-post-id {:view-mode :full}]
-                                 :default [blog-post-list])
-
-                               [blog-common/footer]]))}))
+                                 :default [blog-post-list])]))}))

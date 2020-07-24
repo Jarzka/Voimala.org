@@ -7,14 +7,26 @@
     [pikseli.styles.global :as g-styles]
     [pikseli.styles.layout :as layout]
     [pikseli.ui.modal :as modal]
-    [reagent.dom :as reagent-dom]))
+    [reagent.dom :as reagent-dom]
+    [pikseli.components.mail :as mail]
+    [pikseli.ui.general :as ui]))
 
 (defn- site-footer []
-  [:footer (use-style layout/site-footer)
-   "Copyright © Jari Hanhela"
-   [:p "Source code available "
-    [:a {:href "https://github.com/Jarzka/pikseli.org"} "here"]
-    "."]])
+  (let [separator " | "]
+    [:<>
+     [:footer (use-style layout/site-footer)
+      [ui/social-media-link {:some-type :instagram :href "https://instagram.com/jari_hanhela"} "Instagram"]
+      [ui/social-media-link {:some-type :twitter :href "https://twitter.com/jarzka"} "Twitter"]
+      [ui/social-media-link {:some-type :github :href "https://github.com/Jarzka"} "GitHub"]
+      separator
+      [:a {:href "https://pikseli.org"} "Pikseli.org"]
+      separator
+      [mail/mail]]
+     [:div (use-style layout/copyright)
+      "Copyright © Jari Hanhela"
+      [:p "Source code available "
+       [:a {:href "https://github.com/Jarzka/pikseli.org"} "here"]
+       "."]]]))
 
 (defn content []
   [:div

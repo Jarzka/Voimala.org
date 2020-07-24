@@ -113,9 +113,9 @@
      :padding-left "1.5rem"}}})
 
 (def a-some (merge link
-                   {:display "block"
-                    :margin-top 0
+                   {:margin-top 0
                     :margin-bottom 0
+                    :margin-right "0.5rem"
                     :height "2rem"}))
 
 (def a-button (merge

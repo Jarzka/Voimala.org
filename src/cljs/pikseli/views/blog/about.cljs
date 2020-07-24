@@ -8,8 +8,7 @@
             [pikseli.utils :refer [scroll-to-top]]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
-            [pikseli.ui.general :as ui]
-            [pikseli.views.blog.blog-common :as blog-common]))
+            [pikseli.ui.general :as ui]))
 
 (defn about []
   (r/create-class
