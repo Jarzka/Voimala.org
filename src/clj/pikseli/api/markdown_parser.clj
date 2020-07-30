@@ -14,11 +14,13 @@
         (let [imageClone (.clone image)
               imageTitle (.attr imageClone "title")
               figure (Element. (Tag/valueOf "figure") baseurl)
-              figcaption (Element. (Tag/valueOf "figcaption") baseurl)
-              _ (.text figcaption imageTitle)
-              _ (doto figure
-                  (.appendChild imageClone)
-                  (.appendChild figcaption))]
+              figcaption (Element. (Tag/valueOf "figcaption") baseurl)]
+
+          (.text figcaption imageTitle)
+          (doto figure
+            (.appendChild imageClone)
+            (.appendChild figcaption))
+
           (.replaceWith image figure))))))
 
 (defn parse-markdown [markdown]
