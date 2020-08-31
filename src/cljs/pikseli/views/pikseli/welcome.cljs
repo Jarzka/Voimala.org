@@ -22,4 +22,4 @@
      [:a {:href "#software"} "software"] [:span " and "]
      [:a {:href "#music"} "music"] [:span ". "]
      [:span "Feel free to explore!"]]
-    [:p (use-style g-styles/text-small) "Contents updated: 29.2.2020."]]])
+    [:p (use-style g-styles/text-small) "Contents updated: 31.8.2020."]]])

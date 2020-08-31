@@ -15,5 +15,4 @@
    [filming-view/filming]
    [writing-view/writing]
    [software-view/software]
-   [music-view/music]
-   [misc-view/misc]])
+   [music-view/music]])
