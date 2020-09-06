@@ -8,12 +8,22 @@ All material in this repo is copyrighted. You are free to publicly examine it, b
 
 # Build
 
-## Develop
+Before doing anything else, run:
 
 ```bash
 npm install
-npx shadow-cljs watch frontend
 ```
+
+## Develop
+
+### Frontend
+
+```bash
+npx shadow-cljs watch pikseli
+npx shadow-cljs watch metsa
+```
+
+### Backend
 
 ```bash
 lein repl
@@ -21,9 +31,14 @@ lein repl
 
 ## Compile production
 
+### Frontend
+
 ```bash
-npx shadow-cljs release frontend
+npx shadow-cljs release pikseli
+npx shadow-cljs release metsa
 ```
+
+### Backend
 
 ```bash
 lein uberjar

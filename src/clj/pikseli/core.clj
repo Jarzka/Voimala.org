@@ -2,16 +2,19 @@
   (:require [compojure.core :refer [defroutes GET POST DELETE ANY context]]
             [compojure.route :refer [files not-found resources]]
             [compojure.handler :refer [site]]
-            [pikseli.index :as index]
+            [pikseli.blog.index :as index-blog]
+            [pikseli.portfolio.index :as index-portfolio]
             [pikseli.settings :as settings]
-            [pikseli.api.post-api :as post-api]
+            [pikseli.blog.api.post-api :as post-api]
             [hiccup.core :refer :all]
             [stylefy.core :as stylefy]
             [reitit.ring :as ring]
             [reitit.coercion.spec]
             [org.httpkit.server :refer :all]
             [cognitect.transit :as transit]
-            [clojure.string :as string])
+            [clojure.string :as string]
+            [pikseli.backend-styles :as backend-styles]
+            [pikseli.common.router :as router])
   (:gen-class)
   (:import (java.io ByteArrayOutputStream)))
 
@@ -23,12 +26,16 @@
     (reset! server nil)))
 
 (defn index [request]
-  {:status 200
+  {:status  200
    :headers {"Content-Type" "text/html"}
-   :body (str "<!DOCTYPE html>" (stylefy/query-with-styles
-                                  (fn []
-                                    (index/create-constant-styles)
-                                    (html (index/index request)))))})
+   :body    (str "<!DOCTYPE html>" (stylefy/query-with-styles
+                                     (fn []
+                                       (let [{:keys [uri headers]} request
+                                             host (get headers "host")]
+                                         (backend-styles/create-constant-styles)
+                                         (html (if (router/uri-is-blog? host uri)
+                                                 (index-blog/index request)
+                                                 (index-portfolio/index request)))))))})
 
 (def handler
   (ring/ring-handler
