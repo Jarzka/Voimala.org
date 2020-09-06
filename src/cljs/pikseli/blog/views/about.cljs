@@ -1,14 +1,14 @@
-(ns pikseli.views.blog.about
+(ns pikseli.blog.views.about
   (:require-macros [cljs.core.async.macros :refer [go]])
   (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
-            [pikseli.components.app-link :refer [app-link]]
-            [pikseli.services.dom :as dom-service]
-            [pikseli.styles.views.blog :as blog-style]
-            [pikseli.page-settings :as page-settings]
-            [pikseli.utils :refer [scroll-to-top]]
+            [pikseli.common.components.app-link :refer [app-link]]
+            [pikseli.common.services.dom :as dom-service]
+            [pikseli.blog.styles.blog :as blog-style]
+            [pikseli.common.page-settings :as page-settings]
+            [pikseli.common.utils :refer [scroll-to-top]]
             [reagent.core :as r]
             [cljs.core.async :refer [<!]]
-            [pikseli.ui.general :as ui]))
+            [pikseli.common.ui.general :as ui]))
 
 (defn about []
   (r/create-class
