@@ -1,6 +1,6 @@
 (ns pikseli.blog.main
   (:require
-    [stylefy.core :as stylefy :refer [use-style use-sub-style]]
+    [stylefy.core :as stylefy :refer [use-style prepare-style use-sub-style]]
     [pikseli.blog.views.blog-content :as blog-content]
     [pikseli.common.components.footer :as footer]
     [pikseli.common.styles.global :as g-styles]
@@ -11,7 +11,7 @@
 (defn- main-content []
   [:<>
    [modal/modal-lg]
-   [:div (use-style layout/page-content)
+   [:div (use-style (prepare-style layout/page-content))
     [:main
      [blog-content/main]]
     [footer/site-footer]]])
