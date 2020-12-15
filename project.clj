@@ -22,7 +22,7 @@
                  [garden "1.3.2"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]]
   :main pikseli.core
-  :aot :all
+  :aot :all ; For uberjar
   :auto-clean false ; For uberjar
   :target-path "target/%s"
   :plugins [[lein-cljsbuild "1.1.7"]
