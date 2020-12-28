@@ -29,7 +29,7 @@ npx shadow-cljs watch metsa
 lein repl
 ```
 
-## Compile production
+## Production
 
 ### Frontend
 
