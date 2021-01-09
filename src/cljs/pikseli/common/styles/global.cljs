@@ -34,12 +34,13 @@
 ;; Fonts & Colors
 ;; ****************************************************************
 
-(def colors {:text (if style-settings/dark-mode? "#eaeaea" "#121212")
-             :link (if style-settings/dark-mode? "#46aee5" "#b9511a")
+(def colors {:text                 (if style-settings/theme-dark? "#eaeaea" "#121212")
+             :link                 (if style-settings/theme-dark? "#46aee5" "#b9511a")
+             :selection            (if style-settings/theme-dark? "#9fdcfc" "#ffcfb5")
              :background-secondary "rgba(14, 31, 40, 0.85)"
-             :error "red"
-             :header (if style-settings/dark-mode? "#eaeaea" "#121212")
-             :line "#5a5a5a"})
+             :error                "red"
+             :header               (if style-settings/theme-dark? "#eaeaea" "#121212")
+             :line                 "#5a5a5a"})
 
 (def text-small {:font-size "0.8rem"})
 
@@ -64,6 +65,8 @@
 ;; ****************************************************************
 
 (def h {:color (:header colors)})
+
+(stylefy/tag "*" {::stylefy/mode {"::selection" {:background-color (:selection colors)}}})
 
 (stylefy/tag "h1" (merge h
                          {:margin-top "1.5rem"

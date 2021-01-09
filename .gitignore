@@ -27,3 +27,4 @@ setup.md
 /lein.bat
 /TODO.md
 .gradle/
+logs

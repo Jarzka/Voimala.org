@@ -15,7 +15,7 @@
                 :background-color "rgba(250, 250, 250)"
                 :border "1px solid rgba(255, 255, 255)"})
 
-(def themed-box (if style-settings/dark-mode? dark-box light-box))
+(def themed-box (if style-settings/theme-dark? dark-box light-box))
 
 (def logo
   {:width "12rem"
