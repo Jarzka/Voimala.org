@@ -25,5 +25,6 @@
    [youtube-video "bdM4cXxxZb8"]
    [youtube-video "fepNAB3N3Oc"]
    [:h2 "Music videos"]
+   [youtube-video "U3aPacUnNtw"]
    [youtube-video "PsfjSN21RLg"]
    [youtube-video "yTLuRgxUbxU"]])
