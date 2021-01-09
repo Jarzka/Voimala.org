@@ -20,6 +20,4 @@
      [:a {:href "#filming"} "filming"] [:span ", "]
      [:a {:href "#writing"} "writing"] [:span ", "]
      [:a {:href "#software"} "software"] [:span " and "]
-     [:a {:href "#music"} "music"] [:span ". "]
-     [:span "Feel free to explore!"]]
-    [:p (use-style g-styles/text-small) "Contents updated: 31.8.2020."]]])
+     [:a {:href "#music"} "music"] [:span ". "]]]])
