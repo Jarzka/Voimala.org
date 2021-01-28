@@ -4,7 +4,7 @@
 
 (def state
   {:current-page-index 0
-   :post-ids           nil ; A vector of all post ids that are at least partially loaded
+   :post-ids           nil ; A vector of all known post ids
    :posts              {} ; post-id -> post
    :posts-loading      #{} ; A set of post ids being loaded
    :error?             false})
