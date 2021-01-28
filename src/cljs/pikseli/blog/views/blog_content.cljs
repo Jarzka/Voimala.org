@@ -231,7 +231,7 @@
   (r/create-class
     {:component-did-mount (fn []
                             (dispatch [::post-api/get-post-ids
-                                       (fn [ids] (dispatch [::blog-service/reset-post-ids ids]))
+                                       (fn [ids] (dispatch [::blog-service/set-post-ids ids]))
                                        (fn [] (dispatch [::blog-service/set-error]))]))
      :reagent-render      (fn []
                             (let [blog-post-id (router/blog-post-id @router-service/uri)

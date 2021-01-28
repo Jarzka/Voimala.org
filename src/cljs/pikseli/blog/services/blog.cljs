@@ -15,7 +15,7 @@
     state))
 
 (reg-event-db
-  ::reset-post-ids
+  ::set-post-ids
   (fn [db [_ post-ids]]
     (assoc db :post-ids post-ids)))
 
