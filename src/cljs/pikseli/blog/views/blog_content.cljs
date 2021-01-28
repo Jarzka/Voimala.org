@@ -177,14 +177,11 @@
         post-ids-on-current-page (fn []
                                    (let [post-ids (listen [::blog-subscription/post-ids-from-newest-to-oldest])
                                          current-page-index (listen [::blog-subscription/current-page-index])
-                                         _ (println "KAIKKI POSTI IIDEET: " post-ids)
-                                         _ (println "INDEX: " current-page-index)
                                          post-ids-partitioned (vec (partition-all posts-per-page post-ids))
                                          post-ids-on-current-page (vec (get post-ids-partitioned current-page-index))]
                                      post-ids-on-current-page))
         load-posts-if-needed! (fn []
                                 (let [post-ids (post-ids-on-current-page)]
-                                  (println "POSTIT SIVULLA: " post-ids)
                                   (doseq [post-id post-ids]
                                     (when (and
                                             (not (listen [::blog-subscription/post-by-id post-id]))

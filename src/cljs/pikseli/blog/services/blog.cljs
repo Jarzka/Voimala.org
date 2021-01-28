@@ -40,13 +40,13 @@
     (assoc-in db [:posts post-id :metadata] metadata)))
 
 (re-frame/reg-event-db
-  ::set-post-loaded
-  (fn [db [_ post-id]]
-    (let [posts-loading (:posts-loading db)]
-      (assoc db :posts-loading (disj posts-loading post-id)))))
-
-(re-frame/reg-event-db
   ::set-post-loading
   (fn [db [_ post-id]]
     (let [posts-loading (:posts-loading db)]
       (assoc db :posts-loading (conj posts-loading post-id)))))
+
+(re-frame/reg-event-db
+  ::set-post-loaded
+  (fn [db [_ post-id]]
+    (let [posts-loading (:posts-loading db)]
+      (assoc db :posts-loading (disj posts-loading post-id)))))
