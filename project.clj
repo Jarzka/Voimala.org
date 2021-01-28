@@ -22,8 +22,7 @@
                  [stylefy "2.2.1"]
                  [garden "1.3.2"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]
-                 [re-frame "1.1.2"]
-                 [day8.re-frame/async-flow-fx "0.1.0"]]
+                 [re-frame "1.1.2"]]
   :main pikseli.core
   :aot :all ; For uberjar
   :auto-clean false ; For uberjar
