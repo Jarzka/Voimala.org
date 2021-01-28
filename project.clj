@@ -1,7 +1,8 @@
 (defproject Pikseli "1.0.0-SNAPSHOT"
   :description "Pikseli.org"
   :url "https://www.pikseli.org"
-  :dependencies [[org.clojure/clojure "1.10.1"]
+  :dependencies [; Backend
+                 [org.clojure/clojure "1.10.1"]
                  [org.clojure/clojurescript "1.10.520"]
                  [ring "1.8.1"]
                  [http-kit "2.3.0"]
@@ -14,13 +15,15 @@
                  [com.cognitect/transit-clj "1.0.324"]
                  [org.jsoup/jsoup "1.7.3"]
 
-                 ; Remove these when deps.edn is in use:
+                 ; Frontend (also defined in shadow-cljs, remove these when deps.edn is in use)
                  [reagent "0.10.0"]
                  [cljs-http "0.1.46"]
                  [hiccup "1.0.5"]
                  [stylefy "2.2.1"]
                  [garden "1.3.2"]
-                 [com.andrewmcveigh/cljs-time "0.5.2"]]
+                 [com.andrewmcveigh/cljs-time "0.5.2"]
+                 [re-frame "1.1.2"]
+                 [day8.re-frame/async-flow-fx "0.1.0"]]
   :main pikseli.core
   :aot :all ; For uberjar
   :auto-clean false ; For uberjar

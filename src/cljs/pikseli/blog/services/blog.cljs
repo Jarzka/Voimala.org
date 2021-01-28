@@ -1,41 +1,52 @@
 (ns pikseli.blog.services.blog
-  (:require [reagent.core :as r]))
+  (:require [reagent.core :as r]
+            [re-frame.core :as re-frame]))
 
-; State
+(def state
+  {:current-page-index 0
+   :post-ids           nil ; A vector of all post ids that are at least partially loaded
+   :posts              {} ; post-id -> post
+   :posts-loading      #{} ; A set of post ids being loaded
+   :error?             false})
 
-(def current-page-index (r/atom 0))
+(re-frame/reg-event-db
+  ::init
+  (fn [db [_]]
+    state))
 
-(def post-ids (r/atom nil))
+(re-frame/reg-event-db
+  ::reset-post-ids
+  (fn [db [_ post-ids]]
+    (assoc db :post-ids post-ids)))
 
-(def posts (r/atom {}))
-(def posts-loading (r/atom #{}))
+(re-frame/reg-event-db
+  ::set-error
+  (fn [db [_]]
+    (assoc db :error? true)))
 
-(def error? (r/atom false))
+(re-frame/reg-event-db
+  ::set-current-page-index
+  (fn [db [_ index]]
+    (assoc db :current-page-index index)))
 
-; Helpers
+(re-frame/reg-event-db
+  ::set-post-contents
+  (fn [db [_ post-id contents]]
+    (assoc-in db [:posts post-id] contents)))
 
-(defn post-ids-from-newest-to-oldest []
-  (-> @post-ids sort reverse vec))
+(re-frame/reg-event-db
+  ::set-post-metadata
+  (fn [db [_ post-id metadata]]
+    (assoc-in db [:posts post-id :metadata] metadata)))
 
-(defn post-index [post-id]
-  (let [posts (post-ids-from-newest-to-oldest)]
-    (.indexOf posts post-id)))
+(re-frame/reg-event-db
+  ::set-post-loaded
+  (fn [db [_ post-id]]
+    (let [posts-loading (:posts-loading db)]
+      (assoc db :posts-loading (disj posts-loading post-id)))))
 
-(defn older-post-id [post-id]
-  (let [posts (post-ids-from-newest-to-oldest)
-        post-index (post-index post-id)
-        newer-index (inc post-index)]
-    (get posts newer-index)))
-
-(defn newer-post-id [post-id]
-  (let [posts (post-ids-from-newest-to-oldest)
-        post-index (post-index post-id)
-        older-index (dec post-index)]
-    (get posts older-index)))
-
-(defn posts-loaded? [given-post-ids]
-  (and
-    (some? @post-ids)
-    (every? (fn [post-id]
-              (some? (get @posts post-id)))
-            given-post-ids)))
+(re-frame/reg-event-db
+  ::set-post-loading
+  (fn [db [_ post-id]]
+    (let [posts-loading (:posts-loading db)]
+      (assoc db :posts-loading (conj posts-loading post-id)))))
