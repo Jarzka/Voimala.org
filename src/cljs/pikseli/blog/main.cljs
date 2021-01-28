@@ -1,7 +1,7 @@
 (ns pikseli.blog.main
   (:require
     [stylefy.core :as stylefy :refer [use-style prepare-style use-sub-style]]
-    [re-frame.core :refer [dispatch]]
+    [re-frame.core :refer [dispatch dispatch-sync]]
     [pikseli.blog.views.blog-content :as blog-content]
     [pikseli.blog.services.blog :as blog-service]
     [pikseli.common.components.footer :as footer]
@@ -24,5 +24,5 @@
 
 (defn ^:export start []
   (init)
-  (dispatch [::blog-service/init])
+  (dispatch-sync [::blog-service/init])
   (reagent-dom/render main-content (.getElementById js/document "app")))
