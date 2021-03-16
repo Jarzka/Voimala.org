@@ -30,3 +30,4 @@ setup.md
 logs
 .lsp
 npm-debug.log
+output.calva-repl
