@@ -54,18 +54,18 @@
     {:component-did-mount (fn []
                             (set! (.-HYVOR_TALK_WEBSITE js/window) 1298)
 
-                            (let [config #js {:url "https://metsassa.pikseli.org" :id post-id}]
-                              (let [hyvor-running? (.getElementById js/document "hyvor")]
-                                (if hyvor-running?
-                                  (.reload (.-hyvor_talk js/window) config)
-                                  (do
-                                    (set! (.-HYVOR_TALK_CONFIG js/window) config)
-                                    (let [hyvor-script (.createElement js/document "script")]
-                                      (set! (.-async hyvor-script) "async")
-                                      (set! (.-id hyvor-script) "hyvor")
-                                      (set! (.-type hyvor-script) "text/javascript")
-                                      (set! (.-src hyvor-script) "https://talk.hyvor.com/web-api/embed")
-                                      (.appendChild (.-body js/document) hyvor-script)))))))
+                            (let [config #js {:url "https://metsassa.pikseli.org" :id post-id}
+                                  hyvor-running? (.getElementById js/document "hyvor")]
+                              (if hyvor-running?
+                                (.reload (.-hyvor_talk js/window) config)
+                                (do
+                                  (set! (.-HYVOR_TALK_CONFIG js/window) config)
+                                  (let [hyvor-script (.createElement js/document "script")]
+                                    (set! (.-async hyvor-script) "async")
+                                    (set! (.-id hyvor-script) "hyvor")
+                                    (set! (.-type hyvor-script) "text/javascript")
+                                    (set! (.-src hyvor-script) "https://talk.hyvor.com/web-api/embed")
+                                    (.appendChild (.-body js/document) hyvor-script))))))
      :reagent-render      (fn []
                             [:div#hyvor-talk-view (use-style {:width      "100%"
                                                               :margin-top "1rem"})])}))
@@ -94,14 +94,13 @@
                            (let [post (listen [::blog-subscription/post-by-id post-id])]
                              (if (post-fully-loaded? post)
                                (set-contents! post)
-                               (do
-                                 (dispatch [::post-api/get-post
-                                            post-id
-                                            (fn [post-id contents]
-                                              (dispatch [::blog-service/set-post-contents post-id contents])
-                                              (set-contents! contents))
-                                            (fn []
-                                              (dispatch [::blog-service/set-error]))])))))]
+                               (dispatch [::post-api/get-post
+                                          post-id
+                                          (fn [post-id contents]
+                                            (dispatch [::blog-service/set-post-contents post-id contents])
+                                            (set-contents! contents))
+                                          (fn []
+                                            (dispatch [::blog-service/set-error]))]))))]
     (r/create-class
       {:component-did-update (fn [this]
                                (let [[post-id] (rest (r/argv this))]
@@ -238,7 +237,7 @@
                                [:header (use-style blog-style/header)
 
                                 [:div (use-style blog-style/top-links)
-                                 (if (or blog-post-id about?)
+                                 (when (or blog-post-id about?)
                                    [app-link {:style blog-style/back
                                               :uri   blog-uri}
                                     "< Etusivu"])
