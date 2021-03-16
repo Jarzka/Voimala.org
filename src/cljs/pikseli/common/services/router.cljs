@@ -1,6 +1,5 @@
 (ns pikseli.common.services.router
-  (:require [clojure.string :as string]
-            [pikseli.common.router :as router]
+  (:require [pikseli.common.router :as router]
             [reagent.core :as r]
             [pikseli.common.page-settings :as page-settings]
             [pikseli.common.services.dom :as dom-service]))

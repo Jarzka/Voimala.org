@@ -1,6 +1,5 @@
 (ns pikseli.blog.styles.blog
   (:require [stylefy.core :as stylefy]
-            [garden.color :as color]
             [garden.stylesheet :refer [at-media]]
             [pikseli.common.styles.global :as g-styles]))
 
