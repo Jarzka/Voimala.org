@@ -1,6 +1,5 @@
 (ns pikseli.blog.views.blog-content
-  (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require [stylefy.core :refer [use-style sub-style use-sub-style]]
+  (:require [stylefy.core :refer [use-style use-sub-style]]
             [pikseli.common.components.app-link :refer [app-link]]
             [pikseli.blog.api.post-api :as post-api]
             [pikseli.common.components.pagination :as pagination]
@@ -14,7 +13,6 @@
             [pikseli.common.re-frame :refer [listen]]
             [reagent.core :as r]
             [re-frame.core :refer [dispatch]]
-            [cljs.core.async :refer [<!]]
             [cljs-time.format :as format]
             [cljs-time.coerce :as tc]
             [pikseli.common.styles.layout :as layout]
@@ -205,7 +203,7 @@
                                      post-ids (listen [::blog-subscription/post-ids])
                                      post-ids-on-current-page (post-ids-on-current-page)
                                      max-page-index (max-page-index)
-                                     loaded? (and (not (empty? post-ids))
+                                     loaded? (and (seq post-ids)
                                                   (blog-subscription/posts-loaded? post-ids-on-current-page))
                                      pagination (fn []
                                                   [pagination/pagination {:indexes           (range 0 (inc max-page-index))
@@ -255,4 +253,4 @@
                                (cond
                                  about? [blog-about/about]
                                  blog-post-id [full-blog-post blog-post-id {:view-mode :full}]
-                                 :default [blog-post-list])]))}))
+                                 :else [blog-post-list])]))}))
