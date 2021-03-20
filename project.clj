@@ -19,7 +19,7 @@
                  [reagent "0.10.0"]
                  [cljs-http "0.1.46"]
                  [hiccup "1.0.5"]
-                 [stylefy "2.2.1"]
+                 [stylefy "2.2.2"]
                  [garden "1.3.2"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]
                  [re-frame "1.1.2"]]
