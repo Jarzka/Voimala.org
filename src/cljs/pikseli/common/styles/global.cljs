@@ -1,5 +1,6 @@
 (ns pikseli.common.styles.global
   (:require [stylefy.core :as stylefy]
+            [stylefy.reagent :as stylefy-reagent]
             [pikseli.common.styles.settings :as style-settings]
             [garden.color :as color]))
 
@@ -150,4 +151,4 @@
 ;; ****************************************************************
 
 (defn init-styles []
-  (stylefy/init))
+  (stylefy/init {:dom (stylefy-reagent/init)}))
