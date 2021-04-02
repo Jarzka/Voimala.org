@@ -20,7 +20,7 @@
                  [cljs-http "0.1.46"]
                  [hiccup "1.0.5"]
                  [stylefy "3.0.0-beta1"]
-                 [stylefy/reagent "3.0.0-beta1"]
+                 [stylefy/reagent "3.0.0-beta2"]
                  [garden "1.3.2"]
                  [com.andrewmcveigh/cljs-time "0.5.2"]
                  [re-frame "1.1.2"]]
