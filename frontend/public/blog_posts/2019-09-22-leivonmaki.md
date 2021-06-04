@@ -11,12 +11,9 @@ Jyväskylän seudulla sijaitsevan Leivonmäen kansallispuiston karttaa tutkiessa
 
 ![Maalaismaisema](/images/blog/2019-09-22-leivonmaki/_MG_0768-HDR_thumb.jpg)
 
-
 Olin varannut Leivonmäen päiväretkilleni aikaa pari päivää, missä ajassa ehtisin tutustumaan puiston moniin eri kasvoihin: järviin, harjuihin, soihin ja metsiin. Kohteina olivat mm. Harjunkierros, Koskikara, Kirveslammen kierros ja Luupään lenkki. Olin ihan fiiliksissä, kun sain kulkea pitkin puiston yksinäisiä suomaisemia kamerani kanssa ilman, että ketään tuli vastaan. Olin jopa hieman hämmentynyt siitä, kuinka vähän puistossa lopulta olikaan väkeä. Harjuniemen kärkeen käppäillessä odotin ilta-auringon laskua, mutta valitettavasti iso pilvimassa peitti auringon ja ilta kääntyi nopeasti yöksi. Takaisin oli siis hipsittävä pimeässä, ja tietysti onnistuin myös harhautumaan reitiltä pariin otteeseen. Sentään suunnistin otsalampulla, osa pimeässä metsässä vastaan tulleista retkeilijöistä kun ei tuntunut tarvitsevan edes sitä.
 
 ![Maalaismaisema](/images/blog/2019-09-22-leivonmaki/_MG_0816_thumb.jpg)
-
-![Maalaismaisema](/images/blog/2019-09-22-leivonmaki/_MG_1048_thumb.jpg)
 
 ![Maalaismaisema](/images/blog/2019-09-22-leivonmaki/_MG_1071_thumb.jpg)
 
@@ -35,3 +32,5 @@ Koskikaralla vierailu oli hieno päätös Leivonmäen retkelle. Se tapahtui myö
 ![Joutsniemi](/images/blog/2019-09-22-leivonmaki/DJI_0668-HDR_thumb.jpg)
 
 ![Auringonlasku](/images/blog/2019-09-22-leivonmaki/_MG_1406-HDR_thumb.jpg)
+
+(Viimeinen kuva kansallispuiston ulkopuolelta)

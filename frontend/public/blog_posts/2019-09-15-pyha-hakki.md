@@ -15,12 +15,11 @@ Reitille lähdettäessä päästään suoraan asiaan eli polulle kohti ikimetsä
 
 ![Pyhä-Häkki](/images/blog/2019-09-15-pyha-hakki/_MG_0536_thumb.jpg)
 
-
 ![Pyhä-Häkki](/images/blog/2019-09-15-pyha-hakki/_MG_0332_thumb.jpg)
 
 ![Pyhä-Häkki](/images/blog/2019-09-15-pyha-hakki/_MG_0447_thumb.jpg)
 
-Ikimetsän ohella Pyhä-Häkin reitillä pääsi kulkemaan puistoa ympäröivässä talousmetsässä ja suolla. Reitillä sijaitsee myös yksi nuotipaikka, ja vaikuttikin siltä kuin kaikki vierailijat olisivat kokoontuneet sinne. Parkkiksella kun oli lähtiessä runsaasti autoja, mutta itse polulla en nähnyt juuri ketään. 
+Ikimetsän ohella Pyhä-Häkin reitillä pääsi kulkemaan puistoa ympäröivässä talousmetsässä ja suolla. Reitillä sijaitsee myös yksi nuotiopaikka, ja vaikuttikin siltä kuin kaikki vierailijat olisivat kokoontuneet sinne. Parkkiksella kun oli lähtiessä runsaasti autoja, mutta itse polulla en nähnyt juuri ketään. 
 
 ![Sieni](/images/blog/2019-09-15-pyha-hakki/_MG_0451_thumb.jpg)
 
