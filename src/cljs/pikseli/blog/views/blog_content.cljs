@@ -57,7 +57,10 @@
                             (let [config #js {:url "https://metsassa.pikseli.org" :id post-id}
                                   hyvor-running? (.getElementById js/document "hyvor")]
                               (if hyvor-running?
-                                (.reload (.-hyvor_talk js/window) config)
+                                (try
+                                  (.reload (.-hyvor_talk js/window) config)
+                                  (catch js/Error e
+                                    (.error js/console e)))
                                 (do
                                   (set! (.-HYVOR_TALK_CONFIG js/window) config)
                                   (let [hyvor-script (.createElement js/document "script")]
@@ -66,9 +69,9 @@
                                     (set! (.-type hyvor-script) "text/javascript")
                                     (set! (.-src hyvor-script) "https://talk.hyvor.com/web-api/embed")
                                     (.appendChild (.-body js/document) hyvor-script))))))
-     :reagent-render      (fn []
-                            [:div#hyvor-talk-view (use-style {:width      "100%"
-                                                              :margin-top "1rem"})])}))
+     :reagent-render (fn []
+                       [:div#hyvor-talk-view (use-style {:width "100%"
+                                                         :margin-top "1rem"})])}))
 
 (defn- full-blog-post
   "A single blog post that, given a post id, shows it - or if not loaded, loads it from the server."
