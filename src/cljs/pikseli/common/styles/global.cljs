@@ -72,13 +72,16 @@
 (stylefy/tag "h1" (merge h
                          {:margin-top "1.5rem"
                           :margin-bottom "0.6rem"
-                          :padding "0.5rem"
+                          :padding-top "0.5rem"
+                          :padding-right "0.5rem"
+                          :padding-bottom "0.5rem"
                           :font-size "1.6rem"
                           :font-weight :bold
                           ::stylefy/mode {:first-of-type {:margin-top 0}}
                           :border-bottom (str "0.1rem solid " (:header colors))
                           ::stylefy/scope [[:.full-blog-post
-                                            {:text-transform :uppercase
+                                            {:padding "0.5rem"
+                                             :text-transform :uppercase
                                              :text-align :center
                                              :border-bottom :none}]
                                            [:.blog-post-excerpt

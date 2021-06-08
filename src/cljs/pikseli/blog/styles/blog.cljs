@@ -23,7 +23,9 @@
                                  [:& {:font-size "1rem"}]
                                  [:p {:margin-bottom "1rem"}])]}))
 
-(def blog-post-excerpt
+(def blog-post-excerpt {:margin-bottom "2rem"})
+
+(def blog-post-excerpt-contents
   (merge
     blog-post
     {::stylefy/manual [[:p {:font-size "1.15rem"}]
@@ -101,8 +103,7 @@
                       ::stylefy/scope [[:.full-blog-post
                                         {:text-align :center}]
                                        [:.blog-post-excerpt
-                                        {:margin-top "2rem"
-                                         :margin-bottom "-0.2rem"}]]})
+                                        {:margin-bottom "-0.2rem"}]]})
 
 (def blog-content {:min-height "1100px"
                    ::stylefy/manual [[:figcaption {:text-align :center

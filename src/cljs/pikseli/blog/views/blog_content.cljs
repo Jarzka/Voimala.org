@@ -154,11 +154,11 @@
   [post-id]
   (let [post (listen [::blog-subscription/post-by-id post-id])
         metadata (:metadata post)]
-    [:article.blog-post-excerpt
+    [:article.blog-post-excerpt (use-style blog-style/blog-post-excerpt)
      (when post [blog-post-author-and-date metadata])
      (when post [blog-post-title post-id (:title metadata) true])
      (when-not post [blog-loader])
-     [:div (use-style blog-style/blog-post-excerpt)
+     [:div (use-style blog-style/blog-post-excerpt-contents)
       [app-link {:uri (blog-post-uri post-id)}
        [:img {:src (:image metadata) :alt (:title metadata)}]]
       [:p (:excerpt metadata)
