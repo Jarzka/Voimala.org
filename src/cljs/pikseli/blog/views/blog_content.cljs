@@ -41,13 +41,13 @@
     [:h1 title]))
 
 (defn- blog-post-author-and-date [metadata]
-  [:span (use-style blog-style/author-and-date)
+  [:div (use-style blog-style/author-and-date)
    (str
-     (when (:author metadata)
-       (:author metadata))
-     " - "
      (when (:date metadata)
-       (format/unparse blog-date-out-formatter (tc/from-date (:date metadata)))))])
+       (format/unparse blog-date-out-formatter (tc/from-date (:date metadata))))
+     " / "
+     (when (:author metadata)
+       (:author metadata)))])
 
 (defn discussion [post-id]
   (r/create-class
@@ -119,7 +119,7 @@
                                      metadata (:metadata post)
                                      error? (listen [::blog-subscription/error?])]
                                  [:<>
-                                  [:article
+                                  [:article.full-blog-post
                                    (when post-loaded? [blog-post-title post-id (:title metadata) false])
                                    (when post-loaded? [blog-post-author-and-date metadata])
 
@@ -154,9 +154,9 @@
   [post-id]
   (let [post (listen [::blog-subscription/post-by-id post-id])
         metadata (:metadata post)]
-    [:article
-     (when post [blog-post-title post-id (:title metadata) true])
+    [:article.blog-post-excerpt
      (when post [blog-post-author-and-date metadata])
+     (when post [blog-post-title post-id (:title metadata) true])
      (when-not post [blog-loader])
      [:div (use-style blog-style/blog-post-excerpt)
       [app-link {:uri (blog-post-uri post-id)}

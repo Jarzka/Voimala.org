@@ -92,11 +92,17 @@
                                {:width "100%"
                                 :margin-top "0.5rem"})))
 
-(def author-and-date {:margin-bottom "1rem"
+(def author-and-date {:margin-top "1rem"
+                      :margin-bottom "0.5rem"
                       :position :relative
                       :top "-0.5rem"
-                      :font-size "0.7rem"
-                      :color "#5a5a5a"})
+                      :font-size "0.9rem"
+                      :color "#5a5a5a"
+                      ::stylefy/scope [[:.full-blog-post
+                                        {:text-align :center}]
+                                       [:.blog-post-excerpt
+                                        {:margin-top "2rem"
+                                         :margin-bottom "-0.2rem"}]]})
 
 (def blog-content {:min-height "1100px"
                    ::stylefy/manual [[:figcaption {:text-align :center

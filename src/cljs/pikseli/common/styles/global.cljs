@@ -76,7 +76,14 @@
                           :font-size "1.6rem"
                           :font-weight :bold
                           ::stylefy/mode {:first-of-type {:margin-top 0}}
-                          :border-bottom (str "0.1rem solid " (:header colors))}))
+                          :border-bottom (str "0.1rem solid " (:header colors))
+                          ::stylefy/scope [[:.full-blog-post
+                                            {:text-transform :uppercase
+                                             :text-align :center
+                                             :border-bottom :none}]
+                                           [:.blog-post-excerpt
+                                            {:padding 0
+                                             :border-bottom :none}]]}))
 
 (stylefy/tag "h2" (merge h
                          {:margin-top "1rem"

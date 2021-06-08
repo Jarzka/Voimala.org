@@ -45,7 +45,7 @@
                            :margin-top "1rem"
                            :max-width "1024px"
                            :box-shadow "0 -0.1rem 0.4rem rgba(0, 0, 0, 0.5) inset"
-                           :padding "0.8rem"}
+                           :padding "1rem"}
                            (g-styles/on-mobile
                              {:margin-top "0"}))))
 
