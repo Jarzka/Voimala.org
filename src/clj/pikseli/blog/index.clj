@@ -17,7 +17,7 @@
                                   ".md"))))
         blog-post-metadata (md-to-meta blog-post)]
 
-    [:html
+    [:html {:lang "fi"}
      [:head
       [:title {:id "app-title"}
        (str (when blog-post-id

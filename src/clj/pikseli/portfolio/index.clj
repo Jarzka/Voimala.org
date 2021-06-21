@@ -8,7 +8,7 @@
             [markdown.core :refer [md-to-meta]]))
 
 (defn index [{:keys [uri headers] :as request}]
-  [:html
+  [:html {:lang "en"}
    [:head
     [:title {:id "app-title"}
      (page-settings/page-title "/")]
