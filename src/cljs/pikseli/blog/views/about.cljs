@@ -21,6 +21,6 @@
                                [:img (use-style blog-style/about-image {:src "/images/author.jpg"})]]
                               [:div (use-style blog-style/about-text)
                                [:p "Olen Jari Hanhela, reilu kolmekymppinen retkeily- ja valokuvausharrastaja Tampereelta. Luonto on minulle rauhoittumisen, hyvinvoinnin ja inspiraation lähde, ja siksi palaan sinne aina uudestaan. Liikun luonnossa ympäri vuoden päiväretkien ja lyhyiden vaellusten muodossa, ja näiltä matkoilta jää usein muistoksi kuvia jaettavaksi ja tarinoita kerrottavaksi."]
-                               [:p "Haaveenani on kiertää kaikki Suomen 40 kansallispuistoa ja kirjoittaa jokaisesta pieni retkitarina. Reissu alkoi marraskuussa 2017 " [:a {:href "/blog/2017-11-17-ukk"} "Urho Kekkosen kansallispuistosta"] " ja matkalta puuttuu vielä 4 kansallispuistoa."]
+                               [:p "Haaveenani on kiertää kaikki Suomen 40 kansallispuistoa ja kirjoittaa jokaisesta pieni retkitarina. Reissu alkoi marraskuussa 2017 " [:a {:href "/blog/2017-11-17-ukk"} "Urho Kekkosen kansallispuistosta"] " ja matkalta puuttuu vielä 2 kansallispuistoa."]
 
                                [:img (use-style blog-style/national-parks {:src "/images/national_parks.jpg"})]]]])}))
