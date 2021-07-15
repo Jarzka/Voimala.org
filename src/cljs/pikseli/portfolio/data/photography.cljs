@@ -295,7 +295,4 @@
     :formats #{:jpg}}
    {:file-name "_MG_1997"
     :description "Marraskuu. Kuvattu Mulkkujärven kierroksella."
-    :formats #{:jpg}}
-
-
-   ])
+    :formats #{:jpg}}])
