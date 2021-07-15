@@ -3,7 +3,7 @@ title: "Pala kaunista Savonlinnaa: Kolovesi ja Linnansaari"
 date: 2021-06-30
 image: /images/blog/2021-06-30-kolovesi-linnansaari/_N0A8571.jpg
 author: Jari Hanhela
-excerpt: "Olen saapunut Savonlinnan seudulle, saimaannorppien valtakuntaan. Täällä sijaitsee kaksi kansallispuistoa melko lähellä toisiaan: Koloveden ja Linnansaaren kansallispuisto. Ne ovat erityisesti vesillä liikkujien suosiossa, mutta ei vaellussaappaissakaan tarvitse kylmäksi jäädä, sillä molemmissa puistoissa sijaitsee kävelyyn soveltuvia luontopolkuja. Oma retkireissuni näihin puistoihin tuleekin painottuumaan maakohteisiin, vaikka vesilläkin liikutaan"
+excerpt: "Olen saapunut Savonlinnan seudulle, saimaannorppien valtakuntaan. Täällä sijaitsee kaksi kansallispuistoa melko lähellä toisiaan: Koloveden ja Linnansaaren kansallispuisto. Ne ovat erityisesti vesillä liikkujien suosiossa, mutta ei vaellussaappaissakaan tarvitse kylmäksi jäädä, sillä molemmissa puistoissa sijaitsee kävelyyn soveltuvia luontopolkuja. Oma retkireissuni näihin puistoihin tuleekin painottuumaan maakohteisiin, vaikka vesilläkin liikutaan."
 keywords: kolovesi, koloveden kansallispuisto, linnansaari, linnansaaren kansallispuisto
 ---
 
@@ -72,8 +72,6 @@ Matka saareen kestää Oravista noin vartin. Perillä Sammakkoniemessä odottaa 
 ![Linnansaari](/images/blog/2021-06-30-kolovesi-linnansaari/_N0A8328.jpg)
 
 ![Linnansaari](/images/blog/2021-06-30-kolovesi-linnansaari/_N0A8320.jpg)
-
-![Linnansaari](/images/blog/2021-06-30-kolovesi-linnansaari/_N0A8336.jpg)
 
 Lähden kulkemaan reittiä vastapäivään. Miltei heti polun alusta lähtee sivuhaara kohti Linnansaaren torppaa. Kyseessä on perinnemaisema, jossa voi tutustua viimeisen vuosisadan elämäntyyliin. Siellähän täytyy vierailla.
 
